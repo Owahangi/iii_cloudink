@@ -23,16 +23,20 @@ namespace RentBook.Controllers
             return View(chapter);
         }
 
-        public ActionResult ReadContent(string b_id)
+        public ActionResult ReadBookContent(string b_id,string c_FileName)
         {
             ReadBooksFactory factory = new ReadBooksFactory();
-            List<string> fileContent = factory.ReadfileContent("111");
-
+            List<string> fileContent = factory.ReadfileContent("111", "第一章 秦羽");
+            
             ViewBag.BookContent = fileContent;
 
             return View();
-
         }
 
+        public ActionResult ReadComicBookContent(string b_id,string c_FileName)
+        {
+
+            return View();
+        }
     }
 }
