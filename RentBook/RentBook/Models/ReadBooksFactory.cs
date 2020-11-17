@@ -97,11 +97,30 @@ namespace RentBook.Models
             }
         }
 
-        //public List<string> ReadComicBookfileContent(string b_id, string c_FileName)
-        //{
+        public List<string> ReadComicBookfileContent(string b_id, int chapters)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
 
+            // 找出章節檔名
+            string tSQL = "select c_FileName from BooksChapters where c_FileName like '1231%'";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("Searchb_id", b_id);
+            cmd.Parameters.AddWithValue("Searchc_FileName", chapters);
+            SqlDataReader reader = cmd.ExecuteReader();
 
-        //}
+            List<string> 章節圖片檔名 = new List<string>();
+
+            while (reader.Read())
+            {
+                章節圖片檔名.Add((string)reader["c_FileName"]);
+            }
+
+            reader.Close();
+            con.Close();
+
+            return 章節圖片檔名;
+        }
 
     }
 }

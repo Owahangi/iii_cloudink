@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ReadComicBookContent";
+}
+
+<h2>ReadComicBookContent</h2>
+
+
+@foreach (string FileName in ViewBag.ComicBook)
+{
+    if (FileName != "")
+    {
+        string 檔名 = FileName + ".jpg";
+        <img src="@ViewBag.Path/@檔名" />
+    }
+}
+
+@*<img width="60" height="40" src="@ViewBag.Path/1231-1.jpg"/>*@
