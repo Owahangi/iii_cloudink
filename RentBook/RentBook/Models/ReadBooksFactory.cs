@@ -97,16 +97,18 @@ namespace RentBook.Models
             }
         }
 
-        public List<string> ReadComicBookfileContent(string b_id, int chapters)
+        public List<string> ReadComicBookfileContent(string b_id, string chapters)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
+            string where條件 = b_id + "-" + chapters + "%";
+
             // 找出章節檔名
-            string tSQL = "select c_FileName from BooksChapters where c_FileName like '1231%'";
+            //string tSQL = "select c_FileName from BooksChapters where c_FileName like '123-1%'";
+            string tSQL = "select c_FileName from BooksChapters where c_FileName like @Where條件";
             SqlCommand cmd = new SqlCommand(tSQL, con);
-            cmd.Parameters.AddWithValue("Searchb_id", b_id);
-            cmd.Parameters.AddWithValue("Searchc_FileName", chapters);
+            cmd.Parameters.AddWithValue("Where條件", where條件);
             SqlDataReader reader = cmd.ExecuteReader();
 
             List<string> 章節圖片檔名 = new List<string>();

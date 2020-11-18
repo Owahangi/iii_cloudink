@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "AddBook";
+}
+
+<h2>AddBook</h2>
+
+<body>
+    <div class="container myfont1">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"><h4>新增書籍資料</h4></div>
+                <form action="~/AddBook/SaveAddBook" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label>書籍名稱</label>
+                        <input type="text" name="BookName">
+                    </div>
+
+                    <div class="form-group">
+                        <label>書籍簡介</label>
+                        <textarea rows="5" name="BookInfo"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>上傳書籍封面：</label>
+                        <input type="file" name="BookImage">
+                    </div>
+
+                    <div class="form-group">
+                        <label>書籍分類：</label>
+                        <select name="Booktype">
+                            <option value="0">請選擇...</option>
+                            <option value="1">小說</option>
+                            <option value="2">漫畫</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>出版日期：</label>
+                        <input type="date" name="PublishedDate" max="2020-12-31" min="1900-01-01">
+                    </div>
+
+                    <div class="form-group">
+                        <label>作者</label>
+                        <input type="text" name="AuthorName">
+                    </div>
+
+                    <div class="form-group">
+                        <label>小時/價格</label>
+                        <input type="text" name="HourPrice">
+                    </div>
+
+                    <div class="form-group">
+                        <label>ISBN</label>
+                        <input type="text" name="ISBN">
+                    </div>
+
+                    <div class="form-group">
+                        <label>年齡分級</label>
+                        <input type="text" name="AgeRange">
+                    </div>
+
+                    <div class="form-group">
+                        <label>出版社編號</label>
+                        <input type="text" name="PublishedId">
+                    </div>
+
+                    <button type="submit">送出資料</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>

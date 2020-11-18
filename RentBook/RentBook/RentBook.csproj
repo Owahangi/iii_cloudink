@@ -107,10 +107,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddBookController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddBookFactory.cs" />
+    <Compile Include="Models\BookOutline.cs" />
+    <Compile Include="Models\BookOutlineSubHeaders.cs" />
+    <Compile Include="Models\Books.cs" />
+    <Compile Include="Models\BooksAuthor.cs" />
     <Compile Include="Models\BooksChapters.cs" />
     <Compile Include="Models\ReadBooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +139,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\ReadBooks\ReadBookContent.cshtml" />
     <Content Include="Views\ReadBooks\ReadComicBookContent.cshtml" />
+    <Content Include="Views\AddBook\AddBookData.cshtml" />
+    <Content Include="Views\AddBook\AddBook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
