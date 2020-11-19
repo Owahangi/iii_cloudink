@@ -16,7 +16,7 @@ namespace RentBook
             routes.MapRoute(
                 name: "ReadBooks",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "ReadBooks", action = "List", id = UrlParameter.Optional }
+                defaults: new { controller = "AddBook", action = "AddBook", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
