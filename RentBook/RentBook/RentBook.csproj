@@ -145,6 +145,7 @@
     <Content Include="Views\ReadBooks\ReadComicBookContent.cshtml" />
     <Content Include="Views\AddBook\AddBookData.cshtml" />
     <Content Include="Views\AddBook\AddBook.cshtml" />
+    <Content Include="Views\AddBook\CreateChapter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

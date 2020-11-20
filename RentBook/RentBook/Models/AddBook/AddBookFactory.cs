@@ -25,7 +25,14 @@ namespace RentBook.Models
 
             if (reader.Read())
             {
-                b_id最大值 = (string)reader["b_id"];
+                if ((string)reader["b_id"] == null)
+                {
+                    b_id最大值 = "B00001";
+                }
+                else
+                {
+                    b_id最大值 = (string)reader["b_id"];
+                }                
             }
 
             reader.Close();
@@ -36,7 +43,7 @@ namespace RentBook.Models
             return 新增的b_id;
         }
 
-        public string 取得圖片附檔名(Books b)
+        public string 書籍封面圖片命名(Books b)
         {
             // 取得副檔名
             int point = b.Image.FileName.IndexOf(".");
@@ -188,8 +195,19 @@ namespace RentBook.Models
 
             cmd.ExecuteNonQuery();
 
+
             // 新增到書籍章節資料表
-            string tSQL1 = "Insert into BooksChapters (b_id,c_FileName)Values('" + b.b_id + "','" + bc.c_FileName + "')";
+            string tSQL1 = "";
+            SqlCommand cmd1 = new SqlCommand();
+            cmd.Connection = con;
+
+            foreach (string Files in bc.FilesName)
+            {
+                tSQL1 = "Insert into BooksChapters (b_id,c_Chapters,c_FileName)Values('" + b.b_id + "','" + bc.c_Chapters + "','" + Files + "')";
+                cmd.CommandText = tSQL1;
+                cmd.ExecuteNonQuery();
+            }
+
             con.Close();
         }
 
@@ -205,10 +223,13 @@ namespace RentBook.Models
 
             int 目前最新章節數 = 0;
 
-            if (reader.Read())
+            if (b.b_id != null)
             {
-                目前最新章節數 = (int)reader["c_Chapters"];
-            }
+                if (reader.Read())
+                {
+                    目前最新章節數 = (int)reader["c_Chapters"];
+                }
+            }            
 
             reader.Close();
             con.Close();
@@ -216,28 +237,27 @@ namespace RentBook.Models
             return 目前最新章節數;
         }
 
+        public string 回傳書籍章節檔案副檔名(HttpPostedFileBase file)
+        {
+            // 取得副檔名
+            int point = file.FileName.IndexOf(".");
+            string extention = file.FileName.Substring(point, file.FileName.Length - point);
+            
+            return extention;
+        }
 
-        //public string 取得小說章節檔名(Books b,BooksChapters bc)
+        //public void 更改實體路徑檔案名稱(Books b, BooksChapters bc, string path)
         //{
-        //    if (bc.Files.Count() > 0)
-        //    {
-        //        foreach (HttpPostedFileBase uploadFile in bc.Files)
-        //        {
-        //            if (uploadFile.ContentLength > 0)
-        //            {
-        //                int i = 1;
-        //                // 命名章節檔名
-        //                string ChapterName = b.b_id + "-" + i + ".txt";
+        //    // 當前目錄
+        //    string FolderPath = path;
+        //    DirectoryInfo di = new DirectoryInfo(FolderPath);
 
-        //                uploadFile.SaveAs(Server.MapPath("../書籍素材/小說素材/" + b.b_id + "/" + ChapterName));
+        //    // 取得所有檔案
+        //    FileInfo[] fiArray = di.GetFiles();
 
-        //                i++;
-        //            }
-        //        }
-        //    }
+        //    List<string> PathAllFileName = new List<string>();
 
 
-        //    return ChapterName;
         //}
     }
 }

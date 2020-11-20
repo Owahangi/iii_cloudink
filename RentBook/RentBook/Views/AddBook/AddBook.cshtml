@@ -5,7 +5,7 @@
 
 <h2>AddBook</h2>
 
-<body>
+<body onload="Ready()">
     <div class="container myfont1">
         <div class="card">
             <div class="card-body">
@@ -95,23 +95,32 @@
                         </select>
                     </div>
 
-                    <!-- 第二步驟 上傳大綱-->
+                    <!-- 第二步驟 上傳大綱及章節檔案-->
+                    <hr />
+                    <h3 id="test">新增第 1 章</h3>                  
+
                     <div class="form-group">
                         <label>標題名稱</label>
                         <input type="text" name="Outline">
                     </div>
 
-                    <!-- 第三步驟 上傳章節書籍檔 -->
                     <div class="form-group">
                         <label>上傳書籍各章節檔案：</label>
-                        <input type="file" name="Image" multiple>
+                        <input type="file" name="Files" multiple>
                     </div>
 
                     <button type="submit">送出資料</button>
-                    <button type="submit" onclick="return false">下一步</button>
+                    <button type="submit" onclick="NextChapter()">下一步</button>
                 </form>
             </div>
         </div>
 
     </div>
+
+    <script type="text/javascript">
+        function Ready() {
+            document.getElementById("test").innerHTML = "新增第 2 章";
+        }
+        
+    </script>
 </body>
