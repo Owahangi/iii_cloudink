@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -17,8 +18,8 @@ namespace RentBook.Models
         public int b_HourPrice { get; set; }
         public string b_ISBN { get; set; }
         public int b_AgeRating { get; set; }
+        public string b_Series_yn { get; set; }
         public string p_id { get; set; }
         public string PublishedIdName { get; set; }
-
     }
 }

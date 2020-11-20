@@ -8,7 +8,6 @@ namespace RentBook.Models
     public class BooksAuthor
     {
         public string b_id { get; set; }
-        public string a_id { get; set; }
         public string[] AuthorIdName { get; set; }
     }
 }

@@ -117,12 +117,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AddBookFactory.cs" />
-    <Compile Include="Models\BookOutline.cs" />
-    <Compile Include="Models\Books.cs" />
-    <Compile Include="Models\BooksAuthor.cs" />
-    <Compile Include="Models\BooksChapters.cs" />
-    <Compile Include="Models\ReadBooksFactory.cs" />
+    <Compile Include="Models\AddBook\AddBookFactory.cs" />
+    <Compile Include="Models\AddBook\BookOutline.cs" />
+    <Compile Include="Models\AddBook\Books.cs" />
+    <Compile Include="Models\AddBook\BooksAuthor.cs" />
+    <Compile Include="Models\AddBook\BooksChapters.cs" />
+    <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -37,9 +37,6 @@ namespace RentBook.Controllers
         // 讀取漫畫內容
         public ActionResult ReadComicBookContent(string b_id,string chapters)
         {
-            //string chaptersfoldername = b_id + "-" + chapters.ToString();
-
-            //chapters = 1;
 
             ReadBooksFactory factory = new ReadBooksFactory();
             List<string> 章節檔名 = factory.ReadComicBookfileContent(b_id, chapters);

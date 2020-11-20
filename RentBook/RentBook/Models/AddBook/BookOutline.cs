@@ -8,6 +8,7 @@ namespace RentBook.Models
     public class BookOutline
     {
         public int b_id { get; set; }
-        public string boh_Contetn { get; set; }
+        public string boh_Content { get; set; }
+        public string BookOutlineContent { get; set; }
     }
 }
