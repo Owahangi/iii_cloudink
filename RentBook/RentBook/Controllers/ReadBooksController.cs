@@ -14,40 +14,37 @@ namespace RentBook.Controllers
         // GET: ReadBooks
         public ActionResult List()
         {
-            ReadBooksFactory factory = new ReadBooksFactory();
-            string fileName =  factory.Readfilename("111");
-
-            BooksChapters chapter = new BooksChapters();
-            chapter.c_FileName = fileName;
-
-            return View(chapter);
+            return View();
         }
 
         // 讀取小說內容
-        public ActionResult ReadBookContent(string b_id,string c_FileName)
+        public ActionResult ReadBookContent(string b_id,int c_Chapters)
         {
-            ReadBooksFactory factory = new ReadBooksFactory();
-            List<string> fileContent = factory.ReadfileContent("111", "第一章 秦羽");
-            
-            ViewBag.BookContent = fileContent;
+            ReadBooksModel rb = new ReadBooksModel();
+            rb.b_id = b_id;
+            rb.c_Chapters = c_Chapters;
 
-            return View();
+            ReadBooksFactory factory = new ReadBooksFactory();
+            rb.小說書籍內容 = factory.ReadfileContent(rb);
+            
+            return View(rb);
         }
 
         // 讀取漫畫內容
-        public ActionResult ReadComicBookContent(string b_id,string chapters)
+        public ActionResult ReadComicBookContent(string b_id, int c_Chapters)
         {
 
             ReadBooksFactory factory = new ReadBooksFactory();
-            List<string> 章節檔名 = factory.ReadComicBookfileContent(b_id, chapters);
+            ReadBooksModel rb = new ReadBooksModel();
+            rb.b_id = b_id;
+            rb.c_Chapters = c_Chapters;
+
+            rb.FilesName = factory.ReadComicBookfileContent(rb);
 
             //string 路徑 = System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/漫畫素材/" + b_id + "/" + b_id + "-" + chapters + "/");
-            string 路徑 = "../../書籍素材/漫畫素材/" + b_id + "/" + b_id + "-" + chapters + "/";
+            rb.FilePath = "../../書籍素材/漫畫素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.c_Chapters + "/";
             
-
-            ViewBag.Path = 路徑;
-            ViewBag.ComicBook = 章節檔名;
-            return View();
+            return View(rb);
         }
     }
 }

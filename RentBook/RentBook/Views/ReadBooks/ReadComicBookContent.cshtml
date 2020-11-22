@@ -1,4 +1,4 @@
-﻿
+﻿@model RentBook.Models.ReadBooksModel
 @{
     ViewBag.Title = "ReadComicBookContent";
 }
@@ -7,11 +7,11 @@
 
 
 
-@foreach (string FileName in ViewBag.ComicBook)
+@foreach (string FileName in Model.FilesName)
 {
     if (FileName != "")
     {
         string 檔名 = FileName + ".jpg";
-        <img src="@ViewBag.Path/@檔名" />
+        <img src="@Model.FilePath/@檔名" />
     }
 }

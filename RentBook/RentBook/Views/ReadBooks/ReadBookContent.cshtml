@@ -1,10 +1,11 @@
-﻿@{
+﻿@model RentBook.Models.ReadBooksModel
+@{
     ViewBag.Title = "ReadBookContent";
 }
 
 <h2>ReadBookContent</h2>
 
-@foreach (string c in ViewBag.BookContent)
+@foreach (string c in Model.小說書籍內容)
 {
     if(c != "")
     {

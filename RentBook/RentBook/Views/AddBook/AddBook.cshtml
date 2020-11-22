@@ -1,4 +1,4 @@
-﻿
+﻿@using RentBook.Models.AddBook
 @{
     ViewBag.Title = "AddBook";
 }
@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label>出版社</label>
                         <select name="PublishedIdName">
-                            @foreach (string p in ViewBag.pIdName)
+                            @foreach (string p in Model.出版社編號加名稱)
                             {
                                 <option>@p</option>
                             }
@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <label>作者</label>
                         <select name="AuthorIdName" multiple size="5">
-                            @foreach (string p in ViewBag.aIdName)
+                            @foreach (string p in Model.作者編號加名稱)
                             {
                                 <option value="@p">@p</option>
                             }
@@ -97,7 +97,7 @@
 
                     <!-- 第二步驟 上傳大綱及章節檔案-->
                     <hr />
-                    <h3 id="test">新增第 1 章</h3>                  
+                    <h3 id="chapter"></h3>                  
 
                     <div class="form-group">
                         <label>標題名稱</label>
@@ -119,7 +119,7 @@
 
     <script type="text/javascript">
         function Ready() {
-            document.getElementById("test").innerHTML = "新增第 2 章";
+            document.getElementById("chapter").innerHTML = "新增第 1 章";
         }
         
     </script>

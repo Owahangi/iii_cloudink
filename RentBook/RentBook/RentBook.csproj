@@ -118,10 +118,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AddBook\AddBookFactory.cs" />
+    <Compile Include="Models\AddBook\AddBookModel.cs" />
     <Compile Include="Models\AddBook\BookOutline.cs" />
     <Compile Include="Models\AddBook\Books.cs" />
     <Compile Include="Models\AddBook\BooksAuthor.cs" />
     <Compile Include="Models\AddBook\BooksChapters.cs" />
+    <Compile Include="Models\ReadBook\ReadBooksModel.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,7 +140,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\ReadBooks\List.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\ReadBooks\ReadBookContent.cshtml" />

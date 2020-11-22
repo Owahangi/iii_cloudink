@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using RentBook.Models.AddBook;
 
 namespace RentBook.Controllers
 {
@@ -15,10 +16,11 @@ namespace RentBook.Controllers
         public ActionResult AddBook()
         {
             AddBookFactory factory = new AddBookFactory();
-            ViewBag.pIdName = factory.傳回出版社編號名稱();
-            ViewBag.aIdName = factory.傳回作者編號名稱();
+            AddBookModel ab = new AddBookModel();
+            ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
+            ab.作者編號加名稱 = factory.傳回作者編號名稱();
 
-            return View();
+            return View(ab);
         }
 
 
@@ -73,8 +75,6 @@ namespace RentBook.Controllers
             // 儲存書籍封面到路徑
             b.Image.SaveAs(儲存書籍封面路徑);
 
-
-
             //----------------------------------------------------------------------------------
 
             // 儲存該章節的書籍檔案到路徑
@@ -124,12 +124,6 @@ namespace RentBook.Controllers
             bc.CreateChapters = factory.目前最新章節(b) + 1;
 
             return View(bc);
-        }
-
-        // 新增書籍內容
-        public ActionResult AddBookOutlineSubHeaders()
-        {
-            return View();
         }
     }
 }

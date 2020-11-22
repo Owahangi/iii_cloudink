@@ -122,6 +122,7 @@ namespace RentBook.Models
 
         // 新增書籍基本資料
         // 使用資料表：Books、BooksAuthor
+        // 將資料儲存到 Books 資料表
         public void Create(Books b)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
@@ -184,6 +185,7 @@ namespace RentBook.Models
             con.Close();
         }
 
+        // 將資料儲存到 BookOutline 與 BooksChapters 資料表
         public void 儲存章節標題及檔名 (Books b,BooksChapters bc,BookOutline bo)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
