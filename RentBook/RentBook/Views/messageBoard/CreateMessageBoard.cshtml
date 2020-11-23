@@ -1,0 +1,27 @@
+﻿@using RentBook.Models;
+@model List<RentBook.Models.CmessageBoard>
+
+@{
+    ViewBag.Title = "CreateMessageBoard";
+}
+
+<h2>CreateMessageBoard</h2>
+
+
+
+
+
+<form method="post" action="~/messageBoard/SaveMessage">
+    <p>
+        Message<br />
+        
+        <textarea name="txtMessage"></textarea>
+    </p>
+    <p>
+        Score<br />
+        <input type="radio" name="radioScore" />
+    </p>
+    <p>
+        <input type="submit" value="送出" />
+    </p>
+</form>
