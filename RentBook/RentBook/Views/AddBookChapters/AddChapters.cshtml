@@ -1,0 +1,62 @@
+﻿@model RentBook.Models.AddChapters.AddBookChaptersModel
+@{
+    ViewBag.Title = "AddChapters";
+}
+
+<h2>AddChapters</h2>
+
+<body onload="Ready()">
+    <div class="container myfont1">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"><h4>新增書籍資料</h4></div>
+                <form action="~/AddBookChapters/SaveChapters" method="POST" enctype="multipart/form-data">
+
+                    <input type="hidden" name="bId" value="@Model.b_id" />
+                    <input type="hidden" name="bType" value="@Model.b_Type" />
+                    <input type="hidden" name="bcChapters" value="@Model.bc_Chapters" />
+
+                    <h3>新增第 @Model.bc_Chapters 章</h3>
+
+                    <div class="form-group">
+                        <label>連載情況</label>
+                        <div class="border">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="Series" checked value="連載中">
+                                <label class="form-check-label">連載中</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" name="Series" value="已完結">
+                                <label class="form-check-label">已完結</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <h3 id="chapter"></h3>
+
+                    <div class="form-group">
+                        <label>章節標題名稱</label>
+                        <input type="text" name="bcContent">
+                    </div>
+
+                    <div class="form-group">
+                        <label>上傳書籍各章節檔案：</label>
+                        <input type="file" name="Files" multiple>
+                    </div>
+
+                    <button type="submit">送出資料</button>
+                    <button type="submit" onclick="NextChapter()">下一步</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        //function Ready() {
+        //    document.getElementById("chapter").innerHTML = "新增第 1 章";
+        //}
+
+    </script>
+</body>
