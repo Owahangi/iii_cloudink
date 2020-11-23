@@ -7,15 +7,12 @@ namespace RentBook.Models
 {
     public class BooksChapters
     {
+        public int bc_id { get; set; }
         public int b_id { get; set; }
-        public string c_Chapters { get; set; }
-        public string c_FileName { get; set; }
+        public int bc_Chapters { get; set; }
+        public string bc_Content { get; set; }
 
-        // 找出目前書籍的章節 +1 (用來新增新章節時使用)
+        //要新增的章節
         public int CreateChapters { get; set; }
-        // 用來接收章節的檔案 (多筆)
-        public HttpPostedFileBase[] Files { get; set; }
-
-        public List<string> FilesName { get; set; }
     }
 }

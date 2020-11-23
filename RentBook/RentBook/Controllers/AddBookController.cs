@@ -23,10 +23,12 @@ namespace RentBook.Controllers
             return View(ab);
         }
 
+        /** 尚未加入後端資料驗證 **/
+
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public ActionResult SaveNewBook(Books b, BookOutline bo, BooksChapters bc)
+        public ActionResult SaveNewBook(Books b, BooksChapters bc, BooksFiles bf)
         {
 
             AddBookFactory factory = new AddBookFactory();
@@ -37,7 +39,7 @@ namespace RentBook.Controllers
             ba.AuthorIdName = Request.Form.GetValues("AuthorIdName");
 
             // 書籍大綱資料表
-            bo.boh_Content = Request.Form["Outline"];
+            bc.bc_Content = Request.Form["bcContent"];
 
             // 書籍資料表
             b.b_id = ba.b_id;
@@ -78,22 +80,22 @@ namespace RentBook.Controllers
             //----------------------------------------------------------------------------------
 
             // 儲存該章節的書籍檔案到路徑
-            bc.c_Chapters = "1";
-            bc.FilesName = new List<string>();
+            bc.bc_Chapters = 1;
+            bf.FilesName = new List<string>();
 
             // 在儲存檔案時 自動更改檔名
             // 在上傳時需注意：
             // 1.請將每個檔案名稱 依照順序重新命名 例：1.txt、2.txt、3.txt .....
             // 2.確認要上傳的那個資料夾 Windows 的排序是依據 1.名稱 2.遞增
-            if (bc.Files.Count() > 0)
+            if (bf.Files.Count() > 0)
             {
                 int i = 1;
-                foreach (HttpPostedFileBase uploadFile in bc.Files)
+                foreach (HttpPostedFileBase uploadFile in bf.Files)
                 {
                     if (uploadFile.ContentLength > 0)
                     {
                         // 這個陣列用來 將多筆章節檔名 儲存到資料庫使用
-                        bc.FilesName.Add(b.b_id + "-1-" + i + factory.回傳書籍章節檔案副檔名(uploadFile));
+                        bf.FilesName.Add(b.b_id + "-1-" + i + factory.回傳書籍章節檔案副檔名(uploadFile));
 
                         // 上傳時自動編名
                         uploadFile.SaveAs(Server.MapPath("../書籍素材/" + b.b_Type + "素材/" + b.b_id + "/" + b.b_id + "-1/" + b.b_id + "-1-" + i + factory.回傳書籍章節檔案副檔名(uploadFile)));
@@ -105,25 +107,11 @@ namespace RentBook.Controllers
                 }
             }
 
-            factory.儲存章節標題及檔名(b, bc, bo);
+            factory.儲存章節標題及檔名(b, bf, bc);
             factory.Create(b);
             factory.CreateBA(ba);
 
             return RedirectToAction("AddBook");
-        }
-
-        // 顯示要建立的章節
-        public ActionResult CreateChapter(Books b)
-        {
-            // 因為是建立新書籍 所以一定是第一章 (目前沒有使用)
-            // 建立第二章時使用
-            b.b_id = "123";
-
-            AddBookFactory factory = new AddBookFactory();
-            BooksChapters bc = new BooksChapters();
-            bc.CreateChapters = factory.目前最新章節(b) + 1;
-
-            return View(bc);
         }
     }
 }

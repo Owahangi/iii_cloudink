@@ -40,17 +40,17 @@ namespace RentBook.Models
             con.Open();
 
             //找出章節檔案名稱
-            string tSQL = "select c_FileName from BooksChapters where b_id = @Searchb_id and c_Chapters = @Searchc_Chapters";
+            string tSQL = "select bf_FileName from BooksFiles as b inner join BooksChapters as c on b.bc_id=c.bc_id where c.b_id=@Searchb_id and c.bc_Chapters=@Searchc_Chapters";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("Searchb_id", rb.b_id);
-            cmd.Parameters.AddWithValue("Searchc_Chapters", rb.c_Chapters);
+            cmd.Parameters.AddWithValue("Searchc_Chapters", rb.bc_Chapters);
             SqlDataReader reader = cmd.ExecuteReader();
 
-            string c_FileName = "";
+            string bf_FileName = "";
 
             if (reader.Read())
             {
-                c_FileName = (string)reader["c_FileName"];
+                bf_FileName = (string)reader["bf_FileName"];
             }
 
             reader.Close();
@@ -60,13 +60,13 @@ namespace RentBook.Models
 
             if (rb.b_id != "")
             {
-                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.c_Chapters + "/" + c_FileName + ".txt")))
+                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName + ".txt")))
                 {
 
                 }
                 else
                 {
-                    StreamReader sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.c_Chapters + "/" + c_FileName + ".txt"), System.Text.Encoding.UTF8);
+                    StreamReader sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName + ".txt"), System.Text.Encoding.UTF8);
                     while (sr.Peek() >= 0)
                     {
                         書籍內容.Add(sr.ReadLine());
@@ -89,11 +89,11 @@ namespace RentBook.Models
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string where條件 = rb.b_id + "-" + rb.c_Chapters + "%";
+            string where條件 = rb.b_id + "-" + rb.bc_Chapters + "%";
 
             // 找出章節檔名
             //string tSQL = "select c_FileName from BooksChapters where c_FileName like '123-1%'";
-            string tSQL = "select c_FileName from BooksChapters where c_FileName like @Where條件";
+            string tSQL = "select bf_FileName from BooksFiles where bf_FileName like @Where條件";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("Where條件", where條件);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -102,7 +102,7 @@ namespace RentBook.Models
 
             while (reader.Read())
             {
-                章節圖片檔名.Add((string)reader["c_FileName"]);
+                章節圖片檔名.Add((string)reader["bf_FileName"]);
             }
 
             reader.Close();

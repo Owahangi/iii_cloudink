@@ -14,9 +14,10 @@ namespace RentBook.Models
         public string b_Name { get; set; }
         
         // BooksChapters 資料表
+        public int bc_Chapters { get; set; }
 
-        public int c_Chapters { get; set; }
-        public string c_FileName { get; set; }
+        // BooksFiles 資料表
+        public string bf_FileName { get; set; }
         public List<string> 小說書籍內容 { get; set; }
 
         public List<string> FilesName { get; set; }

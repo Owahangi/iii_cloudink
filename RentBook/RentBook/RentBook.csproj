@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddBookChaptersController.cs" />
     <Compile Include="Controllers\AddBookController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -119,10 +120,12 @@
     </Compile>
     <Compile Include="Models\AddBook\AddBookFactory.cs" />
     <Compile Include="Models\AddBook\AddBookModel.cs" />
-    <Compile Include="Models\AddBook\BookOutline.cs" />
+    <Compile Include="Models\AddBook\BooksChapters.cs" />
     <Compile Include="Models\AddBook\Books.cs" />
     <Compile Include="Models\AddBook\BooksAuthor.cs" />
-    <Compile Include="Models\AddBook\BooksChapters.cs" />
+    <Compile Include="Models\AddBook\BooksFiles.cs" />
+    <Compile Include="Models\AddChapters\AddBookChaptersModel.cs" />
+    <Compile Include="Models\AddChapters\AddChaptersFactory.cs" />
     <Compile Include="Models\ReadBook\ReadBooksModel.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +150,7 @@
     <Content Include="Views\AddBook\AddBookData.cshtml" />
     <Content Include="Views\AddBook\AddBook.cshtml" />
     <Content Include="Views\AddBook\CreateChapter.cshtml" />
+    <Content Include="Views\AddBookChapters\AddChapters.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +161,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewMdoels\" />
+    <Folder Include="Views\AddBookChapter\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

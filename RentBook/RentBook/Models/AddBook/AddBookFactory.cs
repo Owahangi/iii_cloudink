@@ -186,28 +186,45 @@ namespace RentBook.Models
         }
 
         // 將資料儲存到 BookOutline 與 BooksChapters 資料表
-        public void 儲存章節標題及檔名 (Books b,BooksChapters bc,BookOutline bo)
+        public void 儲存章節標題及檔名 (Books b,BooksFiles bf,BooksChapters bc)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            // 新增到書籍大綱資料表
-            string tSQL = "Insert into BookOutline (b_id,boh_Content)Values('" + b.b_id +"','" + bo.boh_Content + "')";
+            // 新增到書籍章節資料表
+            string tSQL = "Insert into BooksChapters (b_id,bc_Chapters,bc_Content)Values(@bId,@bcChapters,@bcContent)";
             SqlCommand cmd = new SqlCommand(tSQL,con);
+            cmd.Parameters.AddWithValue("bId",b.b_id);
+            cmd.Parameters.AddWithValue("bcChapters", bc.bc_Chapters);
+            cmd.Parameters.AddWithValue("bcContent",bc.bc_Content);
 
             cmd.ExecuteNonQuery();
 
+            // 撈回 BooksChapters 資料表，目前自動編號的最大值 (要塞到 BooksFiles 資料表使用的)
+            string tSQL1 = "select max(bc_id) as bc_id from BooksChapters";
+            SqlCommand cmd1 = new SqlCommand(tSQL1, con);
+            SqlDataReader reader = cmd1.ExecuteReader();
 
-            // 新增到書籍章節資料表
-            string tSQL1 = "";
-            SqlCommand cmd1 = new SqlCommand();
-            cmd.Connection = con;
+            int maxbc_id = 0;
 
-            foreach (string Files in bc.FilesName)
+            if (reader.Read())
             {
-                tSQL1 = "Insert into BooksChapters (b_id,c_Chapters,c_FileName)Values('" + b.b_id + "','" + bc.c_Chapters + "','" + Files + "')";
-                cmd.CommandText = tSQL1;
-                cmd.ExecuteNonQuery();
+                maxbc_id = (int)reader["bc_id"];
+            }
+
+            reader.Close();
+
+
+            // 新增到書籍檔案資料表
+            string tSQL2 = "";
+            SqlCommand cmd2 = new SqlCommand();
+            cmd2.Connection = con;
+
+            foreach (string Files in bf.FilesName)
+            {
+                tSQL2 = "Insert into BooksFiles (bc_id,bf_FileName)Values('" + maxbc_id + "','" + Files + "')";
+                cmd2.CommandText = tSQL2;
+                cmd2.ExecuteNonQuery();
             }
 
             con.Close();
@@ -219,8 +236,9 @@ namespace RentBook.Models
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "select max(c_Chapters) as c_Chapters from BooksChapters where b_id = '" + b.b_id +"'";
+            string tSQL = "select max(bc_Chapters) as bc_Chapters from BooksChapters where b_id = @bId";
             SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bId",b.b_id);
             SqlDataReader reader = cmd.ExecuteReader();
 
             int 目前最新章節數 = 0;
@@ -229,7 +247,7 @@ namespace RentBook.Models
             {
                 if (reader.Read())
                 {
-                    目前最新章節數 = (int)reader["c_Chapters"];
+                    目前最新章節數 = (int)reader["bc_Chapters"];
                 }
             }            
 

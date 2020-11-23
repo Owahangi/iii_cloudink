@@ -18,11 +18,11 @@ namespace RentBook.Controllers
         }
 
         // 讀取小說內容
-        public ActionResult ReadBookContent(string b_id,int c_Chapters)
+        public ActionResult ReadBookContent(string b_id,int bc_Chapters)
         {
             ReadBooksModel rb = new ReadBooksModel();
             rb.b_id = b_id;
-            rb.c_Chapters = c_Chapters;
+            rb.bc_Chapters = bc_Chapters;
 
             ReadBooksFactory factory = new ReadBooksFactory();
             rb.小說書籍內容 = factory.ReadfileContent(rb);
@@ -31,18 +31,18 @@ namespace RentBook.Controllers
         }
 
         // 讀取漫畫內容
-        public ActionResult ReadComicBookContent(string b_id, int c_Chapters)
+        public ActionResult ReadComicBookContent(string b_id, int bc_Chapters)
         {
 
             ReadBooksFactory factory = new ReadBooksFactory();
             ReadBooksModel rb = new ReadBooksModel();
             rb.b_id = b_id;
-            rb.c_Chapters = c_Chapters;
+            rb.bc_Chapters = bc_Chapters;
 
             rb.FilesName = factory.ReadComicBookfileContent(rb);
 
             //string 路徑 = System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/漫畫素材/" + b_id + "/" + b_id + "-" + chapters + "/");
-            rb.FilePath = "../../書籍素材/漫畫素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.c_Chapters + "/";
+            rb.FilePath = "../../書籍素材/漫畫素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/";
             
             return View(rb);
         }
