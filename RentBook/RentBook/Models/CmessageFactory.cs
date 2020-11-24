@@ -61,10 +61,10 @@ namespace RentBook.Models
                 CmessageBoard x = new CmessageBoard();
                 x.bm_id = (int)reader["bm_id"];
                 x.b_id = (int)reader["b_id"];
-                x.m_id = (int)reader["m_id"];
+                x.m_id = reader["m_id"].ToString();
                 x.bm_Message = reader["bm_Message"].ToString();
-                x.bm_MessageTime = reader["bm_MessageTime"].ToString();
-                x.bm_score = (int)reader["bm_score"];
+                x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
+                x.bm_Score = (int)reader["bm_score"];
                 list.Add(x);
             }
             con.Close();

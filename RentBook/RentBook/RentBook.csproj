@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -431,18 +439,106 @@
     <Content Include="Content\網站圖片庫\鏡文學7.jpg" />
     <Content Include="Content\網站圖片庫\鏡文學8.jpg" />
     <Content Include="Content\網站圖片庫\鏡文學9.jpg" />
+    <Content Include="dbRentBookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbRentBookModel.Context.cs</LastGenOutput>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="dbRentBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+      <LastGenOutput>dbRentBookModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Author.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookCase.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookCaseBooks.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Books.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksAuthor.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksChapters.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksFiles.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksMessage.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksTags.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksWishlist.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\messageBoardController.cs" />
+    <Compile Include="dbRentBookModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbRentBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbRentBookModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Function.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Level.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberAddDetail.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberDonateAuthor.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberShopDetail.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CmessageBoard.cs" />
     <Compile Include="Models\CmessageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleFunction.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAccount.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -527,6 +623,13 @@
     <Content Include="Content\vendors\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\vendors\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="dbRentBookModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbRentBookModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="dbRentBookModel.edmx.diagram">
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -540,6 +643,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

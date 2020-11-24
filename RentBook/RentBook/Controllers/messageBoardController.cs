@@ -3,42 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using RentBook.Models;
 
 namespace RentBook.Controllers
 {
     public class messageBoardController : Controller
     {
-        // bm_id 書籍留言序號
-        // b_id 書籍編號
-        // m_id 會員編號
-        // bm_Message 留言內容
-        // bm_MessageTime 留言時間
-        // bm_score 會員對書籍的評分
-        // m_Name dbo.Member資料表的會員暱稱
-        public ActionResult DeleteMessageBoard(int? bm_id) 
+        // int  bm_id 書籍留言序號
+        // string b_id 書籍編號
+        // string m_id 會員編號
+        // string bm_Message 留言內容
+        // DateTime bm_MessageTime 留言時間
+        // int bm_Score 會員對書籍的評分
+
+        // string m_Alias dbo.Member資料表的會員暱稱 需要join
+
+        dbRentBookdbEntities db = new dbRentBookdbEntities();
+
+        public ActionResult DeleteMessageBoard(string M_ID) 
         {
-            if (bm_id != null) 
+            BooksMessage bm = db.BooksMessage.FirstOrDefault(m => m.m_id == M_ID);
+            if (bm != null) 
             {
-                CmessageBoard dCust = new CmessageBoard() { bm_id = (int)bm_id };
-                (new CmessageFactory()).delete_BooksMessage(dCust);
+                db.BooksMessage.Remove(bm);
+                db.SaveChanges();
             }
-            return RedirectToAction("書籍資訊");
+            return RedirectToAction("CreateMessageBoard");
         }
-        public ActionResult SaveMessage() 
+
+
+        [HttpPost] //限定使用POST
+        [Authorize] // 會員登入後才可評論
+        public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int SCORE) 
         {
-            CmessageBoard x = new CmessageBoard();
-            //待改
-            //x.bm_id
-            //x.b_id
-            //x.m_id
-            x.bm_Message = Request.Form["txtMessage"];
-            x.bm_score = int.Parse(Request.Form["radioScore"]);
+            var M_ID = HttpContext.Session.SessionID;
 
-            (new CmessageFactory()).create__BooksMessage(x);
-            return RedirectToAction("書籍資訊");
+            //待改 join m_Alias
+            BooksMessage x = new BooksMessage();
+            x.b_id = B_ID;
+            x.m_id = M_ID;
+            x.bm_Message = MESSAGE;
+            x.bm_MessageTime = DateTime.Now;
+            x.bm_Score = SCORE;
 
+            db.BooksMessage.Add(x);
+            db.SaveChanges();
+            return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
         }
+
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {

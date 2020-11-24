@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentBookdbModelStoreContainer" CdmEntityContainer="dbRentBookdbEntities">
+    <EntitySetMapping Name="Author">
+      <EntityTypeMapping TypeName="RentBookdbModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="a_Name" ColumnName="a_Name" />
+          <ScalarProperty Name="a_Image" ColumnName="a_Image" />
+          <ScalarProperty Name="a_Birth" ColumnName="a_Birth" />
+          <ScalarProperty Name="a_Point" ColumnName="a_Point" />
+          <ScalarProperty Name="a_Email" ColumnName="a_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookCase">
+      <EntityTypeMapping TypeName="RentBookdbModel.BookCase">
+        <MappingFragment StoreEntitySet="BookCase">
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="bc_Name" ColumnName="bc_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookCaseBooks">
+      <EntityTypeMapping TypeName="RentBookdbModel.BookCaseBooks">
+        <MappingFragment StoreEntitySet="BookCaseBooks">
+          <ScalarProperty Name="bcb_id" ColumnName="bcb_id" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="bcb_BookLastTime" ColumnName="bcb_BookLastTime" />
+          <ScalarProperty Name="bcb_ReadRange" ColumnName="bcb_ReadRange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="RentBookdbModel.Books">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="b_Name" ColumnName="b_Name" />
+          <ScalarProperty Name="b_Info" ColumnName="b_Info" />
+          <ScalarProperty Name="b_Image" ColumnName="b_Image" />
+          <ScalarProperty Name="b_Type" ColumnName="b_Type" />
+          <ScalarProperty Name="b_PublishedDate" ColumnName="b_PublishedDate" />
+          <ScalarProperty Name="b_HourPrice" ColumnName="b_HourPrice" />
+          <ScalarProperty Name="b_ISBN" ColumnName="b_ISBN" />
+          <ScalarProperty Name="b_AgeRating" ColumnName="b_AgeRating" />
+          <ScalarProperty Name="b_Likes" ColumnName="b_Likes" />
+          <ScalarProperty Name="b_Series_yn" ColumnName="b_Series_yn" />
+          <ScalarProperty Name="b_Put_yn" ColumnName="b_Put_yn" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksAuthor">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksAuthor">
+        <MappingFragment StoreEntitySet="BooksAuthor">
+          <ScalarProperty Name="ba_id" ColumnName="ba_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksChapters">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksChapters">
+        <MappingFragment StoreEntitySet="BooksChapters">
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="bc_Chapters" ColumnName="bc_Chapters" />
+          <ScalarProperty Name="bc_Content" ColumnName="bc_Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksFiles">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksFiles">
+        <MappingFragment StoreEntitySet="BooksFiles">
+          <ScalarProperty Name="bf_id" ColumnName="bf_id" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="bf_FileName" ColumnName="bf_FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksMessage">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksMessage">
+        <MappingFragment StoreEntitySet="BooksMessage">
+          <ScalarProperty Name="bm_id" ColumnName="bm_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="bm_Message" ColumnName="bm_Message" />
+          <ScalarProperty Name="bm_MessageTime" ColumnName="bm_MessageTime" />
+          <ScalarProperty Name="bm_Score" ColumnName="bm_Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksTags">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksTags">
+        <MappingFragment StoreEntitySet="BooksTags">
+          <ScalarProperty Name="bt_id" ColumnName="bt_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooksWishlist">
+      <EntityTypeMapping TypeName="RentBookdbModel.BooksWishlist">
+        <MappingFragment StoreEntitySet="BooksWishlist">
+          <ScalarProperty Name="bw_id" ColumnName="bw_id" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="bw_AddTime" ColumnName="bw_AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Function">
+      <EntityTypeMapping TypeName="RentBookdbModel.Function">
+        <MappingFragment StoreEntitySet="Function">
+          <ScalarProperty Name="f_id" ColumnName="f_id" />
+          <ScalarProperty Name="f_Name" ColumnName="f_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Level">
+      <EntityTypeMapping TypeName="RentBookdbModel.Level">
+        <MappingFragment StoreEntitySet="Level">
+          <ScalarProperty Name="l_id" ColumnName="l_id" />
+          <ScalarProperty Name="l_Image" ColumnName="l_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member">
+      <EntityTypeMapping TypeName="RentBookdbModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_Name" ColumnName="m_Name" />
+          <ScalarProperty Name="m_Alias" ColumnName="m_Alias" />
+          <ScalarProperty Name="m_Birth" ColumnName="m_Birth" />
+          <ScalarProperty Name="m_Gender" ColumnName="m_Gender" />
+          <ScalarProperty Name="m_Point" ColumnName="m_Point" />
+          <ScalarProperty Name="m_Email" ColumnName="m_Email" />
+          <ScalarProperty Name="m_Image" ColumnName="m_Image" />
+          <ScalarProperty Name="m_RegisterDate" ColumnName="m_RegisterDate" />
+          <ScalarProperty Name="m_LastLogin" ColumnName="m_LastLogin" />
+          <ScalarProperty Name="m_LastLogon" ColumnName="m_LastLogon" />
+          <ScalarProperty Name="m_OnlineTime" ColumnName="m_OnlineTime" />
+          <ScalarProperty Name="m_MonthlyLastTime" ColumnName="m_MonthlyLastTime" />
+          <ScalarProperty Name="bc_id" ColumnName="bc_id" />
+          <ScalarProperty Name="l_id" ColumnName="l_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberAddDetail">
+      <EntityTypeMapping TypeName="RentBookdbModel.MemberAddDetail">
+        <MappingFragment StoreEntitySet="MemberAddDetail">
+          <ScalarProperty Name="mad_id" ColumnName="mad_id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="mad_AddPoint" ColumnName="mad_AddPoint" />
+          <ScalarProperty Name="mad_AddTime" ColumnName="mad_AddTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberDonateAuthor">
+      <EntityTypeMapping TypeName="RentBookdbModel.MemberDonateAuthor">
+        <MappingFragment StoreEntitySet="MemberDonateAuthor">
+          <ScalarProperty Name="am_id" ColumnName="am_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="am_DonatePoint" ColumnName="am_DonatePoint" />
+          <ScalarProperty Name="am_DonateTime" ColumnName="am_DonateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberShopDetail">
+      <EntityTypeMapping TypeName="RentBookdbModel.MemberShopDetail">
+        <MappingFragment StoreEntitySet="MemberShopDetail">
+          <ScalarProperty Name="msd_id" ColumnName="msd_id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="msd_CostPoint" ColumnName="msd_CostPoint" />
+          <ScalarProperty Name="msd_DateTime" ColumnName="msd_DateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publishing">
+      <EntityTypeMapping TypeName="RentBookdbModel.Publishing">
+        <MappingFragment StoreEntitySet="Publishing">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_Name" ColumnName="p_Name" />
+          <ScalarProperty Name="p_Address" ColumnName="p_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="RentBookdbModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+          <ScalarProperty Name="r_Name" ColumnName="r_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleFunction">
+      <EntityTypeMapping TypeName="RentBookdbModel.RoleFunction">
+        <MappingFragment StoreEntitySet="RoleFunction">
+          <ScalarProperty Name="sf_id" ColumnName="sf_id" />
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="f_id" ColumnName="f_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemAccount">
+      <EntityTypeMapping TypeName="RentBookdbModel.SystemAccount">
+        <MappingFragment StoreEntitySet="SystemAccount">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_Pwd" ColumnName="s_Pwd" />
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="RentBookdbModel.Tags">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="t_Name" ColumnName="t_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
