@@ -35,7 +35,7 @@ namespace RentBook.Controllers
 
         [HttpPost] //限定使用POST
         [Authorize] // 會員登入後才可評論
-        public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int SCORE) 
+        public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int rate) 
         {
             var M_ID = HttpContext.Session.SessionID;
 
@@ -45,7 +45,7 @@ namespace RentBook.Controllers
             x.m_id = M_ID;
             x.bm_Message = MESSAGE;
             x.bm_MessageTime = DateTime.Now;
-            x.bm_Score = SCORE;
+            x.bm_Score = rate;
 
             db.BooksMessage.Add(x);
             db.SaveChanges();
