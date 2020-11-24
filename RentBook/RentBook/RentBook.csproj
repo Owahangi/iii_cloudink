@@ -343,6 +343,7 @@
     <Content Include="Content\my-icons-collection\font\flaticon.css" />
     <Content Include="Content\my-icons-collection\font\flaticon.html" />
     <Content Include="Content\my-icons-collection\font\Flaticon.svg" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\vendors\animate-css\animate.css" />
     <Content Include="Content\vendors\animate-css\wow.min.js" />
@@ -527,6 +528,8 @@
     <Content Include="Content\vendors\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Content\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\messageBoard\CreateMessageBoard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
