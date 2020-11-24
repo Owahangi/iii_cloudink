@@ -1,10 +1,11 @@
-﻿@{
-    ViewBag.Title = "Index2";
+﻿@model RentBook.Models.AddChapters.AddBookChaptersModel
+@{
+    ViewBag.Title = "AddChapters";
     Layout = "~/Views/Shared/_AddBookLayout.cshtml";
 }
 
-<h2>Index2</h2>
-<form class="container">
+<h4>新增第 @Model.bc_Chapters 章</h4>
+<form class="container" action="~/AddBookChapters/SaveChapters" method="POST" enctype="multipart/form-data">
     <div class="bs-stepper">
         <div class="bs-stepper-header" role="tablist">
             <div class="step" data-target="#step1">
@@ -17,27 +18,43 @@
             <div class="step" data-target="#step2">
                 <button type="button" class="step-trigger" role="tab">
                     <span class="bs-stepper-circle">2</span>
-                    <span class="bs-stepper-label">新增章節標題</span>
+                    <span class="bs-stepper-label">新增成功</span>
                 </button>
             </div>
-
-
         </div>
+        <!-------------------->
+        <input type="hidden" name="bId" value="@Model.b_id" />
+        <input type="hidden" name="bType" value="@Model.b_Type" />
+        <input type="hidden" name="bcChapters" value="@Model.bc_Chapters" />
+
+
         <div class="bs-stepper-content" id="st">
+
             <div id="step1" class="content" role="tabpanel">
                 <div class="col-10 form-group">
-                    <label>章節:</label>
-                    <br />
-                    <input type="text" class="form-control" placeholder="請輸入章節" required="required" />
+                    <label>連載情況:</label>
+                    <div class="border">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="Series" checked value="連載中">
+                            <label class="form-check-label">連載中</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="Series" value="已完結">
+                            <label class="form-check-label">已完結</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-10 form-group">
-                    <label>章節內容:</label>
-                    <input type="file" class="" required="required" />
+                    <label>章節標題名稱:</label>
+                    <br />
+                    <input type="text" name="bcContent" class="form-control" placeholder="請輸入章節" required="required" />
+                </div>
+                <div class="col-10 form-group">
+                    <label>上傳書籍各章節檔案:</label>
+                    <input type="file" name="Files" class="" required="required" multiple />
                 </div>
                 <div>
-
-                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.previous()">上一步</button>
-                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()">下一步</button>
+                    <input type="submit" class="btn btn-primary btn-block" onclick="stepper.next()" value="建立書籍">
                 </div>
 
             </div>
@@ -45,51 +62,47 @@
                 <div class="alert alert-success">
                     成功上架書籍!
                 </div>
+                <button type="submit" class="btn btn-primary btn-block" onclick="stepper.previous()">繼續新增</button>
             </div>
-
         </div>
     </div>
 </form>
 
 @section a {
 
-<script src="https://cdn.jsdelivr.net/npm/bs-stepper@1.7.0/dist/js/bs-stepper.min.js"></script>
-<script>
-    var stepperElem = document.querySelector('.bs-stepper');
-    var stepper = new Stepper(stepperElem);
-    var done = false;
-    var currStep = 1;
-    history.pushState(currStep, '');
+    <script src="https://cdn.jsdelivr.net/npm/bs-stepper@1.7.0/dist/js/bs-stepper.min.js"></script>
+    <script>
+        var stepperElem = document.querySelector('.bs-stepper');
+        var stepper = new Stepper(stepperElem);
+        var done = false;
+        var currStep = 1;
+        history.pushState(currStep, '');
 
-    //切換到步驟前觸發，呼叫e.preventDefault()可阻止切換
-    stepperElem.addEventListener("show.bs-stepper", function (e) {
-        if (done) { //若程序完成，不再切換
-            e.preventDefault();
-            return;
+        //切換到步驟前觸發，呼叫e.preventDefault()可阻止切換
+        stepperElem.addEventListener("show.bs-stepper", function (e) {
+            if (done) { //若程序完成，不再切換
+                e.preventDefault();
+                return;
+            }
+        });
+        //切換到步驟後觸發，e.detail.indexStep為目前步驟序號(從0開始)
+        stepperElem.addEventListener("shown.bs-stepper", function (e) {
+            var idx = e.detail.indexStep + 1;
+            currStep = idx;
+            //pushState()記下歷程以支援瀏覽器回上頁功能
+            history.pushState(idx, '');
+        })
+        //瀏覽器上一頁下一頁觸發
+        window.onpopstate = function (e) {
+            if (e.state && e.state != currStep)
+                stepper.to(e.state);
+        };
+        //模擬送出表單，註記已完成，不再允許切換步驟
+        function simulateSubmit() {
+            stepper.next();
+            done = true;
         }
-    });
-    //切換到步驟後觸發，e.detail.indexStep為目前步驟序號(從0開始)
-    stepperElem.addEventListener("shown.bs-stepper", function (e) {
-        var idx = e.detail.indexStep + 1;
-        currStep = idx;
-        //pushState()記下歷程以支援瀏覽器回上頁功能
-        history.pushState(idx, '');
-    })
-    //瀏覽器上一頁下一頁觸發
-    window.onpopstate = function (e) {
-        if (e.state && e.state != currStep)
-            stepper.to(e.state);
-    };
-    //模擬送出表單，註記已完成，不再允許切換步驟
-    function simulateSubmit() {
-        stepper.next();
-        done = true;
-    }
 
-
-
-
-
-</script>
+    </script>
 }
 

@@ -28,7 +28,7 @@ namespace RentBook.Controllers
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public ActionResult SaveNewBook(Books b, BooksChapters bc, BooksFiles bf)
+        public ActionResult SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,AddBookModel ab)
         {
 
             AddBookFactory factory = new AddBookFactory();
@@ -111,7 +111,11 @@ namespace RentBook.Controllers
             factory.Create(b);
             factory.CreateBA(ba);
 
-            return RedirectToAction("AddBook");
+            //傳到下個 View
+            ab.bid = b.b_id;
+            ab.bType = b.b_Type;
+
+            return RedirectToAction("AddBook",ab);
         }
     }
 }

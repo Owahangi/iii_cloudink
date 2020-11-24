@@ -2,38 +2,29 @@
 @{
     ViewBag.Title = "AddBook";
     Layout = "~/Views/Shared/_AddBookLayout.cshtml";
-
 }
 
-@using (Html.BeginForm(
-    "AddBook",
-    "SaveNewBook",
-    FormMethod.Post,
-    new { enctype = "multipart/form-data" }
-    ))
-{
-    @Html.AntiForgeryToken()
 <form class="container" action="~/AddBook/SaveNewBook" method="POST" enctype="multipart/form-data">
     <div class="bs-stepper">
         <div class="bs-stepper-header" role="tablist">
             <div class="step" data-target="#step1">
                 <button type="button" class="step-trigger" role="tab">
                     <span class="bs-stepper-circle">1</span>
-                    <span class="bs-stepper-label">書籍資料</span>
+                    <span class="bs-stepper-label">新增書籍基本資料</span>
                 </button>
             </div>
             <div class="line"></div>
             <div class="step" data-target="#step2">
                 <button type="button" class="step-trigger" role="tab">
                     <span class="bs-stepper-circle">2</span>
-                    <span class="bs-stepper-label">新增章節標題</span>
+                    <span class="bs-stepper-label">新增章節標題與檔案</span>
                 </button>
             </div>
             <div class="line"></div>
             <div class="step" data-target="#step3">
                 <button type="button" class="step-trigger" role="tab">
                     <span class="bs-stepper-circle">3</span>
-                    <span class="bs-stepper-label">上架成功</span>
+                    <span class="bs-stepper-label">新增成功</span>
                 </button>
             </div>
 
@@ -66,8 +57,8 @@
                     <div class="col-10">
                         <select class="form-control" name="Booktype" required="required" id="b_Type">
                             <option disabled>選擇分類</option>
-                            <option value="1">小說</option>
-                            <option value="2">漫畫</option>
+                            <option value="小說">小說</option>
+                            <option value="漫畫">漫畫</option>
                         </select>
                     </div>
                 </div>
@@ -103,7 +94,7 @@
                     <div class="col-10">
                         <div class="border">
                             <div class="form-check" id="b_Series_yn" name="b_Series_yn">
-                                <input type="radio" class="form-check-input active" name="Series" value="連載中">
+                                <input type="radio" class="form-check-input" name="Series" value="連載中" checked>
                                 <label class="form-check-label">連載中</label>
                             </div>
                             <div class="form-check" id="b_Series_yn" name="b_Series_yn">
@@ -161,32 +152,25 @@
                 </div>
                 <div>
 
-                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.previous()">上一步</button>
-                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()">建立書籍</button>
+                    <button type="button" class="btn btn-primary btn-block" onclick="stepper.previous()">上一步</button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()" value="建立書籍"></button>
                 </div>
             </div>
             <div id="step3" class="content s3" role="tabpanel">
-                @*<div class="col-10 form-group">
-                    <label>內容檔案:</label>
-                    <input type="file" class="form-control" required multiple />
-
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary btn-block" onclick="stepper.previous()">上一步</button>
-                    <button type="button" class="btn btn-primary btn-block" onclick="simulateSubmit()">建立書籍</button>
-                </div>*@
+               
                 <div class="alert alert-success">
                     建立書籍成功!
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" onclick="myclick()">繼續新增</button>
-                <button type="submit" class="btn btn-primary btn-block" onclick="history.go(0)">結束新增</button>
+                @*<button type="submit" class="btn btn-primary btn-block" onclick="myclick()">繼續新增</button>*@
+                @Html.ActionLink("繼續新增", "AddChapters", "AddBookChapters", new { b_Id=Model.bid,b_Type = Model.bType }, new { @class = "btn btn-primary btn-block" })               
+                <button type="button" class="btn btn-primary btn-block" onclick="history.go(0)">結束新增</button>
             </div>
 
         </div>
     </div>
 </form>
 
-}
+
 @section a {
 
 <script src="https://cdn.jsdelivr.net/npm/bs-stepper@1.7.0/dist/js/bs-stepper.min.js"></script>
@@ -228,6 +212,6 @@
 
     $(document.getElementById("chapter").innerHTML = "新增第 1 章");
 
-
+    $("input").each
 </script>
 }
