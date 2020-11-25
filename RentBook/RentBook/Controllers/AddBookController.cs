@@ -28,7 +28,7 @@ namespace RentBook.Controllers
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,AddBookModel ab)
+        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,BooksTags bt)
         {
 
             AddBookFactory factory = new AddBookFactory();
@@ -43,6 +43,10 @@ namespace RentBook.Controllers
 
             // 書籍資料表
             b.b_id = ba.b_id;
+
+            // 書籍標籤資料表
+            bt.Tags = factory.Tags轉成陣列(Request.Form["Tags"]);
+            bt.b_id = b.b_id;
 
             string photoName = factory.書籍封面圖片命名(b);
 
@@ -110,6 +114,7 @@ namespace RentBook.Controllers
             factory.儲存章節標題及檔名(b, bf, bc);
             factory.Create(b);
             factory.CreateBA(ba);
+            factory.儲存到標籤資料表(bt);
 
             // 要帶到繼續新增章節的頁面使用
             string s = b.b_id + "|" + b.b_Type;

@@ -33,27 +33,27 @@
             <div id="step1" class="content" role="tabpanel">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    <label class="control-label col-md-2">書名:</label>
+                    <label class="control-label col-md-2">書名</label>
                     <div class="col-10">
                         <input type="text" class="form-control" name="BookName" required="required">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2">簡介:</label>
+                    <label class="control-label col-md-2">簡介</label>
                     <div class="col-10">
                         <textarea placeholder="請輸入簡介" rows="5" class="form-control" required="required" name="BookInfo" id="b_Info"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">封面照片:</label>
+                    <label class="control-label col-md-2">封面照片</label>
                     <div class="col-10">
                         <input type="file" required="required" name="Image" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">分類:</label>
+                    <label class="control-label col-md-2">分類</label>
                     <div class="col-10">
                         <select class="form-control" name="Booktype" required="required" id="b_Type">
                             <option disabled>選擇分類</option>
@@ -64,33 +64,40 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">出版日期:</label>
+                    <label class="control-label col-md-2">#Tags</label>
+                    <div class="col-10">
+                        <input type="text" name="Tags" required="required" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">出版日期</label>
                     <div class="col-10">
                         <input type="date" name="PublishedDate" max="2020-12-31" min="1900-01-01" required="required" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">價格/小時:</label>
+                    <label class="control-label col-md-2">價格/小時</label>
                     <div class="col-10">
                         <input type="text" name="HourPrice" required="required" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">ISBN:</label>
+                    <label class="control-label col-md-2">ISBN</label>
                     <div class="col-10">
                         <input type="text" name="ISBN" required="required" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2">年齡分級:</label>
+                    <label class="control-label col-md-2">年齡分級</label>
                     <div class="col-10">
                         <input type="text" name="AgeRange" required="required" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2">出版社:</label>
+                    <label class="control-label col-md-2">出版社</label>
                     <div class="col-10">
                         <select name="PublishedIdName" required="required" class="form-control">
                             <option disabled>出版社</option>
@@ -102,7 +109,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-2">作者:</label>
+                    <label class="control-label col-md-2">作者</label>
                     <div class="col-10">
                         <select name="AuthorIdName" required="required" class="form-control" multiple size="5">
                             <option disabled>作者</option>
@@ -115,8 +122,8 @@
                 </div>
                 <div class="form-group">
                     @*<div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>*@
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>*@
                     <div class="col-md-offset-2 col-md-10">
                         <input type="button" id="button1" value="下一步" class="btn btn-block btn-primary" onclick="stepper.next()" />
                     </div>
@@ -128,7 +135,7 @@
                 <h3 id="chapter"></h3>
 
                 <div class="col-10 form-group">
-                    <label class="control-label col-md-2">連載情況:</label>
+                    <label class="control-label col-md-2">連載情況</label>
                     <div class="col-10">
                         <div class="border">
                             <div class="form-check" id="b_Series_yn" name="b_Series_yn">
@@ -143,12 +150,12 @@
                     </div>
                 </div>
                 <div class="col-10 form-group">
-                    <label>章節標題:</label>
+                    <label>章節標題</label>
                     <br />
                     <input type="text" name="bcContent" class="form-control" placeholder="請輸入章節標題" required="required" />
                 </div>
                 <div class="col-10 form-group">
-                    <label>章節內容檔案:</label>
+                    <label>章節內容檔案</label>
                     <input type="file" name="Files" class="" required="required" multiple />
                 </div>
                 <div form-group>
