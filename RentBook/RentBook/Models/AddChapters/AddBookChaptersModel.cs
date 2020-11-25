@@ -9,6 +9,7 @@ namespace RentBook.Models.AddChapters
     {
         // Books 資料表
         public string b_Type { get; set; }
+        public string b_Series_yn { get; set; }
 
         // BooksFiles 資料表
         public string bc_id { get; set; }

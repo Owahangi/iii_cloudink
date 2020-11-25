@@ -51,7 +51,7 @@ namespace RentBook.Models.AddChapters
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
-
+                      
             // 新增到書籍大綱資料表
             string tSQL = "Insert into BooksChapters (b_id,bc_Chapters,bc_Content)Values(@bId,@bcChapters,@bcContent)";
             SqlCommand cmd = new SqlCommand(tSQL, con);
@@ -90,6 +90,27 @@ namespace RentBook.Models.AddChapters
                 cmd2.ExecuteNonQuery();
 
             }
+
+            // 新增到書籍資料表
+            // 連載情況
+            string tSQL3 = "update books set b_Series_yn=@bSeries where b_id=@bid";
+            SqlCommand cmd3 = new SqlCommand(tSQL3,con);
+            cmd3.Parameters.AddWithValue("bid", ac.b_id);
+
+            char 連載情況;
+            if (ac.b_Series_yn == "連載中")
+            {
+                連載情況 = 'y';
+                cmd3.Parameters.AddWithValue("bSeries", 連載情況);
+
+            }
+            else if (ac.b_Series_yn == "已完結")
+            {
+                連載情況 = 'n';
+                cmd3.Parameters.AddWithValue("bSeries", 連載情況);
+            }
+
+            cmd3.ExecuteNonQuery();
 
             con.Close();
         }

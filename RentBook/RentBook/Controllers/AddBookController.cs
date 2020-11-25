@@ -19,7 +19,7 @@ namespace RentBook.Controllers
             AddBookModel ab = new AddBookModel();
             ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
             ab.作者編號加名稱 = factory.傳回作者編號名稱();
-
+            
             return View(ab);
         }
 
@@ -28,7 +28,7 @@ namespace RentBook.Controllers
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public ActionResult SaveNewBook(Books b, BooksChapters bc, BooksFiles bf)
+        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,AddBookModel ab)
         {
 
             AddBookFactory factory = new AddBookFactory();
@@ -111,7 +111,10 @@ namespace RentBook.Controllers
             factory.Create(b);
             factory.CreateBA(ba);
 
-            return RedirectToAction("AddBook");
+            // 要帶到繼續新增章節的頁面使用
+            string s = b.b_id + "|" + b.b_Type;
+
+            return (s);
         }
     }
 }
