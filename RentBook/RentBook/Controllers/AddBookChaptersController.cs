@@ -1,6 +1,7 @@
 ﻿using RentBook.Models.AddChapters;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,13 +36,20 @@ namespace RentBook.Controllers
             ac.b_Type = Request.Form["bType"];
             ac.bc_Content = Request.Form["bcContent"];
             ac.bc_Chapters = Convert.ToInt32(Request.Form["bcChapters"]);
+            ac.b_Series_yn = Request.Form["Series"];
 
-            if(ac.bc_id != null && ac.b_Type !=null && ac.bc_Content != null && ac.bc_Chapters > 0)
+            if(ac.b_id != null && ac.b_Type !=null && ac.bc_Content != null && ac.bc_Chapters > 0)
             {
                 AddChaptersFactory factory = new AddChaptersFactory();
 
                 // 儲存該章節的書籍檔案到路徑
                 ac.FilesName = new List<string>();
+
+                string 書籍章節資料夾路徑 = Server.MapPath("../書籍素材/" + ac.b_Type + "素材/" + ac.b_id + "/" + ac.b_id + "-" + ac.bc_Chapters);
+
+                // 新增小說章節資料夾
+                if (!Directory.Exists(書籍章節資料夾路徑))
+                    Directory.CreateDirectory(書籍章節資料夾路徑);
 
                 // 在儲存檔案時 自動更改檔名
                 // 在上傳時需注意：
@@ -55,13 +63,10 @@ namespace RentBook.Controllers
                         if (uploadFile.ContentLength > 0)
                         {
                             // 這個陣列用來 將多筆章節檔名 儲存到資料庫使用
-                            ac.FilesName.Add(ac.b_id + "-1-" + i + factory.回傳書籍章節檔案副檔名(uploadFile));
+                            ac.FilesName.Add(ac.b_id + "-" + ac.bc_Chapters + "-" + i + factory.回傳書籍章節檔案副檔名(uploadFile));
 
                             // 上傳時自動編名
-                            uploadFile.SaveAs(Server.MapPath("../書籍素材/" + ac.b_Type + "素材/" + ac.b_id + "/" + ac.b_id + "-1/" + ac.b_id + "-1-" + i + factory.回傳書籍章節檔案副檔名(uploadFile)));
-
-                            // 維持原上傳檔名
-                            // uploadFile.SaveAs(Server.MapPath("../書籍素材/" + b.b_Type + "素材/" + b.b_id + "/" + b.b_id + "-1/" + uploadFile.FileName));
+                            uploadFile.SaveAs(Server.MapPath("../書籍素材/" + ac.b_Type + "素材/" + ac.b_id + "/" + ac.b_id + "-" + ac.bc_Chapters + "/" + ac.b_id + "-" + ac.bc_Chapters + "-" + i + factory.回傳書籍章節檔案副檔名(uploadFile)));
                         }
                         i++;
                     }
