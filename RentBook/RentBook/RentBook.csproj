@@ -1996,6 +1996,7 @@
     <Compile Include="Models\AddBook\BooksAuthor.cs" />
     <Compile Include="Models\AddBook\BooksChapters.cs" />
     <Compile Include="Models\AddBook\BooksFiles.cs" />
+    <Compile Include="Models\AddBook\BooksTags.cs" />
     <Compile Include="Models\AddChapters\AddBookChaptersModel.cs" />
     <Compile Include="Models\AddChapters\AddChaptersFactory.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />

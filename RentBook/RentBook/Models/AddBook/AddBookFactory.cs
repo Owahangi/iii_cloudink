@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentBook.Models.AddBook;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -20,7 +21,7 @@ namespace RentBook.Models
             con.Open();
 
             string tSQL = "select max(b_id) as b_id from Books";
-            SqlCommand cmd = new SqlCommand(tSQL,con);
+            SqlCommand cmd = new SqlCommand(tSQL, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
@@ -32,7 +33,7 @@ namespace RentBook.Models
                 else
                 {
                     b_id最大值 = (string)reader["b_id"];
-                }                
+                }
             }
 
             reader.Close();
@@ -54,8 +55,26 @@ namespace RentBook.Models
             return photoName;
         }
 
+        // 將 Tags 拆成陣列
+        public List<string> Tags轉成陣列(string Tags)
+        {
+            string[] arrsplit = Tags.Split('#');
+            List<string> returnlist = new List<string>();
+            foreach (string a in arrsplit)
+            {
+                if(a != "")
+                {
+                    returnlist.Add(a.Trim());
+                }                
+            }
+
+            return returnlist;
+        }
+
+
         // 傳回出版社名稱 (前端的下拉式選單使用)
-        public List<string> 傳回出版社編號名稱() {
+        public List<string> 傳回出版社編號名稱()
+        {
             List<string> 出版社編號名稱 = new List<string>();
 
             SqlConnection con = new SqlConnection(myDBConnectionString);
@@ -172,7 +191,7 @@ namespace RentBook.Models
 
             string SQL = "";
             SqlCommand cmd = new SqlCommand();
-            
+
             cmd.Connection = con;
 
             foreach (string a_id in 作者編號陣列)
@@ -186,17 +205,17 @@ namespace RentBook.Models
         }
 
         // 將資料儲存到 BookOutline 與 BooksChapters 資料表
-        public void 儲存章節標題及檔名 (Books b,BooksFiles bf,BooksChapters bc)
+        public void 儲存章節標題及檔名(Books b, BooksFiles bf, BooksChapters bc)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
             // 新增到書籍章節資料表
             string tSQL = "Insert into BooksChapters (b_id,bc_Chapters,bc_Content)Values(@bId,@bcChapters,@bcContent)";
-            SqlCommand cmd = new SqlCommand(tSQL,con);
-            cmd.Parameters.AddWithValue("bId",b.b_id);
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bId", b.b_id);
             cmd.Parameters.AddWithValue("bcChapters", bc.bc_Chapters);
-            cmd.Parameters.AddWithValue("bcContent",bc.bc_Content);
+            cmd.Parameters.AddWithValue("bcContent", bc.bc_Content);
 
             cmd.ExecuteNonQuery();
 
@@ -230,15 +249,93 @@ namespace RentBook.Models
             con.Close();
         }
 
+        public void 儲存到標籤資料表(BooksTags bt)
+        {
+            // 找出目前現有的 Tags 資料表
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL1 = "select t_Name from Tags";
+            SqlCommand cmd1 = new SqlCommand(tSQL1, con);
+            SqlDataReader reader = cmd1.ExecuteReader();
+
+            List<string> listTag = new List<string>();
+
+            while (reader.Read())
+            {
+                listTag.Add((string)reader["t_Name"]);
+            }
+
+            reader.Close();
+
+
+            // 將標籤新增到 Tags 資料表 (只新增新的標籤 重複的標籤不新增)
+            SqlCommand cmd2 = new SqlCommand();
+            cmd2.Connection = con;
+
+            for (int i = 0; i < bt.Tags.Count; i++)
+            {
+                bool check = false;
+                for (int j = 0; j < listTag.Count; j++)
+                {
+                    if (bt.Tags[i] == listTag[j])
+                    {
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    if (bt.Tags[i] != "")
+                    {
+                        string tSQL2 = "Insert into Tags (t_Name)Values('" + bt.Tags[i] + "')";
+                        cmd2.CommandText = tSQL2;
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            // 找出標籤序號
+            SqlCommand cmd3 = new SqlCommand();
+            cmd3.Connection = con;
+
+            List<int> 標籤序號 = new List<int>();
+
+            for (int i = 0; i < bt.Tags.Count; i++)
+            {
+                string tSQL3 = "select t_id from Tags where t_Name='" + bt.Tags[i] + "'";
+                cmd3.CommandText = tSQL3;
+                SqlDataReader reader1 = cmd3.ExecuteReader();
+                if (reader1.Read())
+                {
+                    標籤序號.Add((int)reader1["t_id"]);
+                }
+                reader1.Close();
+            }
+
+
+            // 將標籤序號 新增到 BooksTags 資料表
+            SqlCommand cmd4 = new SqlCommand();
+            cmd4.Connection = con;
+
+            foreach(int i in 標籤序號)
+            {
+                string tSQL4 = "Insert into BooksTags (b_id,t_id)Values('" + bt.b_id + "'," + i + ")";
+                cmd4.CommandText = tSQL4;
+                cmd4.ExecuteNonQuery();
+            }
+
+            con.Close();
+        }
+
         // 撈出此本書的最新的章節
-        public int 目前最新章節 (Books b)
+        public int 目前最新章節(Books b)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
             string tSQL = "select max(bc_Chapters) as bc_Chapters from BooksChapters where b_id = @bId";
             SqlCommand cmd = new SqlCommand(tSQL, con);
-            cmd.Parameters.AddWithValue("bId",b.b_id);
+            cmd.Parameters.AddWithValue("bId", b.b_id);
             SqlDataReader reader = cmd.ExecuteReader();
 
             int 目前最新章節數 = 0;
@@ -249,7 +346,7 @@ namespace RentBook.Models
                 {
                     目前最新章節數 = (int)reader["bc_Chapters"];
                 }
-            }            
+            }
 
             reader.Close();
             con.Close();
@@ -262,7 +359,7 @@ namespace RentBook.Models
             // 取得副檔名
             int point = file.FileName.IndexOf(".");
             string extention = file.FileName.Substring(point, file.FileName.Length - point);
-            
+
             return extention;
         }
 
