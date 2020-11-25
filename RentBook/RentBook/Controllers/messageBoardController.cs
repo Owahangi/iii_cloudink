@@ -34,10 +34,12 @@ namespace RentBook.Controllers
 
 
         [HttpPost] //限定使用POST
-        [Authorize] // 會員登入後才可評論
+        //[Authorize] // 會員登入後才可評論
         public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int rate) 
         {
             var M_ID = HttpContext.Session.SessionID;
+
+
 
             //待改 join m_Alias
             BooksMessage x = new BooksMessage();
@@ -55,7 +57,12 @@ namespace RentBook.Controllers
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {
-            return View();
+            string keyword = Request.Form["MESSAGE"];
+            List<CmessageSqlView> list = null;
+            if (string.IsNullOrEmpty(keyword))
+                list = (new CmessageFactory()).getAllmessageSqlViews();
+
+            return View(list);
         }
     }
 }

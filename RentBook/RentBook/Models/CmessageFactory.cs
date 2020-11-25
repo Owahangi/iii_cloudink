@@ -15,6 +15,46 @@ namespace RentBook.Models
         // bm_MessageTime 留言時間
         // bm_score 會員對書籍的評分
         // m_Name dbo.Member資料表的會員暱稱
+
+        public List<CmessageSqlView> getAllmessageSqlViews() 
+        {
+            return getMessageSqlView("select * from messageSqlView ", null);
+        }
+
+        public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras) 
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            if (paras != null)
+            {
+                foreach (SqlParameter p in paras)
+                {
+                    cmd.Parameters.Add(p);
+                }
+            }
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CmessageSqlView> list = new List<CmessageSqlView>();
+            while (reader.Read())
+            {
+                CmessageSqlView x = new CmessageSqlView();
+                x.bm_id = (int)reader["bm_id"];
+                x.b_id = (int)reader["b_id"];
+                x.m_id = reader["m_id"].ToString();
+                x.m_Email = reader["m_Email"].ToString();
+                x.m_Image = reader["m_Image"].ToString();
+                x.m_Alias = reader["m_Alias"].ToString();
+                x.bm_Message = reader["bm_Message"].ToString();
+                x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
+                x.bm_Score = (int)reader["bm_score"];
+                list.Add(x);
+            }
+            con.Close();
+
+            return list;
+        }
         public List<CmessageBoard> getAll_BooksMessage() 
         {
             return getBySql_BooksMessage("select * from BooksMessage ", null);
