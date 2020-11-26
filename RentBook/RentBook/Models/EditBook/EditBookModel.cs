@@ -21,9 +21,9 @@ namespace RentBook.Models.EditBook
         public string b_Image { get; set; }
         public string b_Type { get; set; }
         public DateTime b_PublishedDate { get; set; }
-        public int b_HourPrice { get; set; }
+        public int b_DatePrice { get; set; }
         public string b_ISBN { get; set; }
-        public int b_AgeRating { get; set; }
+        public string b_AgeRating { get; set; }
         public string b_Series_yn { get; set; }
         public string p_id { get; set; }
         public string PublishedIdName { get; set; }

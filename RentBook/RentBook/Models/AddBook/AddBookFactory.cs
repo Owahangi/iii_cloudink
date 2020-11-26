@@ -26,7 +26,7 @@ namespace RentBook.Models
 
             if (reader.Read())
             {
-                if ((string)reader["b_id"] == null)
+                if (reader["b_id"] == null)
                 {
                     b_id最大值 = "B00001";
                 }
@@ -62,10 +62,10 @@ namespace RentBook.Models
             List<string> returnlist = new List<string>();
             foreach (string a in arrsplit)
             {
-                if(a != "")
+                if (a != "")
                 {
                     returnlist.Add(a.Trim());
-                }                
+                }
             }
 
             return returnlist;
@@ -80,13 +80,14 @@ namespace RentBook.Models
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "select p_Id + '  ' + p_Name as 出版社編號名稱 from Publishing";
+            string tSQL = "select p_Id + ' ' + p_Name as 出版社編號名稱 from Publishing";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                出版社編號名稱.Add((string)reader["出版社編號名稱"]);
+                if (reader["出版社編號名稱"] != null)
+                    出版社編號名稱.Add((string)reader["出版社編號名稱"]);
             }
 
             reader.Close();
@@ -103,7 +104,7 @@ namespace RentBook.Models
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "select a_Id + '  ' + a_Name as 作者編號名稱 from Author";
+            string tSQL = "select a_Id + ' ' + a_Name as 作者編號名稱 from Author";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -147,10 +148,10 @@ namespace RentBook.Models
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            //Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_HourPrice,b_ISBN,b_AgeRating,p_id)Values(1234,'aaa','bbb','c','d','1996/09/07','1','g',1,1)
+            //Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_DatePrice,b_ISBN,b_AgeRating,p_id)Values(1234,'aaa','bbb','c','d','1996/09/07','1','g',1,1)
 
-            string tSQL = "Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_HourPrice,b_ISBN,b_AgeRating,b_Series_yn,p_id)Values(" +
-                "@bid,@bName,@bInfo,@bImage,@bType,@bPublishedDate,@bHourPrice,@bISBN,@bAgeRating,@bSeries,@pID)";
+            string tSQL = "Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_DatePrice,b_ISBN,b_AgeRating,b_Series_yn,p_id)Values(" +
+                "@bid,@bName,@bInfo,@bImage,@bType,@bPublishedDate,@bDatePrice,@bISBN,@bAgeRating,@bSeries,@pID)";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("bid", b.b_id);
             cmd.Parameters.AddWithValue("bName", b.b_Name);
@@ -158,7 +159,7 @@ namespace RentBook.Models
             cmd.Parameters.AddWithValue("bImage", b.b_Image);
             cmd.Parameters.AddWithValue("bType", b.b_Type);
             cmd.Parameters.AddWithValue("bPublishedDate", b.b_PublishedDate);
-            cmd.Parameters.AddWithValue("bHourPrice", b.b_HourPrice);
+            cmd.Parameters.AddWithValue("bDatePrice", b.b_DatePrice);
             cmd.Parameters.AddWithValue("bISBN", b.b_ISBN);
             cmd.Parameters.AddWithValue("bAgeRating", b.b_AgeRating);
 
@@ -317,7 +318,7 @@ namespace RentBook.Models
             SqlCommand cmd4 = new SqlCommand();
             cmd4.Connection = con;
 
-            foreach(int i in 標籤序號)
+            foreach (int i in 標籤序號)
             {
                 string tSQL4 = "Insert into BooksTags (b_id,t_id)Values('" + bt.b_id + "'," + i + ")";
                 cmd4.CommandText = tSQL4;
@@ -357,7 +358,7 @@ namespace RentBook.Models
         public string 回傳書籍章節檔案副檔名(HttpPostedFileBase file)
         {
             // 取得副檔名
-            int point = file.FileName.IndexOf(".");
+            int point = file.FileName.LastIndexOf(".");
             string extention = file.FileName.Substring(point, file.FileName.Length - point);
 
             return extention;

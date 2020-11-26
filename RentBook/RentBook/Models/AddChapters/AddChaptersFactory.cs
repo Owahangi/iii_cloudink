@@ -13,7 +13,7 @@ namespace RentBook.Models.AddChapters
         public string 回傳書籍章節檔案副檔名(HttpPostedFileBase file)
         {
             // 取得副檔名
-            int point = file.FileName.IndexOf(".");
+            int point = file.FileName.LastIndexOf(".");
             string extention = file.FileName.Substring(point, file.FileName.Length - point);
 
             return extention;

@@ -15,8 +15,8 @@ namespace RentBook.Models.EditBook
         public string b_Image { get; set; }
         public string b_ImagePath { get; set; }
         public string b_Type { get; set; }
-        public int b_HourPrice { get; set; }
-        public int b_AgeRating { get; set; }
+        public int b_DatePrice { get; set; }
+        public string b_AgeRating { get; set; }
         public string 出版社編號名稱 { get; set; }
         public string b_Series_yn { get; set; }
 

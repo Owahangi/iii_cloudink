@@ -15,7 +15,7 @@ namespace RentBook.Models.EditBook
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "select A.b_Image,A.b_id,A.b_Name,A.b_Type,A.b_HourPrice,A.b_AgeRating,A.p_id + ' ' + B.p_Name as 出版社編號名稱,A.b_Series_yn From Books A left outer join Publishing B on A.p_id = B.p_id";
+            string tSQL = "select A.b_Image,A.b_id,A.b_Name,A.b_Type,A.b_DatePrice,A.b_AgeRating,A.p_id + ' ' + B.p_Name as 出版社編號名稱,A.b_Series_yn From Books A left outer join Publishing B on A.p_id = B.p_id";
 
             SqlCommand cmd = new SqlCommand(tSQL, con);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -30,8 +30,8 @@ namespace RentBook.Models.EditBook
                 eb.b_id = (string)reader["b_id"];
                 eb.b_Name = (string)reader["b_Name"];
                 eb.b_Type = (string)reader["b_Type"];
-                eb.b_HourPrice = (int)reader["b_HourPrice"];
-                eb.b_AgeRating = (int)reader["b_AgeRating"];
+                eb.b_DatePrice = (int)reader["b_DatePrice"];
+                eb.b_AgeRating = (string)reader["b_AgeRating"];
                 eb.出版社編號名稱 = (string)reader["出版社編號名稱"];
                 eb.b_Series_yn = (string)reader["b_Series_yn"];
                 eb.b_ImagePath = "../書籍素材/" + eb.b_Type + "素材/" + eb.b_id + "/" + eb.b_id + "-cover.jpg";

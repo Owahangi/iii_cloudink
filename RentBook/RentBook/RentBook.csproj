@@ -2023,8 +2023,6 @@
     <Content Include="Views\Shared\_AddBookLayout.cshtml" />
     <Content Include="Views\AddBook\AddBook.cshtml" />
     <Content Include="Views\AddBookChapters\AddChapters.cshtml" />
-    <Content Include="Views\EditBook\EditBookData2.cshtml" />
-    <Content Include="Views\EditBook\List2.cshtml" />
     <Content Include="Views\EditBook\EditBookData.cshtml" />
     <Content Include="Views\EditBook\List.cshtml" />
     <None Include="Web.Debug.config">
