@@ -78,9 +78,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-md-2">價格/小時</label>
+                    <label class="control-label col-md-2">價格/日</label>
                     <div class="col-10">
-                        <input type="text" name="HourPrice" required="required" class="form-control">
+                        <input type="text" name="DatePrice" required="required" class="form-control">
                     </div>
                 </div>
 
@@ -93,14 +93,20 @@
                 <div class="form-group">
                     <label class="control-label col-md-2">年齡分級</label>
                     <div class="col-10">
-                        <input type="text" name="AgeRange" required="required" class="form-control">
+                        <select name="AgeRange" required="required" class="form-control">
+                            <option disabled>年齡分級</option>
+                            <option value="普遍級">普遍級 ( 一般人皆可觀賞 )</option>
+                            <option value="保護級">保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                            <option value="輔導十二歲級">輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                            <option value="輔導十五歲級">輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                            <option value="限制級">限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-2">出版社</label>
                     <div class="col-10">
                         <select name="PublishedIdName" required="required" class="form-control">
-                            <option disabled>出版社</option>
                             @foreach (string p in Model.出版社編號加名稱)
                             {
                                 <option>@p</option>
@@ -112,7 +118,6 @@
                     <label class="control-label col-md-2">作者</label>
                     <div class="col-10">
                         <select name="AuthorIdName" required="required" class="form-control" multiple size="5">
-                            <option disabled>作者</option>
                             @foreach (string p in Model.作者編號加名稱)
                             {
                                 <option value="@p">@p</option>

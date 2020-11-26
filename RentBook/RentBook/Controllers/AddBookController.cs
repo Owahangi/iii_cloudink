@@ -16,7 +16,7 @@ namespace RentBook.Controllers
         public ActionResult AddBook()
         {
             AddBookFactory factory = new AddBookFactory();
-            AddBookModel ab = new AddBookModel();
+            EditBookModel ab = new EditBookModel();
             ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
             ab.作者編號加名稱 = factory.傳回作者編號名稱();
             
@@ -56,9 +56,9 @@ namespace RentBook.Controllers
             b.b_Image = photoName;
             b.b_Type = Request.Form["Booktype"];
             b.b_PublishedDate = Convert.ToDateTime(Request.Form["PublishedDate"]);
-            b.b_HourPrice = Convert.ToInt32(Request.Form["HourPrice"]);
+            b.b_DatePrice = Convert.ToInt32(Request.Form["DatePrice"]);
             b.b_ISBN = Request.Form["ISBN"];
-            b.b_AgeRating = Convert.ToInt32(Request.Form["AgeRange"]);
+            b.b_AgeRating = Request.Form["AgeRange"];
             b.b_Series_yn = Request.Form["Series"];
             if (Request.Form["PublishedIdName"] != null)
             {
