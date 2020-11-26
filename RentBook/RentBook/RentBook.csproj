@@ -1986,6 +1986,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AddBookChaptersController.cs" />
     <Compile Include="Controllers\AddBookController.cs" />
+    <Compile Include="Controllers\EditBookController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1999,6 +2000,9 @@
     <Compile Include="Models\AddBook\BooksTags.cs" />
     <Compile Include="Models\AddChapters\AddBookChaptersModel.cs" />
     <Compile Include="Models\AddChapters\AddChaptersFactory.cs" />
+    <Compile Include="Models\EditBook\EditBookFactory.cs" />
+    <Compile Include="Models\EditBook\EditBookList.cs" />
+    <Compile Include="Models\EditBook\EditBookModel.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Models\ReadBook\ReadBooksModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2019,6 +2023,10 @@
     <Content Include="Views\Shared\_AddBookLayout.cshtml" />
     <Content Include="Views\AddBook\AddBook.cshtml" />
     <Content Include="Views\AddBookChapters\AddChapters.cshtml" />
+    <Content Include="Views\EditBook\EditBookData2.cshtml" />
+    <Content Include="Views\EditBook\List2.cshtml" />
+    <Content Include="Views\EditBook\EditBookData.cshtml" />
+    <Content Include="Views\EditBook\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,91 @@
+﻿@model RentBook.Models.EditBook.EditBookModel
+
+@{
+    ViewBag.Title = "EditBookData";
+}
+
+<h2>EditBookData</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>EditBookModel</h4>
+        <hr />
+        <!-- b_id 未改動態 -->
+        <input type="hidden" name="b_id" value="123" />
+
+        <div class="form-group">
+            <label class="control-label col-md-2">書名</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.b_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">簡介</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.b_Info, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_Info, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">封面照片</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.b_Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">#Tags</label>
+            <div class="col-md-10">
+                <input type="text" name="Tag" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">價格/小時</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.b_HourPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_HourPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">增加作者</label>
+            <div class="col-md-10">
+                <input type="text" name="author" class="form-control" />
+            </div>
+        </div>
+
+        <div class="col-10 form-group">
+            <label class="control-label col-md-2">連載情況</label>
+            <div class="col-md-10">
+                <div class="border">
+                    <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                        <input type="radio" class="form-check-input" name="Series" value="連載中" checked>
+                        <label class="form-check-label">連載中</label>
+                    </div>
+                    <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                        <input type="radio" class="form-check-input" name="Series" value="已完結">
+                        <label class="form-check-label">已完結</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">修改書籍資料</button>
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

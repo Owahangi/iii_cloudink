@@ -1,0 +1,73 @@
+﻿@model IEnumerable<RentBook.Models.EditBookList>
+
+@{
+    ViewBag.Title = "List2";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            封面
+        </th>
+        <th>
+            書籍編號
+        </th>
+        <th>
+            書名
+        </th>
+        <th>
+            類型
+        </th>
+        <th>
+            價格/小時
+        </th>
+        <th>
+            年齡分級
+        </th>
+        <th>
+            出版社
+        </th>
+        <th>
+            連載情況
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (EditBookModel b in Model)
+        <tr>
+            <td>
+                <img src="" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_HourPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_AgeRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.出版社編號加名稱)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.b_Series_yn)
+            </td>
+            <td>
+                @Html.ActionLink("編輯", "Edit", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

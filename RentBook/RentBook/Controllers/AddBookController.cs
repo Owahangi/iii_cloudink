@@ -16,7 +16,7 @@ namespace RentBook.Controllers
         public ActionResult AddBook()
         {
             AddBookFactory factory = new AddBookFactory();
-            AddBookModel ab = new AddBookModel();
+            EditBookModel ab = new EditBookModel();
             ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
             ab.作者編號加名稱 = factory.傳回作者編號名稱();
             
