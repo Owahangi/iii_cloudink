@@ -24,7 +24,8 @@ namespace RentBook.Models
         public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras) 
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -50,8 +51,10 @@ namespace RentBook.Models
                 x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
                 x.bm_Score = (int)reader["bm_score"];
                 list.Add(x);
+                GlobalVar.SqlView.Add(x);
             }
             con.Close();
+
 
             return list;
         }
@@ -83,7 +86,7 @@ namespace RentBook.Models
         private List<CmessageBoard> getBySql_BooksMessage(string sql, List<SqlParameter> paras) 
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -118,7 +121,7 @@ namespace RentBook.Models
         private void executeSql_BooksMessage(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;

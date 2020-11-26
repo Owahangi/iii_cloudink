@@ -37,14 +37,11 @@ namespace RentBook.Controllers
         //[Authorize] // 會員登入後才可評論
         public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int rate) 
         {
-            var M_ID = HttpContext.Session.SessionID;
-
-
-
+            //var M_ID = HttpContext.Session.SessionID;
             //待改 join m_Alias
             BooksMessage x = new BooksMessage();
             x.b_id = B_ID;
-            x.m_id = M_ID;
+            //x.m_id = M_ID;
             x.bm_Message = MESSAGE;
             x.bm_MessageTime = DateTime.Now;
             x.bm_Score = rate;
@@ -57,11 +54,13 @@ namespace RentBook.Controllers
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {
-            string keyword = Request.Form["MESSAGE"];
-            List<CmessageSqlView> list = null;
-            if (string.IsNullOrEmpty(keyword))
-                list = (new CmessageFactory()).getAllmessageSqlViews();
-
+            //string keyword = Request.Form["MESSAGE"];
+            //List<CmessageSqlView> list = null;
+            //if (string.IsNullOrEmpty(keyword))
+            //    list = (new CmessageFactory()).getAllmessageSqlViews();
+            List<CmessageSqlView> list = new List<CmessageSqlView>();
+            CmessageFactory factory = new CmessageFactory();
+            list = factory.getAllmessageSqlViews();
             return View(list);
         }
     }

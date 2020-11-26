@@ -524,6 +524,7 @@
     <Compile Include="Models\CmessageBoard.cs" />
     <Compile Include="Models\CmessageFactory.cs" />
     <Compile Include="Models\CmessageSqlView.cs" />
+    <Compile Include="Models\GlobalVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publishing.cs">
       <DependentUpon>dbRentBookModel.tt</DependentUpon>
