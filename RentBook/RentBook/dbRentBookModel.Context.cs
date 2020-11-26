@@ -46,5 +46,6 @@ namespace RentBook
         public virtual DbSet<RoleFunction> RoleFunction { get; set; }
         public virtual DbSet<SystemAccount> SystemAccount { get; set; }
         public virtual DbSet<Tags> Tags { get; set; }
+        public virtual DbSet<messageSqlView> messageSqlView { get; set; }
     }
 }

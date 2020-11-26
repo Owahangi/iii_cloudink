@@ -387,12 +387,15 @@
     <Content Include="Content\網站圖片庫\備用素材\亂搭6.jpg" />
     <Content Include="Content\網站圖片庫\全職高手.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼1.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼10.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼2.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼3.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼4.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼5.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼6.jpg" />
     <Content Include="Content\網站圖片庫\大頭貼7.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼8.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼9.jpg" />
     <Content Include="Content\網站圖片庫\天盛常歌.jpg" />
     <Content Include="Content\網站圖片庫\小說素材\全職高手.jpg" />
     <Content Include="Content\網站圖片庫\小說素材\冷月如霜.jpg" />
@@ -521,10 +524,12 @@
     <Compile Include="MemberShopDetail.cs">
       <DependentUpon>dbRentBookModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="messageSqlView.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CmessageBoard.cs" />
     <Compile Include="Models\CmessageFactory.cs" />
     <Compile Include="Models\CmessageSqlView.cs" />
-    <Compile Include="Models\GlobalVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publishing.cs">
       <DependentUpon>dbRentBookModel.tt</DependentUpon>

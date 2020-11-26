@@ -21,9 +21,9 @@ namespace RentBook.Controllers
 
         dbRentBookdbEntities db = new dbRentBookdbEntities();
 
-        public ActionResult DeleteMessageBoard(string M_ID) 
+        public ActionResult DeleteMessageBoard(int BM_ID) 
         {
-            BooksMessage bm = db.BooksMessage.FirstOrDefault(m => m.m_id == M_ID);
+            BooksMessage bm = db.BooksMessage.FirstOrDefault(m => m.bm_id == BM_ID);
             if (bm != null) 
             {
                 db.BooksMessage.Remove(bm);
@@ -54,14 +54,10 @@ namespace RentBook.Controllers
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {
-            //string keyword = Request.Form["MESSAGE"];
-            //List<CmessageSqlView> list = null;
-            //if (string.IsNullOrEmpty(keyword))
-            //    list = (new CmessageFactory()).getAllmessageSqlViews();
-            List<CmessageSqlView> list = new List<CmessageSqlView>();
-            CmessageFactory factory = new CmessageFactory();
-            list = factory.getAllmessageSqlViews();
-            return View(list);
+            //CmessageSqlView x = new CmessageSqlView();
+            //CmessageFactory factory = new CmessageFactory();
+            //list = factory.getAllmessageSqlViews();
+            return View();
         }
     }
 }

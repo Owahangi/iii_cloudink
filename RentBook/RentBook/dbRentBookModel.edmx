@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RentBookdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RentBookdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="a_id" />
@@ -205,6 +205,23 @@
           <Property Name="t_id" Type="int" Nullable="false" />
           <Property Name="t_Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'RentBookdb.dbo.messageSqlView' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="messageSqlView">
+          <Key>
+            <PropertyRef Name="書籍留言序號" />
+            <PropertyRef Name="會員編號" />
+          </Key>
+          <Property Name="書籍留言序號" Type="int" Nullable="false" />
+          <Property Name="書籍編號" Type="nvarchar" MaxLength="50" />
+          <Property Name="會員編號" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="會員Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="會員大頭貼" Type="nvarchar" MaxLength="255" />
+          <Property Name="會員暱稱" Type="nvarchar" MaxLength="50" />
+          <Property Name="評論內容" Type="nvarchar" MaxLength="4000" />
+          <Property Name="評論時間" Type="datetime" />
+          <Property Name="書籍評價" Type="int" />
+        </EntityType>
         <EntityContainer Name="RentBookdbModelStoreContainer">
           <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookCase" EntityType="Self.BookCase" Schema="dbo" store:Type="Tables" />
@@ -227,9 +244,21 @@
           <EntitySet Name="RoleFunction" EntityType="Self.RoleFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SystemAccount" EntityType="Self.SystemAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tags" EntityType="Self.Tags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="messageSqlView" EntityType="Self.messageSqlView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [messageSqlView].[書籍留言序號] AS [書籍留言序號], 
+    [messageSqlView].[書籍編號] AS [書籍編號], 
+    [messageSqlView].[會員編號] AS [會員編號], 
+    [messageSqlView].[會員Email] AS [會員Email], 
+    [messageSqlView].[會員大頭貼] AS [會員大頭貼], 
+    [messageSqlView].[會員暱稱] AS [會員暱稱], 
+    [messageSqlView].[評論內容] AS [評論內容], 
+    [messageSqlView].[評論時間] AS [評論時間], 
+    [messageSqlView].[書籍評價] AS [書籍評價]
+    FROM [dbo].[messageSqlView] AS [messageSqlView]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RentBookdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -455,7 +484,23 @@
           <EntitySet Name="RoleFunction" EntityType="Self.RoleFunction" />
           <EntitySet Name="SystemAccount" EntityType="Self.SystemAccount" />
           <EntitySet Name="Tags" EntityType="Self.Tags" />
+          <EntitySet Name="messageSqlView" EntityType="RentBookdbModel.messageSqlView" />
         </EntityContainer>
+        <EntityType Name="messageSqlView">
+          <Key>
+            <PropertyRef Name="書籍留言序號" />
+            <PropertyRef Name="會員編號" />
+          </Key>
+          <Property Name="書籍留言序號" Type="Int32" Nullable="false" />
+          <Property Name="書籍編號" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="會員編號" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="會員Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="會員大頭貼" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="會員暱稱" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="評論內容" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="評論時間" Type="DateTime" Precision="3" />
+          <Property Name="書籍評價" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -680,6 +725,21 @@
               <MappingFragment StoreEntitySet="Tags">
                 <ScalarProperty Name="t_id" ColumnName="t_id" />
                 <ScalarProperty Name="t_Name" ColumnName="t_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="messageSqlView">
+            <EntityTypeMapping TypeName="RentBookdbModel.messageSqlView">
+              <MappingFragment StoreEntitySet="messageSqlView">
+                <ScalarProperty Name="書籍評價" ColumnName="書籍評價" />
+                <ScalarProperty Name="評論時間" ColumnName="評論時間" />
+                <ScalarProperty Name="評論內容" ColumnName="評論內容" />
+                <ScalarProperty Name="會員暱稱" ColumnName="會員暱稱" />
+                <ScalarProperty Name="會員大頭貼" ColumnName="會員大頭貼" />
+                <ScalarProperty Name="會員Email" ColumnName="會員Email" />
+                <ScalarProperty Name="會員編號" ColumnName="會員編號" />
+                <ScalarProperty Name="書籍編號" ColumnName="書籍編號" />
+                <ScalarProperty Name="書籍留言序號" ColumnName="書籍留言序號" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

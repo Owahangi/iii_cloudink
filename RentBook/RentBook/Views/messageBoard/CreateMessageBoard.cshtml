@@ -1,5 +1,5 @@
 ﻿@using RentBook.Models
-@model List<RentBook.Models.CmessageSqlView>
+@model List<RentBook.messageSqlView>
 
 
 @{
@@ -250,18 +250,19 @@
                     <div class="section-title">
                         <h5>評論</h5>
                     </div>
-                    @foreach (CmessageSqlView m in Model)
+                    @foreach (messageSqlView m in Model)
                     {
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
                                 <!--img-->
-                                <img src="@m.m_Image" alt="">
+                                <img src="@m.會員大頭貼" alt="">
                             </div>
                         </div>
                         <div class="anime__review__item__text">
                             <div class="anime__review__item__text">
                                 <!--<h6>暱稱<span>時間</span></h6>-->
-                                <h6>@m.m_Alias<span>@m.bm_MessageTime</span></h6>
+                                <h6>@m.會員暱稱<span>@m.評論時間</span></h6>
+                                <p>@m.評論內容</p>
                             </div>
                         </div>
                     }

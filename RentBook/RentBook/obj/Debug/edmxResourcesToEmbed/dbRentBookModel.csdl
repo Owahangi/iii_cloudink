@@ -222,5 +222,21 @@
     <EntitySet Name="RoleFunction" EntityType="Self.RoleFunction" />
     <EntitySet Name="SystemAccount" EntityType="Self.SystemAccount" />
     <EntitySet Name="Tags" EntityType="Self.Tags" />
+    <EntitySet Name="messageSqlView" EntityType="RentBookdbModel.messageSqlView" />
   </EntityContainer>
+  <EntityType Name="messageSqlView">
+    <Key>
+      <PropertyRef Name="書籍留言序號" />
+      <PropertyRef Name="會員編號" />
+    </Key>
+    <Property Name="書籍留言序號" Type="Int32" Nullable="false" />
+    <Property Name="書籍編號" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="會員編號" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="會員Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="會員大頭貼" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="會員暱稱" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="評論內容" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="評論時間" Type="DateTime" Precision="3" />
+    <Property Name="書籍評價" Type="Int32" />
+  </EntityType>
 </Schema>

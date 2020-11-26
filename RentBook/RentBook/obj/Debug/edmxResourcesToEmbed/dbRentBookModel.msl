@@ -222,5 +222,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="messageSqlView">
+      <EntityTypeMapping TypeName="RentBookdbModel.messageSqlView">
+        <MappingFragment StoreEntitySet="messageSqlView">
+          <ScalarProperty Name="書籍評價" ColumnName="書籍評價" />
+          <ScalarProperty Name="評論時間" ColumnName="評論時間" />
+          <ScalarProperty Name="評論內容" ColumnName="評論內容" />
+          <ScalarProperty Name="會員暱稱" ColumnName="會員暱稱" />
+          <ScalarProperty Name="會員大頭貼" ColumnName="會員大頭貼" />
+          <ScalarProperty Name="會員Email" ColumnName="會員Email" />
+          <ScalarProperty Name="會員編號" ColumnName="會員編號" />
+          <ScalarProperty Name="書籍編號" ColumnName="書籍編號" />
+          <ScalarProperty Name="書籍留言序號" ColumnName="書籍留言序號" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
