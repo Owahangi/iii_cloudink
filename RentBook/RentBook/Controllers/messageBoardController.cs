@@ -16,8 +16,7 @@ namespace RentBook.Controllers
         // string bm_Message 留言內容
         // DateTime bm_MessageTime 留言時間
         // int bm_Score 會員對書籍的評分
-
-        // string m_Alias dbo.Member資料表的會員暱稱 需要join
+        // string m_Alias dbo.Member資料表的會員暱稱
 
         dbRentBookdbEntities db = new dbRentBookdbEntities();
 
@@ -35,26 +34,40 @@ namespace RentBook.Controllers
 
         [HttpPost] //限定使用POST
         //[Authorize] // 會員登入後才可評論
-        public ActionResult CreateMessageBoard(string B_ID, string MESSAGE, int rate) 
+        public ActionResult CreateMessageBoard(string BM_MESSAGE, int rate) 
         {
             //var M_ID = HttpContext.Session.SessionID;
-            //待改 join m_Alias
+
+            //var message = new Models.CmessageBoard()
+            //{
+            //    bm_id = BM_ID,
+            //    b_id = B_ID,
+            //    m_id = M_ID,
+            //    bm_Message = BM_MESSAGE,
+            //    bm_MessageTime = DateTime.Now,
+            //    bm_Score = rate
+            //};
+            //db.BooksMessage.Add(message);
+            //db.SaveChanges();
+            //return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
+
             BooksMessage x = new BooksMessage();
-            x.b_id = B_ID;
+            //x.b_id = B_ID;
             //x.m_id = M_ID;
-            x.bm_Message = MESSAGE;
+            x.bm_Message = BM_MESSAGE;
             x.bm_MessageTime = DateTime.Now;
             x.bm_Score = rate;
 
             db.BooksMessage.Add(x);
             db.SaveChanges();
-            return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
+            return RedirectToAction("CreateMessageBoard");
+            //return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
         }
 
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {
-            //CmessageSqlView x = new CmessageSqlView();
+
             //CmessageFactory factory = new CmessageFactory();
             //list = factory.getAllmessageSqlViews();
             return View();

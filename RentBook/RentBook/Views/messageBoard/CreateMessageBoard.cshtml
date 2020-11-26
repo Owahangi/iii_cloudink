@@ -1,10 +1,10 @@
 ﻿@using RentBook.Models
-@model List<RentBook.messageSqlView>
+@model IEnumerable<RentBook.messageSqlView>
 
 
 @{
     ViewBag.Title = "CreateMessageBoard";
-
+    dbRentBookdbEntities db = new dbRentBookdbEntities();
     //var message = new List<RentBook.BooksMessage>();
     //dbRentBookdbEntities db = new dbRentBookdbEntities();
     //message = (from m in db.BooksMessage
