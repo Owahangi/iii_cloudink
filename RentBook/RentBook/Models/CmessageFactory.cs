@@ -8,57 +8,56 @@ namespace RentBook.Models
 {
     public class CmessageFactory
     {
-        // bm_id 書籍留言序號
-        // b_id 書籍編號
-        // m_id 會員編號
-        // bm_Message 留言內容
-        // bm_MessageTime 留言時間
-        // bm_score 會員對書籍的評分
-        // m_Name dbo.Member資料表的會員暱稱
+         //bm_id 書籍留言序號
+         //b_id 書籍編號
+         //m_id 會員編號
+         //bm_Message 留言內容
+         //bm_MessageTime 留言時間
+         //bm_score 會員對書籍的評分
+         //m_Name dbo.Member資料表的會員暱稱
 
-        //public List<CmessageSqlView> getAllmessageSqlViews() 
-        //{
-        //    return getMessageSqlView("select * from messageSqlView ", null);
-        //}
+        public List<CmessageSqlView> getAllmessageSqlViews()
+        {
+            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id=bm.m_id ", null);
+        }
 
-        //public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras) 
-        //{
-        //    SqlConnection con = new SqlConnection();
-        //    con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand();
-        //    cmd.Connection = con;
-        //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        //    cmd.CommandText = "messageSqlView";
-        //    if (paras != null)
-        //    {
-        //        foreach (SqlParameter p in paras)
-        //        {
-        //            cmd.Parameters.Add(p);
-        //        }
-        //    }
-        //    SqlDataReader reader = cmd.ExecuteReader();
-        //    List<CmessageSqlView> list = new List<CmessageSqlView>();
-        //    while (reader.Read())
-        //    {
+        public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            if (paras != null)
+            {
+                foreach (SqlParameter p in paras)
+                {
+                    cmd.Parameters.Add(p);
+                }
+            }
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CmessageSqlView> list = new List<CmessageSqlView>();
+            while (reader.Read())
+            {
 
-        //        CmessageSqlView x = new CmessageSqlView();
-        //        x.bm_id = (int)reader["bm_id"];
-        //        x.b_id = reader["b_id"].ToString();
-        //        x.m_id = reader["m_id"].ToString();
-        //        x.m_Email = reader["m_Email"].ToString();
-        //        x.m_Image = reader["m_Image"].ToString();
-        //        x.m_Alias = reader["m_Alias"].ToString();
-        //        x.bm_Message = reader["bm_Message"].ToString();
-        //        x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
-        //        x.bm_Score = (int)reader["bm_score"];
-        //        list.Add(x);
-        //    }
-        //    con.Close();
+                CmessageSqlView x = new CmessageSqlView();
+                x.bm_id = (int)reader["bm_id"];
+                x.b_id = reader["b_id"].ToString();
+                x.m_id = reader["m_id"].ToString();
+                x.m_Email = reader["m_Email"].ToString();
+                x.m_Image = reader["m_Image"].ToString();
+                x.m_Alias = reader["m_Alias"].ToString();
+                x.bm_Message = reader["bm_Message"].ToString();
+                x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
+                x.bm_Score = (int)reader["bm_score"];
+                list.Add(x);
+            }
+            con.Close();
 
 
-        //    return list;
-        //}
+            return list;
+        }
         public List<CmessageBoard> getAll_BooksMessage() 
         {
             return getBySql_BooksMessage("select * from BooksMessage ", null);

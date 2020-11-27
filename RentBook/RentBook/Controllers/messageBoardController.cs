@@ -34,43 +34,27 @@ namespace RentBook.Controllers
 
         [HttpPost] //限定使用POST
         //[Authorize] // 會員登入後才可評論
-        public ActionResult CreateMessageBoard(string BM_MESSAGE, int rate) 
+        public ActionResult CreateMessageBoard(BooksMessage bm) 
         {
-            //var M_ID = HttpContext.Session.SessionID;
+            string b_id = bm.b_id;
+            string m_id = bm.m_id;
+            string bm_Message = bm.bm_Message;
+            bm.bm_MessageTime = DateTime.Now;
+            bm.bm_Score = int.Parse(Request.Form["bm_Score"]);
 
-            //var message = new Models.CmessageBoard()
-            //{
-            //    bm_id = BM_ID,
-            //    b_id = B_ID,
-            //    m_id = M_ID,
-            //    bm_Message = BM_MESSAGE,
-            //    bm_MessageTime = DateTime.Now,
-            //    bm_Score = rate
-            //};
-            //db.BooksMessage.Add(message);
-            //db.SaveChanges();
-            //return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
-
-            BooksMessage x = new BooksMessage();
-            //x.b_id = B_ID;
-            //x.m_id = M_ID;
-            x.bm_Message = BM_MESSAGE;
-            x.bm_MessageTime = DateTime.Now;
-            x.bm_Score = rate;
-
-            db.BooksMessage.Add(x);
+            db.BooksMessage.Add(bm);
             db.SaveChanges();
-            return RedirectToAction("CreateMessageBoard");
-            //return RedirectToAction("CreateMessageBoard", new { B_ID = B_ID });
+
+            return RedirectToAction("CreateMessageBoard", new { b_id = b_id });
         }
 
         // GET: messageBoard
         public ActionResult CreateMessageBoard()
         {
-
-            //CmessageFactory factory = new CmessageFactory();
-            //list = factory.getAllmessageSqlViews();
-            return View();
+            CmessageFactory factory = new CmessageFactory();
+            List<CmessageSqlView> list = new List<CmessageSqlView>();
+            list = factory.getAllmessageSqlViews();
+            return View(list);
         }
     }
 }

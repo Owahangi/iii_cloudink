@@ -1,20 +1,16 @@
 ﻿@using RentBook.Models
-@model IEnumerable<RentBook.messageSqlView>
+@model List<RentBook.Models.CmessageSqlView>
 
 
 @{
     ViewBag.Title = "CreateMessageBoard";
-    dbRentBookdbEntities db = new dbRentBookdbEntities();
-    //var message = new List<RentBook.BooksMessage>();
-    //dbRentBookdbEntities db = new dbRentBookdbEntities();
-    //message = (from m in db.BooksMessage
-    //           where m.b_id == this.Model.b_id
-    //           select m).ToList();
+
 }
 
 <h2>CreateMessageBoard</h2>
 
-<!-- Preloader -->
+
+    <!-- Preloader -->
 <div id="preloader">
     <div class="preload-content">
         <div id="original-load"></div>
@@ -237,36 +233,38 @@
                         </div>
                     </div>
                     <!--分頁元件<nav>
-                        <ul class="pagination justify-content-center" id="pagination1">
-                            <li class="page-item"><a class="page-link">上一頁</a></li>
-                            <li class="page-item"><a class="page-link" active>1</a></li>
-                            <li class="page-item"><a class="page-link">2</a></li>
-                            <li class="page-item"><a class="page-link">3</a></li>
-                            <li class="page-item"><a class="page-link">4</a></li>
-                            <li class="page-item"><a class="page-link">下一頁</a></li>
-                        </ul>
-                    </nav>-->
+        <ul class="pagination justify-content-center" id="pagination1">
+            <li class="page-item"><a class="page-link">上一頁</a></li>
+            <li class="page-item"><a class="page-link" active>1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">4</a></li>
+            <li class="page-item"><a class="page-link">下一頁</a></li>
+        </ul>
+    </nav>-->
 
                     <div class="section-title">
                         <h5>評論</h5>
                     </div>
-                    @foreach (messageSqlView m in Model)
+                    @foreach (CmessageSqlView m in Model)
                     {
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
-                                <!--img-->
-                                <img src="@m.會員大頭貼" alt="">
+                                <img src="@m.m_Image" alt="">
                             </div>
                         </div>
                         <div class="anime__review__item__text">
                             <div class="anime__review__item__text">
-                                <!--<h6>暱稱<span>時間</span></h6>-->
-                                <h6>@m.會員暱稱<span>@m.評論時間</span></h6>
-                                <p>@m.評論內容</p>
+                                <h6>@m.m_Alias - <span>@m.bm_MessageTime</span></h6>
+                                <p>@m.bm_Message</p>
+                                <input type="hidden" name="b_id" value="@m.b_id" />
+                                <input type="hidden" name="m_id" value="@m.m_id" />
                             </div>
                         </div>
+                        <div>
+                        </div>
                     }
-                    <div class="anime__review__item">
+                    @*<div class="anime__review__item">
                         <div class="anime__review__item__pic">
                             <img src="~/Content/網站圖片庫\大頭貼2.jpg" alt="">
                         </div>
@@ -325,7 +323,7 @@
                                 好奇故事背後的精采花絮嗎？
                             </p>
                         </div>
-                    </div>
+                    </div>*@
 
                 </div>
                 <div class="anime__details__form">
@@ -335,14 +333,14 @@
 
 
                     <form method="post" action="~/messageBoard/CreateMessageBoard">
-                        <textarea placeholder="Your Comment" naem="MESSAGE"></textarea>
+                        <textarea placeholder="Your Comment" naem="bm_Message"></textarea>
                         <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
                         <div class="rate-content mt-2">
-                            <input type="radio" name="rate" id="input1" value="5" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
-                            <input type="radio" name="rate" id="input1" value="4" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
-                            <input type="radio" name="rate" id="input1" value="3" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
-                            <input type="radio" name="rate" id="input1" value="2" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
-                            <input type="radio" name="rate" id="input1" value="1" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="5" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="4" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="3" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="2" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="1" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
                         </div>
                     </form>
 
