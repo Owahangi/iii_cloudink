@@ -19,7 +19,7 @@ namespace RentBook.Controllers
             EditBookModel ab = new EditBookModel();
             ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
             ab.作者編號加名稱 = factory.傳回作者編號名稱();
-            
+
             return View(ab);
         }
 
@@ -28,7 +28,7 @@ namespace RentBook.Controllers
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,BooksTags bt)
+        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf, BooksTags bt)
         {
 
             AddBookFactory factory = new AddBookFactory();
