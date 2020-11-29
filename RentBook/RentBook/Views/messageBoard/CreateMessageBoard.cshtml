@@ -250,7 +250,7 @@
                     {
                         <div class="anime__review__item">
                             <div class="anime__review__item__pic">
-                                <img src="@m.m_Image" alt="">
+                                <img src="@(m.m_Image)" alt="">
                             </div>
                         </div>
                         <div class="anime__review__item__text">
@@ -261,19 +261,17 @@
                                 <input type="hidden" name="m_id" value="@m.m_id" />
                             </div>
                         </div>
-                        <div>
-                        </div>
                     }
-                    @*<div class="anime__review__item">
+                    <div class="anime__review__item">
                         <div class="anime__review__item__pic">
-                            <img src="~/Content/網站圖片庫\大頭貼2.jpg" alt="">
+                            <img src="~/Content/網站圖片庫/大頭貼8.jpg" alt="">
                         </div>
                         <div class="anime__review__item__text">
                             <h6>Lotus - <span>1 Hour ago</span></h6>
                             <p>讀到睡著，ZZ。</p>
                         </div>
                     </div>
-                    <div class="anime__review__item">
+                    @*<div class="anime__review__item">
                         <div class="anime__review__item__pic">
                             <img src="~/Content/網站圖片庫\大頭貼3.jpg" alt="">
                         </div>
@@ -323,13 +321,13 @@
                                 好奇故事背後的精采花絮嗎？
                             </p>
                         </div>
-                    </div>*@
+                    </div>
 
                 </div>
                 <div class="anime__details__form">
                     <div class="section-title">
                         <h5>Your Comment</h5>
-                    </div>
+                    </div>*@
 
 
                     <form method="post" action="~/messageBoard/CreateMessageBoard">
@@ -341,9 +339,9 @@
                             <input type="radio" name="bm_Score" id="input1" value="3" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
                             <input type="radio" name="bm_Score" id="input1" value="2" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
                             <input type="radio" name="bm_Score" id="input1" value="1" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+
                         </div>
                     </form>
-
 
                 </div>
 

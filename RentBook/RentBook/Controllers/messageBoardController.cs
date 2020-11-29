@@ -40,7 +40,7 @@ namespace RentBook.Controllers
             string m_id = bm.m_id;
             string bm_Message = bm.bm_Message;
             bm.bm_MessageTime = DateTime.Now;
-            bm.bm_Score = int.Parse(Request.Form["bm_Score"]);
+            int? bm_Score = bm.bm_Score;
 
             db.BooksMessage.Add(bm);
             db.SaveChanges();
@@ -54,7 +54,9 @@ namespace RentBook.Controllers
             CmessageFactory factory = new CmessageFactory();
             List<CmessageSqlView> list = new List<CmessageSqlView>();
             list = factory.getAllmessageSqlViews();
+            // join tables
             return View(list);
         }
+
     }
 }

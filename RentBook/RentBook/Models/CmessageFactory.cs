@@ -42,11 +42,15 @@ namespace RentBook.Models
             {
 
                 CmessageSqlView x = new CmessageSqlView();
+
+
                 x.bm_id = (int)reader["bm_id"];
                 x.b_id = reader["b_id"].ToString();
                 x.m_id = reader["m_id"].ToString();
                 x.m_Email = reader["m_Email"].ToString();
                 x.m_Image = reader["m_Image"].ToString();
+                //x.m_Image = System.Web.HttpContext.Current.Server.MapPath(reader["m_Image"].ToString());
+                //"../../"+"Content/網站圖片庫/"+"大頭貼9"+"/"
                 x.m_Alias = reader["m_Alias"].ToString();
                 x.bm_Message = reader["bm_Message"].ToString();
                 x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
