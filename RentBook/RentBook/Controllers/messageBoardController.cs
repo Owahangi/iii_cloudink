@@ -40,8 +40,7 @@ namespace RentBook.Controllers
             string m_id = bm.m_id;
             string bm_Message = bm.bm_Message;
             bm.bm_MessageTime = DateTime.Now;
-            int? bm_Score = bm.bm_Score;
-
+            int? bm_Score =bm.bm_Score;
             db.BooksMessage.Add(bm);
             db.SaveChanges();
 

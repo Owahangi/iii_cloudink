@@ -19,6 +19,7 @@ namespace RentBook.Models
         public List<CmessageSqlView> getAllmessageSqlViews()
         {
             return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id=bm.m_id ", null);
+            //SQL語法 where ... 待修正
         }
 
         public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras)
@@ -49,8 +50,7 @@ namespace RentBook.Models
                 x.m_id = reader["m_id"].ToString();
                 x.m_Email = reader["m_Email"].ToString();
                 x.m_Image = reader["m_Image"].ToString();
-                //x.m_Image = System.Web.HttpContext.Current.Server.MapPath(reader["m_Image"].ToString());
-                //"../../"+"Content/網站圖片庫/"+"大頭貼9"+"/"
+                //SQL Sever table Column(PATH -> ../../Content......)
                 x.m_Alias = reader["m_Alias"].ToString();
                 x.bm_Message = reader["bm_Message"].ToString();
                 x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
@@ -117,10 +117,6 @@ namespace RentBook.Models
             con.Close();
 
             return list;
-
-
-
-            //return MessageBoard;
         }
         private void executeSql_BooksMessage(string sql, List<SqlParameter> paras)
         {
