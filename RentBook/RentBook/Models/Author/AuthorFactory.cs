@@ -41,6 +41,36 @@ namespace RentBook.Models.Author
             return 新增的a_id;
         }
 
+        public List<AuthorModel> getByKeyword(string keyword)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "Select * from Author where a_id Like @aid or a_Name Like @aName";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("aid", '%' + keyword + '%');
+            cmd.Parameters.AddWithValue("aName", '%' + keyword + '%');
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<AuthorModel> list = new List<AuthorModel>();
+            while (reader.Read())
+            {
+                AuthorModel a = new AuthorModel();
+                a.a_id = (string)reader["a_id"];
+                a.a_Name = (string)reader["a_Name"];
+                a.a_Image = (string)reader["a_Image"];
+                a.a_Birth = ((DateTime)reader["a_Birth"]).ToString("yyyy/MM/dd");
+                a.a_Point = (int)reader["a_Point"];
+                a.a_Email = (string)reader["a_Email"];
+                list.Add(a);
+            }
+
+            reader.Close();
+            con.Close();
+
+            return list;
+        }
+
         public List<AuthorModel> SeleteAll()
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
@@ -118,7 +148,7 @@ namespace RentBook.Models.Author
             return aa;
         }
 
-        public string 刪除舊照片(string aid)
+        public string 傳回原照片檔名(string aid)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
@@ -136,18 +166,7 @@ namespace RentBook.Models.Author
 
             reader.Close();
             con.Close();
-
-            if (System.IO.File.Exists("../" + oldfilename))
-            {
-                try
-                {
-                    System.IO.File.Delete(oldfilename);
-                }
-                catch
-                {
-                    oldfilename = "修改失敗";
-                }
-            }
+            
             return oldfilename;
         }
 

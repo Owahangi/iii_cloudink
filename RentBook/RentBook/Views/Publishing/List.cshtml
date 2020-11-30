@@ -1,0 +1,49 @@
+﻿@model IEnumerable<RentBook.Models.PublishingModel>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<!-- 模糊搜尋 p_id p_Name-->
+<form method="post">
+    <input type="text" name="txtkeyword" /> <input type="submit" value="查詢" />
+</form>
+
+<p>
+    @Html.ActionLink("新增出版社", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            出版社編號
+        </th>
+        <th>
+            出版社名稱
+        </th>
+        <th>
+            出版社地址
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_Address)
+            </td>
+            <td>
+                @Html.ActionLink("編輯", "Edit", new { pid=item.p_id }) |
+            </td>
+        </tr>
+    }
+
+</table>

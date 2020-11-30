@@ -6,6 +6,11 @@
 
 <h2>List</h2>
 
+<!-- 模糊搜尋 a_id a_Name-->
+<form method="post">
+    <input type="text" name="txtkeyword" /> <input type="submit" value="查詢" />
+</form>
+
 <p>
     @Html.ActionLink("新增作者", "Create")
 </p>
@@ -13,6 +18,9 @@
     <tr>
         <th>
             作者照片
+        </th>
+        <th>
+            作者編號
         </th>
         <th>
             作者名稱
@@ -33,6 +41,9 @@
 <tr>
     <td>
         <img name="a_Image" src="@item.a_Image" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.a_id)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.a_Name)

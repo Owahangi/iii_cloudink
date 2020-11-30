@@ -12,9 +12,20 @@ namespace RentBook.Controllers
         // GET: Author
         public ActionResult List()
         {
-            AuthorFactory factory = new AuthorFactory();
+            string keyword = Request.Form["txtKeyword"];
 
-            return View(factory.SeleteAll());
+            List<AuthorModel> list = null;
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                list = (new AuthorFactory()).SeleteAll();
+            }
+            else
+            {
+                list = (new AuthorFactory()).getByKeyword(keyword);
+            }
+            return View(list);
+
         }
 
         public ActionResult Create()
@@ -65,7 +76,19 @@ namespace RentBook.Controllers
 
             if (a.image != null)
             {
-                string deleteresult = factory.刪除舊照片(a.a_id);
+                string deleteresult = factory.傳回原照片檔名(a.a_id);
+
+                if (System.IO.File.Exists(Server.MapPath(deleteresult)))
+                {
+                    try
+                    {
+                        System.IO.File.Delete(Server.MapPath(deleteresult));
+                    }
+                    catch
+                    {
+                        deleteresult = "修改失敗";
+                    }
+                }
 
                 if (deleteresult != "修改失敗")
                 {
