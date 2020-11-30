@@ -347,3 +347,7 @@ C:\Users\iii\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompil
 C:\Users\iii\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
 C:\Users\iii\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.dll
 C:\Users\iii\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\郭良田\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\郭良田\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\郭良田\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\郭良田\Desktop\demo\RentBook\RentBook\obj\Debug\RentBook.pdb

@@ -1,0 +1,442 @@
+﻿@using RentBook.Models
+@model List<RentBook.Models.CmessageSqlView>
+
+
+@{
+    ViewBag.Title = "CreateMessageBoard";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>CreateMessageBoard</h2>
+
+
+    <!-- Preloader -->
+<div id="preloader">
+    <div class="preload-content">
+        <div id="original-load"></div>
+    </div>
+</div>
+
+<!-- Subscribe Modal -->
+<div class="subscribe-newsletter-area">
+    <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-body">
+                    <h5 class="title">Subscribe to my newsletter</h5>
+                    <form action="#" class="newsletterForm" method="post">
+                        <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                        <button type="submit" class="btn original-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+
+    <!-- Top Header Area -->
+    <div class="top-header">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Breaking News Area -->
+                <div class="col-12 col-sm-8">
+                    <div class="breaking-news-area">
+                        <div id="breakingNewsTicker" class="ticker">
+                            <ul>
+                                <li><a href="#">Hello World!</a></li>
+                                <li><a href="#">Hello Universe!</a></li>
+                                <li><a href="#">Hello Original!</a></li>
+                                <li><a href="#">Hello Earth!</a></li>
+                                <li><a href="#">Hello Colorlib!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Social Area -->
+                <div class="col-12 col-sm-4">
+                    <div class="top-social-area">
+                        <div class="subscribe-btn">
+                            <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">登入</a>
+                            <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">註冊</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo Area -->
+    <!-- Nav Area -->
+    <div class="original-nav-area" id="stickyNav">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between">
+                    <div>
+                        <form class="form-inline" action="search.aspx" method="get">
+                            <div class="input-group">
+                                <input type="text" name="searchstring" class="form-control" placeholder="請輸入商品名稱" size="25">
+                                <select>
+                                    <option value="">全部</option>
+                                    <option>漫畫</a>
+                                    <option>小說</a>
+                                </select>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-light border-dark">
+                                        <span>&#x1f50d;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu" id="originalNav">
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+
+
+
+                            <ul>
+                                <li><a href="index.html">首頁</a></li>
+                                <li><a href="#">漫畫</a></li>
+                                <li><a href="#">小說</a></li>
+                                <li><a href="about-us.html">今日最新</a></li>
+                                <li><a href="#">排行榜</a></li>
+                                <li><a href="contact.html">兌換點數</a></li>
+                                <li><a href="contact.html">購物車</a></li>
+
+                            </ul>
+                            <!-- Search Form  -->
+
+
+
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ##### Header Area End ##### -->
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option mt-15">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                    <a href="./categories.html">Categories</a>
+                    <span>Romance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<div id="search"></div>
+<div id="close-icon"></div>
+<section class="anime-details spad">
+    <div class="container">
+        <div class="anime__details__content">
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <div class="">
+                        <div><img src="~/Content/網站圖片庫\我在詐騙公司上班.jpg"></div>
+                        <div class=""><i class="fa fa-comments"> 11</i> <i class="fa fa-eye pull-right"> 9141</i></div>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="anime__details__text">
+                        <div class="anime__details__title">
+                            <h3>我在詐騙公司上班</h3>
+                            <span></span>
+                        </div>
+                        <div class="anime__details__rating">
+                            <div class="rating">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                            <span>1.029 Votes</span>
+                        </div>
+                        <p>
+                            真心不騙的詐騙漫畫，幽國默民的社會群像
+                            走投無路的小弟誤入詐騙公司，這家公司除了流氓樣的胖老闆、大胸部的美艷主任之外，就只有他了。
+                            身家清白，愛護動物，內心純潔的他雖然百般不願意，但在愛心筆、詐騙電話等工作過程中，漸漸發現社會上其實充斥著無所不在的話術、騙局，許多看來正當的行業其實比詐騙公司更為惡劣。
+                            就在小弟了解主任曾是「共體時艱」的受害者同時，主任也發現了小弟「肉體實堅」，二人之間有了淡淡的曖昧。
+                            當小弟試著突破對詐騙業的心防、主任是否也能突破小弟的心房？他們對主任前老闆進行的「終極詐騙」又能不能成功，替主任討回一口氣？而胖老闆又有著什麼樣的過去呢？
+                        </p>
+
+                        <div class="subscribe-btn">
+                            <a href="#" class="btn subscribe-btn border-dark"><i class="fa fa-heart"></i> Follow</a>
+                            <a href="#" class="btn subscribe-btn border-dark">
+                                <span>Watch Now</span> <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="anime__details__review">
+
+                    <div class="section-title">
+                        <h5>章節</h5>
+                    </div>
+                    <div class="sidebar-widget-area">
+                        <div class="widget-content">
+
+                            <ul class="list-group">
+                                <li><a href="#" class="list-group-item">Ep.1</a></li>
+                                <li><a href="#" class="list-group-item">Ep.2</a></li>
+                                <li><a href="#" class="list-group-item">Ep.3</a></li>
+                                <li><a href="#" class="list-group-item">Ep.4</a></li>
+                                <li><a href="#" class="list-group-item">Ep.5</a></li>
+                                <li><a href="#" class="list-group-item">Ep.6</a></li>
+                                <li><a href="#" class="list-group-item">Ep.7</a></li>
+                                <li><a href="#" class="list-group-item">Ep.8</a></li>
+                                <li><a href="#" class="list-group-item">Ep.9</a></li>
+                                <li><a href="#" class="list-group-item">Ep.10</a></li>
+                                <li class="dots" id="dots"></li>
+                                <div class="more" id="more">
+                                    <li><a href="#" class="list-group-item">Ep.11</a></li>
+                                    <li><a href="#" class="list-group-item">Ep.12</a></li>
+                                    <li><a href="#" class="list-group-item">Ep.13</a></li>
+                                </div>
+                                <button class="list-group-item" onclick="myFunction()" id="myBtn">閱讀更多</button>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--分頁元件<nav>
+        <ul class="pagination justify-content-center" id="pagination1">
+            <li class="page-item"><a class="page-link">上一頁</a></li>
+            <li class="page-item"><a class="page-link" active>1</a></li>
+            <li class="page-item"><a class="page-link">2</a></li>
+            <li class="page-item"><a class="page-link">3</a></li>
+            <li class="page-item"><a class="page-link">4</a></li>
+            <li class="page-item"><a class="page-link">下一頁</a></li>
+        </ul>
+    </nav>-->
+
+                    <div class="section-title">
+                        <h5>評論</h5>
+                    </div>
+                    @foreach (CmessageSqlView m in Model)
+                    {
+                        <div class="anime__review__item">
+                            <div class="anime__review__item__pic">
+                                <img src="@(m.m_Image)" alt="">
+                            </div>
+                            <div class="anime__review__item__text">
+                                <h6>@m.m_Alias - <span>@m.bm_MessageTime</span></h6>
+                                <p>@m.bm_Message</p>
+                                <input type="hidden" name="b_id" value="@m.b_id" />
+                                <input type="hidden" name="m_id" value="@m.m_id" />
+
+                            </div>
+                        </div>
+                    }
+
+                    @*@using (Html.BeginForm("CreateMessageBoard", "messageBoard", FormMethod.Post, new { }))
+                    {
+                        @Html.HiddenFor()
+                        @Html.TextBox("messageBoard")
+                        <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
+                    }*@
+                    <form method="post" action="~/messageBoard/CreateMessageBoard">
+                        <textarea placeholder="Your Comment" naem="bm_Message"></textarea>
+                        <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
+                        <div class="rate-content mt-2">
+                            <input type="radio" name="bm_Score" id="input1" value="5" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="4" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="3" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="2" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+                            <input type="radio" name="bm_Score" id="input1" value="1" /><a href="#" id="r1" type="radio"><i class="fa fa-star-o" id="starstyle"></i></a>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="sidebar-widget-area">
+                    <h5 class="title">Latest Posts</h5>
+
+                    <div class="widget-content">
+
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img src="網站圖片庫/不能讓老師發現的霸凌日記.jpg" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="post-tag">Lifestyle</a>
+                                <h4><a href="#" class="post-headline">Party people in the house</a></h4>
+                                <div class="post-meta">
+                                    <p><a href="#">12 March</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img src="網站圖片庫/我們不能是朋友.jpg" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="post-tag">Lifestyle</a>
+                                <h4><a href="#" class="post-headline">A sunday in the park</a></h4>
+                                <div class="post-meta">
+                                    <p><a href="#">12 March</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img src="網站圖片庫/殺手的戀愛相談.jpg" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="post-tag">Lifestyle</a>
+                                <h4><a href="#" class="post-headline">Party people in the house</a></h4>
+                                <div class="post-meta">
+                                    <p><a href="#">12 March</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Blog Post -->
+                        <div class="single-blog-post d-flex align-items-center widget-post">
+                            <!-- Post Thumbnail -->
+                            <div class="post-thumbnail">
+                                <img src="網站圖片庫/誰怕誰.jpg" alt="">
+                            </div>
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <a href="#" class="post-tag">Lifestyle</a>
+                                <h4><a href="#" class="post-headline">A sunday in the park</a></h4>
+                                <div class="post-meta">
+                                    <p><a href="#">12 March</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget-area">
+                    <h5 class="title">Tags</h5>
+                    <div class="widget-content">
+                        <ul class="tags">
+                            <li><a href="#">全一集</a></li>
+                            <li><a href="#">冒險</a></li>
+                            <li><a href="#">戀愛故事</a></li>
+                            <li><a href="#">穿越</a></li>
+                            <li><a href="#">輕小說</a></li>
+                            <li><a href="#">機甲</a></li>
+                            <li><a href="#">校園</a></li>
+                            <li><a href="#">戰爭</a></li>
+                            <li><a href="#">懸疑推理</a></li>
+                            <li><a href="#">職場</a></li>
+                            <li><a href="#">網路小說</a></li>
+                            <li><a href="#">奇幻</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ##### Single Blog Area Start ##### -->
+<!-- ##### Single Blog Area End ##### -->
+<!-- ##### Instagram Feed Area Start ##### -->
+<!-- ##### Instagram Feed Area End ##### -->
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area text-center ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Footer Nav Area -->
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-center">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">首頁</a></li>
+                                    <li><a href="#">漫畫</a></li>
+                                    <li><a href="#">小說</a></li>
+                                    <li><a href="#">今日最新</a></li>
+                                    <li><a href="#">排行榜</a></li>
+                                    <li><a href="#">兌換點數</a></li>
+                                    <li><a href="#">購物車</a></li>
+                                    <li><a href="#">登入|註冊</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+                <!-- Footer Social Area -->
+                <div class="footer-social-area mt-30">
+
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+</footer>

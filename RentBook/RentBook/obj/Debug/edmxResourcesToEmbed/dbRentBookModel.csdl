@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentBookdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="a_id" />
+    </Key>
+    <Property Name="a_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="a_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="a_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="a_Birth" Type="DateTime" Precision="0" />
+    <Property Name="a_Point" Type="Int32" />
+    <Property Name="a_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BookCase">
+    <Key>
+      <PropertyRef Name="bc_id" />
+    </Key>
+    <Property Name="bc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bc_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BookCaseBooks">
+    <Key>
+      <PropertyRef Name="bcb_id" />
+    </Key>
+    <Property Name="bcb_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bc_id" Type="Int32" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bcb_BookLastTime" Type="DateTime" Precision="3" />
+    <Property Name="bcb_ReadRange" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="b_id" />
+    </Key>
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="b_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="b_Info" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="b_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="b_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="b_PublishedDate" Type="DateTime" Precision="0" />
+    <Property Name="b_DatePrice" Type="Int32" />
+    <Property Name="b_ISBN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="b_AgeRating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="b_Likes" Type="Int32" />
+    <Property Name="b_Series_yn" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="b_Put_yn" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="p_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BooksAuthor">
+    <Key>
+      <PropertyRef Name="ba_id" />
+    </Key>
+    <Property Name="ba_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="a_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BooksChapters">
+    <Key>
+      <PropertyRef Name="bc_id" />
+    </Key>
+    <Property Name="bc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bc_Chapters" Type="Int32" />
+    <Property Name="bc_Content" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BooksFiles">
+    <Key>
+      <PropertyRef Name="bf_id" />
+    </Key>
+    <Property Name="bf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bc_id" Type="Int32" />
+    <Property Name="bf_FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BooksMessage">
+    <Key>
+      <PropertyRef Name="bm_id" />
+    </Key>
+    <Property Name="bm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bm_Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="bm_MessageTime" Type="DateTime" Precision="3" />
+    <Property Name="bm_Score" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BooksTags">
+    <Key>
+      <PropertyRef Name="bt_id" />
+    </Key>
+    <Property Name="bt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="t_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BooksWishlist">
+    <Key>
+      <PropertyRef Name="bw_id" />
+    </Key>
+    <Property Name="bw_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bc_id" Type="Int32" />
+    <Property Name="b_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bw_AddTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Name="f_id" Type="Int32" Nullable="false" />
+    <Property Name="f_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Level">
+    <Key>
+      <PropertyRef Name="l_id" />
+    </Key>
+    <Property Name="l_id" Type="Int32" Nullable="false" />
+    <Property Name="l_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="m_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="m_Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="m_Birth" Type="DateTime" Precision="0" />
+    <Property Name="m_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="m_Point" Type="Int32" />
+    <Property Name="m_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="m_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="m_RegisterDate" Type="DateTime" Precision="3" />
+    <Property Name="m_LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="m_LastLogon" Type="DateTime" Precision="3" />
+    <Property Name="m_OnlineTime" Type="DateTime" Precision="3" />
+    <Property Name="m_MonthlyLastTime" Type="DateTime" Precision="3" />
+    <Property Name="bc_id" Type="Int32" />
+    <Property Name="l_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MemberAddDetail">
+    <Key>
+      <PropertyRef Name="mad_id" />
+    </Key>
+    <Property Name="mad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mad_AddPoint" Type="Int32" />
+    <Property Name="mad_AddTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MemberDonateAuthor">
+    <Key>
+      <PropertyRef Name="am_id" />
+    </Key>
+    <Property Name="am_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="am_DonatePoint" Type="Int32" />
+    <Property Name="am_DonateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MemberShopDetail">
+    <Key>
+      <PropertyRef Name="msd_id" />
+    </Key>
+    <Property Name="msd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="m_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="msd_CostPoint" Type="Int32" />
+    <Property Name="msd_DateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Publishing">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="p_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="r_id" />
+    </Key>
+    <Property Name="r_id" Type="Int32" Nullable="false" />
+    <Property Name="r_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RoleFunction">
+    <Key>
+      <PropertyRef Name="sf_id" />
+    </Key>
+    <Property Name="sf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="s_id" Type="Int32" />
+    <Property Name="f_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SystemAccount">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="s_Pwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="r_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="t_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="dbRentBookdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Author" EntityType="Self.Author" />
+    <EntitySet Name="BookCase" EntityType="Self.BookCase" />
+    <EntitySet Name="BookCaseBooks" EntityType="Self.BookCaseBooks" />
+    <EntitySet Name="Books" EntityType="Self.Books" />
+    <EntitySet Name="BooksAuthor" EntityType="Self.BooksAuthor" />
+    <EntitySet Name="BooksChapters" EntityType="Self.BooksChapters" />
+    <EntitySet Name="BooksFiles" EntityType="Self.BooksFiles" />
+    <EntitySet Name="BooksMessage" EntityType="Self.BooksMessage" />
+    <EntitySet Name="BooksTags" EntityType="Self.BooksTags" />
+    <EntitySet Name="BooksWishlist" EntityType="Self.BooksWishlist" />
+    <EntitySet Name="Function" EntityType="Self.Function" />
+    <EntitySet Name="Level" EntityType="Self.Level" />
+    <EntitySet Name="Member" EntityType="Self.Member" />
+    <EntitySet Name="MemberAddDetail" EntityType="Self.MemberAddDetail" />
+    <EntitySet Name="MemberDonateAuthor" EntityType="Self.MemberDonateAuthor" />
+    <EntitySet Name="MemberShopDetail" EntityType="Self.MemberShopDetail" />
+    <EntitySet Name="Publishing" EntityType="Self.Publishing" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="RoleFunction" EntityType="Self.RoleFunction" />
+    <EntitySet Name="SystemAccount" EntityType="Self.SystemAccount" />
+    <EntitySet Name="Tags" EntityType="Self.Tags" />
+  </EntityContainer>
+</Schema>

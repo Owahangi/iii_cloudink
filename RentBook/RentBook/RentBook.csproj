@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1812,6 +1820,86 @@
     <Content Include="Content\vendor\jquery\stellar.js" />
     <Content Include="Content\vendor\jquery\theme.js" />
     <Content Include="Content\vendor\jquery\waypoints.min.js" />
+    <Content Include="Content\網站圖片庫\img1.jpg" />
+    <Content Include="Content\網站圖片庫\nov1.jpg" />
+    <Content Include="Content\網站圖片庫\不能讓老師發現的霸凌日記.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\book1.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\book2.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\book4.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\icon.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\img1.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\img2.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\img3.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\img4.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\new1.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\new2.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\nov1.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\nov2.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\nov3.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\nov4.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭1.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭2.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭3.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭4.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭5.jpg" />
+    <Content Include="Content\網站圖片庫\備用素材\亂搭6.jpg" />
+    <Content Include="Content\網站圖片庫\全職高手.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼1.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼10.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼2.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼3.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼4.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼5.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼6.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼7.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼8.jpg" />
+    <Content Include="Content\網站圖片庫\大頭貼9.jpg" />
+    <Content Include="Content\網站圖片庫\天盛常歌.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\全職高手.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\冷月如霜.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\凰權.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\夜天子.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\後宮甄嬛傳.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\慶餘年.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\我不喜歡這世界，我只喜歡你.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\我的藍.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\星辰變.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\東宮.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\瑯琊榜之風起長林.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\知否？知否？應是綠肥紅瘦.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\致我們暖暖的小時光.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\蜜汁燉魷魚.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\鬥破蒼穹.jpg" />
+    <Content Include="Content\網站圖片庫\小說素材\魔道祖師爺.png" />
+    <Content Include="Content\網站圖片庫\庶女.jpg" />
+    <Content Include="Content\網站圖片庫\慶餘年.jpg" />
+    <Content Include="Content\網站圖片庫\我們不能是朋友.jpg" />
+    <Content Include="Content\網站圖片庫\我只裡歡你.jpg" />
+    <Content Include="Content\網站圖片庫\我在詐騙公司上班.jpg" />
+    <Content Include="Content\網站圖片庫\我的藍.jpg" />
+    <Content Include="Content\網站圖片庫\殺手的戀愛相談.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\一人之下.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\師生百合短篇合集.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\庶女攻略.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\漫畫家與座敷童子的生活記事.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\知男而上.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\神醫嫡女.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\第一掌門.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\簪中錄.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\聖女不是好惹的.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\陰暗的性格與向日葵.jpg" />
+    <Content Include="Content\網站圖片庫\漫畫素材\鬼滅之刃.jpg" />
+    <Content Include="Content\網站圖片庫\蜜汁.jpg" />
+    <Content Include="Content\網站圖片庫\誰怕誰.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學1.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學2.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學3.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學4.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學5.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學6.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學7.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學8.jpg" />
+    <Content Include="Content\網站圖片庫\鏡文學9.jpg" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -1832,6 +1920,16 @@
     <Content Include="css\_courses.css" />
     <Content Include="css\_feature.css" />
     <Content Include="css\_price.css" />
+    <Content Include="dbRentBookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+      <LastGenOutput>dbRentBookModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="dbRentBookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+      <LastGenOutput>dbRentBookModel.cs</LastGenOutput>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\123.png" />
@@ -3280,6 +3378,13 @@
     <Content Include="網站圖片庫\鏡文學7.jpg" />
     <Content Include="網站圖片庫\鏡文學8.jpg" />
     <Content Include="網站圖片庫\鏡文學9.jpg" />
+    <EntityDeploy Include="dbRentBookModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbRentBookModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="dbRentBookModel.edmx.diagram">
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -5002,13 +5107,77 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Author.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookCase.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookCaseBooks.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Books.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksAuthor.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksChapters.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksFiles.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksMessage.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksTags.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksWishlist.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AddBookChaptersController.cs" />
     <Compile Include="Controllers\AddBookController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\messageBoardController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
+    <Compile Include="dbRentBookModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbRentBookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbRentBookModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbRentBookModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Function.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Level.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberAddDetail.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberDonateAuthor.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberShopDetail.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AddBook\AddBookFactory.cs" />
     <Compile Include="Models\AddBook\AddBookModel.cs" />
@@ -5022,9 +5191,27 @@
     <Compile Include="Models\CDictionary.cs" />
     <Compile Include="Models\CMember.cs" />
     <Compile Include="Models\CMemberFactory.cs" />
+    <Compile Include="Models\messageBoardModels\CmessageBoard.cs" />
+    <Compile Include="Models\messageBoardModels\CmessageFactory.cs" />
+    <Compile Include="Models\messageBoardModels\CmessageSqlView.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Models\ReadBook\ReadBooksModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publishing.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleFunction.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAccount.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tags.cs">
+      <DependentUpon>dbRentBookModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5221,6 +5408,8 @@
     <Content Include="vendors\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="vendors\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="vendors\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\messageBoard\CreateMessageBoard.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5233,6 +5422,9 @@
     <Folder Include="Models\Common\" />
     <Folder Include="Models\Member\" />
     <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
