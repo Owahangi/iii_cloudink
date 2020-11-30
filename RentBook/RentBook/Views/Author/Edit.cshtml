@@ -17,7 +17,7 @@
     <div class="form-group">
         <label class="control-label col-md-2">作者編號</label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.a_id, new { htmlAttributes = new { @class = "form-control",@disabled="disabled" } })
+            @Html.EditorFor(model => model.a_id, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
             @Html.ValidationMessageFor(model => model.a_id, "", new { @class = "text-danger" })
         </div>
     </div>

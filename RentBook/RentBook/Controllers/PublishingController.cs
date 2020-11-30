@@ -62,7 +62,7 @@ namespace RentBook.Controllers
         public ActionResult EditSave(PublishingModel p)
         {
             PublishingFactory factory = new PublishingFactory();
-            
+
             factory.Edit(p);
 
             return RedirectToAction("List");

@@ -71,7 +71,6 @@ namespace RentBook.Controllers
         {
             AuthorFactory factory = new AuthorFactory();
 
-            a.a_id = Request.Form["a_id"];
             a.a_Birth = Request.Form["a_Birth"];
 
             if (a.image != null)
