@@ -29,13 +29,13 @@ namespace RentBook.Controllers
 
         // 將書籍基本資料除存到資料庫 / 將書籍封面存到實體路徑並命名
         [HttpPost]
-        public string SaveNewBook(Books b, BooksChapters bc, BooksFiles bf,BooksTags bt)
+        public string SaveNewBook(AddBooks b, AddBooksChapters bc, AddBooksFiles bf,AddBooksTags bt)
         {
 
             AddBookFactory factory = new AddBookFactory();
 
             // 書籍作者資料表
-            BooksAuthor ba = new BooksAuthor();
+            AddBooksAuthor ba = new AddBooksAuthor();
             ba.b_id = factory.自動產生b_id();
             ba.AuthorIdName = Request.Form.GetValues("AuthorIdName");
 

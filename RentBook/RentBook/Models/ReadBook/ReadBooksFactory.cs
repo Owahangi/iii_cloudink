@@ -60,13 +60,13 @@ namespace RentBook.Models
 
             if (rb.b_id != "")
             {
-                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName + ".txt")))
+                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName)))
                 {
 
                 }
                 else
                 {
-                    StreamReader sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName + ".txt"), System.Text.Encoding.UTF8);
+                    StreamReader sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/小說素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/" + bf_FileName), System.Text.Encoding.UTF8);
                     while (sr.Peek() >= 0)
                     {
                         書籍內容.Add(sr.ReadLine());
