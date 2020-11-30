@@ -44,7 +44,7 @@ namespace RentBook.Models
             return 新增的b_id;
         }
 
-        public string 書籍封面圖片命名(Books b)
+        public string 書籍封面圖片命名(AddBooks b)
         {
             // 取得副檔名
             int point = b.Image.FileName.IndexOf(".");
@@ -143,7 +143,7 @@ namespace RentBook.Models
         // 新增書籍基本資料
         // 使用資料表：Books、BooksAuthor
         // 將資料儲存到 Books 資料表
-        public void Create(Books b)
+        public void Create(AddBooks b)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
@@ -183,7 +183,7 @@ namespace RentBook.Models
         }
 
         // 將資料儲存到書籍作者資料表
-        public void CreateBA(BooksAuthor ba)
+        public void CreateBA(AddBooksAuthor ba)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
@@ -206,7 +206,7 @@ namespace RentBook.Models
         }
 
         // 將資料儲存到 BookOutline 與 BooksChapters 資料表
-        public void 儲存章節標題及檔名(Books b, BooksFiles bf, BooksChapters bc)
+        public void 儲存章節標題及檔名(AddBooks b, AddBooksFiles bf, AddBooksChapters bc)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
@@ -250,7 +250,7 @@ namespace RentBook.Models
             con.Close();
         }
 
-        public void 儲存到標籤資料表(BooksTags bt)
+        public void 儲存到標籤資料表(AddBooksTags bt)
         {
             // 找出目前現有的 Tags 資料表
             SqlConnection con = new SqlConnection(myDBConnectionString);
@@ -329,7 +329,7 @@ namespace RentBook.Models
         }
 
         // 撈出此本書的最新的章節
-        public int 目前最新章節(Books b)
+        public int 目前最新章節(AddBooks b)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();

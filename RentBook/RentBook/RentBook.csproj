@@ -4289,11 +4289,11 @@
     </Compile>
     <Compile Include="Models\AddBook\AddBookFactory.cs" />
     <Compile Include="Models\AddBook\AddBookModel.cs" />
-    <Compile Include="Models\AddBook\Books.cs" />
-    <Compile Include="Models\AddBook\BooksAuthor.cs" />
-    <Compile Include="Models\AddBook\BooksChapters.cs" />
-    <Compile Include="Models\AddBook\BooksFiles.cs" />
-    <Compile Include="Models\AddBook\BooksTags.cs" />
+    <Compile Include="Models\AddBook\AddBooks.cs" />
+    <Compile Include="Models\AddBook\AddBooksAuthor.cs" />
+    <Compile Include="Models\AddBook\AddBooksChapters.cs" />
+    <Compile Include="Models\AddBook\AddBooksFiles.cs" />
+    <Compile Include="Models\AddBook\AddBooksTags.cs" />
     <Compile Include="Models\AddChapters\AddBookChaptersModel.cs" />
     <Compile Include="Models\AddChapters\AddChaptersFactory.cs" />
     <Compile Include="Models\Author\AuthorFactory.cs" />

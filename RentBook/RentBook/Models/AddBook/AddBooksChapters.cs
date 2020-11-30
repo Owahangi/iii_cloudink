@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RentBook.Models
 {
-    public class BooksChapters
+    public class AddBooksChapters
     {
         public int bc_id { get; set; }
         public int b_id { get; set; }

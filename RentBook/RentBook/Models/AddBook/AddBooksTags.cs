@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RentBook.Models.AddBook
 {
-    public class BooksTags
+    public class AddBooksTags
     {
         public List<string> Tags { get; set; }
 
