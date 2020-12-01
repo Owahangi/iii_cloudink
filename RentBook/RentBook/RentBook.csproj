@@ -4282,6 +4282,7 @@
     <Compile Include="Controllers\AddBookController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\EditBookController.cs" />
+    <Compile Include="Controllers\PointController.cs" />
     <Compile Include="Controllers\PublishingController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4301,6 +4302,8 @@
     <Compile Include="Models\EditBook\EditBookFactory.cs" />
     <Compile Include="Models\EditBook\EditBookList.cs" />
     <Compile Include="Models\EditBook\EditBookModel.cs" />
+    <Compile Include="Models\Point\PointFactory.cs" />
+    <Compile Include="Models\Point\PointModel.cs" />
     <Compile Include="Models\Publishing\PublishingFactory.cs" />
     <Compile Include="Models\Publishing\PublishingModel.cs" />
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
@@ -4331,6 +4334,8 @@
     <Content Include="Views\Publishing\List.cshtml" />
     <Content Include="Views\Publishing\Create.cshtml" />
     <Content Include="Views\Publishing\Edit.cshtml" />
+    <Content Include="Views\Point\List.cshtml" />
+    <Content Include="Views\Point\AddPoint.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

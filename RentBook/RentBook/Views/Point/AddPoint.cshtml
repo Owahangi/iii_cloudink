@@ -1,0 +1,28 @@
+﻿@model RentBook.Models.Point.PointModel
+@{
+    ViewBag.Title = "AddPoint";
+}
+
+
+@using (Html.BeginForm("SaveAddPoint", "Point", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    <input type="hidden" name="m_id" value="@Model.m_id" />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            儲值點數 <input type="text" name="mad_AddPoint" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="儲值" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
