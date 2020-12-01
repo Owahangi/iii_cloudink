@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 using RentBook.Models;
 
+using System.Web.SessionState;
+
+
 namespace RentBook.Controllers
 {
     public class messageBoardController : Controller
@@ -36,6 +39,9 @@ namespace RentBook.Controllers
         //[Authorize] // 會員登入後才可評論
         public ActionResult CreateMessageBoard(BooksMessage bm) 
         {
+
+            if (Session["UserAccount"] != null) { }
+
             string b_id = bm.b_id;
             string m_id = bm.m_id;
             string bm_Message = bm.bm_Message;
@@ -50,6 +56,12 @@ namespace RentBook.Controllers
         // GET: messageBoard
         public ActionResult CreateMessageBoard(string b_id)
         {
+            //var UserEmail = db.Member
+            //    .Where(m => m.m_Email == mem.m_Email)
+            //    .FirstOrDefault();
+
+            //Session["SK_LOGINED_USER"] = UserEmail;
+
             var book = db.Books.FirstOrDefault(b => b.b_id == b_id);
             if (book == null)
                 return RedirectToAction("SeachItem");
@@ -57,13 +69,12 @@ namespace RentBook.Controllers
             var msg = db.BooksMessage.Where(m => m.b_id == b_id);
 
             CmessageFactory factory = new CmessageFactory();
-            List<CmessageSqlView> list = new List<CmessageSqlView>();
+            List<CmessageSqlView> list = new List<CmessageSqlView>();// join tables
             list = factory.getAllmessageSqlViews();
             var list2 = list.Where(m => m.b_id == b_id);
 
-            // join tables
-            int AvgSore = factory.getAvgSorce();
-            ViewBag.AVGSORE = AvgSore;
+            int AvgSore = factory.getAvgSorce(b_id);
+            ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
             return View(list);
         }
 

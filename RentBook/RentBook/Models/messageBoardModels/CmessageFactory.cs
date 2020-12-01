@@ -15,7 +15,7 @@ namespace RentBook.Models
         //bm_MessageTime 留言時間
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
-        public int getAvgSorce()
+        public int getAvgSorce(string b_id)
         {
             int avgsore = 0;
             SqlConnection con = new SqlConnection();
