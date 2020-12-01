@@ -57,6 +57,7 @@ namespace RentBook.Models.Publishing
             {
                 PublishingModel p = new PublishingModel();
                 p.p_id = (string)reader["p_id"];
+                p.p_Identifier = (string)reader["p_Identifier"];
                 p.p_Name = (string)reader["p_Name"];
                 p.p_Address = (string)reader["p_Address"];
                 
@@ -73,7 +74,7 @@ namespace RentBook.Models.Publishing
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
-            string tSQL = "select p_id,p_Name,p_Address from Publishing";
+            string tSQL = "select p_id,p_Identifier,p_Name,p_Address from Publishing";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -82,6 +83,7 @@ namespace RentBook.Models.Publishing
             {
                 PublishingModel p = new PublishingModel();
                 p.p_id = (string)reader["p_id"];
+                p.p_Identifier = (string)reader["p_Identifier"];
                 p.p_Name = (string)reader["p_Name"];
                 p.p_Address = (string)reader["p_Address"];
                 
@@ -98,9 +100,10 @@ namespace RentBook.Models.Publishing
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
-            string tSQL = "Insert into Publishing (p_id,p_Name,p_Address)Values(@pid,@pName,@pAddress)";
+            string tSQL = "Insert into Publishing (p_id,p_Identifier,p_Name,p_Address)Values(@pid,@pidentifier,@pName,@pAddress)";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("pid", p.p_id);
+            cmd.Parameters.AddWithValue("pidentifier", p.p_Identifier);
             cmd.Parameters.AddWithValue("pName", p.p_Name);
             cmd.Parameters.AddWithValue("pAddress", p.p_Address);
 
@@ -122,6 +125,7 @@ namespace RentBook.Models.Publishing
             if (reader.Read())
             {
                 p.p_id = (string)reader["p_id"];
+                p.p_Identifier = (string)reader["p_Identifier"];
                 p.p_Name = (string)reader["p_Name"];
                 p.p_Address = (string)reader["p_Address"];
             }
@@ -137,10 +141,11 @@ namespace RentBook.Models.Publishing
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "Update Publishing set p_Name=@pName,p_Address=@pAddress where p_id=@pid";
+            string tSQL = "Update Publishing set p_Identifier=@pidentifier,p_Name=@pName,p_Address=@pAddress where p_id=@pid";
             
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("pid", p.p_id);
+            cmd.Parameters.AddWithValue("pidentifier", p.p_Identifier);
             cmd.Parameters.AddWithValue("pName", p.p_Name);
             cmd.Parameters.AddWithValue("pAddress", p.p_Address);
             
