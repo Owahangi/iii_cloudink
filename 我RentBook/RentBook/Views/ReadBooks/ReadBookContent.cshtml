@@ -1,0 +1,23 @@
+﻿@model RentBook.Models.ReadBooksModel
+@{
+    ViewBag.Title = "ReadBookContent";
+    Layout = "~/Views/Shared/ReadBook.cshtml";
+}
+
+
+
+@foreach (string c in Model.小說書籍內容)
+{
+    
+    if(c != "")
+    {
+        <p style="color:#000000;font-size:20px">
+            @c
+        </p>
+    }
+    //else
+    @*{
+        <br />
+    }*@
+}
+

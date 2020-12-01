@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentBookdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="a_id" />
+    </Key>
+    <Property Name="a_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="a_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="a_Image" Type="nvarchar" MaxLength="255" />
+    <Property Name="a_Birth" Type="date" />
+    <Property Name="a_Point" Type="int" />
+    <Property Name="a_Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BookCase">
+    <Key>
+      <PropertyRef Name="bc_id" />
+    </Key>
+    <Property Name="bc_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bc_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BookCaseBooks">
+    <Key>
+      <PropertyRef Name="bcb_id" />
+    </Key>
+    <Property Name="bcb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bc_id" Type="int" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="bcb_BookLastTime" Type="datetime" />
+    <Property Name="bcb_ReadRange" Type="int" />
+  </EntityType>
+  <EntityType Name="BookOutline">
+    <Key>
+      <PropertyRef Name="boh_id" />
+    </Key>
+    <Property Name="boh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="boh_Content" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="b_id" />
+    </Key>
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="b_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="b_Info" Type="nvarchar" MaxLength="4000" />
+    <Property Name="b_Image" Type="nvarchar" MaxLength="255" />
+    <Property Name="b_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="b_PublishedDate" Type="date" />
+    <Property Name="b_HourPrice" Type="int" />
+    <Property Name="b_ISBN" Type="nvarchar" MaxLength="100" />
+    <Property Name="b_AgeRating" Type="int" />
+    <Property Name="b_Likes" Type="int" />
+    <Property Name="b_Series_yn" Type="nchar" MaxLength="1" />
+    <Property Name="b_Put_yn" Type="nchar" MaxLength="1" />
+    <Property Name="p_id" Type="int" />
+  </EntityType>
+  <EntityType Name="BooksAuthor">
+    <Key>
+      <PropertyRef Name="ba_id" />
+    </Key>
+    <Property Name="ba_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="a_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BooksChapters">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="c_FileName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="BooksMessage">
+    <Key>
+      <PropertyRef Name="bm_id" />
+    </Key>
+    <Property Name="bm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="m_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="bm_Message" Type="nvarchar" MaxLength="4000" />
+    <Property Name="bm_MessageTime" Type="datetime" />
+    <Property Name="bm_Score" Type="int" />
+  </EntityType>
+  <EntityType Name="BooksTags">
+    <Key>
+      <PropertyRef Name="bt_id" />
+    </Key>
+    <Property Name="bt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="t_id" Type="int" />
+  </EntityType>
+  <EntityType Name="BooksWishlist">
+    <Key>
+      <PropertyRef Name="bw_id" />
+    </Key>
+    <Property Name="bw_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bc_id" Type="int" />
+    <Property Name="b_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="bw_AddTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Name="f_id" Type="int" Nullable="false" />
+    <Property Name="f_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Level">
+    <Key>
+      <PropertyRef Name="l_id" />
+    </Key>
+    <Property Name="l_id" Type="int" Nullable="false" />
+    <Property Name="l_Image" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="RentBookdbModelStoreContainer">
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookCase" EntityType="Self.BookCase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookCaseBooks" EntityType="Self.BookCaseBooks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookOutline" EntityType="Self.BookOutline" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooksAuthor" EntityType="Self.BooksAuthor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooksChapters" EntityType="Self.BooksChapters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooksMessage" EntityType="Self.BooksMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooksTags" EntityType="Self.BooksTags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooksWishlist" EntityType="Self.BooksWishlist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Function" EntityType="Self.Function" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Level" EntityType="Self.Level" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
