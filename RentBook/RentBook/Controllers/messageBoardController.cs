@@ -48,12 +48,22 @@ namespace RentBook.Controllers
         }
 
         // GET: messageBoard
-        public ActionResult CreateMessageBoard()
+        public ActionResult CreateMessageBoard(string b_id)
         {
+            var book = db.Books.FirstOrDefault(b => b.b_id == b_id);
+            if (book == null)
+                return RedirectToAction("SeachItem");
+            var chap = db.BooksChapters.Where(c => c.b_id == b_id);
+            var msg = db.BooksMessage.Where(m => m.b_id == b_id);
+
             CmessageFactory factory = new CmessageFactory();
             List<CmessageSqlView> list = new List<CmessageSqlView>();
             list = factory.getAllmessageSqlViews();
+            var list2 = list.Where(m => m.b_id == b_id);
+
             // join tables
+            int AvgSore = factory.getAvgSorce();
+            ViewBag.AVGSORE = AvgSore;
             return View(list);
         }
 

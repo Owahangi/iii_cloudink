@@ -8,14 +8,28 @@ namespace RentBook.Models
 {
     public class CmessageFactory
     {
-         //bm_id 書籍留言序號
-         //b_id 書籍編號
-         //m_id 會員編號
-         //bm_Message 留言內容
-         //bm_MessageTime 留言時間
-         //bm_score 會員對書籍的評分
-         //m_Name dbo.Member資料表的會員暱稱
+        //bm_id 書籍留言序號
+        //b_id 書籍編號
+        //m_id 會員編號
+        //bm_Message 留言內容
+        //bm_MessageTime 留言時間
+        //bm_score 會員對書籍的評分
+        //m_Name dbo.Member資料表的會員暱稱
+        public int getAvgSorce()
+        {
+            int avgsore = 0;
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT AVG(bm_Score) FROM BooksMessage WHERE bm_Score > 0 AND b_id=@b_id ";
+            cmd.Parameters.Add(avgsore);
+            cmd.ExecuteNonQuery();
+            con.Close();
 
+            return avgsore;
+        }
         public List<CmessageSqlView> getAllmessageSqlViews()
         {
             return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id=bm.m_id ", null);
