@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+    <!-- Title -->
+    <title>新聞頁面</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    
+</head>
+<style>
+.mybg1
+{
+ font-weight: bolder;
+ background-color: whitesmoke;
+}
+.readmoreposition
+{
+ margin-top: 120px;
+}
+.myborder1
+{
+border-style: solid #4dd2ff;
+}
+.hovereffect {
+width:100%;
+height:100%;
+float:left;
+overflow:hidden;
+position:relative;
+text-align:center;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+display:block;
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect h2 {
+text-transform:uppercase;
+color:#fff;
+text-align:center;
+position:relative;
+font-size:17px;
+background:rgba(0,0,0,0.6);
+-webkit-transform:translatey(-100px);
+-ms-transform:translatey(-100px);
+transform:translatey(-100px);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+padding:10px;
+}
+
+.hovereffect a.info {
+text-decoration:none;
+display:inline-block;
+text-transform:uppercase;
+color:#fff;
+border:1px solid #fff;
+background-color:transparent;
+opacity:0;
+filter:alpha(opacity=0);
+-webkit-transition:all .2s ease-in-out;
+transition:all .2s ease-in-out;
+margin:50px 0 0;
+padding:7px 14px;
+}
+
+.hovereffect a.info:hover {
+box-shadow:0 0 5px #fff;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+.hovereffect:hover h2,.hovereffect:hover a.info {
+opacity:1;
+filter:alpha(opacity=100);
+-ms-transform:translatey(0);
+-webkit-transform:translatey(0);
+transform:translatey(0);
+}
+
+.hovereffect:hover a.info {
+-webkit-transition-delay:.2s;
+transition-delay:.2s;
+}
+
+.box{
+    width: 300px;
+    padding: 3px;
+    border: none;
+}
+.ellipsis{
+    font-size: 16px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.ellipsis-2{
+    font-size: 16px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+.myborder{
+    border-bottom:1px dotted #cccccc;
+}
+.myheight1{
+    height: 200px;
+    width: 100%;  
+    background-size: contain;  
+    
+}
+.myheight2{
+    height: 100%;
+    width: auto;
+    size: contain;
+    position: relative;    
+}
+.myheight3{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    position: relative;
+}
+.myheight3:hover{
+    transition: 0.5s;
+    opacity: 0.5;
+    box-shadow: 1px 1px 5px #000000;
+}
+.mypost1{
+    width: 100%;
+    height: auto;
+}
+
+
+
+</style>
+<script>
+
+</script>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
+
+    <!-- Subscribe Modal -->
+    <div class="subscribe-newsletter-area">
+        <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body">
+                        <h5 class="title">Subscribe to my newsletter</h5>
+                        <form action="#" class="newsletterForm" method="post">
+                            <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                            <button type="submit" class="btn original-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <!-- Breaking News Area -->
+                    <div class="col-12 col-sm-8">
+                        <div class="breaking-news-area">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">Hello World!</a></li>
+                                    <li><a href="#">Hello Universe!</a></li>
+                                    <li><a href="#">Hello Original!</a></li>
+                                    <li><a href="#">Hello Earth!</a></li>
+                                    <li><a href="#">Hello Colorlib!</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Top Social Area -->
+                    <div class="col-12 col-sm-4">
+                        <div class="top-social-area">
+                            <div class="subscribe-btn">
+                                <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">登入</a>
+                                <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">註冊</a>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="search"></div>
+        <div id="close-icon"></div>
+        <!-- Logo Area -->
+       
+
+        <!-- Nav Area -->
+        <div class="original-nav-area" id="stickyNav">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
+
+                        <!-- Subscribe btn 
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--> 
+                        <div>
+                            <form class="form-inline" action="search.aspx" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="searchstring" class="form-control" placeholder="請輸入商品名稱" size="25">
+                                    <select>
+                                        <option value="">全部</option>
+                                        <option>漫畫</a>
+                                        <option>小說</a>                                            
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-light border-dark">
+                                            <span>&#x1f50d;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu" id="originalNav">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                
+                                
+
+                                <ul>
+                                    <li><a href="index.html">首頁</a></li>
+                                    <li><a href="#">漫畫</a></li>
+                                    <li><a href="#">小說</a></li>
+                                    <li><a href="about-us.html">今日最新</a></li>
+                                    <li><a href="#">排行榜</a></li>
+                                    <li><a href="contact.html">兌換點數</a></li>
+                                    <li><a href="contact.html">購物車</a></li>
+                                    
+                                </ul>
+                                <!-- Search Form  -->
+                                
+                                
+                                
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<div class="container">
+    <div class="mypost1">
+        <img src="網站圖片庫/鏡文學9.jpg" class="mypost1">
+    </div>
+    <div class="row">
+        <div class="col-12 mt-5">
+        <p class=" badge badge-dark" style="font-size: 18px;">★ 最新消息</p>
+        </div>
+        <div class="col-12">
+            <h2>懸崖上的樂園——專訪吳曉樂《我們沒有祕密》</h2>
+            <p>文｜引用翟翱 2020-08-25</p>
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <img src="" style="box-shadow: 2px 2px 5px #000000;">
+        </div>
+        <div class="col-12 mt-5">
+            
+            <p>吳曉樂很在意臉。不是她自己的，而是她筆下人物的面孔，以及新聞事件裡千人一面的受害者。</p>
+
+
+
+            <p>採訪時，她不止一次提到「我想要她們長回自己的臉。」吳曉樂說，社會有張受害者臉譜，一旦受傷，我們就要活生生的人戴上，變成乖順愚笨天真爛漫的角色。</p>
+
+
+
+                <p>「我們想保護一個人，就會把他們修飾得很笨很無知，好讓他們獲得同情，同時剝奪他們的個性。我想寫一個性的故事，不用大家習慣的寫法——女人很可憐，男人很可惡，社會不尊重女人。」</p>
+
+
+
+                    <p>這便是她最新長篇小說《我們沒有祕密》所抵抗的，一種危險的抵抗。《我們沒有祕密》吳曉樂第二本長篇，也是醞釀最久的小說，一直想寫，卻一直找不到正確的方式敘述。寫完了，她仍在自我懷疑。</p>
+
+
+
+
+
+<h6>受害者長出自己的臉</h6>
+
+
+
+<p>小說起源於幾年前友人告訴她一部父親與眾女兒亂倫的紀錄片。加害者與受害者的標籤已貼妥，該是鄉民征討獸父的時候，可鏡頭裡其中一名女兒卻說：「如果晚上爸爸沒有來找我，我會難過。」這讓吳曉樂思考，受害者的臉，是什麼樣子？</p>
+
+
+
+    <p>《我們沒有祕密》是吳曉樂迄今最危險作品。因為這是後「me too」時代難以討好公理（或鄉民）的故事：女孩在名為愛意或初戀的樂園裡，樂園卻在顫顫巍巍的懸崖上，「我小說裡的受害者可以是壞人嗎？可以可愛嗎？我們可以原諒一個非典型的受害者嗎？」稍有不慎，女孩陷落。吳曉樂也是，完稿後，她仍不斷自問「這樣寫，真的可以嗎？」</p>
+
+
+
+ <p>她自我懷疑的是「讓受害者嘗到甜頭，會不會抵銷她／他的痛苦？」而這正是吳曉樂想通過《我們沒有祕密》試探的謎底。謎底在深淵，打撈過程往復於黑暗，她坦言幾度想放棄，最後花了一年半才完成，「寫這本書像在觀落陰，每次動筆心裡都會抗拒，因為我會跟著沉下去，寫完會憂鬱非常久。」支撐她的動力又是什麼？「後來我筆下的女主角跳了出來，希望我捍衛她們的臉。」</p>
+
+
+
+ <p>她們的臉，一張張在深淵裡模糊不清的臉。</p>
+
+<h6>小鎮對壞女人的危險</h6>
+
+
+
+<p>聰明如吳曉樂，知道讀者不會輕易與她一同到深淵，所以用乍看像狗血韓劇的誘餌當開頭——妻子消失了，妻子有祕密。律師「范衍重」妻「吳辛屏」人間蒸發，曾有家暴疑雲的律師被懷疑是凶手。同時，他來到妻長大的小鎮找人，卻發現在此，祕密以鎮為單位，大而噬人。</p>
+
+
+
+    <p>過程中，范衍重遇見妻的家人與過往友人「奧黛莉」與「宋懷萱」，然而每個人口中的吳辛屏都不一樣，他都不認得。妻的面孔漸漸模糊了，她曾是性侵受害者，是說謊的人，是十八歲就心如蛇蠍的高中生，也是他日日夜夜的枕邊人。最終，吳曉樂沒有閃避，不是虛晃一招，給出了用祕密交換祕密，以謊言抵達謊言的結局。</p>
+
+
+
+        <p>或許是經歷了作品影視化，《我們沒有祕密》看似有別於《你的孩子不是你的孩子》與《上流兒童》，脫離吳曉樂熟悉的教養議題，更具驚悚小說的類型框架，結局也轉了好幾層。然而直到小說中段讀者才會發現，《我們沒有祕密》仍直指家庭「行禮如儀」冷冽之逼人。家的空廢，成為小說的悲劇來源。至於主角們老家坐落的小鎮，更是耳語交織的咒陣。</p>
+
+
+
+        <p>吳曉樂說，小鎮對壞女人是很不友善的，而且女人很容易成為壞女人，「我媽在澎湖長大，她跟我說不理解為何大家會懷念所謂的小鎮風情。因為我阿嬤生了五個女兒，只要有男生站在門口等她們，就會被閒言閒語，說不知廉恥。」吳曉樂引張亦絢談《房思琪的初戀樂園》的說法，封閉的空間對女性而言，「鄰居『守望相助』之『助』，更近『助紂為虐』。」</p>
+    <h6>越想越不對勁的故事 </h6>
+    <p>妻子長大的小鎮是封閉的空間，對外來者范衍重來說則像迷陣，《我們沒有祕密》也用類型迷陣作為布局，又敢於直球對決。吳曉樂問我「怎樣？這次有進步吧？」答案是肯定的——如果進步指的是勇於走寫作的鋼索，去問沒人敢問，可十足八卦，人人都想知道的事，所謂的「越想越不對勁」。被侵犯了，可不可以越想越不對勁？想越久，正義是不是就會離你越遠？</p>
+
+
+
+    <p>「鄉民看到性侵新聞，都會推文說價錢談不攏，又一個『越想越不對勁』。我想講的就是越想越不對勁的故事，我要說，如果你人生沒有越想越不對勁，那你不是神就是白痴。」</p>
+
+
+
+    <p>人們看到性侵新聞，已練就膝反射思考，標籤當事者。吳曉樂說，這時就需要文學把這個空間撐出來讓人思考，「如果我的小說變成新聞，就只有加害者與受害者，但你不知道他們長什麼樣子，法律不能處理的，就交給文學。」</p>
+
+
+
+    <p>2018年，吳曉樂寫《上流兒童》，曾長時間田野調查，「學習如何正確理解受訪者所說的話，並在短時間內記下她們提供的資料。」寫《我們沒有祕密》，吳曉樂同樣花費大量時間田調。為了回應紀錄片裡「女兒如果期待爸爸走進她的房間，那一瞬間她在想什麼？」吳曉樂閱讀性侵調查報告，採訪好幾名性平委員，「田調時，我發現很多女性表示自己兄弟對她們有性接觸，即使是一瞬間的碰觸，對女性來說也像烙痕。」</p>
+
+
+
+    <p>吳曉樂強調田調的重要，「過程中遇見的個案故事、性平委員，以及讀過諮商師的文章，幫助我走完這本小說，因為這麼困難的事都有人在做了，而我只是寫小說。」既然《我們沒有祕密》寫非典型的性受害者，那麼受害者經驗是否可以被扭轉或克服？——這是一個危險同時僭越的問題。</p>
+
+
+
+
+
+    <p>不過吳曉樂沒有中計。「我沒有答案，但我想這一切會發生，是不是因為我們不能談論年輕的性？男生練習性的方式很強調碰觸，例如小男孩很愛玩抓雞雞。當很多家長在崩潰小學不能有性教育，我就想到那些在抓雞雞的小男孩，他們總需要知道性吧？可是這種性探索的界線到底在哪？我自己朦朧的感覺是，至少讓我們開始談性吧。我的女性友人被媽媽問：『如果你不是處女，那你可以給老公什麼？』友人回答：『技術。』」 </p>
+
+
+
+    <p>掌握身體如同書寫巧藝，「最終的問題或許是，女孩們有自己的性故事，可是別人都幫她們寫好了。」故事被寫定，樂園傾頹了，女孩永遠只能是失敗者。因此，《我們沒有祕密》在懸崖邊搭建樂園，寫出不一樣的性的故事。</p>
+
+<h6>當獵物自願坐上椅子</h6>
+巧合的是，寫這本小說時，吳曉樂的律師朋友成了性平委員，有一天丟給她一個問題：「如果你的12歲女兒，給人摸胸部，你可以接受她是自願的嗎？」12歲的女孩，是不是也有自己的臉？</p>
+
+
+
+<p>吳曉樂坦言，「我很難有答案，只能跟我朋友說，至少你要讓那個女孩知道性不髒。」這時，她變出各式關於性的譬喻，「就像甜點，很好吃，但你可能還不能吃。也像開車，開車很快樂，只是你這個時候還不能飆車。」如何描述性又不汙名化，顯然是難題。</p>
+
+
+
+<p>吳曉樂在小說裡這樣描述獵與被獵的複雜關係：「十歲的她突然被放到一張太高的椅子上，又相信只有把她抱上去的人，才可以放她下來。」《我們沒有祕密》是危險的，也在於吳曉樂想呈現性受害者的面貌，又不汙名性，可偏偏我們習慣找可怪罪的對象。</p>
+
+
+
+<p>「然而，受害者跟加害者的關係是很扭曲的，有自己的生態系，裡頭可能有快樂，可你敢不敢去講這個快樂？我敢。我想讓讀者知道一切都是人性的思考，受害者不是這麼笨，是有吃到糖才會繼續走下去。」像格林兄弟的糖果屋童話。吳曉樂試著讓她的角色有自己的面孔，也嘆道「讓她們長出臉，真的好難，她們的聲音一直在跟我對話。我會想，她們是為了想要被愛嗎？可是她們怎麼可以想這樣被愛？最後我問自己，我要寫的是一個標籤，還是一個人？」</p>
+
+
+
+<p>《我們沒有祕密》最後其實仍有祕密，吳曉樂也習慣接收祕密，例如她說婚姻不是靠愛維持的，而是對彼此的供需暸若指掌才能長久，「共享一種黑暗，只有你能看出檯面下的我。」就像小說裡范衍重本來認為婚姻是謊言，後來卻發現「老婆的謊言比他扎實。」</p>
+
+
+
+<p>吳曉樂說，她的創作觀察多是靠聽來的，而不是觀看，因為大家很愛找她說心事。我以為其中有訣竅，吳曉樂卻說，「你只要給他們一張椅子，他們就會坐下來滔滔不絕，因為每個人都想搶先講自己的版本。」</p>
+
+
+
+<p>所以渴求的力比多真的無所不在，你想被傾聽，很輕易的，就會坐上高高的椅子，卻不知怎樣下來。</p>
+    
+    
+<h6>【購書連結】</h6>>
+<p>博客來：</p>
+
+<a href="https://bit.ly/3fVTDsz">https://bit.ly/3fVTDsz</a>> <p>獨家書封親簽版</p>
+
+<a href="https://bit.ly/342XbHf">https://bit.ly/342XbHf</a> <p>一般版</p>
+
+<p>誠品：</p>
+
+<a href="https://bit.ly/3fV37Ek">https://bit.ly/3fV37Ek</a> <p>作者親簽 / 誠品獨家贈品--祕密感溫變色書卡</p>
+
+<p>金石堂：</p>
+
+<a href="https://bit.ly/2Y1Lmgx">https://bit.ly/2Y1Lmgx</a> <p>金石堂網路書店限定 【小草作x我們沒有秘密】花茶限定組合限量贈品版</p>
+
+<p>讀冊：</p>
+
+<a href="https://bit.ly/2Y1Yp1D">https://bit.ly/2Y1Yp1D</a> <p>【小草作x我們沒有秘密】花茶限定組合 限量贈品版</p>
+
+<p>Momo：</p>
+
+<a href="https://bit.ly/3463o57">https://bit.ly/3463o57</a> <p>【小草作x我們沒有秘密】花茶限定組合 限量贈品版  </p>
+    
+    
+    
+    </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                   
+                    <!-- Footer Nav Area -->
+                    <div class="classy-nav-container breakpoint-off">
+                        <!-- Classy Menu -->
+                        <nav class="classy-navbar justify-content-center">
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- close btn -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="#">首頁</a></li>
+                                        <li><a href="#">漫畫</a></li>
+                                        <li><a href="#">小說</a></li>
+                                        <li><a href="#">今日最新</a></li>
+                                        <li><a href="#">排行榜</a></li>
+                                        <li><a href="#">兌換點數</a></li>
+                                        <li><a href="#">購物車</a></li>
+                                        <li><a href="#">登入|註冊</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                    
+                    <!-- Footer Social Area -->
+                    <div class="footer-social-area mt-30">
+                        
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+
+</body>
+
+</html>

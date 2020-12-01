@@ -28,7 +28,6 @@
         <input type="hidden" name="bType" value="@Model.b_Type" />
         <input type="hidden" name="bcChapters" value="@Model.bc_Chapters" />
 
-
         <div class="bs-stepper-content" id="st">
 
             <div id="step1" class="content" role="tabpanel">
@@ -64,7 +63,7 @@
                     成功上架書籍!
                 </div>
                 @*<button type="button" class="btn btn-primary btn-block" onclick="stepper.previous()">繼續新增章節</button>*@
-                @Html.ActionLink("繼續新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, new {@class= "btn btn-primary btn-block" })
+                @Html.ActionLink("繼續新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, new { @class = "btn btn-primary btn-block" })
             </div>
         </div>
     </div>

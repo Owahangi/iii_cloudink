@@ -76,196 +76,746 @@ C:\Users\USER\Desktop\master\iii_cloudink\RentBook\RentBook\obj\Debug\RentBook.c
 C:\Users\USER\Desktop\master\iii_cloudink\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
 C:\Users\USER\Desktop\master\iii_cloudink\RentBook\RentBook\obj\Debug\RentBook.dll
 C:\Users\USER\Desktop\master\iii_cloudink\RentBook\RentBook\obj\Debug\RentBook.pdb
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\RentBook.dll.config
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\RentBook.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\RentBook.pdb
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csc.exe
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csc.exe.config
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csc.rsp
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csi.exe
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csi.exe.config
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\csi.rsp
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.AppContext.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Console.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Net.Http.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\vbc.exe
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\vbc.exe.config
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\vbc.rsp
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Helpers.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Mvc.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Razor.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Razor.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Helpers.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\System.Web.Mvc.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\obj\Debug\RentBook.dll
-C:\Users\iii\Desktop\git\iii_master\RentBook\RentBook\obj\Debug\RentBook.pdb
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\RentBook.dll.config
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\RentBook.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\RentBook.pdb
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\csc.exe
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Helpers.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Mvc.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Razor.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Razor.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Helpers.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\System.Web.Mvc.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\obj\Debug\RentBook.dll
-C:\Users\USER\Desktop\Git\iii_master\RentBook\RentBook\obj\Debug\RentBook.pdb
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\RentBook.dll.config
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\RentBook.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\RentBook.pdb
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csc.exe
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csc.exe.config
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csc.rsp
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csi.exe
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csi.exe.config
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\csi.rsp
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.AppContext.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Console.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Net.Http.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\vbc.exe
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\vbc.exe.config
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\vbc.rsp
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Helpers.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Mvc.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Razor.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Razor.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Helpers.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\System.Web.Mvc.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\obj\Debug\RentBook.dll
-C:\Users\iii\Desktop\git\iii_Owahangi\RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\iii\Desktop\RentBook\RentBook\bin\RentBook.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\RentBook.pdb
+C:\Users\iii\Desktop\RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\iii\Desktop\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\iii\Desktop\RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\iii\Desktop\RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\iii\Desktop\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\RentBook.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\RentBook.pdb
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\710plus\Desktop\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\710plus\Desktop\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\710plus\Desktop\RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\710plus\Desktop\RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Buffers.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Memory.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Buffers.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Memory.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\PagedList.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\PagedList.Mvc.dll
+C:\Users\iii\Desktop\RentBook\RentBook\bin\PagedList.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\PagedList.Mvc.xml
+C:\Users\iii\Desktop\RentBook\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\RentBook.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\RentBook.pdb
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\PagedList.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\PagedList.Mvc.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Buffers.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Memory.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\PagedList.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\PagedList.Mvc.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Buffers.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Memory.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\iii\Desktop\專題MVC練習\RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\RentBook.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\RentBook.pdb
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\PagedList.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\PagedList.Mvc.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Buffers.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Memory.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\PagedList.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\PagedList.Mvc.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Buffers.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Memory.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\我RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\我RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\iii\Desktop\我RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\iii\Desktop\我RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\RentBook.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\RentBook.pdb
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\PagedList.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\PagedList.Mvc.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Buffers.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Memory.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\PagedList.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\PagedList.Mvc.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Buffers.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Memory.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\iii\Desktop\1127教室\我RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\RentBook.dll.config
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\RentBook.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\RentBook.pdb
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csc.exe
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csc.exe.config
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csc.rsp
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csi.exe
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csi.exe.config
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\csi.rsp
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Console.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\vbc.exe
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\vbc.rsp
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\EntityFramework.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\PagedList.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\PagedList.Mvc.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Buffers.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Memory.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Helpers.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Mvc.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Razor.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\EntityFramework.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\PagedList.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\PagedList.Mvc.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Buffers.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Memory.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Razor.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Helpers.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\System.Web.Mvc.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\obj\Debug\RentBook.dll
+C:\Users\710plus\Desktop\1130教室\我RentBook\RentBook\obj\Debug\RentBook.pdb
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\RentBook.dll.config
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\RentBook.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\RentBook.pdb
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csc.exe
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csc.exe.config
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csc.rsp
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csi.exe
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csi.exe.config
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\csi.rsp
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.AppContext.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Console.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.IO.Compression.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Net.Http.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Net.Sockets.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.ValueTuple.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Xml.XPath.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\vbc.exe
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\vbc.exe.config
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\vbc.rsp
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\VBCSCompiler.exe
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\EntityFramework.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\EntityFramework.SqlServer.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\PagedList.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\PagedList.Mvc.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Buffers.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Memory.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Numerics.Vectors.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Text.Encodings.Web.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Helpers.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Mvc.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Razor.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.Deployment.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.Razor.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\EntityFramework.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\EntityFramework.SqlServer.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\PagedList.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\PagedList.Mvc.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Buffers.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Memory.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Numerics.Vectors.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Text.Encodings.Web.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Razor.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.Deployment.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Webpages.Razor.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Helpers.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\System.Web.Mvc.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\obj\Debug\RentBook.csprojAssemblyReference.cache
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\obj\Debug\RentBook.csproj.CoreCompileInputs.cache
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\obj\Debug\RentBook.csproj.CopyComplete
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\obj\Debug\RentBook.dll
+C:\Users\iii\Desktop\新增資料夾 (2)\RentBook\obj\Debug\RentBook.pdb

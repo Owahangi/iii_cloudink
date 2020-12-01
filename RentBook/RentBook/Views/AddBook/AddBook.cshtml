@@ -1,7 +1,7 @@
 ﻿@using RentBook.Models.AddBook
 @{
     ViewBag.Title = "AddBook";
-    Layout = "~/Views/Shared/_AddBookLayout.cshtml";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
 }
 
 <div class="bs-stepper">
@@ -28,7 +28,7 @@
             </div>
     </div>
     <div class="bs-stepper-content" id="st">
-        <form class="container" id="form2" action="~/AddBook/SaveNewBook">
+        <form class="container" id="form2" action="~/AddBook/SaveNewBook" method="post" enctype="multipart/form-data">
 
             <div id="step1" class="content" role="tabpanel">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
