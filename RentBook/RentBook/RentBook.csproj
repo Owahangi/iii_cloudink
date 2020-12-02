@@ -4302,6 +4302,7 @@
     <Compile Include="Models\EditBook\EditBookFactory.cs" />
     <Compile Include="Models\EditBook\EditBookList.cs" />
     <Compile Include="Models\EditBook\EditBookModel.cs" />
+    <Compile Include="Models\Point\PointBookCaseBooksModel.cs" />
     <Compile Include="Models\Point\PointFactory.cs" />
     <Compile Include="Models\Point\PointModel.cs" />
     <Compile Include="Models\Publishing\PublishingFactory.cs" />
@@ -4336,6 +4337,7 @@
     <Content Include="Views\Publishing\Edit.cshtml" />
     <Content Include="Views\Point\List.cshtml" />
     <Content Include="Views\Point\AddPoint.cshtml" />
+    <Content Include="Views\Point\ShopMonthlyCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

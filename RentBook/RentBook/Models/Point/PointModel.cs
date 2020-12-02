@@ -52,8 +52,14 @@ namespace RentBook.Models.Point
         public int bc_id { get; set; }
         public DateTime bcb_BookLastTime { get; set; }
 
+        //  MonthlyCard 資料表
+        public string bmc_id{ get; set; }
+        public string bmc_Name { get; set; }
+        public int bmc_Date { get; set; }
+        public int bmc_Price { get; set; }
+
+
         // 其他應用(不是資料表的欄位)
         public int 購買天數 { get; set; }
-
     }
 }

@@ -162,5 +162,127 @@ namespace RentBook.Models.Point
             cmd2.ExecuteNonQuery();
             con.Close();
         }
+
+        public List<PointModel> 列出月卡方案(string m_id)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+            string tSQL = "select * from MonthlyCard";
+            SqlCommand cmd = new SqlCommand(tSQL,con);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<PointModel> list = new List<PointModel>();
+
+            while (reader.Read())
+            {
+                PointModel p = new PointModel();
+                p.m_id = m_id;
+                p.bmc_id = (string)reader["bmc_id"];
+                p.bmc_Name = (string)reader["bmc_Name"];
+                p.bmc_Date = (int)reader["bmc_Date"];
+                p.bmc_Price = (int)reader["bmc_Price"];
+
+                list.Add(p);
+            }
+
+            return list;
+        }
+
+        public void 儲存月卡資料(PointModel p)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            int 消費完的會員點數 = 回傳目前此會員的剩餘點數(p.m_id) - p.bmc_Price;
+            int 會員書櫃編號 = 回傳目前此會員的書櫃編號(p.m_id);
+
+            DateTime 購買天數 = DateTime.Now.Date;
+
+            // 購買三十天月卡
+            if(p.msd_CostPoint == 300)
+            {
+                DateTime dt = DateTime.Now;
+                購買天數 = dt.AddDays(30);
+            }
+
+            // 購買六十天月卡
+            if (p.msd_CostPoint == 600)
+            {
+                DateTime dt = DateTime.Now;
+                購買天數 = dt.AddDays(60);
+            }
+
+            // 購買九十天月卡
+            if (p.msd_CostPoint == 850)
+            {
+                DateTime dt = DateTime.Now;
+                購買天數 = dt.AddDays(90);
+            }
+
+
+            // 更新到會員資料表
+            string tSQL = "Update Member set m_Point=@mPoint";
+            if(購買天數 != DateTime.Now.Date)
+            tSQL += ",m_MonthlyLastTime=@mMonthlyLastTime";
+            tSQL += " where m_id=@mid";
+
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("mid", p.m_id);
+            cmd.Parameters.AddWithValue("mPoint", 消費完的會員點數);
+            if (購買天數 != DateTime.Now.Date)
+            cmd.Parameters.AddWithValue("mMonthlyLastTime", 消費完的會員點數);
+
+            cmd.ExecuteNonQuery();
+
+            // 將消費紀錄 儲存到 MemberShopDetail 資料表
+            string tSQL1 = "Insert into MemberShopDetail (m_id,b_id,msd_CostPoint,msd_DateTime,msd_TotalPoint)Values(@mid,@bid,@msdCostPoint,@msdDateTime,@msdTotalPoint)";
+            SqlCommand cmd1 = new SqlCommand(tSQL1, con);
+            cmd1.Parameters.AddWithValue("mid", p.m_id);
+            cmd1.Parameters.AddWithValue("bid", p.bmc_id);
+            cmd1.Parameters.AddWithValue("msdCostPoint", p.bmc_Price);
+            cmd1.Parameters.AddWithValue("msdDateTime", DateTime.Now);
+            cmd1.Parameters.AddWithValue("msdTotalPoint", 消費完的會員點數);
+
+            cmd1.ExecuteNonQuery();
+
+            // 找出這個會員的書櫃內的所有書籍時間
+            string tSQL2 = "select * from BookCaseBooks where bc_id=@bcid";
+            SqlCommand cmd2 = new SqlCommand(tSQL2, con);
+            cmd2.Parameters.AddWithValue("bcid", 會員書櫃編號);
+            SqlDataReader reader = cmd2.ExecuteReader();
+
+            List<PointBookCaseBooksModel> list = new List<PointBookCaseBooksModel>();
+            while (reader.Read())
+            {
+                PointBookCaseBooksModel pbcb = new PointBookCaseBooksModel();
+                pbcb.b_id = (string)reader["b_id"];
+                pbcb.bcb_BookLastTime = (DateTime)reader["bcb_BookLastTime"];
+                list.Add(pbcb);
+            }
+
+            reader.Close();
+
+            // 更新 BookCaseBooks 的書籍時間
+
+            if (list != null)
+            {
+                string tSQL3 = "";
+                SqlCommand cmd3 = new SqlCommand();
+                cmd3.Connection = con;
+
+                foreach (PointBookCaseBooksModel pcb in list)
+                {
+                    DateTime dtt = pcb.bcb_BookLastTime;
+                    dtt.AddDays(p.bmc_Date);
+
+                    tSQL3 = "Update BookCaseBooks set bcb_BookLastTime='" + dtt + "' where bc_id='"+ pcb.b_id + "'";
+                    cmd3.CommandText = tSQL3;
+                    cmd3.ExecuteNonQuery();
+                }
+            }
+
+            con.Close();
+        }
+
     }
 }

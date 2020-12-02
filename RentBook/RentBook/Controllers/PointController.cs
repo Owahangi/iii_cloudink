@@ -71,5 +71,34 @@ namespace RentBook.Controllers
 
             return RedirectToAction("List");
         }
+
+        public ActionResult ShopMonthlyCard(string m_id)
+        {
+            PointFactory factory = new PointFactory();
+            List<PointModel> list = factory.列出月卡方案(m_id);
+
+            return View(list);
+        }
+
+        // 儲存月卡資料
+        public ActionResult SaveMonthlyCard(PointModel p)
+        {
+            PointFactory factory = new PointFactory();
+
+            int 使用者剩餘點數 = factory.回傳目前此會員的剩餘點數(p.m_id);
+
+            if (使用者剩餘點數 > Convert.ToInt32(Request.Form["msd_CostPoint"]))
+            {
+                p.m_id = Request.Form["m_id"];
+                p.bmc_Price = Convert.ToInt32(Request.Form["bmc_Price"]);
+                factory.儲存月卡資料(p);
+            }
+            else
+            {
+                // 使用者錢不夠
+            }
+
+            return RedirectToAction("ShopMonthlyCard", new { m_id = p.m_id });
+        }
     }
 }
