@@ -1,0 +1,106 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<RentBook.Books>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_PublishedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_HourPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_AgeRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Likes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Series_yn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().b_Put_yn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().p_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Info)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_PublishedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_HourPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_AgeRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Likes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Series_yn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Put_yn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.b_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.b_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.b_id })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.PagedListPager(Model,page =>Url.Action("Index",new { page }))

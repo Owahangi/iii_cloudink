@@ -1,0 +1,210 @@
+﻿@model IEnumerable<RentBook.Books>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12 mt-2">
+            <div class="breadcrumb__links">
+                <span>搜尋結果: </span>
+                <a href="./categories.html">小說</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mt-30">
+        <div class="col-12 col-md-2">
+            <div class="sidebar-widget-area">
+
+                <div class="widget-content">
+                    <ul class="list-group">
+                        <legend>分類</legend>
+                        <li class="list-group-item dropright text-center">
+                            <a class="dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" style="font-size: 18px;">漫畫</a>
+                            <ul class="dropdown-menu">
+                                <li class="text-center"><a href="#" class="dropdown-item">格鬥</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">冒險</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">少男</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">少女</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">超女</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">警探</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">戰國</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">機械</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">科幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">魔法</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">妖魔</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">競技</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">烹飪</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">職業</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">恐怖</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">搞笑</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">校園</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">戰爭</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">港產</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">短篇</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">其他</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item dropright text-center">
+                            <a class="dropdown dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" style="font-size: 18px;">小說</a>
+                            <ul class="dropdown-menu">
+                                <li class="text-center"><a href="#" class="dropdown-item">童話</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">玄幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">武俠</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">偵探</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">恐怖</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">同人</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">科幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">奇幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">歷史</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">網遊</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">耽美</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="list-group-item text-center" href="#" style="font-size: 18px;">今日最新</a>
+                        </li>
+                        <li>
+                            <a class="list-group-item text-center" href="#" style="font-size: 18px;">排行榜</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-10">
+            <h5>共 (count) 部作品</h5>
+            <hr>
+            @foreach (var item in Model)
+            {
+            <div class="row mt-3 myborder">
+                <div>
+                    <input type="hidden" value="@item.b_id" />
+                </div>
+                <div class=" col-md-3 myheight1" style="text-align:center;">
+                    <a href="#"><img src="@Html.DisplayFor(modelItem => item.b_Image)" class="myheight2 justify-content-center"></a>
+                </div>
+                <div class="col-md-9">
+                    <div class="text-body">
+                        <div class="box"></div>
+                        <div class="title">
+                            <a href="#"><h5>@Html.DisplayFor(modelItem => item.b_Name)</h5></a>
+                        </div>
+                        <p class="ellipsis-2" style="color: black;"> @Html.DisplayFor(modelItem => item.b_Info)
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center" id="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.b_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Info)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_PublishedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_HourPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_AgeRating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Likes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Series_yn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.b_Put_yn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Info)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_PublishedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_HourPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_AgeRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Likes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Series_yn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_Put_yn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>*@
