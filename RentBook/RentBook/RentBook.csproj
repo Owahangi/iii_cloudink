@@ -2776,6 +2776,7 @@
     <Compile Include="BooksWishlist.cs">
       <DependentUpon>dbRentBookModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\messageBoardController.cs" />
     <Compile Include="Models\messageBoardModels\messageBoardController.cs" />
     <Compile Include="dbRentBookModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -2940,7 +2941,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

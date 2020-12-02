@@ -15,6 +15,7 @@ namespace RentBook.Models
         //bm_MessageTime 留言時間
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
+
         public int getAvgSorce(string b_id)
         {
             int avgsore = 0;
@@ -30,12 +31,15 @@ namespace RentBook.Models
 
             return avgsore;
         }
+
+        //get join tables
         public List<CmessageSqlView> getAllmessageSqlViews()
         {
-            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id=bm.m_id ", null);
+            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id = bm.m_id ", null);
             //SQL語法 where ... 待修正
         }
 
+        //get join table input sql
         public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
@@ -76,10 +80,13 @@ namespace RentBook.Models
 
             return list;
         }
+
+        //get table(BooksMessage)
         public List<CmessageBoard> getAll_BooksMessage() 
         {
             return getBySql_BooksMessage("select * from BooksMessage ", null);
         }
+
         public CmessageBoard getByBmId_BooksMessage(int bm_id) 
         {
             List<SqlParameter> paras = new List<SqlParameter>();
@@ -94,6 +101,7 @@ namespace RentBook.Models
             return list[0];
         }
 
+        // delete Message
         public void delete_BooksMessage(CmessageBoard p) 
         {
             List<SqlParameter> list = new List<SqlParameter>();
