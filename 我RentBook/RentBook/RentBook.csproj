@@ -6998,6 +6998,7 @@
     <Content Include="Views\Shared\_CommonMemberLoveLayout.cshtml" />
     <Content Include="Views\Shared\LoginSignin.cshtml" />
     <Content Include="Views\Shared\_LoginedLayout.cshtml" />
+    <Content Include="Views\Shared\_MemberCentreLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

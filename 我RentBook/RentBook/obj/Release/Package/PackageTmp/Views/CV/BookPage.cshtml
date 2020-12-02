@@ -63,6 +63,7 @@
                             <a href="#" class="btn subscribe-btn border-dark">
                                 <span>Watch Now</span> <i class="fa fa-angle-right"></i>
                             </a>
+                            <>
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,14 @@
                                 {
                                     if (i < 5)
                                     {
-                                        @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters= Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                        if (Model.Books.b_Type == "小說")
+                                        {
+                                            @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                        }
                                         @*<li><a href="#" class="list-group-item">Ep.@Model.Chapters[i].bc_Content</a></li>*@
                                     }
 
@@ -97,7 +105,14 @@
                                     {
                                         if (i > 4)
                                         {
-                                            @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                            if (Model.Books.b_Type == "小說")
+                                            {
+                                                @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                            }
+                                            else
+                                            {
+                                                @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                            }
                                             @*<li><a href="#" class="list-group-item">Ep.@Model.Chapters[i].bc_Content</a></li>*@
                                         }
                                     }
@@ -123,14 +138,14 @@
                             <div class="anime__review__item__text">
                                 <h6>
                                     @item.m_Alias
-                                <span>@item.bm_MessageTime</span>
-                            </h6>
-                            <p>@item.bm_Message</p>
-                            <input type="hidden" name="b_id" value="@item.b_id" />
-                            <input type="hidden" name="m_id" value="@item.m_id" />
+                                    <span>@item.bm_MessageTime</span>
+                                </h6>
+                                <p>@item.bm_Message</p>
+                                <input type="hidden" name="b_id" value="@item.b_id" />
+                                <input type="hidden" name="m_id" value="@item.m_id" />
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
 
 
                 </div>
@@ -141,31 +156,30 @@
                     <form method="post" action="~/CV/BookPage">
                         <textarea placeholder="Your Comment" name="bm_Message"></textarea>
                         <input type="hidden" name="b_id" value="@Html.DisplayFor(model =>model.Books.b_id)" />
-                        <input type="hidden" name="m_id" value="m2" />
+                        <input type="hidden" name="m_id" value="m2" /><!--判定member留言板-->
                         <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
 
-                        <div class="rate-content mt-2">
-                            <input type="radio" name="bm_Score" id="input1" value="5"/>
+                        <div class="rate-content mt-2" id="rating">
+                            
+
                             <a href="#" id="r1" type="radio">
                                 <i class="fa fa-star-o" id="starstyle"></i>
                             </a>
-                            <input type="radio" name="bm_Score" id="input1" value="4"/>
                             <a href="#" id="r1" type="radio">
                                 <i class="fa fa-star-o" id="starstyle"></i>
                             </a>
-                            <input type="radio" name="bm_Score" id="input1" value="3"/>
                             <a href="#" id="r1" type="radio">
                                 <i class="fa fa-star-o" id="starstyle"></i>
                             </a>
-                            <input type="radio" name="bm_Score" id="input1" value="2"/>
                             <a href="#" id="r1" type="radio">
                                 <i class="fa fa-star-o" id="starstyle"></i>
                             </a>
-                            <input type="radio" name="bm_Score" id="input1" value="1"/>
                             <a href="#" id="r1" type="radio">
                                 <i class="fa fa-star-o" id="starstyle"></i>
                             </a>
-                        </div>
+                            <input type="hidden" name="bm_Score" id="input1" value="0" />
+                            
+                        </div>                        
 
                     </form>
 
@@ -198,7 +212,7 @@
                                 </div>
                             </div>
                         }
-                        
+
                     </div>
                 </div>
                 <div class="sidebar-widget-area">

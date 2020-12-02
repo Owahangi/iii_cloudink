@@ -50,10 +50,11 @@ namespace RentBook.Controllers
             if (cust != null)
             {
                 //存進Session
-                Session[CDictionary.SK_LOGINED_USER] = cust.m_Email;
-                
+                Session[CDictionary.SK_LOGINED_USER] = cust;
+
                 //重新導向到 首頁
                 return RedirectToAction("xxx","CV");
+                //return RedirectToAction("Home");
             }
             return View();
         }

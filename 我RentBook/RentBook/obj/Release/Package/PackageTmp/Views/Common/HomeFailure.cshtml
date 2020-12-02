@@ -1,0 +1,592 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+<h2>Home</h2>
+<div id="preloader">
+    <div class="preload-content">
+        <div id="original-load"></div>
+    </div>
+</div>
+
+<!-- Subscribe Modal -->
+<div class="subscribe-newsletter-area">
+    <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-body">
+                    <h5 class="title">Subscribe to my newsletter</h5>
+                    <form action="#" class="newsletterForm" method="post">
+                        <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here">
+                        <button type="submit" class="btn original-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ##### Header Area Start ##### -->
+<header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Breaking News Area -->
+                <div class="col-12 col-sm-8">
+                    <div class="breaking-news-area">
+                        <div id="breakingNewsTicker" class="ticker">
+                            <ul>
+                                <li><a href="#">Hello World!</a></li>
+                                <li><a href="#">Hello Universe!</a></li>
+                                <li><a href="#">Hello Original!</a></li>
+                                <li><a href="#">Hello Earth!</a></li>
+                                <li><a href="#">Hello Colorlib!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Social Area -->
+                <div class="col-12 col-sm-4">
+                    <div class="top-social-area">
+                        <div class="subscribe-btn">
+                            @*@Html.ActionLink("會員專區", "MemberHome")*@
+                            <a href="#" id="btnLogin" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">登入</a>
+                            <a href="#" id="btnRegister" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">註冊</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="search"></div>
+    <div id="close-icon"></div>
+    <!-- Logo Area -->
+</header>
+<!-- ##### Header Area End ##### -->
+<!-- ##### Hero Area Start ##### -->
+<div class="hero-area">
+    <!-- Hero Slides Area -->
+    <div class="hero-slides owl-carousel">
+        <!-- Single Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(~/網站圖片庫/鏡文學1.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="slide-content text-center">
+                            <div class="post-tag">
+                                <a href="#" data-animation="fadeInUp">lifestyle</a>
+                            </div>
+                            <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(~/網站圖片庫/鏡文學2.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="slide-content text-center">
+                            <div class="post-tag">
+                                <a href="#" data-animation="fadeInUp">lifestyle</a>
+                            </div>
+                            <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Single Slide -->
+        <div class="single-hero-slide bg-img" style="background-image: url(~/網站圖片庫/鏡文學3.jpg);">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="slide-content text-center">
+                            <div class="post-tag">
+                                <a href="#" data-animation="fadeInUp">lifestyle</a>
+                            </div>
+                            <h2 data-animation="fadeInUp" data-delay="250ms"><a href="single-post.html">Take a look at last night’s party!</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Hero Area End ##### -->
+<!-- ##### 第一欄Blog Wrapper Start ##### -->
+
+<div class="blog-wrapper section-padding-100 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+
+                <!-- Single Blog Area  -->
+                <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1000ms">
+                    <div class="row align-items-center ">
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-thumbnail hovereffect">
+                                <img src="~/網站圖片庫/鏡文學4.jpg" alt="">
+                                <div class="post-date">
+                                    <a href="#">12 <span>march</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- Blog Content -->
+                            <div class="single-blog-content">
+                                <div class="box"></div>
+                                <h4><a href="#" class="post-headline">【人氣作品，不看嗎？】讀者推薦排行榜　10/28 - 11/3</a></h4>
+                                <p class="ellipsis">鏡文學簽約作品每週【推薦排行榜】♕TOP1 《發條之森》TOP2《公司冗員清除驚喜包》TOP3《妖怪法則》TOP4《拼裝家庭》TOP5《禿鷹</p>
+                                <a href="#">繼續閱讀</a>
+                                <div class="post-meta">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area  -->
+                <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1000ms">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-thumbnail hovereffect">
+                                <img src="~/網站圖片庫/鏡文學5.jpg" alt="">
+                                <div class="post-date">
+                                    <a href="#">12 <span>march</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- Blog Content -->
+                            <div class="single-blog-content">
+                                <div class="box"></div>
+
+                                <h4><a href="#" class="post-headline">【鏡文學出版】拼裝家庭</a></h4>
+                                <p class="ellipsis">拼裝家庭Ami亞海 著出版日期：2020/10/30★對共居、教養有更多想像，勇敢迎來各種幸福的契機，觸碰現代家庭組合的多元可能。★人氣插畫家藍聖傑BLUE親自操刀書封繪製★未出版即售出改編影視版權─推薦─劉育豪 / 高雄市性別公民行動協會理事長蔡淇華 / 作家，臺中市惠文高中圖書館主任全世界都以為我們在一起，其實並沒有──先後與同一個女子結婚又離婚的兩個男人， 各自帶著與前妻生下的女兒一起生活；同住在一個屋簷下的他們，到底是不是一家人？何篤行離婚了。妻子留下還在襁褓中的女兒繆繆，頭也不回地離開了婚姻。</p>
+                                <a href="#">繼續閱讀</a>
+                                <div class="post-meta">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Single Blog Area  -->
+                <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1000ms">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="single-blog-thumbnail hovereffect">
+                                <img src="~/網站圖片庫/鏡文學9.jpg" alt="">
+                                <div class="post-date">
+                                    <a href="#">10 <span>march</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <!-- Blog Content -->
+                            <div class="single-blog-content mt-50">
+                                <div class=""></div>
+
+                                <h4>
+                                    <a href="#" class="post-headline">
+                                        懸崖上的樂園——專訪吳曉樂《我們沒有祕密》
+                                    </a>
+                                </h4>
+                                <p class="ellipsis-2">吳曉樂不愛露面，反而在意各種事件中被流言掩沒的人，他們的臉孔究竟有沒有被看見，所以她參與社運討論，卻發現「弱者往往很難善待彼此」。這也是《我們沒有祕密》幾位角色之間不幸的關係。吳曉樂很在意臉。不是她自己的，而是她筆下人物的面孔，以及新聞事件裡千人一面的受害者。採訪時，她不止一次提到「我想要她們長回自己的臉。」吳曉樂說，社會有張受害者臉譜，一旦受傷，我們就要活生生的人戴上，變成乖順愚笨天真爛漫的角色。</p>
+                                <a href="#">繼續閱讀</a>
+                                <div class="post-meta">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1000ms">
+                <div class="post-sidebar-area">
+
+                    <!-- Tag -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Tags</h5>
+                        <div class="widget-content">
+                            <ul class="tags">
+                                <li><a href="#">全一集</a></li>
+                                <li><a href="#">冒險</a></li>
+                                <li><a href="#">戀愛故事</a></li>
+                                <li><a href="#">穿越</a></li>
+                                <li><a href="#">輕小說</a></li>
+                                <li><a href="#">機甲</a></li>
+                                <li><a href="#">校園</a></li>
+                                <li><a href="#">戰爭</a></li>
+                                <li><a href="#">懸疑推理</a></li>
+                                <li><a href="#">職場</a></li>
+                                <li><a href="#">網路小說</a></li>
+                                <li><a href="#">奇幻</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- sidebar post -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Latest Posts</h5>
+
+                        <div class="widget-content">
+
+                            <!-- Single Blog Post -->
+                            <div class="single-blog-post d-flex align-items-center widget-post">
+                                <!-- Post Thumbnail -->
+                                <div class="post-thumbnail">
+                                    <img src="~/網站圖片庫/我們不能是朋友.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+
+                                    <h4><a href="#" class="post-headline">我們不能是朋友</a></h4>
+                                    <div class="post-meta">
+                                        <p><a href="#">12 March</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Blog Post -->
+                            <div class="single-blog-post d-flex align-items-center widget-post">
+                                <!-- Post Thumbnail -->
+                                <div class="post-thumbnail">
+                                    <img src="~/網站圖片庫/我在詐騙公司上班.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+
+                                    <h4><a href="書籍資訊_V2.html" class="post-headline">我在詐騙公司上班</a></h4>
+                                    <div class="post-meta">
+                                        <p><a href="#">12 March</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Blog Post -->
+                            <div class="single-blog-post d-flex align-items-center widget-post">
+                                <!-- Post Thumbnail -->
+                                <div class="post-thumbnail">
+                                    <img src="~/網站圖片庫/殺手的戀愛相談.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+
+                                    <h4><a href="#" class="post-headline">殺手的戀愛相談</a></h4>
+                                    <div class="post-meta">
+                                        <p><a href="#">12 March</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Blog Post -->
+                            <div class="single-blog-post d-flex align-items-center widget-post">
+                                <!-- Post Thumbnail -->
+                                <div class="post-thumbnail">
+                                    <img src="~/網站圖片庫/誰怕誰.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+
+                                    <h4><a href="#" class="post-headline">誰怕誰</a></h4>
+                                    <div class="post-meta">
+                                        <p><a href="#">12 March</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="instagram-feed-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="insta-title">
+                                    <h5>限時折扣⚡</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Instagram Slides -->
+                    <div class="instagram-slides owl-carousel">
+                        <!-- Single Insta Feed -->
+                        <!------>
+                        <!--圖1-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/天盛常歌.jpg" alt="">
+                            <div class="overlay">
+                                <h2>《天盛長歌》</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖2-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/蜜汁.jpg" alt="">
+                            <div class="overlay">
+                                <h2>《蜜汁燉魷魚》</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖3-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/我只裡歡你.jpg" alt="">
+                            <div class="overlay">
+                                <h2>《我只喜歡你》</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖4-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/慶餘年.jpg" alt="">
+                            <div class="overlay">
+                                <h2>慶餘年</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖5-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/庶女.jpg" alt="">
+                            <div class="overlay">
+                                <h2>《庶女明蘭傳》</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖6-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/我的藍.jpg" alt="">
+                            <div class="overlay">
+                                <h2>我的藍</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+                        <!--圖7-->
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="~/網站圖片庫/全職高手.jpg" alt="">
+                            <div class="overlay">
+                                <h2>全職高手</h2>
+                                <a class="info" href="#">閱讀全文</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-30">
+            <div class="col-12 col-lg-9">
+                <!-- Single Blog Area  -->
+                <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1000ms">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-thumbnail hovereffect">
+                                <img src="~/網站圖片庫/鏡文學7.jpg" alt="">
+                                <div class="post-date">
+                                    <a href="#">12 <span>march</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- Blog Content -->
+                            <div class="single-blog-content">
+                                <div class="box"></div>
+
+                                <h4><a href="#" class="post-headline">【鏡文學出版】歡迎光臨分手事務所（電子書）</a></h4>
+                                <p class="ellipsis">《歡迎光臨分手事務所》四絃 著★ 「拿錢拆散不愛的兩個人有錯嗎?」正反價值拉鋸 ，具十足話題性。★ 都會浪漫愛情喜劇！細膩描繪愛情的多種樣貌與戀愛中的難題，呈現老、中、青三代面對愛情的不同態度。★ 刺激的「臥底」橋段，主角化身情報員蒐集情資， 滿足讀者窺探欲望。自己說不出口的分手，就交給分手事務所。楊綺真和初戀男友愛情長跑七年，沒想到某天收到一張A4列印紙，上面簡單寫著「我們分手吧」！不甘心就這樣被分手的她，到處也找不到前男友，整天鬱鬱寡歡、丟了工作，甚至嘗試吃20幾顆安眠藥自殺。</p>
+                                <a href="#">繼續閱讀</a>
+                                <div class="post-meta">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area  -->
+                <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1000ms">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-thumbnail hovereffect">
+                                <img src="~/網站圖片庫/鏡文學8.jpg" alt="">
+                                <div class="post-date">
+                                    <a href="#">12 <span>march</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <!-- Blog Content -->
+                            <div class="single-blog-content">
+                                <div class="box"></div>
+
+                                <h4><a href="#" class="post-headline">【鏡文學出版】1+1+1</a></h4>
+                                <p class="ellipsis">《1+1+1：最暖爸爸插畫家大人系繪本》藍聖傑BLUE 著 文字／翟翱故事／陳昱俐★ 超過1,000,000人次分享，多國媒體現象式報導超人氣插畫家全新創作★ 關於家與成長的大人系療癒繪本。★ 煙花綻放版與街景生活版兩款絕美封面隨機出貨。</p>
+                                <a href="#">繼續閱讀</a>
+                                <div class="post-meta">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-btn mt-100 wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                    <a href="新聞搜尋頁面.html" class="btn original-btn">Read More</a>
+                </div>
+            </div>
+
+            <!-- ##### Sidebar Area ##### -->
+            <div class="col-12 col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1000ms">
+                <div class="post-sidebar-area">
+
+                    <!-- Tag -->
+                    <!-- Widget Area -->
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title subscribe-title">Subscribe to my newsletter</h5>
+                        <div class="widget-content">
+                            <form action="#" class="newsletterForm">
+                                <input type="email" name="email" id="subscribesForm" placeholder="Your e-mail here">
+                                <button type="submit" class="btn original-btn">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--評論區-->
+                    <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
+                        <div class="card-header mybg1">賈雨村評論:</div>
+                        <div class="card-body text-dark">
+                            <a href="#"><h5 class="card-title">瑯琊榜之風起長林</h5></a>
+                            <p class="card-text">
+                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
+                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
+                        <div class="card-header mybg1">秦可卿評論:</div>
+                        <div class="card-body text-dark">
+                            <a href="#"><h5 class="card-title">《魔道祖師／陳情令》</h5></a>
+                            <p class="card-text">
+                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
+                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
+                        <div class="card-header mybg1">馮紫英評論:</div>
+                        <div class="card-body text-dark">
+                            <a href="#"><h5 class="card-title">《知否？知否？應是綠肥紅瘦／庶女明蘭傳》</h5></a>
+                            <p class="card-text">
+                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
+                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="load-more-btn mt-100 wow fadeInUp readmoreposition" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                        <a href="#" class="btn original-btn ">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Blog Wrapper End ##### -->
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Footer Nav Area -->
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-center">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">首頁</a></li>
+                                    <li><a href="#">漫畫</a></li>
+                                    <li><a href="#">小說</a></li>
+                                    <li><a href="#">今日最新</a></li>
+                                    <li><a href="#">排行榜</a></li>
+                                    <li><a href="#">兌換點數</a></li>
+                                    <li><a href="#">購物車</a></li>
+                                    <li><a href="#">登入|註冊</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Footer Social Area -->
+                <div class="footer-social-area mt-30">
+
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
+    @*<script>document.getElementById("btnLogin").style.display = "none";
+        document.getElementById("btnRegister").style.display = "none";</script>*@
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+</footer>
+<!-- ##### Footer Area End ##### -->
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+@*<script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+
+<!--<script src="~/Scripts/jquery/jquery-2.2.4.min.js"></script>-->
+<!-- Popper js -->
+<!--<script src="~/Scripts/popper.min.js"></script>-->
+<!-- Bootstrap js -->
+<!--<script src="~/Scripts/bootstrap.min.js"></script>-->
+<!-- Plugins js -->
+<!--<script src="~/Scripts/plugins.js"></script>-->
+<!-- Active js -->
+<!--<script src="~/Scripts/active.js"></script>-->

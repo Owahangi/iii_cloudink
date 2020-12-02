@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/LoginSignin.cshtml";
+}
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <img src="~/Content/img/724727.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="col-lg-7">
+
+
+
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">創建一個屬於你的帳戶吧!!</h1>
+                            </div>
+                            @*<form class="user" action="register.aspx" method="POST" enctype="multipart/form-data" onsubmit="return checkFormData()">*@
+                            <form method="post" action="~/Member/Save">
+
+
+
+                                <!--EMAIL-->
+                                <div class="form-group">
+                                    <input type="email" name="txt_m_Email" id="" value="" placeholder="Email帳號" size="30" maxlength="50" required autocomplete="off" class="form-control form-control-user">
+
+                                </div>
+
+                                <!--密碼-->
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" name="txt_s_Pwd" id="" value="" placeholder="請輸入密碼" size="30" required class="form-control form-control-user">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" name="txt_s_Pwd_Check" id="" value="" placeholder="再確認密碼" size="30" required class="form-control form-control-user">
+                                    </div>
+                                </div>
+
+
+                                <!--姓名-->
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <label for="txtage" class="myfont1">姓名:</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control form-control-user" name="txt_m_Name" id="" placeholder="姓名">
+                                    </div>
+                                </div>
+
+                                <!--年齡-->
+                                @*<div class="form-group row">
+                <div class="col-sm-2">
+                    <label for="txtage" class="myfont1">年齡:</label>
+                </div>
+                <div class="col-sm-10">
+                    <input class="input1 form-control form-control-user" type="number" name="age" id="txtage" min="" max="" step="1" value="" placeholder="請輸入年齡">
+                </div>
+            </div>*@
+
+                                <!--生日-->
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <label for="" class="myfont1">生日:</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <input type="date" name="txt_m_Birth" id="" class=" input1 form-control form-control-user">
+                                    </div>
+                                </div>
+
+                                <!--性別-->
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        <label class="myfont1">性別:</label>
+                                    </div>
+                                    <div class="col-sm-10 mystyle1">
+                                        <input type="radio" name="txt_m_Gender" value="1" id="" class="input1"><label>&nbsp;Male</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="2" id="" class="input1"><label>&nbsp;Female</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="3" id="" class="input1"><label>&nbsp;Lesbian</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="4" id="" class="input1"><label>&nbsp;Gay</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="5" id="" class="input1"><label>&nbsp;Bisexual</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="6" id="" class="input1"><label>&nbsp;Transgender</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="txt_m_Gender" value="7" id="" class="input1"><label>&nbsp;Queer</label>
+
+
+                                    </div>
+                                </div>
+
+
+                                <!--上傳圖檔-->
+                                @*<div class="form-group row">
+
+                <div class="col-sm-10 mystyle1">
+                    <img id="blah" alt="your image" width="220" height="220" />
+
+                    <input type="file"
+                           onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+
+                </div>
+                <div class="col-sm-2"></div>
+            </div>*@
+                        </div>
+
+
+
+                        @*<a href="會員首頁.html">*@
+                            <input type="submit" value="註冊帳戶" class="btn btn-primary btn-user btn-block">
+                        @*</a>*@
+                        <br>
+                        @*<a href="會員首頁.html">*@
+                            <input type="reset" value="重置表單" class="btn btn-secondary btn-user btn-block">
+                        @*</a>*@
+
+                        <hr>
+                        </form>
+
+
+
+                        <div class="text-center">
+                            <a class="small" href="忘記密碼.html">忘記密碼了嗎?</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="small" href="登入.html">您已經擁有帳戶了嗎?請改用登入介面!</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Content/js/sb-admin-2.min.js"></script>
+
+</body>
+
+

@@ -1,0 +1,748 @@
+﻿@*@{
+        ViewBag.Title = "MemberLove";
+    }*@
+@using RentBook.Models
+@using System.Data.SqlClient;
+@{ ViewBag.Title = "MemberLove";
+    //ViewBag.Title = Session[CDictionary.SK_LOGINED_USER].ToString();
+    string user = "";
+    string b_name_1 = "";
+    string b_info_1 = "";
+    string b_image_1 = "";
+    string b_name_2 = "";
+    string b_info_2 = "";
+    string b_image_2 = "";
+    string b_name_3 = "";
+    string b_info_3 = "";
+    string b_image_3 = "";
+    string b_name_4 = "";
+    string b_info_4 = "";
+    string b_image_4 = "";
+
+
+    if (Session[CDictionary.SK_LOGINED_USER] != null)
+    {
+        user = (Session[CDictionary.SK_LOGINED_USER] as CMember).m_Email;
+
+        //SqlConnection con = new SqlConnection();
+        //con.ConnectionString = @"Data Source=.;Initial Catalog=dbDemo;Integrated Security=True";
+        //con.Open();
+
+        //SqlCommand cmd = new SqlCommand();
+        //cmd.Connection = con;
+        //cmd.CommandText = "SELECT * FROM tCustomer WHERE fId=11";
+
+        //SqlDataReader reader = cmd.ExecuteReader();
+        //string s = "查無資料";
+        //if (reader.Read())
+        //{
+        //    s = reader["fName"].ToString();
+        //}
+        //con.Close();
+
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+        con.Open();
+
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        string sql = "";
+        sql = sql + "Select D.*";
+        sql = sql + "  From Member A left join BookCase B on A.bc_id = B.bc_id";
+        sql = sql + "  left join BookCaseBooks C on B.bc_id = C.bc_id";
+        sql = sql + "  left join Books D on C.b_id = D.b_id";
+        sql = sql + " Where A.m_Email = '" + user + "' ";
+        cmd.CommandText = sql;
+
+        SqlDataReader reader = cmd.ExecuteReader();
+        b_name_1 = "";
+        b_info_1 = "";
+        b_image_1 = "";
+        b_name_2 = "";
+        b_info_2 = "";
+        b_image_2 = "";
+        b_name_3 = "";
+        b_info_3 = "";
+        b_image_3 = "";
+        b_name_4 = "";
+        b_info_4 = "";
+        b_image_4 = "";
+        int i = 0;
+
+        //if (reader.Read())
+        //{
+        //    b_info = reader["b_info"].ToString();
+        //}
+
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                i++;
+
+                if (i == 1)
+                {
+                    b_name_1 = reader["b_name"].ToString();
+                    b_info_1 = reader["b_info"].ToString();
+                    b_image_1 = reader["b_image"].ToString();
+                }
+                else if (i == 2)
+                {
+                    b_name_2 = reader["b_name"].ToString();
+                    b_info_2 = reader["b_info"].ToString();
+                    b_image_2 = reader["b_image"].ToString();
+                }
+                else if (i == 3)
+                {
+                    b_name_3 = reader["b_name"].ToString();
+                    b_info_3 = reader["b_info"].ToString();
+                    b_image_3 = reader["b_image"].ToString();
+                }
+                else if (i == 4)
+                {
+                    b_name_4 = reader["b_name"].ToString();
+                    b_info_4 = reader["b_info"].ToString();
+                    b_image_4 = reader["b_image"].ToString();
+                }
+            }
+        }
+
+        con.Close();
+
+
+
+    }
+
+    Layout = "~/Views/Shared/_CommonMemberLoveLayout.cshtml"; }
+
+@*<h2>MemberLove</h2>*@
+<h2>@user</h2>
+
+<header class="header-area ">
+
+    <!-- Nav Area -->
+    <div class="original-nav-area" id="stickyNav">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between">
+
+
+
+                    <div>
+                        <img class="img-fluid myimg1" alt="your image" width="70" height="70" src="~/LOGO-1.png" />
+                    </div>
+
+
+
+                    <p></p><p></p>
+                    <!-- Menu -->
+                    <div class="classy-menu" id="originalNav">
+
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+
+                        <!-- Nav Start -->
+
+                        <div class="classynav">
+
+                            <ul>
+
+                                <li><a href="index.html">首頁</a></li>
+                                <li>
+                                    <a href="#">漫畫</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">格鬥</a></li>
+                                        <li><a href="#">冒險</a></li>
+                                        <li><a href="#">少男</a></li>
+                                        <li><a href="#">少女</a></li>
+                                        <li><a href="#">超女</a></li>
+                                        <li><a href="#">警探</a></li>
+                                        <li><a href="#">戰國</a></li>
+                                        <li><a href="#">機械</a></li>
+                                        <li><a href="#">科幻</a></li>
+                                        <li><a href="#">魔法</a></li>
+                                        <li><a href="#">妖魔</a></li>
+                                        <li><a href="#">競技</a></li>
+                                        <li><a href="#">烹飪</a></li>
+                                        <li><a href="#">職業</a></li>
+                                        <li><a href="#">恐怖</a></li>
+                                        <li><a href="#">搞笑</a></li>
+                                        <li><a href="#">校園</a></li>
+                                        <li><a href="#">戰爭</a></li>
+                                        <li><a href="#">港產</a></li>
+                                        <li><a href="#">短篇</a></li>
+                                        <li><a href="#">其他</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">小說</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">童話</a></li>
+                                        <li><a href="#">玄幻</a></li>
+                                        <li><a href="#">武俠</a></li>
+                                        <li><a href="#">偵探</a></li>
+                                        <li><a href="#">恐怖</a></li>
+                                        <li><a href="#">同人</a></li>
+                                        <li><a href="#">科幻</a></li>
+                                        <li><a href="#">奇幻</a></li>
+                                        <li><a href="#">歷史</a></li>
+                                        <li><a href="#">網遊</a></li>
+                                        <li><a href="#">耽美</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">今日最新</a></li>
+                                <li><a href="#">排行榜</a></li>
+                                <li><a href="contact.html">兌換點數</a></li>
+                                <li><a href="contact.html">購物車</a></li>
+
+
+
+
+
+
+
+
+                            </ul>
+                            <!-- Search Form  -->
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+
+
+
+                    <a href="會員首頁.html" id="userDropdown" role="button" class="btn popovers" data-toggle="popover" title="個人檔案"
+                       data-content="🏳️‍🌈 <a  href='個人資訊.html'  title='編輯個人檔案'>編輯個人檔案</a> <hr>
+                  👋🏼 <a href='#' data-toggle='modal' data-target='#logoutModal' title='登出'>登出</a>" data-original-title="test title">
+                  <img class="img-profile rounded-circle" id="blah" alt="your image" width="50" height="50" src="img/封面/首頁圖片/2組.jpg" />
+
+                  </a>
+
+
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="invisible left-block d-xl-block d-none order-0" style="min-height: 20px"></div>
+
+
+
+
+<div class="container">
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class=" border-right sidebar" id="sidebar-wrapper">
+
+            <br><br>
+            <div class="sidebar-heading text-white">書的選項</div>
+            <div class="list-group list-group-flush">
+
+
+                <a href="心儀書單.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-archive"></i>
+                    藏書閣
+                </a>
+
+
+                <a href="閱讀紀錄.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-compact-disc"></i>
+                    閱讀紀錄
+                </a>
+
+                <a href="我的評論.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-comments"></i>
+                    我的評論
+                </a>
+
+
+                <hr>
+                <div class="sidebar-heading text-white">您的個人選項</div>
+
+                <a href="我的帳戶.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    我的帳戶
+                </a>
+
+                <a href="編輯個人檔案.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-user-edit"></i>
+                    編輯個人資訊
+                </a>
+
+                @*<a href="#" data-toggle='modal' data-target='#logoutModal' class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-sign-out-alt"></i>
+                    登出
+                </a>*@
+                @Html.ActionLink("登出", "LogOut")
+
+
+            </div>
+        </div>
+
+
+        <!-- Page Content -->
+
+        <div id="page-content-wrapper">
+
+
+
+            <div class="container">
+
+                <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                <div class="row">
+
+
+                    <div class="col-2 col-md-2">
+                        <button class="btn btn-primary" id="menu-toggle"> 《《展開</button>
+                    </div>
+
+
+                    <div class="col-10 col-md-7">
+                        <nav aria-label="breadcrumb navbg1">
+                            <ol class="breadcrumb navbg1">
+                                <li class="breadcrumb-item"><a href="會員首頁.html">雲墨空間</a></li>
+                                <li class="breadcrumb-item"><a href="#">藏書閣</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+
+
+                    <div class="col-12 col-md-3">
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="container-fluid">
+
+                <br>
+                <div class="container mybg1 rounded">
+                    <br>
+                    <div class="row">
+
+                        <div class="col-12 col-sm-6">
+                            <div class="single-blog row no-gutters style_five">
+                                <div class="col-12 col-sm-4">
+                                    <div class="thumb">
+                                        @*<a href="#"><img class="img-fluid" src="~/img/封面/心儀書單/墨跡三千.jpg" alt=""></a>*@
+                                        <a href="#"><img class="img-fluid" src="~/img/封面/首頁圖片/@b_image_1" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            @*<a href="#"><h5 class="myfont2">《墨跡三千》</h5></a>*@
+                                            <a href="#"><h5 class="myfont2">《@b_name_1》</h5></a>
+                                        </div>
+
+                                        <a class="d-block dark_font" href="single-blog.html">
+                                            <h5 class="maxlength">
+                                                @*最不靠譜的救世團隊；一個火爆，一個發誓要殺死男主角，
+                                                一個搶著要自殺死， 一個愛作死，一個愛找死，一個怕死，
+                                                還有一個懶得要死，再加上一隻不知道能幹什麼的吉祥獸，
+                                                突破邊界並同聯手救世。一個關乎整個世界卻又無人敢碰的任務，
+                                                一趟游歷三千個大中小千世界的冒險，成就廣濟龍王的傳奇*@
+                                                @b_info_1
+                                                <a></a>
+                                            </h5>
+                                        </a>
+                                        <a href="#" class="text-primary">閱讀更多</a>
+                                        @*<div class="meta-bottom d-flex">
+                                            <a href="#" class="text-danger">無垠</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="single-blog row no-gutters style_five">
+                                <div class="col-12 col-sm-4">
+                                    <div class="thumb">
+                                        @*<a href="#"><img class="img-fluid" src="~/img/封面/心儀書單/陳情另.png"></a>*@
+                                        <a href="#"><img class="img-fluid" src="~/img/封面/首頁圖片/@b_image_2"></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <div class="short_details ">
+                                        <div class="meta-top d-flex">
+                                            @*<a href="#"><h5 class="myfont2">《魔道祖師》</h5></a>*@
+                                            <a href="#"><h5 class="myfont2">《@b_name_2》</h5></a>
+                                        </div>
+                                        <a class="d-block dark_font" href="single-blog.html">
+                                            <h5 class="maxlength">
+                                                @*前世的魏無羨萬人唾罵，聲名狼藉。
+                                                被情同手足的師弟帶人端了老巢，
+                                                縱橫一世，死無全屍。
+                                                曾掀起腥風血雨的一代魔道祖師，重生成了一個……
+                                                腦殘。
+                                                還特麼是個人人喊打的斷袖腦殘！
+                                                我見諸君多有病，料諸君見我應如是。
+                                                但修鬼道不修仙，任你千軍萬馬，十方惡霸，九州奇俠，高嶺之花，
+                                                但凡化為一抔黃土，統統收歸旗下，為我所用，供我驅策！
+                                                ...*@ @b_info_2<a href="#" class="text-primary">閱讀更多</a>
+                                            </h5>
+                                        </a>
+                                        <a href="#" class="text-primary">閱讀更多</a>
+                                        @*<div class="meta-bottom d-flex">
+                                            <a href="#" class="text-danger">墨香銅臭</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+
+                    </div>
+
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="single-blog row no-gutters style_five">
+                                <div class="col-12 col-sm-4">
+                                    <div class="thumb">
+                                        @*<a href="#"><img class="img-fluid" src="~/img/封面/心儀書單/《致我們暖暖的小時光》.jpg" alt=""></a>*@
+                                        <a href="#"><img class="img-fluid" src="~/img/封面/首頁圖片/@b_image_3" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            @*<a href="#"><h5 class="myfont2">《末末》</h5></a>*@
+                                            <a href="#"><h5 class="myfont2">《@b_name_3》</h5></a>
+                                        </div>
+                                        <a class="d-block dark_font" href="single-blog.html">
+                                            <h5 class="maxlength">
+                                                @*司徒末，堅強獨立，好一朵美麗的鏗鏘玫瑰花。
+                                                她覺得自己上輩子一定是姦淫擄掠了，不然不會攤上這麼個毒舌男。
+                                                顧未易，天生涼薄，桃花不斷卻沒有哪朵能開到心上。
+                                                ...*@ @b_info_3<a href="#" class="text-primary">閱讀更多</a>
+                                            </h5>
+                                        </a>
+                                        <a href="#" class="text-primary">閱讀更多</a>
+                                        @*<div class="meta-bottom d-flex">
+                                            <a href="#" class="text-danger">趙乾乾</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="single-blog row no-gutters style_five">
+                                <div class="col-12 col-sm-4">
+                                    <div class="thumb">
+                                        @*<a href="#"><img class="img-fluid" src="~/img/封面/心儀書單/諸星異聞錄.png" alt=""></a>*@
+                                        <a href="#"><img class="img-fluid" src="~/img/封面/首頁圖片/@b_image_4" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <div class="short_details">
+                                        <div class="meta-top d-flex">
+                                            @*<a href="#"><h5 class="myfont2">《諸星異聞錄》</h5></a>*@
+                                            <a href="#"><h5 class="myfont2">《@b_name_4》</h5></a>
+                                        </div>
+                                        <a class="d-block dark_font" href="single-blog.html">
+                                            <h5 class="maxlength">
+                                                @*我叫劉傑，是個愛看小說的普通研究生。自從颱風天出門買消夜被雷劈、
+                                                穿越到這個魔法世界十二年，一歲學習讀書識字、三歲練習冥想、
+                                                五歲已經是碧水村第一神童。九歲一身魔力盡失被初等學校的屁孩們嘲笑*@
+                                                @b_info_4
+                                                <a></a>
+                                            </h5>
+                                        </a>
+                                        <a href="#" class="text-primary">閱讀更多</a>
+                                        @*<div class="meta-bottom d-flex">
+                                            <a href="#" class="text-danger">晴烈</a>
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                        </div>
+                        <div class="col-6">
+                            <div class="load-more-btn mt-100 wow fadeInUp readmoreposition mybtn1" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                                <a href="#" class="btn original-btn btn-block">展開更多</a>
+                            </div>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+
+                    <br>
+
+                </div>
+
+
+                <div class="blog-wrapper section-padding-100 clearfix">
+                    <div class="container rounded-30 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="700ms">
+                        <br>
+                        <div class="row mybg2">
+
+                            <div class="col-sm-8">
+
+                                <br>
+
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12">
+                                            <button type="button" class="btn-outline badge mybutton1 myfont1">熱門推薦圖書</button>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <hr>
+
+                                    <div class="row">
+
+                                        <div class="col-12  col-sm-12">
+                                            <div class="card mb-3 mycard1" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-6"><a href="#"> <p class="card-title myfont3">《誕降師》</p></a> </div>
+                                                                    <div class="col-6"><a href="#"><p class="myfont4">作者:李穆梅</p></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <h5>大綱:</h5>
+                                                            <p class="card-text mytext1 maxlength1">
+                                                                匠者，是修飾有形之物的人，
+                                                                可以透過後天的學習，達到精善之境。 術者，卻能無中生有，善此道者則為師。
+                                                                然而若無血緣，若無天分， 凡人難窺術之境界。杭樹生以為自己是個至凡之人，
+                                                                她雖沒有母親， 卻有一個愛她疼她的好父親杭樂安。她也以為她父親唯一特別的地方便是愛笑無害的臉，
+                                                                除此之外，杭樂安應該只是個平凡的開字匠。這個像天地一樣存在的道理，
+                                                                她信以為真了十二年。而她之所以可以成功誕降活物，是因為她的努力與用心。
+                                                            </p>
+                                                            <a class="info" href="#">繼續閱讀...</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="hovereffect">
+                                                            <img class="img-responsive" src="~/img/封面/心儀書單/誕降師.png" alt="">
+                                                            <div class="overlay">
+                                                                <br><br>
+                                                                <a class="info" href="#">閱讀連結</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row">
+
+                                        <div class="col-12  col-sm-12">
+                                            <div class="card mb-3 mycard1" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4">
+                                                        <div class="hovereffect">
+                                                            <img class="img-responsive" src="~/img/封面/心儀書單/狼將.jpg" alt="">
+                                                            <div class="overlay">
+                                                                <br><br>
+                                                                <a class="info" href="#">閱讀連結</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-6"><a href="#"> <p class="card-title myfont3">《狼將》</p></a> </div>
+                                                                    <div class="col-6"><a href="#"><p class="myfont4">作者:狄奧君</p></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <h5>大綱:</h5>
+                                                            <p class="card-text mytext1 maxlength1">
+                                                                生存，是最基本的；
+                                                                亂世中生存，是最困難的。 一名被狼養大的少年狼，遇上漢人養父，
+                                                                帶著他在突羯族中生活， 將他養育成為一位出色的將領，加上狼天生的野獸本能，
+                                                                使他成為一位出色的將領， 統領著令人聞風喪膽的「蒼狼隊」屢建戰功。
+                                                                在得不到族人的認同、以及身處亂世的無奈，狼如何利用其天生的野性本能，
+                                                                在亂世中生存呢？為了生存，自尊、人性、愛情、族人是否都可以放棄？狼會如何選擇？
+                                                            </p>
+                                                            <a class="info" href="#">繼續閱讀...</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row">
+
+                                        <div class="col-12  col-sm-12">
+                                            <div class="card mb-3 mycard1" style="max-width: 540px;">
+                                                <div class="row no-gutters">
+
+                                                    <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-6"><a href="#"> <p class="card-title myfont3">《墨跡三千》</p></a> </div>
+                                                                    <div class="col-6"><a href="#"><p class="myfont4">作者:無垠</p></a></div>
+                                                                </div>
+                                                            </div>
+                                                            <h5>大綱:</h5>
+                                                            <p class="card-text mytext1 maxlength1">
+                                                                最不靠譜的救世團隊；一個火爆，一個發誓要殺死男主角，一個搶著要自殺死，
+                                                                一個愛作死，一個愛找死，一個怕死，還有一個懶得要死，再加上一隻不知道能幹什麼的吉祥獸，
+                                                                突破邊界並同聯手救世。一個關乎整個世界卻又無人敢碰的任務，
+                                                                一趟游歷三千個大中小千世界的冒險，成就廣濟龍王的傳奇
+                                                            </p>
+                                                            <a class="info" href="#">繼續閱讀...</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="hovereffect">
+                                                            <img class="img-responsive" src="~/img/封面/心儀書單/墨跡三千.jpg" alt="">
+                                                            <div class="overlay">
+                                                                <br><br>
+                                                                <a class="info" href="#">閱讀連結</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="load-more-btn mt-100 wow fadeInUp readmoreposition mybtn1" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                                                    <a href="#" class="btn original-btn btn-block">展開更多</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <hr>
+
+
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-sm-4">
+
+                                <div class="col">
+                                    <div class="sidebar-widget-area">
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12">
+                                                <button type="button" class="btn-outline badge mybutton1 myfont1">您的書櫃標籤</button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <hr>
+                                        <div class="widget-content">
+                                            <ul class="tags tag1">
+                                                <li><a href="#">武俠</a></li>
+                                                <li><a href="#">穿越</a></li>
+                                                <li><a href="#">愛情</a></li>
+                                                <li><a href="#">歷史</a></li>
+                                                <li><a href="#">甜寵</a></li>
+                                                <li><a href="#">復仇</a></li>
+                                                <li><a href="#">耽美</a></li>
+                                                <li><a href="#">奇幻</a></li>
+                                                <li><a href="#">仙俠</a></li>
+                                                <li><a href="#">科幻</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+</div>
+
+
+<footer class="footer-area text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Footer Nav Area -->
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-center">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Casual Reading  &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+</footer>
+
