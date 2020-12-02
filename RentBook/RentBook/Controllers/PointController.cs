@@ -34,7 +34,7 @@ namespace RentBook.Controllers
         }
 
         // 可以租書籍的頁面
-        public ActionResult List(string m_id,string b_id)
+        public ActionResult List(string m_id, string b_id)
         {
             PointFactory factory = new PointFactory();
             PointModel p = new PointModel();
@@ -54,7 +54,7 @@ namespace RentBook.Controllers
 
             int 使用者剩餘點數 = factory.回傳目前此會員的剩餘點數(p.m_id);
 
-            if(使用者剩餘點數 > Convert.ToInt32(Request.Form["msd_CostPoint"]))
+            if (使用者剩餘點數 > Convert.ToInt32(Request.Form["msd_CostPoint"]))
             {
                 p.m_id = Request.Form["m_id"];
                 p.b_id = Request.Form["b_id"];
@@ -81,23 +81,27 @@ namespace RentBook.Controllers
         }
 
         // 儲存月卡資料
-        public ActionResult SaveMonthlyCard(PointModel p)
+        public ActionResult SaveMonthlyCard(string m_id, string bmc_id, string bmc_Name, int bmc_Date, int bmc_Price)
         {
             PointFactory factory = new PointFactory();
+            PointModel p = new PointModel();
 
-            int 使用者剩餘點數 = factory.回傳目前此會員的剩餘點數(p.m_id);
+            p.m_id = m_id;
+            p.bmc_id = bmc_id;
+            p.bmc_Name = bmc_Name;
+            p.bmc_Date = bmc_Date;
+            p.bmc_Price = bmc_Price;
 
-            if (使用者剩餘點數 > Convert.ToInt32(Request.Form["msd_CostPoint"]))
+            int 使用者剩餘點數 = factory.回傳目前此會員的剩餘點數(m_id);
+
+            if (使用者剩餘點數 > bmc_Price)
             {
-                p.m_id = Request.Form["m_id"];
-                p.bmc_Price = Convert.ToInt32(Request.Form["bmc_Price"]);
                 factory.儲存月卡資料(p);
             }
             else
             {
                 // 使用者錢不夠
             }
-
             return RedirectToAction("ShopMonthlyCard", new { m_id = p.m_id });
         }
     }

@@ -46,7 +46,13 @@
                         <label name="bmc_Price" value="@item.bmc_Price">@item.bmc_Price 元</label>
                     </td>
                     <td>
-                        <input type="submit" value="立即購買" class="btn btn-default" />
+                        @Html.ActionLink("立即購買", "SaveMonthlyCard","Point", new {
+                           m_id = item.m_id,
+                           bmc_id = item.bmc_id,
+                           bmc_Date = item.bmc_Date,
+                           bmc_Name = item.bmc_Name,
+                           bmc_Price = item.bmc_Price
+                       },new { @class="btn btn - default" }) 
                     </td>
                 </tr>
             }

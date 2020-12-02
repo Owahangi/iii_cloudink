@@ -10,7 +10,7 @@ namespace RentBook.Models.Point
         // Member 資料表
         public string m_id { get; set; }
         public int m_Point { get; set; }
-        public int m_MonthlyLastTime { get; set; }
+        public DateTime m_MonthlyLastTime { get; set; }
 
 
         // Books 資料表

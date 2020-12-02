@@ -9,6 +9,7 @@ namespace RentBook.Models.Point
     public class PointBookCaseBooksModel
     {
         // BookCaseBooks 資料表
+        public int bcb_id { get; set; }
         public int bc_id { get; set; }
         public string b_id { get; set; }
         public DateTime bcb_BookLastTime { get; set; }
