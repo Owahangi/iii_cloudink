@@ -28,8 +28,14 @@ namespace RentBook.Models
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "select m_Email from ([Member] as m inner join [BookCase] as b on m.bc_id = b.bc_id) inner join [BookCaseBooks] as bcb on m.bc_id = bcb.bc_id where m.bc_id = bcb.bc_id and bcb_id = @bcb_id ";
-            cmd.Parameters.Add(email);
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.Add(bc_id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                email = (string)reader["m_Email"];
+            }
+            reader.Close();
             con.Close();
 
             return email;
@@ -44,8 +50,16 @@ namespace RentBook.Models
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT AVG(bm_Score) FROM BooksMessage WHERE bm_Score > 0 AND b_id = @b_id ";
-            cmd.Parameters.Add(avgsore);
+            cmd.CommandText = "SELECT AVG(bm_Score) as avgsore FROM BooksMessage WHERE bm_Score > 0 AND b_id = @B_ID ";
+            cmd.Parameters.AddWithValue("B_ID", b_id);
+            con.Close();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                avgsore = (int)reader["avgsore"];
+            }
+            reader.Close();
             con.Close();
 
             return avgsore;
@@ -55,7 +69,7 @@ namespace RentBook.Models
         //get join tables
         public List<CmessageSqlView> getAllmessageSqlViews()
         {
-            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id = bm.m_id ", null);
+            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id = bm.m_id ", null);
             //SQL語法 where ... 待修正
         }
 
@@ -96,7 +110,6 @@ namespace RentBook.Models
                 list.Add(x);
             }
             con.Close();
-
 
             return list;
         }

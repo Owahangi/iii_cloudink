@@ -74,7 +74,7 @@ namespace RentBook.Controllers
             int AvgSore = factory.getAvgSorce(b_id);
             ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
 
-                int bc_id = factory.getEmail();
+                //int bc_id = factory.getEmail();
 
             return View(list);
         }
