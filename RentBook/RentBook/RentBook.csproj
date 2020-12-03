@@ -4337,6 +4337,8 @@
     <Content Include="Views\Point\List.cshtml" />
     <Content Include="Views\Point\AddPoint.cshtml" />
     <Content Include="Views\Point\ShopMonthlyCard.cshtml" />
+    <Content Include="Views\EditBook\EditChaptersList.cshtml" />
+    <Content Include="Views\EditBook\EditChapters.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

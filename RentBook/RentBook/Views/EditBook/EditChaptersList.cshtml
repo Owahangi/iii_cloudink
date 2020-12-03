@@ -1,0 +1,49 @@
+﻿@using RentBook.Models.EditBook
+@model List<RentBook.Models.EditBook.EditBookModel>
+
+@{
+    ViewBag.Title = "EditChaptersList";
+}
+
+<h2>EditChapters</h2>
+
+@using (Html.BeginForm("EditBookData", "EditBook", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <tr>
+            <th>
+                書籍編號
+            </th>
+            <th>
+                章節
+            </th>
+            <th>
+                章節標題
+            </th>
+            <th>
+            </th>
+            
+        </tr>
+
+        @foreach (EditBookModel b in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.bc_Chapters)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.bc_Content)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯章節", "EditChapters", new { bc_id = b.bc_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

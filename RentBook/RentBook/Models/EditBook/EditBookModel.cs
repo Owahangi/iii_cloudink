@@ -8,8 +8,8 @@ namespace RentBook.Models.EditBook
     public class EditBookModel
     {
         // 下拉式選單使用
-        public List<string> 出版社編號加名稱 { get; set; }
-        public List<string> 作者編號加名稱 { get; set; }
+        public List<string> 出版社編號加名稱列表 { get; set; }
+        public List<string> 作者編號加名稱列表 { get; set; }
 
 
 
@@ -25,6 +25,7 @@ namespace RentBook.Models.EditBook
         public string b_ISBN { get; set; }
         public string b_AgeRating { get; set; }
         public string b_Series_yn { get; set; }
+        public string b_Put_yn { get; set; }
         public string p_id { get; set; }
         public string PublishedIdName { get; set; }
 
@@ -32,8 +33,12 @@ namespace RentBook.Models.EditBook
         public string 出版社編號名稱 { get; set; }
         public string b_ImagePath { get; set; }
         public string Tags字串 { get; set; }
+        public List<string> 列出本書的作者 { get; set; }
+
 
         // BookAuthor 資料表
+        public string a_id { get; set; }
+        public string a_Name { get; set; }
         public string[] AuthorIdName { get; set; }
 
 

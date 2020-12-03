@@ -150,8 +150,8 @@ namespace RentBook.Models
 
             //Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_DatePrice,b_ISBN,b_AgeRating,p_id)Values(1234,'aaa','bbb','c','d','1996/09/07','1','g',1,1)
 
-            string tSQL = "Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_DatePrice,b_ISBN,b_AgeRating,b_Series_yn,p_id)Values(" +
-                "@bid,@bName,@bInfo,@bImage,@bType,@bPublishedDate,@bDatePrice,@bISBN,@bAgeRating,@bSeries,@pID)";
+            string tSQL = "Insert into Books (b_id,b_Name,b_Info,b_Image,b_Type,b_PublishedDate,b_DatePrice,b_ISBN,b_AgeRating,b_Series_yn,b_Put_yn,p_id)Values(" +
+                "@bid,@bName,@bInfo,@bImage,@bType,@bPublishedDate,@bDatePrice,@bISBN,@bAgeRating,@bSeries,'n',@pID)";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("bid", b.b_id);
             cmd.Parameters.AddWithValue("bName", b.b_Name);

@@ -12,10 +12,10 @@
     @Html.AntiForgeryToken()
 
     <p>
-        @Html.ActionLink("新增章節", "AddChapters", "AddBook", new { b_id = Model.b_id, b_Type = Model.b_Type },null)
+        @Html.ActionLink("新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, null)
     </p>
     <p>
-        @Html.ActionLink("修改章節內容", "#", "#", new { b_id = Model.b_id, b_Type = Model.b_Type })
+        @Html.ActionLink("編輯章節", "EditChaptersList", new { b_id = Model.b_id })
     </p>
 
     <div class="form-horizontal">
@@ -94,9 +94,16 @@
             <label class="control-label col-md-2">出版社</label>
             <div class="col-md-10">
                 <select name="PublishedIdName" required="required" class="form-control">
-                    @foreach (string p in Model.出版社編號加名稱)
+                    @foreach (string p in Model.出版社編號加名稱列表)
                     {
-                        <option>@p</option>
+                        if (p == Model.出版社編號名稱)
+                        {
+                            <option selected>@p</option>
+                        }
+                        else
+                        {
+                            <option>@p</option>
+                        }
                     }
                 </select>
             </div>
@@ -105,9 +112,25 @@
             <label class="control-label col-md-2">作者</label>
             <div class="col-md-10">
                 <select name="AuthorIdName" required="required" class="form-control" multiple size="5">
-                    @foreach (string p in Model.作者編號加名稱)
+                    @foreach (string p in Model.作者編號加名稱列表)
                     {
-                        <option value="@p">@p</option>
+                        bool check = false;
+                        foreach (string m in Model.列出本書的作者)
+                        {
+                            if (p == m)
+                            {
+                                check = true;
+                            }
+                        }
+                        if (check)
+                        {
+                            <option value="@p" selected>@p</option>
+                        }
+                        else
+                        {
+                            <option value="@p">@p</option>
+                        }
+
                     }
                 </select>
             </div>
@@ -117,14 +140,60 @@
             <label class="control-label col-md-2">連載情況</label>
             <div class="col-md-10">
                 <div class="border">
-                    <div class="form-check" id="b_Series_yn" name="b_Series_yn">
-                        <input type="radio" class="form-check-input" name="Series" value="連載中" checked>
-                        <label class="form-check-label">連載中</label>
-                    </div>
-                    <div class="form-check" id="b_Series_yn" name="b_Series_yn">
-                        <input type="radio" class="form-check-input" name="Series" value="已完結">
-                        <label class="form-check-label">已完結</label>
-                    </div>
+                    @if (Model.b_Series_yn == "連載中")
+                    {
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="連載中" checked>
+                            <label class="form-check-label">連載中</label>
+                        </div>
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="已完結">
+                            <label class="form-check-label">已完結</label>
+                        </div>
+                    }
+                    else if (Model.b_Series_yn == "已完結")
+                    {
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="連載中">
+                            <label class="form-check-label">連載中</label>
+                        </div>
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="已完結" checked>
+                            <label class="form-check-label">已完結</label>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 form-group">
+            <label class="control-label col-md-2">上架/下架</label>
+            <div class="col-md-10">
+                <div class="border">
+                    @if (Model.b_Put_yn == "上架")
+                    {
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y" checked>
+                            <label class="form-check-label">上架</label>
+                        </div>
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="n">
+                            <label class="form-check-label">下架</label>
+                        </div>
+                    }
+                    else if (Model.b_Put_yn == "下架")
+                    {
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y" >
+                            <label class="form-check-label">上架</label>
+                        </div>
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="n" checked>
+                            <label class="form-check-label">下架</label>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
