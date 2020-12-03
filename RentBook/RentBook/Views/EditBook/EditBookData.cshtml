@@ -11,11 +11,18 @@
 {
     @Html.AntiForgeryToken()
 
+    <p>
+        @Html.ActionLink("新增章節", "AddChapters", "AddBook", new { b_id = Model.b_id, b_Type = Model.b_Type },null)
+    </p>
+    <p>
+        @Html.ActionLink("修改章節內容", "#", "#", new { b_id = Model.b_id, b_Type = Model.b_Type })
+    </p>
+
     <div class="form-horizontal">
         <h4>EditBookModel</h4>
         <hr />
         <!-- b_id 未改動態 -->
-        <input type="hidden" name="b_id" value="123" />
+        <input type="hidden" name="b_id" value="@Model.b_id" />
 
         <div class="form-group">
             <label class="control-label col-md-2">書名</label>
@@ -28,8 +35,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">簡介</label>
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.b_Info, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.b_Info, "", new { @class = "text-danger" })
+                <textarea rows="5" class="form-control" name="b_Info" value="@Model.b_Info" id="b_Info"></textarea>
             </div>
         </div>
 
@@ -44,7 +50,14 @@
         <div class="form-group">
             <label class="control-label col-md-2">#Tags</label>
             <div class="col-md-10">
-                <input type="text" name="Tag" class="form-control" />
+                <input type="text" name="Tag" class="form-control" value="@Model.Tags字串" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版日期</label>
+            <div class="col-md-10">
+                <input type="text" name="b_PublishedDate" class="form-control" value="@Model.b_PublishedDate" />
             </div>
         </div>
 
@@ -57,9 +70,46 @@
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2">增加作者</label>
+            <label class="control-label col-md-2">ISBN</label>
             <div class="col-md-10">
-                <input type="text" name="author" class="form-control" />
+                <input type="text" name="b_ISBN" class="form-control" value="@Model.b_ISBN" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">年齡分級</label>
+            <div class="col-md-10">
+                <select name="AgeRange" required="required" class="form-control">
+                    <option disabled>年齡分級</option>
+                    <option value="普遍級">普遍級 ( 一般人皆可觀賞 )</option>
+                    <option value="保護級">保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                    <option value="輔導十二歲級">輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                    <option value="輔導十五歲級">輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                    <option value="限制級">限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版社</label>
+            <div class="col-md-10">
+                <select name="PublishedIdName" required="required" class="form-control">
+                    @foreach (string p in Model.出版社編號加名稱)
+                    {
+                        <option>@p</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">作者</label>
+            <div class="col-md-10">
+                <select name="AuthorIdName" required="required" class="form-control" multiple size="5">
+                    @foreach (string p in Model.作者編號加名稱)
+                    {
+                        <option value="@p">@p</option>
+                    }
+                </select>
             </div>
         </div>
 

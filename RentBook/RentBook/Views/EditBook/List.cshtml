@@ -1,5 +1,5 @@
 ﻿@using RentBook.Models.EditBook
-@model IEnumerable<RentBook.Models.EditBook.EditBookList>
+@model List<RentBook.Models.EditBook.EditBookModel>
 
 @{
     ViewBag.Title = "List";
@@ -7,69 +7,74 @@
 
 <h2>List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            封面
-        </th>
-        <th>
-            書籍編號
-        </th>
-        <th>
-            書名
-        </th>
-        <th>
-            類型
-        </th>
-        <th>
-            價格/小時
-        </th>
-        <th>
-            年齡分級
-        </th>
-        <th>
-            出版社
-        </th>
-        <th>
-            連載情況
-        </th>
-        <th></th>
-    </tr>
+@using (Html.BeginForm("EditBookData", "EditBook", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
 
-    @foreach(EditBookList b in Model)
-    {
+    <p>
+        @Html.ActionLink("新增書籍", "AddBook", "AddBookChapters")
+    </p>
+    <table class="table">
         <tr>
-            <td>
-                <img src="@b.b_ImagePath" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_DatePrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_AgeRating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.出版社編號名稱)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => b.b_Series_yn)
-            </td>
-            <td>
-                @Html.ActionLink("編輯", "Edit", new { /* id=item.PrimaryKey */ })
-            </td>
+            <th>
+                封面
+            </th>
+            <th>
+                書籍編號
+            </th>
+            <th>
+                書名
+            </th>
+            <th>
+                類型
+            </th>
+            <th>
+                價格/小時
+            </th>
+            <th>
+                年齡分級
+            </th>
+            <th>
+                出版社
+            </th>
+            <th>
+                連載情況
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (EditBookModel b in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@b.b_ImagePath" width="250" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_DatePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_AgeRating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.出版社編號名稱)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.b_Series_yn)
+                </td>
+                <td>
+                    @Html.ActionLink("編輯", "EditBookData", new { bid=b.b_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

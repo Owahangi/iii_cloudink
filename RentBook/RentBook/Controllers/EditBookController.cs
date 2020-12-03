@@ -14,22 +14,26 @@ namespace RentBook.Controllers
         {
             EditBookFactory factory = new EditBookFactory();
 
-            List<EditBookList> list = factory.列出所有書籍資訊();
+            List<EditBookModel> list = factory.列出所有書籍資訊();
             
             return View(list);
         }
 
-        public ActionResult EditBookData()
+        public ActionResult EditBookData(string bid)
         {
-            EditBookFactory factory = new EditBookFactory();
-            EditBookModel eb = new EditBookModel();
-            eb.出版社編號加名稱 = factory.傳回出版社編號名稱();
-            eb.作者編號加名稱 = factory.傳回作者編號名稱();
+            if (bid != null)
+            {
+                EditBookFactory factory = new EditBookFactory();
 
-            List<SelectListItem> item = new List<SelectListItem>();
+                EditBookModel eb = factory.帶出要修改的書籍資訊(bid);
+                eb.Tags字串 = factory.列出書籍Tags(bid);
+                eb.出版社編號加名稱 = factory.傳回出版社編號名稱();
+                eb.作者編號加名稱 = factory.傳回作者編號名稱();
 
+                return View(eb);
+            }
 
-            return View();
+            return RedirectToAction("List");
         }
     }
 }

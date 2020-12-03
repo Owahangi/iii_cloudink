@@ -28,7 +28,10 @@ namespace RentBook.Models.EditBook
         public string p_id { get; set; }
         public string PublishedIdName { get; set; }
 
-
+        // 其他不在資料表內的欄位
+        public string 出版社編號名稱 { get; set; }
+        public string b_ImagePath { get; set; }
+        public string Tags字串 { get; set; }
 
         // BookAuthor 資料表
         public string[] AuthorIdName { get; set; }

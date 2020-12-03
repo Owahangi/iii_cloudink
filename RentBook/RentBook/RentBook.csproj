@@ -4300,7 +4300,6 @@
     <Compile Include="Models\Author\AuthorFactory.cs" />
     <Compile Include="Models\Author\AuthorModel.cs" />
     <Compile Include="Models\EditBook\EditBookFactory.cs" />
-    <Compile Include="Models\EditBook\EditBookList.cs" />
     <Compile Include="Models\EditBook\EditBookModel.cs" />
     <Compile Include="Models\Point\PointBookCaseBooksModel.cs" />
     <Compile Include="Models\Point\PointFactory.cs" />
