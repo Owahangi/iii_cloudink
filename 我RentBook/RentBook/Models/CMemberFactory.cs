@@ -137,6 +137,7 @@ namespace RentBook.Models
                 x.m_Gender = reader["m_Gender"].ToString();
                 //x.m_Point = (int)reader["m_Point"];
                 x.m_Email = reader["m_Email"].ToString();
+                x.bc_id = (int)reader["bc_id"];
                 //x.m_Image = reader["m_Image"].ToString();
                 //x.m_RegisterDate = (DateTime)reader["m_RegisterDate"];
                 //x.m_LastLogin = (DateTime)reader["m_LastLogin"];

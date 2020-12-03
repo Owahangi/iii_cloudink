@@ -10,7 +10,7 @@ namespace RentBook.Controllers
 {
     public class ReadBooksController : Controller
     {
-
+        RentBookdbEntities2 db = new RentBookdbEntities2();
         // GET: ReadBooks
         public ActionResult List()
         {
@@ -18,7 +18,7 @@ namespace RentBook.Controllers
         }
 
         // 讀取小說內容
-        public ActionResult ReadBookContent(string b_id,int bc_Chapters)
+        public ActionResult ReadBookContent(string b_id, int bc_Chapters)
         {
             ReadBooksModel rb = new ReadBooksModel();
             rb.b_id = b_id;
@@ -26,8 +26,15 @@ namespace RentBook.Controllers
 
             ReadBooksFactory factory = new ReadBooksFactory();
             rb.小說書籍內容 = factory.ReadfileContent(rb);
-            
+
+
+
+
             return View(rb);
+
+
+
+
         }
 
         // 讀取漫畫內容
@@ -43,8 +50,10 @@ namespace RentBook.Controllers
 
             //string 路徑 = System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/漫畫素材/" + b_id + "/" + b_id + "-" + chapters + "/");
             rb.FilePath = "../../書籍素材/漫畫素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/";
-            
+
             return View(rb);
+
+
         }
     }
 }

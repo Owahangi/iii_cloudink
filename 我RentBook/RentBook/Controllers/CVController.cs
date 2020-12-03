@@ -19,6 +19,9 @@ namespace RentBook.Controllers
             var result2 = result.OrderByDescending(r => r.b_PublishedDate).ToList();
 
 
+
+
+
             if (Session[CDictionary.SK_LOGINED_USER] == null)
                 return View(result2);
             else
@@ -26,7 +29,7 @@ namespace RentBook.Controllers
                 ViewBag.Session = Session[CDictionary.SK_LOGINED_USER];
                 return View(result2);
             }
-           
+
 
 
         }
@@ -37,7 +40,7 @@ namespace RentBook.Controllers
             var list = db.Books.ToList();
             return View(list);
         }
-        
+
         public ActionResult SeachItem(string searchstring, string drop, int page = 1)
         {
             int pageSize = 10;
@@ -76,7 +79,7 @@ namespace RentBook.Controllers
             }
             else
             {
-                
+
                 if (!String.IsNullOrEmpty(searchstring))
                 {
                     int currentPage = page < 1 ? 1 : page;
@@ -92,7 +95,7 @@ namespace RentBook.Controllers
 
                     }
                 }
-                else 
+                else
                 {
                     ViewBag.drop = drop;
                     int currentPage = page < 1 ? 1 : page;
@@ -117,35 +120,56 @@ namespace RentBook.Controllers
         {
             var book = db.Books.FirstOrDefault(b => b.b_id == bid);
             if (book == null)
-                return RedirectToAction("SeachItem");            
+                return RedirectToAction("SeachItem");
             var chap = db.BooksChapters.Where(c => c.b_id == bid);
             var msg = db.BooksMessage.Where(m => m.b_id == bid);
 
+            var user = (Session[CDictionary.SK_LOGINED_USER] as CMember);
+            var bkb = db.BookCaseBooks.Where(b => b.bc_id == user.bc_id);
 
+                       
+            
             //Member
             CmessageFactory factory = new CmessageFactory();
             List<CmessageSqlView> list = new List<CmessageSqlView>();
             list = factory.getAllmessageSqlViews();
             var list2 = list.Where(m => m.b_id == bid);
-            return View(new Models.BooksChap
+            if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
             {
-                Books = book,
-                Chapters = chap.ToList(),
-                Messages = msg.ToList(),
-                CmessageSqlViews = list2.ToList()
+                return View(new Models.BooksChap
+                {
+                    Books = book,
+                    Chapters = chap.ToList(),
+                    Messages = msg.ToList(),
+                    CmessageSqlViews = list2.ToList(),
+                    log = false
+                }); 
+            }
+            else
+            {
+                return View(new Models.BooksChap
+                {
+                    Books = book,
+                    Chapters = chap.ToList(),
+                    Messages = msg.ToList(),
+                    CmessageSqlViews = list2.ToList(),
+                    BookCaseBooks = bkb.ToList(),
+                    log = true,
+                    cmember =user
+                });
+            }
 
-            });
         }
         [HttpPost] //限定使用POST
         //[Authorize] // 會員登入後才可評論
-        public ActionResult BookPage(BooksMessage bm)
+        public ActionResult SAVEBookPage(BooksMessage bm)
         {
             bm.bm_MessageTime = DateTime.Now;
             int bm_Sorce = (int)bm.bm_Score;
             db.BooksMessage.Add(bm);
             db.SaveChanges();
 
-            return RedirectToAction("BookPage", new { b_id = bm.b_id });
+            return RedirectToAction("BookPage", new { bid = bm.b_id });
         }
     }
 }

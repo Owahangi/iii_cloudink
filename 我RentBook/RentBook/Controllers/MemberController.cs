@@ -64,7 +64,7 @@ namespace RentBook.Controllers
             //x.fPassword = Request.Form["txtPassword"];
 
             (new CMemberFactory()).create(x, s_Pwd);
-            return RedirectToAction("Create");
+            return RedirectToAction("Login","Common");
             //return View();
         }
 

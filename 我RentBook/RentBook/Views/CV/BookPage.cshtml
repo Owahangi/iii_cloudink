@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "BookPage";
     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    bool check = false;
+    
+
 }
 
 <div class="breadcrumb-option mt-15">
@@ -63,7 +67,7 @@
                             <a href="#" class="btn subscribe-btn border-dark">
                                 <span>Watch Now</span> <i class="fa fa-angle-right"></i>
                             </a>
-                            <>
+                            <h5 class="d-inline">@Html.DisplayFor(model => model.Books.b_DatePrice) 元/日</h5>
                         </div>
                     </div>
                 </div>
@@ -81,29 +85,25 @@
                         <div class="widget-content">
 
                             <ul class="list-group">
-                                @for (int i = 0; i < Model.Chapters.Count; i++)
-                                {
-                                    if (i < 5)
-                                    {
-                                        if (Model.Books.b_Type == "小說")
-                                        {
-                                            @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
-                                        }
-                                        else
-                                        {
-                                            @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
-                                        }
-                                        @*<li><a href="#" class="list-group-item">Ep.@Model.Chapters[i].bc_Content</a></li>*@
-                                    }
 
+
+
+                                @if (Model.log == true)
+                                {
+                                    for (int i = 0; i < Model.BookCaseBooks.Count; i++)
+                                    {
+                                        if (Model.BookCaseBooks[i].b_id == Model.Books.b_id)//驗證有沒有買書
+                                        {
+                                            check = true;
+                                        }
+                                    }
                                 }
 
-                                <li class="dots" id="dots"></li>
-                                <div class="more" id="more">
-
-                                    @for (int i = 1; i < Model.Chapters.Count; i++)
+                                @if (check == true && Model.log == true)
+                                {
+                                    for (int i = 0; i < Model.Chapters.Count; i++)
                                     {
-                                        if (i > 4)
+                                        if (i < 5)
                                         {
                                             if (Model.Books.b_Type == "小說")
                                             {
@@ -113,13 +113,79 @@
                                             {
                                                 @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
                                             }
-                                            @*<li><a href="#" class="list-group-item">Ep.@Model.Chapters[i].bc_Content</a></li>*@
+
                                         }
+
                                     }
 
-                                </div>
+                                    <li class="dots" id="dots"></li>
+                                    <div class="more" id="more">
 
-                                <button class="list-group-item" onclick="myFunction()" id="myBtn">閱讀更多</button>
+                                        @for (int i = 1; i < Model.Chapters.Count; i++)
+                                        {
+                                            if (i > 4)
+                                            {
+                                                if (Model.Books.b_Type == "小說")
+                                                {
+                                                    @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item" })
+                                                }
+                                                @*<li><a href="#" class="list-group-item">Ep.@Model.Chapters[i].bc_Content</a></li>*@
+                                            }
+                                        }
+
+                                    </div>
+
+                                    <button class="list-group-item" onclick="myFunction()" id="myBtn">閱讀更多</button>
+                                }
+                                else
+                                {
+                                    //沒登入或沒買書
+
+                                    for (int i = 0; i < Model.Chapters.Count; i++)
+                                    {
+                                        if (i < 5)
+                                        {
+                                            if (Model.Books.b_Type == "小說")
+                                            {
+                                                @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item", onclick = "javascript:alert('請先購買書籍'); return false;" })
+                                            }
+                                            else
+                                            {
+                                                @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item", onclick = "javascript:alert('請先購買書籍'); return false;" })
+                                            }
+
+                                        }
+
+                                    }
+
+                                    <li class="dots" id="dots"></li>
+                                    <div class="more" id="more">
+
+                                        @for (int i = 1; i < Model.Chapters.Count; i++)
+                                        {
+                                            if (i > 4)
+                                            {
+                                                if (Model.Books.b_Type == "小說")
+                                                {
+                                                    @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item", onclick = "javascript:alert('請先購買書籍'); return false;" })
+                                                }
+                                                else
+                                                {
+                                                    @Html.ActionLink("EP." + Model.Chapters[i].bc_Content, "ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = Model.Chapters[i].bc_Chapters }, new { @class = "list-group-item", onclick = "javascript:alert('請先購買書籍'); return false;" })
+                                                }
+                                            }
+                                        }
+
+                                    </div>
+
+                                    <button class="list-group-item" onclick="myFunction()" id="myBtn">閱讀更多</button>
+                                }
+
+
 
                             </ul>
                         </div>
@@ -131,136 +197,144 @@
                     </div>
                     @foreach (var item in Model.CmessageSqlViews)
                     {
-                        <div class="anime__review__item">
-                            <div class="anime__review__item__pic">
-                                <img src="@item.m_Image" alt="">
-                            </div>
-                            <div class="anime__review__item__text">
-                                <h6>
-                                    @item.m_Alias
-                                    <span>@item.bm_MessageTime</span>
-                                </h6>
-                                <p>@item.bm_Message</p>
-                                <input type="hidden" name="b_id" value="@item.b_id" />
-                                <input type="hidden" name="m_id" value="@item.m_id" />
-                            </div>
+                    <div class="anime__review__item">
+                        <div class="anime__review__item__pic">
+                            <img src="@item.m_Image" alt="">
                         </div>
+                        <div class="anime__review__item__text">
+                            <h6>
+                                @item.m_Alias
+                                <span>@item.bm_MessageTime</span>
+                                @for (int i = 0; i < item.bm_Score; i++)
+                                {
+                                    <i class="fa fa-star" id="starstylefull" ></i>
+                                }
+                                
+                            </h6>
+                            <p>@item.bm_Message</p>
+                            
+                            <input type="hidden" name="b_id" value="@item.b_id" />
+                            <input type="hidden" name="m_id" value="@item.m_id" />
+                        </div>
+                    </div>
                     }
 
 
                 </div>
-                <div class="anime__details__form">
-                    <div class="section-title">
-                        <h5>Your Comment</h5>
+                @if (check == true && Model.log == true)
+                {
+                    <div class="anime__details__form">
+                        <div class="section-title">
+                            <h5>Your Comment</h5>
+                        </div>
+                        <form method="post" action="~/CV/SAVEBookPage">
+                            <textarea placeholder="Your Comment" name="bm_Message"></textarea>
+                            <input type="hidden" name="b_id" value="@Html.DisplayFor(model => model.Books.b_id)" />
+                            <input type="hidden" name="m_id" value="@Model.cmember.m_id" /><!--判定member留言板-->
+                            <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
+
+                            <div class="rate-content mt-2" id="rating">
+
+
+                                <a href="#" id="r1" type="radio">
+                                    <i class="fa fa-star-o" id="starstyle"></i>
+                                </a>
+                                <a href="#" id="r1" type="radio">
+                                    <i class="fa fa-star-o" id="starstyle"></i>
+                                </a>
+                                <a href="#" id="r1" type="radio">
+                                    <i class="fa fa-star-o" id="starstyle"></i>
+                                </a>
+                                <a href="#" id="r1" type="radio">
+                                    <i class="fa fa-star-o" id="starstyle"></i>
+                                </a>
+                                <a href="#" id="r1" type="radio">
+                                    <i class="fa fa-star-o" id="starstyle"></i>
+                                </a>
+                                <input type="hidden" name="bm_Score" id="input1" value="0" />
+
+                            </div>
+
+                        </form>
+
                     </div>
-                    <form method="post" action="~/CV/BookPage">
-                        <textarea placeholder="Your Comment" name="bm_Message"></textarea>
-                        <input type="hidden" name="b_id" value="@Html.DisplayFor(model =>model.Books.b_id)" />
-                        <input type="hidden" name="m_id" value="m2" /><!--判定member留言板-->
-                        <button type="submit"><i class="fa fa-arrow-circle-o-up"></i> Review</button>
-
-                        <div class="rate-content mt-2" id="rating">
-                            
-
-                            <a href="#" id="r1" type="radio">
-                                <i class="fa fa-star-o" id="starstyle"></i>
-                            </a>
-                            <a href="#" id="r1" type="radio">
-                                <i class="fa fa-star-o" id="starstyle"></i>
-                            </a>
-                            <a href="#" id="r1" type="radio">
-                                <i class="fa fa-star-o" id="starstyle"></i>
-                            </a>
-                            <a href="#" id="r1" type="radio">
-                                <i class="fa fa-star-o" id="starstyle"></i>
-                            </a>
-                            <a href="#" id="r1" type="radio">
-                                <i class="fa fa-star-o" id="starstyle"></i>
-                            </a>
-                            <input type="hidden" name="bm_Score" id="input1" value="0" />
-                            
-                        </div>                        
-
-                    </form>
-
-                </div>
-
+                }
             </div>
-            <div class="col-lg-4 col-md-4">
-                <div class="sidebar-widget-area">
-                    <h5 class="title">Latest Posts</h5>
+                <div class="col-lg-4 col-md-4">
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Latest Posts</h5>
 
-                    <div class="widget-content">
-                        @for (int i = 0; i < 4; i++)
-                        {
-                            <div class="single-blog-post d-flex align-items-center widget-post">
-                                <!-- Post Thumbnail -->
-                                <div class="post-thumbnail">
-                                    <img src="~/書籍素材/@(Model.Books.b_Type)素材/@Model.Books.b_id/@Model.Books.b_Image" alt="">
-                                </div>
-                                <!-- Post Content -->
-                                <div class="post-content">
-                                    <a href="#" class="post-tag">Lifestyle</a>
-                                    <h4>
-                                        <a href="#" class="post-headline">@Model.Books.b_Name</a>
-                                    </h4>
-                                    <div class="post-meta">
-                                        <p>
-                                            <a href="#">12 March</a>
-                                        </p>
+                        <div class="widget-content">
+                            @for (int i = 0; i < 4; i++)
+                            {
+                                <div class="single-blog-post d-flex align-items-center widget-post">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="~/書籍素材/@(Model.Books.b_Type)素材/@Model.Books.b_id/@Model.Books.b_Image" alt="">
+                                    </div>
+                                    <!-- Post Content -->
+                                    <div class="post-content">
+                                        <a href="#" class="post-tag">Lifestyle</a>
+                                        <h4>
+                                            <a href="#" class="post-headline">@Model.Books.b_Name</a>
+                                        </h4>
+                                        <div class="post-meta">
+                                            <p>
+                                                <a href="#">12 March</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
+                            }
 
+                        </div>
                     </div>
-                </div>
-                <div class="sidebar-widget-area">
-                    <h5 class="title">Tags</h5>
-                    <div class="widget-content">
-                        <ul class="tags">
-                            <li>
-                                <a href="#">全一集</a>
-                            </li>
-                            <li>
-                                <a href="#">冒險</a>
-                            </li>
-                            <li>
-                                <a href="#">戀愛故事</a>
-                            </li>
-                            <li>
-                                <a href="#">穿越</a>
-                            </li>
-                            <li>
-                                <a href="#">輕小說</a>
-                            </li>
-                            <li>
-                                <a href="#">機甲</a>
-                            </li>
-                            <li>
-                                <a href="#">校園</a>
-                            </li>
-                            <li>
-                                <a href="#">戰爭</a>
-                            </li>
-                            <li>
-                                <a href="#">懸疑推理</a>
-                            </li>
-                            <li>
-                                <a href="#">職場</a>
-                            </li>
-                            <li>
-                                <a href="#">網路小說</a>
-                            </li>
-                            <li>
-                                <a href="#">奇幻</a>
-                            </li>
-                        </ul>
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Tags</h5>
+                        <div class="widget-content">
+                            <ul class="tags">
+                                <li>
+                                    <a href="#">全一集</a>
+                                </li>
+                                <li>
+                                    <a href="#">冒險</a>
+                                </li>
+                                <li>
+                                    <a href="#">戀愛故事</a>
+                                </li>
+                                <li>
+                                    <a href="#">穿越</a>
+                                </li>
+                                <li>
+                                    <a href="#">輕小說</a>
+                                </li>
+                                <li>
+                                    <a href="#">機甲</a>
+                                </li>
+                                <li>
+                                    <a href="#">校園</a>
+                                </li>
+                                <li>
+                                    <a href="#">戰爭</a>
+                                </li>
+                                <li>
+                                    <a href="#">懸疑推理</a>
+                                </li>
+                                <li>
+                                    <a href="#">職場</a>
+                                </li>
+                                <li>
+                                    <a href="#">網路小說</a>
+                                </li>
+                                <li>
+                                    <a href="#">奇幻</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 

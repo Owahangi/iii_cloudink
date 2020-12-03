@@ -49,6 +49,7 @@ namespace RentBook.Controllers
 
             if (cust != null)
             {
+                
                 //存進Session
                 Session[CDictionary.SK_LOGINED_USER] = cust;
 

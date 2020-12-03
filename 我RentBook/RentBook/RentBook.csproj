@@ -6618,6 +6618,7 @@
     <Compile Include="Tags.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Tags.cs" />
     <Compile Include="ViewModels\CLoginViewModel.cs" />
     <Compile Include="ViewModels\Home_VM.cs" />
   </ItemGroup>

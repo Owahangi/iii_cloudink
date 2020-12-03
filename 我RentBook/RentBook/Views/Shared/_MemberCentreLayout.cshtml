@@ -444,11 +444,11 @@
                         <i class="fas fa-user-edit"></i>
                         編輯個人資訊
                     </a>
-
-                    <a href="#" data-toggle='modal' data-target='#logoutModal' class="list-group-item list-group-item-action sidebar">
+                    @Html.ActionLink("登出", "Logout", "Common", new { @class = "list-group-item list-group-item-action sidebar" })
+                    @*<a href="#" data-toggle='modal' data-target='#logoutModal' class="list-group-item list-group-item-action sidebar">
                         <i class="fas fa-sign-out-alt"></i>
                         登出
-                    </a>
+                    </a>*@
 
 
 
