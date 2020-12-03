@@ -16,6 +16,27 @@ namespace RentBook.Models
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
 
+
+
+        //需帶入bc_id(書櫃編號)
+        public string getEmail(int bc_id) 
+        {
+            string email = "";
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select m_Email from ([Member] as m inner join [BookCase] as b on m.bc_id = b.bc_id) inner join [BookCaseBooks] as bcb on m.bc_id = bcb.bc_id where m.bc_id = bcb.bc_id and bcb_id = @bcb_id ";
+            cmd.Parameters.Add(email);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            //待修正
+
+            return email;
+        }
+
         public int getAvgSorce(string b_id)
         {
             int avgsore = 0;
@@ -24,10 +45,9 @@ namespace RentBook.Models
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT AVG(bm_Score) FROM BooksMessage WHERE bm_Score > 0 AND b_id=@b_id ";
-            cmd.Parameters.Add(avgsore);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            cmd.CommandText = "SELECT AVG(bm_Score) FROM BooksMessage WHERE bm_Score > 0 AND b_id = @b_id ";
+
+            //待修正
 
             return avgsore;
         }

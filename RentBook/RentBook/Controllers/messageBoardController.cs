@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 using RentBook.Models;
-
 using System.Web.SessionState;
+
 
 
 namespace RentBook.Controllers
@@ -40,8 +39,6 @@ namespace RentBook.Controllers
         public ActionResult CreateMessageBoard(BooksMessage bm) 
         {
 
-            if (Session["UserAccount"] != null) { }
-
             string b_id = bm.b_id;
             string m_id = bm.m_id;
             string bm_Message = bm.bm_Message;
@@ -73,8 +70,12 @@ namespace RentBook.Controllers
             list = factory.getAllmessageSqlViews();
             var list2 = list.Where(m => m.b_id == b_id);
 
+            //星星平均
             int AvgSore = factory.getAvgSorce(b_id);
             ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
+
+                int bc_id = factory.getEmail();
+
             return View(list);
         }
 
