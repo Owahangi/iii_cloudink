@@ -2777,7 +2777,6 @@
       <DependentUpon>dbRentBookModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\messageBoardController.cs" />
-    <Compile Include="Models\messageBoardModels\messageBoardController.cs" />
     <Compile Include="dbRentBookModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

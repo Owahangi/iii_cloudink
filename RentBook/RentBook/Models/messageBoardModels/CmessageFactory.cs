@@ -32,9 +32,8 @@ namespace RentBook.Models
             cmd.ExecuteNonQuery();
             con.Close();
 
-            //待修正
-
             return email;
+            //待測試
         }
 
         public int getAvgSorce(string b_id)
@@ -46,10 +45,11 @@ namespace RentBook.Models
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "SELECT AVG(bm_Score) FROM BooksMessage WHERE bm_Score > 0 AND b_id = @b_id ";
-
-            //待修正
+            cmd.Parameters.Add(avgsore);
+            con.Close();
 
             return avgsore;
+            //待測試
         }
 
         //get join tables
