@@ -21,6 +21,8 @@
     <table class="table">
         <tr>
             <th>
+            </th>
+            <th>
                 封面
             </th>
             <th>
@@ -53,6 +55,9 @@
         @foreach (EditBookModel b in Model)
         {
     <tr>
+        <td>
+            <input type="hidden" name="b_Info" value="@b.b_Info" />
+        </td>
         <td>
             <img src="@b.b_ImagePath" width="150" />
         </td>

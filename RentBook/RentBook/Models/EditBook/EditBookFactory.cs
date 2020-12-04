@@ -109,7 +109,7 @@ namespace RentBook.Models.EditBook
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
 
-            string tSQL = "select A.b_Image,A.b_id,A.b_Name,A.b_Info,A.b_Type,A.b_DatePrice,A.b_ISBN,A.b_AgeRating,A.p_id + '  ' + B.p_Name as 出版社編號名稱,A.b_Series_yn,A.b_Put_yn From Books A left outer join Publishing B on A.p_id = B.p_id where A.b_id=@bid";
+            string tSQL = "select A.b_Image,A.b_id,A.b_Name,A.b_Info,A.b_Type,A.b_PublishedDate,A.b_DatePrice,A.b_ISBN,A.b_AgeRating,A.p_id + '  ' + B.p_Name as 出版社編號名稱,A.b_Series_yn,A.b_Put_yn From Books A left outer join Publishing B on A.p_id = B.p_id where A.b_id=@bid";
 
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("bid", b_id);
@@ -124,6 +124,7 @@ namespace RentBook.Models.EditBook
                 eb.b_Name = (string)reader["b_Name"];
                 eb.b_Info = (string)reader["b_Info"];
                 eb.b_Type = (string)reader["b_Type"];
+                eb.b_PublishedDate = ((DateTime)reader["b_PublishedDate"]).ToString("yyyy/MM/dd");
                 eb.b_DatePrice = (int)reader["b_DatePrice"];
                 eb.b_ISBN = (string)reader["b_ISBN"];
                 eb.b_AgeRating = (string)reader["b_AgeRating"];
@@ -304,6 +305,98 @@ namespace RentBook.Models.EditBook
             con.Close();
 
             return 本書的作者;
+        }
+
+        //----------------- 以上都是把資料呈現到 View 的 function ---------------
+        //----------------- 以下開始存入資料 ------------------------------------
+
+        // Update Books 資料表
+        public void SaveBookData_Books(EditBookModel eb)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "update Books set ";
+            tSQL += "b_Name=@bName,";
+            tSQL += "b_Info=@bInfo,";
+            tSQL += "b_Image=@bImage,";
+            tSQL += "b_PublishedDate=@bPublishedDate,";
+            tSQL += "b_DatePrice=@bDatePrice,";
+            tSQL += "b_ISBN=@bISBN,";
+            tSQL += "b_AgeRating=@bAgeRating,";
+            tSQL += "b_Series_yn=@bSeries,";
+            tSQL += "b_Put_yn=@bPut,";
+            tSQL += "p_id=@pid";
+            tSQL += " where b_id=@bid";
+
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bid", eb.b_id);
+            cmd.Parameters.AddWithValue("bName", eb.b_Name);
+            cmd.Parameters.AddWithValue("bInfo", eb.b_Info);
+            cmd.Parameters.AddWithValue("bImage", eb.b_Image);
+            cmd.Parameters.AddWithValue("bPublishedDate", eb.b_PublishedDate);
+            cmd.Parameters.AddWithValue("bDatePrice", eb.b_DatePrice);
+            cmd.Parameters.AddWithValue("bISBN", eb.b_ISBN);
+            cmd.Parameters.AddWithValue("bAgeRating", eb.b_AgeRating);
+            cmd.Parameters.AddWithValue("pid", eb.p_id);
+            cmd.Parameters.AddWithValue("bPut", eb.b_Put_yn);
+
+            // 連載情況
+            char 連載情況;
+            if (eb.b_Series_yn == "連載中")
+            {
+                連載情況 = 'y';
+                cmd.Parameters.AddWithValue("bSeries", 連載情況);
+            }
+            else if (eb.b_Series_yn == "已完結")
+            {
+                連載情況 = 'n';
+                cmd.Parameters.AddWithValue("bSeries", 連載情況);
+            }
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public string 傳回原書籍封面照片檔名(string bid)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+            string tSQL = "select b_Image from Books where b_id=@bid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bid", bid);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            string oldfilename = "";
+
+            if (reader.Read())
+            {
+                oldfilename = (string)reader["b_Image"];
+            }
+
+            reader.Close();
+            con.Close();
+
+            return oldfilename;
+        }
+
+        // 儲存新封面圖片使用
+        public string 書籍封面圖片命名(EditBookModel eb)
+        {
+            // 取得副檔名
+            int point = eb.Image.FileName.IndexOf(".");
+            string extention = eb.Image.FileName.Substring(point, eb.Image.FileName.Length - point);
+            // 命名封面檔名
+            string photoName = eb.b_id + "-cover" + extention;
+
+            return photoName;
+        }
+
+        // 解析出版社資料(傳入資料庫用)
+        public string 出版社資料解析成編號(string PublishedIdName)
+        {
+            string[] 解析結果 = PublishedIdName.Split(' ');
+            return 解析結果[0];
         }
     }
 }

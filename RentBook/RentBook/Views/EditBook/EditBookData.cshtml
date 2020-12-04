@@ -7,7 +7,7 @@
 <h2>EditBookData</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("SaveEditBookData", "EditBook", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -21,8 +21,11 @@
     <div class="form-horizontal">
         <h4>EditBookModel</h4>
         <hr />
-        <!-- b_id 未改動態 -->
+
         <input type="hidden" name="b_id" value="@Model.b_id" />
+        <input type="hidden" name="b_Type" value="@Model.b_Type" />
+        <input type="hidden" name="b_Image" value="@Model.b_Image" />
+
 
         <div class="form-group">
             <label class="control-label col-md-2">書名</label>
@@ -35,15 +38,21 @@
         <div class="form-group">
             <label class="control-label col-md-2">簡介</label>
             <div class="col-md-10">
-                <textarea rows="5" class="form-control" name="b_Info" value="@Model.b_Info" id="b_Info"></textarea>
+                <textarea rows="5" class="form-control" name="b_Info" id="b_Info">@Model.b_Info</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">預覽照片</label>
+            <div class="col-md-10">
+                <img src="@Model.b_ImagePath" width="150" id="img" />
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2">封面照片</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.b_Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.b_Image, "", new { @class = "text-danger" })
+                <input type="file" name="Image" id="Image"/>
             </div>
         </div>
 
@@ -57,7 +66,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">出版日期</label>
             <div class="col-md-10">
-                <input type="text" name="b_PublishedDate" class="form-control" value="@Model.b_PublishedDate" />
+                <input type="date" name="b_PublishedDate" class="form-control" value="@Model.b_PublishedDate.Replace("/", "-")" />
             </div>
         </div>
 
@@ -79,13 +88,48 @@
         <div class="form-group">
             <label class="control-label col-md-2">年齡分級</label>
             <div class="col-md-10">
-                <select name="AgeRange" required="required" class="form-control">
+                <select name="b_AgeRating" required="required" class="form-control">
                     <option disabled>年齡分級</option>
-                    <option value="普遍級">普遍級 ( 一般人皆可觀賞 )</option>
-                    <option value="保護級">保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
-                    <option value="輔導十二歲級">輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
-                    <option value="輔導十五歲級">輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
-                    <option value="限制級">限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                    @if (Model.b_AgeRating == "普遍級")
+                    {
+                        <option value="普遍級" selected>普遍級 ( 一般人皆可觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="普遍級">普遍級 ( 一般人皆可觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "保護級")
+                    {
+                        <option value="保護級" selected>保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="保護級">保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "輔導十二歲級")
+                    {
+                        <option value="輔導十二歲級" selected>輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="輔導十二歲級">輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "輔導十五歲級")
+                    {
+                        <option value="輔導十五歲級" selected>輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="輔導十五歲級">輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "限制級")
+                    {
+                        <option value="限制級" selected>限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="限制級">限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                    }
                 </select>
             </div>
         </div>
@@ -185,7 +229,7 @@
                     else if (Model.b_Put_yn == "下架")
                     {
                         <div class="form-check" id="b_Put_yn" name="b_Series_yn">
-                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y" >
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y">
                             <label class="form-check-label">上架</label>
                         </div>
                         <div class="form-check" id="b_Put_yn" name="b_Series_yn">
@@ -204,6 +248,16 @@
     </div>
 }
 
+@section a{
+    <script>
+        $('#Image').on('change', function (e) {
+            const file = this.files[0];
+            const objectURL = URL.createObjectURL(file);
+
+            $('#img').attr('src', objectURL);
+        });
+    </script>
+}
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

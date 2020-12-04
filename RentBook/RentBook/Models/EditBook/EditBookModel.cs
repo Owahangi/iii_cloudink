@@ -20,7 +20,7 @@ namespace RentBook.Models.EditBook
         public HttpPostedFileBase Image { get; set; }
         public string b_Image { get; set; }
         public string b_Type { get; set; }
-        public DateTime b_PublishedDate { get; set; }
+        public string b_PublishedDate { get; set; }
         public int b_DatePrice { get; set; }
         public string b_ISBN { get; set; }
         public string b_AgeRating { get; set; }
