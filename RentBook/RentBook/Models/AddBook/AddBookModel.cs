@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RentBook.Models.AddBook
 {
-    public class EditBookModel
+    public class AddBookModel
     {
         // 下拉式選單使用
         public List<string> 出版社編號加名稱 { get; set; }

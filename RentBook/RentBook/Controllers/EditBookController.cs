@@ -66,6 +66,7 @@ namespace RentBook.Controllers
             eb.b_AgeRating = Request.Form["b_AgeRating"];
             eb.b_Series_yn = Request.Form["Series"];
             eb.b_Put_yn = Request.Form["b_Put_yn"];
+
             if (Request.Form["PublishedIdName"] != null)
             {
                 eb.PublishedIdName = Request.Form["PublishedIdName"];
@@ -102,8 +103,19 @@ namespace RentBook.Controllers
                 }
             }
 
-            factory.SaveBookData_Books(eb);
+            // 處理 tags
+            eb.Tags字串 = Request.Form["Tag"];
+            eb.Tags = factory.Tags轉成陣列(eb.Tags字串);
+            factory.移除此書籍的標籤(eb.b_id);
 
+            // 處理書籍作者
+            eb.AuthorIdName = Request.Form.GetValues("AuthorIdName");
+            factory.移除此書籍的作者(eb.b_id);
+
+            //儲存到資料庫
+            factory.SaveBookData_Books(eb);
+            factory.儲存到標籤資料表(eb);
+            factory.SaveBooksAuthor(eb);
 
             return RedirectToAction("List");
         }

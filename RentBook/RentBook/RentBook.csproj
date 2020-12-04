@@ -4291,7 +4291,7 @@
     <Compile Include="Models\AddBook\AddBookFactory.cs" />
     <Compile Include="Models\AddBook\AddBookModel.cs" />
     <Compile Include="Models\AddBook\AddBooks.cs" />
-    <Compile Include="Models\AddBook\AddBooksAuthor.cs" />
+    <Compile Include="Models\AddBook\EditBookModel.cs" />
     <Compile Include="Models\AddBook\AddBooksChapters.cs" />
     <Compile Include="Models\AddBook\AddBooksFiles.cs" />
     <Compile Include="Models\AddBook\AddBooksTags.cs" />

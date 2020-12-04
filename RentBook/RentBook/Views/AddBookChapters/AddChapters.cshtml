@@ -64,6 +64,9 @@
                 </div>
                 @*<button type="button" class="btn btn-primary btn-block" onclick="stepper.previous()">繼續新增章節</button>*@
                 @Html.ActionLink("繼續新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, new { @class = "btn btn-primary btn-block" })
+                @Html.ActionLink("結束新增", "List", "EditBook", null, new { @class = "btn btn-primary btn-block" })
+                @Html.ActionLink("建立新書籍", "AddBook", "AddBook", null, new { @class = "btn btn-primary btn-block" })
+
             </div>
         </div>
     </div>

@@ -398,5 +398,160 @@ namespace RentBook.Models.EditBook
             string[] 解析結果 = PublishedIdName.Split(' ');
             return 解析結果[0];
         }
+
+        public List<string> Tags轉成陣列(string Tags)
+        {
+            string[] arrsplit = Tags.Split('#');
+            List<string> returnlist = new List<string>();
+            foreach (string a in arrsplit)
+            {
+                if (a != "")
+                {
+                    returnlist.Add(a.Trim());
+                }
+            }
+
+            return returnlist;
+        }
+
+        // 儲存 Tags
+        public void 移除此書籍的標籤(string b_id)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "Delete from BooksTags where b_id=@bid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bid", b_id);
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void 儲存到標籤資料表(EditBookModel eb)
+        {
+            // 找出目前現有的 Tags 資料表
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL1 = "select t_Name from Tags";
+            SqlCommand cmd1 = new SqlCommand(tSQL1, con);
+            SqlDataReader reader = cmd1.ExecuteReader();
+
+            List<string> listTag = new List<string>();
+
+            while (reader.Read())
+            {
+                listTag.Add((string)reader["t_Name"]);
+            }
+
+            reader.Close();
+
+
+            // 將標籤新增到 Tags 資料表 (只新增新的標籤 重複的標籤不新增)
+            SqlCommand cmd2 = new SqlCommand();
+            cmd2.Connection = con;
+
+            for (int i = 0; i < eb.Tags.Count; i++)
+            {
+                bool check = false;
+                for (int j = 0; j < listTag.Count; j++)
+                {
+                    if (eb.Tags[i] == listTag[j])
+                    {
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    if (eb.Tags[i] != "")
+                    {
+                        string tSQL2 = "Insert into Tags (t_Name)Values('" + eb.Tags[i] + "')";
+                        cmd2.CommandText = tSQL2;
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            // 找出標籤序號
+            SqlCommand cmd3 = new SqlCommand();
+            cmd3.Connection = con;
+
+            List<int> 標籤序號 = new List<int>();
+
+            for (int i = 0; i < eb.Tags.Count; i++)
+            {
+                string tSQL3 = "select t_id from Tags where t_Name='" + eb.Tags[i] + "'";
+                cmd3.CommandText = tSQL3;
+                SqlDataReader reader1 = cmd3.ExecuteReader();
+                if (reader1.Read())
+                {
+                    標籤序號.Add((int)reader1["t_id"]);
+                }
+                reader1.Close();
+            }
+
+
+            // 將標籤序號 新增到 BooksTags 資料表
+            SqlCommand cmd4 = new SqlCommand();
+            cmd4.Connection = con;
+
+            foreach (int i in 標籤序號)
+            {
+                string tSQL4 = "Insert into BooksTags (b_id,t_id)Values('" + eb.b_id + "'," + i + ")";
+                cmd4.CommandText = tSQL4;
+                cmd4.ExecuteNonQuery();
+            }
+
+            con.Close();
+        }
+
+        // 儲存作者
+        public void 移除此書籍的作者(string b_id)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "Delete from BooksAuthor where b_id=@bid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bid", b_id);
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public List<string> 作者資料陣列解析成編號(string[] AuthorIdName)
+        {
+            List<string> 解析結果 = new List<string>();
+
+            foreach (string a in AuthorIdName)
+            {
+                string[] 解析 = a.Split(' ');
+                解析結果.Add(解析[0]);
+            }
+
+            return 解析結果;
+        }
+        // 將資料儲存到書籍作者資料表
+        public void SaveBooksAuthor(EditBookModel eb)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            List<string> 作者編號陣列 = 作者資料陣列解析成編號(eb.AuthorIdName);
+
+            string SQL = "";
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.Connection = con;
+
+            foreach (string a_id in 作者編號陣列)
+            {
+                SQL = "Insert into BooksAuthor (b_id,a_id)Values('" + eb.b_id + "','" + a_id + "')";
+                cmd.CommandText = SQL;
+                cmd.ExecuteNonQuery();
+            }
+
+            con.Close();
+        }
     }
 }

@@ -46,9 +46,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="control-label col-md-2">預覽照片</label>
+                    <div class="col-md-10">
+                        <img src="" width="150" id="img" />
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label col-md-2">封面照片</label>
                     <div class="col-10">
-                        <input type="file" required="required" name="Image" />
+                        <input type="file" required="required" name="Image" id="Image"/>
                     </div>
                 </div>
 
@@ -178,8 +185,9 @@
                 <input type="hidden" id="bbid" name="b_id" value="" />
                 <input type="hidden" id="bbtype" name="b_Type" value="" />
 
+                @Html.ActionLink("完成新增","List","EditBook",null,new { @class= "btn btn-primary btn-block" })
                 <button type="submit" class="btn btn-primary btn-block">繼續新增章節</button>
-                <button type="button" class="btn btn-primary btn-block" onclick="history.go(0)">結束新增</button>
+                <button type="button" class="btn btn-primary btn-block" onclick="history.go(0)">建立新書籍</button>
             </div>
         </form>
     </div>
@@ -246,6 +254,13 @@
         function myclick() {
             window.history.back(-1);
         };
+
+        $('#Image').on('change', function (e) {
+            const file = this.files[0];
+            const objectURL = URL.createObjectURL(file);
+
+            $('#img').attr('src', objectURL);
+        });
 
         $(document.getElementById("chapter").innerHTML = "新增第 1 章");
     </script>

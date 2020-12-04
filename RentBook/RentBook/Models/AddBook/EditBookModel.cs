@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RentBook.Models
 {
-    public class AddBooksAuthor
+    public class EditBookModel
     {
         public string b_id { get; set; }
         public string[] AuthorIdName { get; set; }
