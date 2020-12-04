@@ -62,7 +62,7 @@ namespace RentBook.Controllers
             var book = db.Books.FirstOrDefault(b => b.b_id == b_id);
             if (book == null)
                 return RedirectToAction("SeachItem");
-            var chap = db.BooksChapters.Where(c => c.b_id == b_id);
+            //var chap = db.BooksChapters.Where(c => c.b_id == b_id);
             var msg = db.BooksMessage.Where(m => m.b_id == b_id);
 
             CmessageFactory factory = new CmessageFactory();
@@ -74,8 +74,13 @@ namespace RentBook.Controllers
             int AvgSore = factory.getAvgSorce(b_id);
             ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
 
-                //int bc_id = factory.getEmail();
+            Member c = Session[CDictionary.SK_LOGINED_USER] as Member;
 
+            //判斷有沒流過言
+            List<BooksMessage> ListBooksMessage = new List<BooksMessage>();
+            string m_id = ""; //待刪除
+            ListBooksMessage = factory.getOneMessage(b_id, m_id);
+            
             return View(list);
         }
 

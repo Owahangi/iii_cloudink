@@ -16,9 +16,41 @@ namespace RentBook.Models
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
 
-
-
         //需帶入bc_id(書櫃編號)
+        public List<BooksMessage> getOneMessage(string b_id, string m_id) 
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from BooksMessage where b_id = @b_id and m_id = @m_id ";
+            cmd.Parameters.AddWithValue("b_id", b_id);
+            cmd.Parameters.AddWithValue("m_id", m_id);
+
+            List<BooksMessage> list = new List<BooksMessage>();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) 
+            {
+                BooksMessage x = new BooksMessage();
+                x.bm_id = (int)reader["bm_id"];
+                x.b_id = reader["b_id"].ToString();
+                x.m_id = reader["m_id"].ToString();
+                x.bm_Message = reader["bm_Message"].ToString();
+                x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
+                x.bm_Score = (int)reader["bm_Score"];
+                list.Add(x);
+            }
+
+            if (list.Count == 0)
+            {
+                return null;
+            }
+
+            return list;
+        }
+        
         public string getEmail(int bc_id) 
         {
             string email = "";
@@ -27,10 +59,11 @@ namespace RentBook.Models
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select m_Email from ([Member] as m inner join [BookCase] as b on m.bc_id = b.bc_id) inner join [BookCaseBooks] as bcb on m.bc_id = bcb.bc_id where m.bc_id = bcb.bc_id and bcb_id = @bcb_id ";
-            cmd.Parameters.Add(bc_id);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd.CommandText = "select m_Email from ([Member] as m inner join [BookCase] as b on m.bc_id = b.bc_id) inner join [BookCaseBooks] as bcb on m.bc_id = bcb.bc_id where bcb.bc_id = @bc_id ";
+            cmd.Parameters.AddWithValue("bcb_id", bc_id);
 
+            SqlDataReader reader = cmd.ExecuteReader();
+            
             if (reader.Read())
             {
                 email = (string)reader["m_Email"];
@@ -53,7 +86,6 @@ namespace RentBook.Models
             cmd.CommandText = "SELECT AVG(bm_Score) as avgsore FROM BooksMessage WHERE bm_Score > 0 AND b_id = @B_ID ";
             cmd.Parameters.AddWithValue("B_ID", b_id);
             con.Close();
-
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -95,7 +127,6 @@ namespace RentBook.Models
             {
 
                 CmessageSqlView x = new CmessageSqlView();
-
 
                 x.bm_id = (int)reader["bm_id"];
                 x.b_id = reader["b_id"].ToString();
