@@ -16,7 +16,38 @@ namespace RentBook.Models
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
 
-        //需帶入bc_id(書櫃編號)
+        public bool checkWishListLove(int bc_id, string b_id)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from BooksWishlist where bc_id = @bc_id and b_id = @b_id ";
+            cmd.Parameters.AddWithValue("@b_id", bc_id);
+            cmd.Parameters.AddWithValue("@m_id", b_id);
+
+            BooksWishlist bw = new BooksWishlist();
+            List<BooksWishlist> bwList = new List<BooksWishlist>();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                bw.bw_id = (int)reader["bw_id"];
+                bw.bc_id = (int)reader["bc_id"];
+                bw.b_id = reader["b_id"].ToString();
+                bw.bw_AddTime = (DateTime)reader["bw_AddTime"];
+                bwList.Add(bw);
+            }
+            if (bwList.Count == 0)
+            {
+                return false;
+            }
+            return true;
+            //待測試及確認
+        }
+
         public List<BooksMessage> getOneMessage(string b_id, string m_id) 
         {
             SqlConnection con = new SqlConnection();
@@ -50,7 +81,29 @@ namespace RentBook.Models
 
             return list;
         }
-        
+
+        public string getM_ID(string b_id)
+        {
+            string M_ID = "";
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select m_id from [Member] as m inner join [BookCaseBooks] as bcb on m.bc_id = bcb.bc_id where bcb.b_id = @b_id ";
+            cmd.Parameters.AddWithValue("@b_id", b_id);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                M_ID = reader["m_id"].ToString();
+            }
+            reader.Close();
+            con.Close();
+
+            return M_ID;
+        }
+
         public string getEmail(int bc_id) 
         {
             string email = "";
@@ -72,6 +125,30 @@ namespace RentBook.Models
             con.Close();
 
             return email;
+            //待測試
+        }
+
+        public int getMemberStar(string b_id, string m_id)
+        {
+            int star = 0;
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=DESKTOP-QC55GV4\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select bm_Score from BooksMessage WHERE b_id = @b_id and m_id = @m_id ";
+            cmd.Parameters.AddWithValue("@b_id", b_id);
+            cmd.Parameters.AddWithValue("@m_id", m_id);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                star = (int)reader["bm_Score"];
+            }
+            reader.Close();
+            con.Close();
+
+            return star;
             //待測試
         }
 

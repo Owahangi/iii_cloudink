@@ -78,9 +78,13 @@ namespace RentBook.Controllers
 
             //判斷有沒流過言
             List<BooksMessage> ListBooksMessage = new List<BooksMessage>();
-            string m_id = ""; //待刪除
+            string m_id = factory.getM_ID(b_id);
             ListBooksMessage = factory.getOneMessage(b_id, m_id);
-            
+
+            //個人星星
+            int MemberStar = factory.getMemberStar(b_id, m_id);
+            ViewBag.MEMBERSTAR = MemberStar; // 丟ViewBag.MEMBERSTAR到Views
+
             return View(list);
         }
 
