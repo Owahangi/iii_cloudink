@@ -8,7 +8,7 @@
 
 <h4>修改第 @Model.bc_Chapters 章</h4>
 
-<form class="container" id="form2" action="~/AddBookChapters/SaveChapters">
+<form class="container" id="form2" action="~/EditBook/SaveEditChapters">
     <div class="bs-stepper">
         <div class="bs-stepper-header" role="tablist">
             <div class="step" data-target="#step1">
@@ -21,11 +21,12 @@
             <div class="step" data-target="#step2">
                 <button type="button" class="step-trigger" role="tab">
                     <span class="bs-stepper-circle">2</span>
-                    <span class="bs-stepper-label">新增成功</span>
+                    <span class="bs-stepper-label">修改成功</span>
                 </button>
             </div>
         </div>
         <!-------------------->
+        <input type="hidden" name="bc_id" value="@Model.bc_id" />
         <input type="hidden" name="bId" value="@Model.b_id" />
         <input type="hidden" name="bType" value="@Model.b_Type" />
         <input type="hidden" name="bcChapters" value="@Model.bc_Chapters" />
@@ -34,38 +35,29 @@
 
             <div id="step1" class="content" role="tabpanel">
                 <div class="col-10 form-group">
-                    <label>連載情況:</label>
-                    <div class="border">
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" name="Series" checked value="連載中">
-                            <label class="form-check-label">連載中</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" name="Series" value="已完結">
-                            <label class="form-check-label">已完結</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-10 form-group">
                     <label>章節標題名稱:</label>
                     <br />
-                    <input type="text" name="bcContent" class="form-control" value="@Model.bc_Content" required="required" />
+                    <input type="text" name="bc_Content" class="form-control" value="@Model.bc_Content" required="required" />
                 </div>
                 <div class="col-10 form-group">
                     <label>重新上傳所有章節書籍檔案:</label>
                     <input type="file" name="Files" class="" required="required" multiple />
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()">建立章節</button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()">修改章節</button>
                 </div>
+                <br />
+                <div>
+                    @Html.ActionLink("取消修改", "EditChaptersList", "EditBook", new { b_id = Model.b_id }, new { @class = "btn btn-primary btn-block" })
+                </div>
+
 
             </div>
             <div id="step2" class="content s2" role="tabpanel">
                 <div class="alert alert-success">
-                    成功上架書籍!
+                    修改成功!
                 </div>
-                @*<button type="button" class="btn btn-primary btn-block" onclick="stepper.previous()">繼續新增章節</button>*@
-                @Html.ActionLink("繼續新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, new { @class = "btn btn-primary btn-block" })
+                @Html.ActionLink("回到章節清單", "EditChaptersList", "EditBook", new { b_id = Model.b_id }, new { @class = "btn btn-primary btn-block" })
             </div>
         </div>
     </div>

@@ -553,5 +553,86 @@ namespace RentBook.Models.EditBook
 
             con.Close();
         }
+
+        // 儲存修改的章節標題
+        public void SaveEditBookChapters(EditBookModel eb)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "Update BooksChapters set bc_Content=@bcContent where bc_id=@bcid";
+            SqlCommand cmd = new SqlCommand(tSQL,con);
+            cmd.Parameters.AddWithValue("bcid", eb.bc_id);
+            cmd.Parameters.AddWithValue("bcContent", eb.bc_Content);
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // 刪除所有該章節的檔案
+        public List<string> 回傳所有該章節的檔名(EditBookModel eb)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "select bf_FileName from BooksFiles where bc_id=@bcid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bcid", eb.bc_id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            List<string> list = new List<string>();
+
+            while (reader.Read())
+            {
+                list.Add((string)reader["bf_FileName"]);
+            }
+
+            con.Close();
+
+            return list;
+        }
+
+        public void 刪除該章節在資料庫裡的所有的檔名(int bc_id)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "delete from BooksFiles where bc_id=@bcid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("bcid", bc_id);
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void 儲存該章節所有檔名到資料庫(EditBookModel eb)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.Parameters.AddWithValue("bcid", eb.bc_id);
+            cmd.Parameters.AddWithValue("bfFileName", eb.bc_id);
+
+            foreach (string Files in eb.FilesName)
+            {
+                tSQL = "insert into BooksFiles (bc_id,bf_FileName)Values('" + eb.bc_id +"','" + Files + "')";
+                cmd.CommandText = tSQL;
+                cmd.ExecuteNonQuery();
+            }
+
+            con.Close();
+        }
+
+        public string 回傳書籍章節檔案副檔名(HttpPostedFileBase file)
+        {
+            // 取得副檔名
+            int point = file.FileName.LastIndexOf(".");
+            string extention = file.FileName.Substring(point, file.FileName.Length - point);
+
+            return extention;
+        }
     }
 }
