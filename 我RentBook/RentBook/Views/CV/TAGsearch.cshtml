@@ -1,7 +1,7 @@
 ﻿@using PagedList
 @using PagedList.Mvc
 
-@model IPagedList<RentBook.Books>
+@model RentBook.Models.TAGsearch
 @{
     ViewBag.Title = "TAGsearch";
     Layout = "~/Views/Shared/_Layout2.cshtml";
@@ -39,40 +39,37 @@
                         <li class="list-group-item text-center">
                             @Html.ActionLink("今日最新", "LatestItem", "CV")
                         </li>
-                        <li>
-                            <a class="list-group-item text-center" href="#" style="font-size: 18px;">排行榜</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-10">
-            <h5>共 @ViewBag.count 部作品</h5>
+            <h5>共  部作品</h5>
             <hr>
-            @foreach (var item in Model)
-            {
+           
                 <div class="row mt-3 myborder">
                     <div>
-                        <input type="hidden" value="@item.b_id" />
+                        <input type="hidden" value="@Model.bid" />
                     </div>
                     <div class=" col-md-3 myheight1" style="text-align:center;">
-                        <a href="#"><img src="~/書籍素材/@(item.b_Type)素材/@item.b_id/@item.b_Image" class="myheight2 justify-content-center"></a>
+                        <a href="#"><img src="~/書籍素材/@(Model.btype)素材/@Model.bid/@Model.bimage" class="myheight2 justify-content-center"></a>
                     </div>
                     <div class="col-md-9">
                         <div class="text-body">
                             <div class="box"></div>
                             <div class="title">
-                                @Html.ActionLink(item.b_Name, "BookPage", "CV", new { bid = item.b_id }, new { @class = "title", style = "font-size:24px; font-weight:bold;" })
-                                @*<a href="#"><h5>@Html.DisplayFor(modelItem => item.b_Name)</h5></a>*@
+                                @Html.ActionLink(Model.bname.ToString(), "BookPage", "CV", new { bid = Model.bid }, new { @class = "title", style = "font-size:24px; font-weight:bold;" })
+                                
                             </div>
-                            <p class="ellipsis-2" style="color: black;"> @Html.DisplayFor(modelItem => item.b_Info)
+                            <p class="ellipsis-2" style="color: black;"> @Html.DisplayFor(modelItem => Model.binfo)
                         </div>
                     </div>
                 </div>
-            }
+            
 
         </div>
     </div>
-    @Html.PagedListPager(Model, page => Url.Action("TAGsearch"))
+    
 
 </div>

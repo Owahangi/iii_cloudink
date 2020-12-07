@@ -27,7 +27,7 @@ namespace RentBook.Models
         private void executeSql(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -75,7 +75,7 @@ namespace RentBook.Models
             sql = sql + "   From Member";
 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -108,7 +108,7 @@ namespace RentBook.Models
         private List<CMember> getBySql(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();

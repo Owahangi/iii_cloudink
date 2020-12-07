@@ -40,7 +40,7 @@ namespace RentBook.Controllers
             
             cm = factory.getAllmessageSqlViews();
             var cm2 = cm.ToList();
-
+            
 
             if (Session[CDictionary.SK_LOGINED_USER] == null)
             {
@@ -311,15 +311,38 @@ namespace RentBook.Controllers
             int pageSize = 10;
             int currentPage = page < 1 ? 1 : page;
 
+            var a1 = db.Tags.Where(a => a.t_Name == tagname);
+            
+
+
             var list = from a in db.BooksTags
                        join b in db.Tags on a.t_id equals b.t_id
+                       where b.t_Name.Contains(tagname)
                        select new { a, b };
             var list2 = from a in list
                         join b in db.Books on a.a.b_id equals b.b_id
                         select new { a, b };
-            var result = list2.Where(l => l.a.b.t_Name == tagname).ToList();
-            var result2 = result.ToPagedList(currentPage, pageSize);
-            return View(result2);
+            var list3 = list2.ToList();
+            
+            List<TAGsearch> tags = new List<TAGsearch>();
+            TAGsearch x = new TAGsearch();
+            foreach (var item in list3)
+            {
+                x.bid.Add(item.b.b_id);
+                x.bimage.Add(item.b.b_Image);
+                x.binfo.Add(item.b.b_Info);
+                x.bname.Add(item.b.b_Name);
+                x.btype.Add(item.b.b_Type);
+            }
+            
+            tags.Add(x);
+            return View(new TAGsearch {
+                bid = x.bid,
+                bimage = x.bimage,
+                binfo =x.binfo,
+                bname = x.bname,
+                btype = x.btype
+               });
         }
     }
 }

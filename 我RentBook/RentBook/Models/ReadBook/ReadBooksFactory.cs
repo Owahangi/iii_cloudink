@@ -9,7 +9,7 @@ namespace RentBook.Models
 {
     public class ReadBooksFactory
     {
-        string myDBConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+        string myDBConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
 
         
 
