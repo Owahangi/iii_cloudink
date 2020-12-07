@@ -384,7 +384,7 @@ namespace RentBook.Models.EditBook
         public string 書籍封面圖片命名(EditBookModel eb)
         {
             // 取得副檔名
-            int point = eb.Image.FileName.IndexOf(".");
+            int point = eb.Image.FileName.LastIndexOf(".");
             string extention = eb.Image.FileName.Substring(point, eb.Image.FileName.Length - point);
             // 命名封面檔名
             string photoName = eb.b_id + "-cover" + extention;

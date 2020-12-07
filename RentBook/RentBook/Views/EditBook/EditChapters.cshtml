@@ -1,8 +1,9 @@
 ﻿@model RentBook.Models.EditBook.EditBookModel
 @{
     ViewBag.Title = "EditChapters";
-    Layout = "~/Views/Shared/_AddBookLayout.cshtml";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
 }
+
 
 <h2>EditChapters</h2>
 
@@ -41,7 +42,7 @@
                 </div>
                 <div class="col-10 form-group">
                     <label>重新上傳所有章節書籍檔案:</label>
-                    <input type="file" name="Files" class="" required="required" multiple />
+                    <input type="file" name="Files" class="" multiple />
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary btn-block" onclick="stepper.next()">修改章節</button>

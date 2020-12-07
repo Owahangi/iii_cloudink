@@ -183,7 +183,7 @@ namespace RentBook.Models
         }
 
         // 將資料儲存到書籍作者資料表
-        public void CreateBA(EditBookModel ba)
+        public void CreateBA(AddBooksAuthor ba)
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();

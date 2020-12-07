@@ -16,7 +16,7 @@ namespace RentBook.Controllers
         public ActionResult AddBook()
         {
             AddBookFactory factory = new AddBookFactory();
-            Models.AddBook.AddBookModel ab = new Models.AddBook.AddBookModel();
+            EditBookModel ab = new EditBookModel();
             ab.出版社編號加名稱 = factory.傳回出版社編號名稱();
             ab.作者編號加名稱 = factory.傳回作者編號名稱();
             
@@ -34,7 +34,7 @@ namespace RentBook.Controllers
             AddBookFactory factory = new AddBookFactory();
 
             // 書籍作者資料表
-            Models.EditBookModel ba = new Models.EditBookModel();
+            AddBooksAuthor ba = new AddBooksAuthor();
             ba.b_id = factory.自動產生b_id();
             ba.AuthorIdName = Request.Form.GetValues("AuthorIdName");
 

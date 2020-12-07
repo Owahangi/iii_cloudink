@@ -1,0 +1,15 @@
+public ActionResult Details(int fUID)
+        {
+
+            var acc = db.t會員.FirstOrDefault(m => m.fUID == fUID);
+            if (acc == null)
+                return RedirectToAction("list");
+
+            var chef = db.t私廚.FirstOrDefault(c => c.fUID == fUID);
+
+
+            return View(new ViewModel.Account.多數模型 {
+                chef = chef,
+                member = acc
+            });
+        }

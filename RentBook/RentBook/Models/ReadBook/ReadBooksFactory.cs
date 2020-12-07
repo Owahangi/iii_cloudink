@@ -11,28 +11,7 @@ namespace RentBook.Models
     {
         string myDBConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
 
-        // 根據書籍編號 找出書名
-        //public string Readfilename(string b_id)
-        //{
-        //    string filename = "";
-
-        //    SqlConnection con = new SqlConnection(myDBConnectionString);
-        //    con.Open();
-        //    string tSQL = "select c_FileName from BooksChapters where b_id = @Searchb_id";
-        //    SqlCommand cmd = new SqlCommand(tSQL, con);
-        //    cmd.Parameters.AddWithValue("Searchb_id", b_id);
-        //    SqlDataReader reader = cmd.ExecuteReader();
-
-        //    if (reader.Read())
-        //    {
-        //        filename = (string)reader["c_FileName"];
-        //    }
-
-        //    reader.Close();
-        //    con.Close();
-
-        //    return filename;
-        //}
+        
 
         public List<string> ReadfileContent(ReadBooksModel rb)
         {
