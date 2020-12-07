@@ -136,13 +136,31 @@ namespace RentBook.Models.Point
             return 使用者購買的日期;
         }
 
-        // 傳回 今天 + 購買天數 的日期
-        public DateTime 日期時間運算(int 購買天數)
+        // 找出目前此本書籍的剩餘時間
+        public DateTime 找出目前此本書籍的剩餘時間(PointModel p)
         {
-            DateTime dt = DateTime.Now;
-            dt.AddDays(購買天數);
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
 
-            return dt;
+            int 會員書櫃編號 = 回傳目前此會員的書櫃編號(p.m_id);
+
+            string tSQL = "select bcb_BookLastTime from BookCaseBooks where bc_id=@bcid and b_id=@bid";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("@bid",p.b_id);
+            cmd.Parameters.AddWithValue("@bcid", 會員書櫃編號);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DateTime 目前此書籍的剩餘時間 = new DateTime(1990,01,01);
+
+            if (reader.Read())
+            {
+               目前此書籍的剩餘時間 = (DateTime)reader["bcb_BookLastTime"];
+            }
+
+            reader.Close();
+            con.Close();
+
+            return 目前此書籍的剩餘時間;
         }
 
         public void 儲存消費資料(PointModel p)
@@ -177,16 +195,37 @@ namespace RentBook.Models.Point
 
                 int 會員書櫃編號 = 回傳目前此會員的書櫃編號(p.m_id);
 
+                DateTime 書籍剩餘時間 = 找出目前此本書籍的剩餘時間(p);
+                DateTime 日期比較 = new DateTime(1990, 01, 01);
+                int 判斷日期 = DateTime.Compare(書籍剩餘時間, 日期比較);
 
-                p.bcb_BookLastTime = 日期時間運算(p.購買天數);
+                string tSQL2 = "";
 
-                // 將購買的書籍 加到 BookCaseBooks 資料表
-                string tSQL2 = "Insert into BookCaseBooks (bc_id,b_id,bcb_BookLastTime,bcb_ReadRange)Values(@bcid,@bid,@bcbBookLastTime,@bcbReadRange)";
+                if(判斷日期 == 0)
+                {
+                    // 將購買的書籍 加到 BookCaseBooks 資料表
+                    tSQL2 = "Insert into BookCaseBooks (bc_id,b_id,bcb_BookLastTime)Values(@bcid,@bid,@bcbBookLastTime)";
+
+                    DateTime dt = DateTime.Now;
+                    DateTime 增加天數後的時間 = dt.AddDays(p.購買天數);
+                    p.bcb_BookLastTime = 增加天數後的時間;
+                }
+                else
+                {
+                    // 目前書櫃已有此書籍 (所以增加購買天數)
+
+                    DateTime dt = Convert.ToDateTime(書籍剩餘時間);
+                    DateTime 增加天數後的時間 = dt.AddDays(p.購買天數);
+                    p.bcb_BookLastTime = 增加天數後的時間;
+
+                    tSQL2 = "update BookCaseBooks set bcb_BookLastTime=@bcbBookLastTime where bc_id=@bcid and b_id=@bid";
+                    
+                }
+
                 SqlCommand cmd2 = new SqlCommand(tSQL2, con);
                 cmd2.Parameters.AddWithValue("bcid", 會員書櫃編號);
                 cmd2.Parameters.AddWithValue("bid", p.b_id);
                 cmd2.Parameters.AddWithValue("bcbBookLastTime", p.bcb_BookLastTime);
-                cmd2.Parameters.AddWithValue("bcbReadRange", "");
 
                 cmd2.ExecuteNonQuery();
                 con.Close();

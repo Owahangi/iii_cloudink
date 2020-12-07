@@ -29,8 +29,9 @@ namespace RentBook.Controllers
                 PointFactory factory = new PointFactory();
                 factory.儲存儲值資料(p);
             }
-
+        
             return RedirectToAction("AddPoint", new { m_id = p.m_id });
+
         }
 
         // 可以租書籍的頁面
@@ -75,6 +76,10 @@ namespace RentBook.Controllers
         public ActionResult ShopMonthlyCard(string m_id)
         {
             PointFactory factory = new PointFactory();
+            if(m_id == null)
+            {
+                m_id = "沒登入";
+            }
             List<PointModel> list = factory.列出月卡方案(m_id);
 
             return View(list);
