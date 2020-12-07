@@ -1,0 +1,737 @@
+﻿@using RentBook.Models
+@using System.Data.SqlClient;
+
+@{ ViewBag.Title = "MemberMessage";
+    string user = "";
+    string b_name_1 = "";
+    string bm_Message_1 = "";
+    string bm_MessageTime_1 = "";
+    string b_name_2 = "";
+    string bm_Message_2 = "";
+    string bm_MessageTime_2 = "";
+    string b_name_3 = "";
+    string bm_Message_3 = "";
+    string bm_MessageTime_3 = "";
+    string b_name_4 = "";
+    string bm_Message_4 = "";
+    string bm_MessageTime_4 = "";
+    string b_name_5 = "";
+    string bm_Message_5 = "";
+    string bm_MessageTime_5 = "";
+    string b_name_6 = "";
+    string bm_Message_6 = "";
+    string bm_MessageTime_6 = "";
+    string b_name_7 = "";
+    string bm_Message_7 = "";
+    string bm_MessageTime_7 = "";
+    string b_name_8 = "";
+    string bm_Message_8 = "";
+    string bm_MessageTime_8 = "";
+
+
+    if (Session[CDictionary.SK_LOGINED_USER] != null)
+    {
+        user = (Session[CDictionary.SK_LOGINED_USER] as CMember).m_Email;
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+        con.Open();
+
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        string sql = "";
+        sql = sql + "Select D.*, E.bm_Message, Convert(varchar(10), E.bm_MessageTime, 111) as bm_MessageTime";
+        sql = sql + " From Member A left join BookCase B on A.bc_id = B.bc_id";
+        sql = sql + "      left join BookCaseBooks C on B.bc_id = C.bc_id";
+        sql = sql + "      left join Books D on C.b_id = D.b_id";
+        sql = sql + "      left join BooksMessage E on D.b_id = E.b_id and A.m_id = E.m_id";
+        sql = sql + " Where A.m_Email = '" + user + "' ";
+        sql = sql + " Order by E.bm_MessageTime desc";
+        cmd.CommandText = sql;
+
+        SqlDataReader reader = cmd.ExecuteReader();
+        b_name_1 = "";
+        bm_Message_1 = "";
+        bm_MessageTime_1 = "";
+        b_name_2 = "";
+        bm_Message_2 = "";
+        bm_MessageTime_2 = "";
+        b_name_3 = "";
+        bm_Message_3 = "";
+        bm_MessageTime_3 = "";
+        b_name_4 = "";
+        bm_Message_4 = "";
+        bm_MessageTime_4 = "";
+        b_name_5 = "";
+        bm_Message_5 = "";
+        bm_MessageTime_5 = "";
+        b_name_6 = "";
+        bm_Message_6 = "";
+        bm_MessageTime_6 = "";
+        b_name_7 = "";
+        bm_Message_7 = "";
+        bm_MessageTime_7 = "";
+        b_name_8 = "";
+        bm_Message_8 = "";
+        bm_MessageTime_8 = "";
+
+        int i = 0;
+
+        //if (reader.Read())
+        //{
+        //    b_info = reader["b_info"].ToString();
+        //}
+
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                i++;
+
+                if (i == 1)
+                {
+                    b_name_1 = reader["b_name"].ToString();
+                    bm_Message_1 = reader["bm_Message"].ToString();
+                    bm_MessageTime_1 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 2)
+                {
+                    b_name_2 = reader["b_name"].ToString();
+                    bm_Message_2 = reader["bm_Message"].ToString();
+                    bm_MessageTime_2 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 3)
+                {
+                    b_name_3 = reader["b_name"].ToString();
+                    bm_Message_3 = reader["bm_Message"].ToString();
+                    bm_MessageTime_3 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 4)
+                {
+                    b_name_4 = reader["b_name"].ToString();
+                    bm_Message_4 = reader["bm_Message"].ToString();
+                    bm_MessageTime_4 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 5)
+                {
+                    b_name_5 = reader["b_name"].ToString();
+                    bm_Message_5 = reader["bm_Message"].ToString();
+                    bm_MessageTime_5 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 6)
+                {
+                    b_name_6 = reader["b_name"].ToString();
+                    bm_Message_6 = reader["bm_Message"].ToString();
+                    bm_MessageTime_6 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 7)
+                {
+                    b_name_7 = reader["b_name"].ToString();
+                    bm_Message_7 = reader["bm_Message"].ToString();
+                    bm_MessageTime_7 = reader["bm_MessageTime"].ToString();
+                }
+                else if (i == 8)
+                {
+                    b_name_8 = reader["b_name"].ToString();
+                    bm_Message_8 = reader["bm_Message"].ToString();
+                    bm_MessageTime_8 = reader["bm_MessageTime"].ToString();
+                }
+            }
+        }
+
+        con.Close();
+    }
+
+    Layout = "~/Views/Shared/_CommonMemberLayout.cshtml"; }
+
+<h2>@user</h2>
+
+<header class="header-area ">
+
+    <!-- Nav Area -->
+    <div class="original-nav-area" id="stickyNav">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between">
+
+
+
+                    <div>
+                        <img class="img-fluid myimg1" alt="your image" width="70" height="70" src="LOGO-1.png" />
+                    </div>
+
+
+
+                    <p></p><p></p>
+                    <!-- Menu -->
+                    <div class="classy-menu" id="originalNav">
+
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+
+                        <!-- Nav Start -->
+
+                        <div class="classynav">
+
+                            <ul>
+
+                                <li><a href="index.html">首頁</a></li>
+                                <li>
+                                    <a href="#">漫畫</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">格鬥</a></li>
+                                        <li><a href="#">冒險</a></li>
+                                        <li><a href="#">少男</a></li>
+                                        <li><a href="#">少女</a></li>
+                                        <li><a href="#">超女</a></li>
+                                        <li><a href="#">警探</a></li>
+                                        <li><a href="#">戰國</a></li>
+                                        <li><a href="#">機械</a></li>
+                                        <li><a href="#">科幻</a></li>
+                                        <li><a href="#">魔法</a></li>
+                                        <li><a href="#">妖魔</a></li>
+                                        <li><a href="#">競技</a></li>
+                                        <li><a href="#">烹飪</a></li>
+                                        <li><a href="#">職業</a></li>
+                                        <li><a href="#">恐怖</a></li>
+                                        <li><a href="#">搞笑</a></li>
+                                        <li><a href="#">校園</a></li>
+                                        <li><a href="#">戰爭</a></li>
+                                        <li><a href="#">港產</a></li>
+                                        <li><a href="#">短篇</a></li>
+                                        <li><a href="#">其他</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">小說</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">童話</a></li>
+                                        <li><a href="#">玄幻</a></li>
+                                        <li><a href="#">武俠</a></li>
+                                        <li><a href="#">偵探</a></li>
+                                        <li><a href="#">恐怖</a></li>
+                                        <li><a href="#">同人</a></li>
+                                        <li><a href="#">科幻</a></li>
+                                        <li><a href="#">奇幻</a></li>
+                                        <li><a href="#">歷史</a></li>
+                                        <li><a href="#">網遊</a></li>
+                                        <li><a href="#">耽美</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">今日最新</a></li>
+                                <li><a href="#">排行榜</a></li>
+                                <li><a href="contact.html">兌換點數</a></li>
+                                <li><a href="contact.html">購物車</a></li>
+
+
+
+
+
+
+
+
+                            </ul>
+                            <!-- Search Form  -->
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+
+
+
+                    <a href="會員首頁.html" id="userDropdown" role="button" class="btn popovers" data-toggle="popover" title="個人檔案"
+                       data-content="🏳️‍🌈 <a  href='個人資訊.html'  title='編輯個人檔案'>編輯個人檔案</a> <hr>
+                  👋🏼 <a href='#' data-toggle='modal' data-target='#logoutModal' title='登出'>登出</a>" data-original-title="test title">
+                  <img class="img-profile rounded-circle" id="blah" alt="your image" width="50" height="50" src="img/封面/首頁圖片/2組.jpg" />
+
+                  </a>
+
+
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="invisible left-block d-xl-block d-none order-0" style="min-height: 20px"></div>
+
+
+
+
+<div class="container">
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class=" border-right sidebar" id="sidebar-wrapper">
+
+            <br><br>
+            <div class="sidebar-heading text-white">書的選項</div>
+            <div class="list-group list-group-flush">
+
+
+                <a href="心儀書單.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-archive"></i>
+                    藏書閣
+                </a>
+
+
+                <a href="閱讀紀錄.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-compact-disc"></i>
+                    閱讀紀錄
+                </a>
+
+                <a href="我的評論.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-comments"></i>
+                    我的評論
+                </a>
+
+
+                <hr>
+                <div class="sidebar-heading text-white">您的個人選項</div>
+
+                <a href="我的帳戶.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    我的帳戶
+                </a>
+
+                <a href="編輯個人檔案.html" class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-user-edit"></i>
+                    編輯個人資訊
+                </a>
+
+                <a href="#" data-toggle='modal' data-target='#logoutModal' class="list-group-item list-group-item-action sidebar">
+                    <i class="fas fa-sign-out-alt"></i>
+                    登出
+                </a>
+
+
+
+            </div>
+        </div>
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <div class="container">
+
+                <div class="container">
+
+                    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                    <div class="row">
+
+
+                        <div class="col-4 col-md-2">
+                            <button class="btn btn-primary" id="menu-toggle"> 《《展開</button>
+                        </div>
+
+
+                        <div class="col-8 col-md-7">
+                            <nav aria-label="breadcrumb navbg1">
+                                <ol class="breadcrumb navbg1">
+                                    <li class="breadcrumb-item"><a href="會員首頁.html">雲墨空間</a></li>
+                                    <li class="breadcrumb-item"><a href="#">我的評論</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+
+
+                        <div class="col-12 col-md-3">
+
+                            <div class="btn-group btn-block">
+                                <button type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    請選擇時間
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button">一周內紀錄</button>
+                                    <button class="dropdown-item" type="button">一個月內紀錄</button>
+                                    <button class="dropdown-item" type="button">半年內紀錄</button>
+                                    <button class="dropdown-item" type="button">一年內紀錄</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <br>
+
+
+
+
+
+
+                <div class="blog-wrapper section-padding-100 clearfix">
+                    <div class="container rounded-30 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="700ms">
+                        <br>
+
+                        <div class="row mybg2">
+                            <div class="col-12  col-sm-9 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="700ms">
+
+                                <br>
+
+                                <!--評論區內容-->
+                                <div class="container">
+
+                                    <div class="row">
+
+                                        <div class="col-12 col-sm-12">
+                                            <button type="button" class="btn-outline badge mybutton1 myfont1">您的歷史評論</button>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">金陵城起復賈雨村:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_1 :</h3></a>
+                                            <p class="mycomment2">
+                                                @*有日，到了都中，進入神京，雨村先整了衣冠，帶了小童，
+                                                    拿著宗侄的名帖，至榮府門前投了。彼時賈政已看了妹丈之書，即忙請入相會。
+                                                    見雨村相貌魁偉*@
+                                                @bm_Message_1
+                                            </p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_1 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">大觀園試才題對額:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_2 :</h3></a>
+                                            <p class="mycomment2">
+                                                @*賈珍先去園中知會眾人。可巧近日寶玉因思念秦鐘，憂戚不盡，
+                                                    賈母常命人帶他到新園中來戲耍。此時亦才進來，忽見賈珍走來，向他笑道：
+                                                    「你還不出去﹖老爺就來了。」寶玉聽了，帶著奶娘、小廝們，一溜煙就出園來。方轉過彎，
+                                                    頂頭賈政引著眾清客來了，躲之不及，只得一邊站了。賈政近因聞得塾掌稱贊寶玉專能對對聯，雖不喜讀書，
+                                                    偏倒有些歪才情似的，今日偶然撞見這機會，便命他跟來。寶玉只得隨往，尚不知何意。*@
+                                                @bm_Message_2
+                                            </p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_2 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_3 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_3</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_3 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_4 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_4</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_4 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_5 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_5</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_5 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_6 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_6</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_6 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_7 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_7</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_7 評論 <a href="#" class="text-info"></a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="media">
+                                        <div class="media-body">
+                                            @*<a href="#"><h3 class="mt-0">埋香塚飛燕泣殘紅:</h3></a>*@
+                                            <a href="#"><h3 class="mt-0">@b_name_8 :</h3></a>
+                                            @*<p class="mycomment2"> 話說林黛玉正自悲泣，忽聽院門響處，只見寶釵出來了，寶玉、襲人一群人送了出來。待要上去問著寶玉，又恐當著眾人問，羞了他倒不便，因而閃過一旁，讓寶釵去了，寶玉等進去關了門，方轉過來，猶望著門洒了幾點淚。自覺無味，便轉身回來，無精打彩的卸了殘妝。</p>*@
+                                            <p class="mycomment2">@bm_Message_8</p>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-1"></div>
+                                                    <div class="col-12 col-md-6"></div>
+                                                    @*<div class="col-12 col-md-5">2020.10.20 評論 <a href="#" class="text-info">拼裝家庭</a></div>*@
+                                                    <div class="col-12 col-md-5">@bm_MessageTime_8 評論 <a href="#" class="text-info">拼裝家庭</a></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+
+
+                                    <!--展開更多bar-->
+                                    <!-- Load More -->
+                                    <div class="load-more-btn mt-100 wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                                </li>
+                                                <li class="page-item active" aria-current="page">
+                                                    <span class="page-link">
+                                                        1
+                                                        <span class="sr-only">(current)</span>
+                                                    </span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <br>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-sm-3 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="700ms">
+                                <div class="post-sidebar-area">
+
+                                    <!-- Tag -->
+                                    <div class="sidebar-widget-area">
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12">
+                                                <button type="button" class="btn-outline badge mybutton1 myfont1">評論書籍標籤</button>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <div class="widget-content">
+                                            <ul class="tags">
+                                                <li><a href="#">恐怖驚悚</a></li>
+                                                <li><a href="#">愛情</a></li>
+                                                <li><a href="#">穿越</a></li>
+                                                <li><a href="#">冒險/少年</a></li>
+                                                <li><a href="#">青春校園</a></li>
+                                                <li><a href="#">文學/寫實</a></li>
+                                                <li><a href="#">偵探</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <!--熱評區-->
+
+                                    <div class="sidebar-widget-area">
+
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12">
+                                                <button type="button" class="btn-outline badge mybutton1 myfont1">網站熱門評論</button>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="widget-content">
+
+                                            <div class="card border-info mb-3 rounded-0 mycomment1" style="max-width: 18rem;">
+                                                <a href="#"><div class="card-header bg-transparent border-info">殺手的戀愛相談</div></a>
+                                                <div class="card-body text-info">
+                                                    <a href="#"><h5 class="card-title text-primary">茗煙:</h5></a>
+                                                    <p class="card-text">
+                                                        昨夜雨疏風驟，
+                                                        濃睡不消殘酒。
+                                                        試問卷簾人，
+                                                        卻道海棠依舊。
+                                                        知否，知否？
+                                                        應是綠肥紅瘦。
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-info text1">2020.10.22</div>
+                                            </div>
+                                            <hr>
+                                            <div class="card border-info mb-3 rounded-0 mycomment1" style="max-width: 18rem;">
+                                                <a href="#"><div class="card-header bg-transparent border-info">拼裝家庭</div></a>
+                                                <div class="card-body text-info">
+                                                    <a href="#"><h5 class="card-title text-primary">麝月:</h5></a>
+                                                    <p class="card-text">
+                                                        欲減羅衣寒未去，不卷珠簾，人在深深處。殘杏枝頭花幾許。啼紅正恨清明雨。
+                                                        盡日沈香煙一縷。宿酒醒遲，惱破春情緒。遠信還因歸燕誤。小屏風上西江路。
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-info text1">2020.10.19</div>
+                                            </div>
+                                            <hr>
+                                            <div class="card border-info mb-3 rounded-0 mycomment1" style="max-width: 18rem;">
+                                                <a href="#"><div class="card-header bg-transparent border-info">妖怪法則</div></a>
+                                                <div class="card-body text-info">
+                                                    <a href="#"><h5 class="card-title text-primary">司棋:</h5></a>
+                                                    <p class="card-text">
+                                                        花深深。一鉤羅襪行花陰。行花陰。閒將柳帶，細結同心。
+                                                        日邊消息空沈沈。畫眉樓上愁登臨。愁登臨。海棠開後，望到如今
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-info text1">2020.10.15</div>
+                                            </div>
+
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="load-more-btn mt-100 wow fadeInUp readmoreposition mybtn1" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                                                            <a href="#" class="btn original-btn btn-block">更多熱評</a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-area text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Footer Nav Area -->
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-center">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Casual Reading  &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+</footer>
+
+
+
+

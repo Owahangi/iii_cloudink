@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>*@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="~/vendors/popup/magnific-popup.css">
+
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/style.css">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="~/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="~/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/js/active.js"></script>
+</head>
+<style>
+.mystyle4
+{
+  margin-right: -20cm;
+  padding-left: 0cm;
+}
+.myimg1
+{
+  margin-left: 0cm;
+}
+.myborder1
+{
+  border-style: hidden;
+}
+.mymargin3
+{
+  margin-right: -3cm;
+  padding-left: 200px;
+}
+
+.mystyle3
+{
+  background-color:  #EFEFEF;;
+}
+.mystyle2
+{
+  font-size: 25px;
+}
+.mybutton1
+{
+ background-color: #c6d9f1
+}
+
+
+.sidebar
+{
+  background-color: #768EA9;
+  font-family: "微軟正黑體";
+  font-weight: bolder;
+}
+.mybg7
+{
+  background-color:#e6e1e1;
+}
+.myfooter1
+{
+  background-color:#F8F9FC ;
+}
+.mybg6
+{
+  font-family: "微軟正黑體";
+  font-size: 16px;
+  font-weight: bolder;
+  background-color:  #768EA9;
+}
+.mymargin2
+{
+  margin-right: -35px;
+  padding-left: 10px;
+}
+.mymargin1
+{
+  margin-right: -20px;
+  padding-left: 10px;
+}
+.mymargin
+{
+  margin-top: -12px;
+}
+.mylistgroup1
+{
+  border-style: hidden;
+}
+.mybg5
+{
+  background-color: snow;
+
+}
+.mytext1
+{
+  font-weight: bolder;
+}
+.myfont1
+{
+ font-size: 20px;
+
+}
+.mybg1
+{
+  margin-top: -25px;
+  background-color: #768EA9;
+}
+.mybg2
+{
+  margin-top: -2cm;
+  background-color: #e6e1e1;
+}
+.mybg3
+{
+  margin-top: -2cm;
+}
+.mybg4
+{
+  margin-top: 1cm;
+  background-color: #e6e1e1;
+}
+.mytest1
+{
+  padding-top: 20px;
+}
+.mytest2
+{
+  padding-top: 30px;
+}
+.mystyle1
+{
+  padding-top: 100px;
+  padding-left: 40px;
+}
+.mycardeck1
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mybtn1
+{
+  padding-right: 10px;
+  padding-top: 20px;
+}
+.navbg1
+{
+ font-weight: 700;
+ font-family: "微軟正黑體";
+ margin-left: 0cm;
+ background-color: transparent;
+
+}
+.mycard1
+{
+
+  background-color: rgb(179, 217, 248);
+}
+
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+
+.ratings {
+position: relative;
+vertical-align: middle;
+display: inline-block;
+color: #ddd; /*背景星星顏色*/
+overflow: hidden;
+font-size: 30px; /*調整字體大小可放大縮小星星*/
+text-shadow: 0px 1px 0 #999;
+}
+.full_star {
+width: 90%; /*調整寬度可變更星等*/
+position: absolute;
+left: 0;
+top: 0;
+white-space: nowrap;
+overflow: hidden;
+color: #D56A16; /*前景星星顏色*/
+}
+
+.media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+
+
+</style>
+
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

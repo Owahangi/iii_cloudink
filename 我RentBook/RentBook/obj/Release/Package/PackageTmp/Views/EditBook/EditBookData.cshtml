@@ -1,0 +1,266 @@
+﻿@model RentBook.Models.EditBook.EditBookModel
+
+@{
+    ViewBag.Title = "EditBookData";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
+}
+
+
+<h2>EditBookData</h2>
+
+
+@using (Html.BeginForm("SaveEditBookData", "EditBook", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        @Html.ActionLink("新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, null)
+    </p>
+    <p>
+        @Html.ActionLink("編輯章節", "EditChaptersList", new { b_id = Model.b_id })
+    </p>
+
+    <div class="form-horizontal">
+        <h4>EditBookModel</h4>
+        <hr />
+
+        <input type="hidden" name="b_id" value="@Model.b_id" />
+        <input type="hidden" name="b_Type" value="@Model.b_Type" />
+        <input type="hidden" name="b_Image" value="@Model.b_Image" />
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">書名</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.b_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">簡介</label>
+            <div class="col-md-10">
+                <textarea rows="5" class="form-control" name="b_Info" id="b_Info">@Model.b_Info</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">預覽照片</label>
+            <div class="col-md-10">
+                <img src="@Model.b_ImagePath" width="150" id="img" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">封面照片</label>
+            <div class="col-md-10">
+                <input type="file" name="Image" id="Image" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">#Tags</label>
+            <div class="col-md-10">
+                <input type="text" name="Tag" class="form-control" value="@Model.Tags字串" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版日期</label>
+            <div class="col-md-10">
+                <input type="date" name="b_PublishedDate" class="form-control" value="@Model.b_PublishedDate.Replace("/", "-")" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">價格/日</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.b_DatePrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.b_DatePrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">ISBN</label>
+            <div class="col-md-10">
+                <input type="text" name="b_ISBN" class="form-control" value="@Model.b_ISBN" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">年齡分級</label>
+            <div class="col-md-10">
+                <select name="b_AgeRating" required="required" class="form-control">
+                    <option disabled>年齡分級</option>
+                    @if (Model.b_AgeRating == "普遍級")
+                    {
+                        <option value="普遍級" selected>普遍級 ( 一般人皆可觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="普遍級">普遍級 ( 一般人皆可觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "保護級")
+                    {
+                        <option value="保護級" selected>保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="保護級">保護級 ( 未滿六歲不得觀賞，六歲以上未滿十二歲需由成年親友陪伴輔導觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "輔導十二歲級")
+                    {
+                        <option value="輔導十二歲級" selected>輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="輔導十二歲級">輔導十二歲級 ( 未滿十二歲之兒童不得觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "輔導十五歲級")
+                    {
+                        <option value="輔導十五歲級" selected>輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="輔導十五歲級">輔導十五歲級 ( 未滿十五歲之人不得觀賞 )</option>
+                    }
+                    @if (Model.b_AgeRating == "限制級")
+                    {
+                        <option value="限制級" selected>限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                    }
+                    else
+                    {
+                        <option value="限制級">限制級 ( 未滿十八歲之人不得觀賞 )</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版社</label>
+            <div class="col-md-10">
+                <select name="PublishedIdName" required="required" class="form-control">
+                    @foreach (string p in Model.出版社編號加名稱列表)
+                    {
+                        if (p == Model.出版社編號名稱)
+                        {
+                            <option selected>@p</option>
+                        }
+                        else
+                        {
+                            <option>@p</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">作者</label>
+            <div class="col-md-10">
+                <select name="AuthorIdName" required="required" class="form-control" multiple size="5">
+                    @foreach (string p in Model.作者編號加名稱列表)
+                    {
+                        bool check = false;
+                        foreach (string m in Model.列出本書的作者)
+                        {
+                            if (p == m)
+                            {
+                                check = true;
+                            }
+                        }
+                        if (check)
+                        {
+                            <option value="@p" selected>@p</option>
+                        }
+                        else
+                        {
+                            <option value="@p">@p</option>
+                        }
+
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="col-10 form-group">
+            <label class="control-label col-md-2">連載情況</label>
+            <div class="col-md-10">
+                <div class="border">
+                    @if (Model.b_Series_yn == "連載中")
+                    {
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="連載中" checked>
+                            <label class="form-check-label">連載中</label>
+                        </div>
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="已完結">
+                            <label class="form-check-label">已完結</label>
+                        </div>
+                    }
+                    else if (Model.b_Series_yn == "已完結")
+                    {
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="連載中">
+                            <label class="form-check-label">連載中</label>
+                        </div>
+                        <div class="form-check" id="b_Series_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="Series" value="已完結" checked>
+                            <label class="form-check-label">已完結</label>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 form-group">
+            <label class="control-label col-md-2">上架/下架</label>
+            <div class="col-md-10">
+                <div class="border">
+                    @if (Model.b_Put_yn == "上架")
+                    {
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y" checked>
+                            <label class="form-check-label">上架</label>
+                        </div>
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="n">
+                            <label class="form-check-label">下架</label>
+                        </div>
+                    }
+                    else if (Model.b_Put_yn == "下架")
+                    {
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="y">
+                            <label class="form-check-label">上架</label>
+                        </div>
+                        <div class="form-check" id="b_Put_yn" name="b_Series_yn">
+                            <input type="radio" class="form-check-input" name="b_Put_yn" value="n" checked>
+                            <label class="form-check-label">下架</label>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">修改書籍資料</button>
+        </div>
+    </div>
+}
+
+@section a{
+    <script>
+        $('#Image').on('change', function (e) {
+            const file = this.files[0];
+            const objectURL = URL.createObjectURL(file);
+
+            $('#img').attr('src', objectURL);
+        });
+    </script>
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

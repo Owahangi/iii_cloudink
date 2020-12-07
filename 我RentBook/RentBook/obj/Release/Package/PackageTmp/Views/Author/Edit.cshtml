@@ -1,0 +1,88 @@
+﻿@model RentBook.Models.Author.AuthorModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm("EditSave", "Author", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">作者編號</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.a_id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.a_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">作者名稱</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.a_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.a_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">作者生日</label>
+            <div class="col-md-10">
+                <input type="date" name="a_Birth" value="@Model.a_Birth.Replace("/", "-")" max="2020-12-31" min="1900-01-01" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">作者信箱</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.a_Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.a_Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">預覽照片</label>
+            <div class="col-md-10">
+                <img src="@Model.a_Image" width="150" id="img" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">作者照片</label>
+            <div class="col-md-10">
+                <input type="file" name="image" id="image" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section a{
+    <script>
+        $('#image').on('change', function (e) {
+            const file = this.files[0];
+            const objectURL = URL.createObjectURL(file);
+
+            $('#img').attr('src', objectURL);
+        });
+    </script>
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

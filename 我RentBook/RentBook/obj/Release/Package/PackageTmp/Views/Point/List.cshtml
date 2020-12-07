@@ -1,0 +1,67 @@
+﻿@model RentBook.Models.Point.PointModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@using (Html.BeginForm("ShopBook", "Point", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+
+    <input type="hidden" name="m_id" value="@Model.m_id" />
+    <input type="hidden" name="b_id" value="@Model.b_id" />
+    <input type="hidden" name="b_DatePrice" value="@Model.b_DatePrice" />
+
+
+    <table class="table">
+        <tr>
+            <th>
+                品項
+            </th>
+            <th>
+                價格
+            </th>
+            <th></th>
+        </tr>
+
+
+        <tr>
+            <td>
+                七日
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.書籍七日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.書籍七日價格">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                十四
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.書籍十四日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.書籍十四日價格">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                二十一日
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.書籍二十一日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.書籍二十一日價格">
+            </td>
+        </tr>
+
+
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="立即購買" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}

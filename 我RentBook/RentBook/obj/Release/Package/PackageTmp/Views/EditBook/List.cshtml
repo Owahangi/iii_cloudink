@@ -1,0 +1,96 @@
+﻿@using RentBook.Models.EditBook
+@model List<RentBook.Models.EditBook.EditBookModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
+}
+
+<h2>List</h2>
+
+<form method="post">
+    <input type="text" name="txtkeyword" /> <input type="submit" value="查詢書籍" />
+</form>
+
+@using (Html.BeginForm("EditBookData", "EditBook", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        @Html.ActionLink("新增書籍", "AddBook", "AddBook")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+            </th>
+            <th>
+                封面
+            </th>
+            <th>
+                書籍編號
+            </th>
+            <th>
+                書名
+            </th>
+            <th>
+                類型
+            </th>
+            <th>
+                價格/日
+            </th>
+            <th>
+                年齡分級
+            </th>
+            <th>
+                出版社
+            </th>
+            <th>
+                連載情況
+            </th>
+            <th>
+                上架/下架狀態
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (EditBookModel b in Model)
+        {
+    <tr>
+        <td>
+            <input type="hidden" name="b_Info" value="@b.b_Info" />
+        </td>
+        <td>
+            <img src="@b.b_ImagePath" width="150" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_DatePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_AgeRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.出版社編號名稱)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_Series_yn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => b.b_Put_yn)
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "EditBookData", new { b_id = b.b_id })
+        </td>
+    </tr>
+        }
+
+    </table>
+}

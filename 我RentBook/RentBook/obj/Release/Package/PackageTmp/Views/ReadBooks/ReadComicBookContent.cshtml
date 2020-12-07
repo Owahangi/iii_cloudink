@@ -1,0 +1,18 @@
+﻿@model RentBook.Models.ReadBooksModel
+@{
+    ViewBag.Title = "ReadComicBookContent";
+    Layout = "~/Views/Shared/ReadBook.cshtml";
+
+}
+
+<h2>ReadComicBookContent</h2>
+
+
+
+@foreach (string FileName in Model.FilesName)
+{
+    if (FileName != "")
+    {
+        <img src="@Model.FilePath/@FileName" />
+    }
+}

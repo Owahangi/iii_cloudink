@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>雲墨小棧 - 登入</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/Content/css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .mystyle1 {
+            padding-top: 12px;
+        }
+
+        .myfont1 {
+            padding-top: 5px;
+            font-size: 24px;
+            font-family: "微軟正黑體";
+        }
+
+        .textarea {
+            resize: none;
+        }
+
+        .textarea {
+            font-family: "微軟正黑體";
+            font-size: 20px;
+            resize: none;
+            vertical-align: middle;
+        }
+
+        .button1 {
+            font-family: "微軟正黑體";
+            font-size: 20px;
+            font-weight: bold;
+            color: darkturquoise;
+            background-color: forestgreen;
+            width: 150px;
+            height: 40px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        /* alert("歡迎使用本程式 !"); */
+        function checkFormData() {
+
+            var myname = document.getElementById("myname")
+            var myEmail = document.getElementById("txtemail");
+            var myAge = document.getElementById("txtage");
+            var birthday = document.getElementById("birthday")
+
+
+            if (myEmail.value == "") {
+                alert("請輸入Email");
+                return false
+            }
+
+            if (myname.value == "") {
+                alert("請輸入您的姓名");
+                return false
+            }
+
+            if (birthday.value == "") {
+                alert("請輸入您的生日");
+                return false
+            }
+
+
+
+            var myGenderGroup = document.getElementsByName("gender");
+            var ifGenderChecked = false;
+
+            for (var i = 0; i < myGenderGroup.length; i++) {
+                if (myGenderGroup[i].checked) {
+                    ifGenderChecked = true;
+                    break;
+                }
+            }
+
+            if (ifGenderChecked == false) {
+                alert("請輸入性別");
+                return false;
+            }
+        }
+
+        function displayRange() {
+
+            var myRange = document.getElementById("rngweight");
+            var myLabel = document.getElementById("lblweight");
+
+            myLabel.innerHTML = myRange.value + "kg";
+        }
+    </script>
+</head>
+<script>
+
+</script>
+
+@RenderBody()
+
+</html>

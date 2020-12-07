@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+
+/*版面寬度*/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+
+
+/*小說封面圖片*/
+.myimg2
+{
+  display: block;
+
+  width: 100px;
+}
+
+
+
+/*正在閱讀書單*/
+.myfont1
+{
+  margin-top: 20px;
+  margin-left: 3cm;
+  font-size: 16px;
+  font-weight: bolder;
+  color: black;
+  background-color: #c6d9f1
+}
+
+
+/*profile 圖片*/
+.imgsize
+{
+ width: 50px;
+ height: 50px;
+}
+/*title 選項*/
+.myfont2
+{
+ color: white;   
+ text-align: center;
+}
+
+/*使封面圖片居中*/
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*微調封面圖片位置*/
+.mystyle1
+{
+ margin-left: -25px;
+}
+/*每一行書籍資料*/
+.mystyle4
+{
+  border-radius: 20px;
+  border-style: solid #EEE;
+  border-width: 2cm;
+  background-color: rgb(201, 224, 231);
+}
+
+/*title bar*/
+.mystyle5
+{
+  font-size: 20px;
+  background-color: midnightblue;
+}
+
+
+/*書籍名稱*/
+.myfont6
+{
+text-align: center;
+font-size: 24px;
+padding-top: 30px;
+color: rgb(72, 157, 241);
+}
+.myfont6:hover
+{
+  color: darkgoldenrod;
+}
+
+/*背景灰布*/
+.mybg2
+{
+  margin-top: -4cm;
+  background-color: #e6e1e1;
+}
+
+
+
+
+
+
+
+/*modal*/
+.modal { 
+  top: -120px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.modal-backdrop {
+  background-color: rgba(0,0,0,.0001) !important;
+}
+
+.mytext1
+{
+  font-size: 20px;
+  text-align: center;
+  line-height: 1cm;
+
+}
+/*********************************/
+
+body
+{
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #cdcdcd;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #000000;
+  background: rgb(130, 207, 238);
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  background-color: teal;
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 80px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0;
+  z-index: 2;
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+ 
+  
+  background: #0a0a0a;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  height:1200px ;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px; 
+  background: rgba(28, 34, 23, 0.596);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+

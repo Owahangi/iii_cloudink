@@ -1,0 +1,113 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<RentBook.Books>
+@{
+    ViewBag.Title = "LatestItem";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="breadcrumb__links">
+                <span>搜尋結果: </span>
+                <a href="./categories.html">小說</a>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mt-30">
+        <div class="col-12 col-md-2">
+            <div class="sidebar-widget-area">
+
+                <div class="widget-content">
+                    <ul class="list-group">
+                        <legend>分類</legend>
+                        <li class="list-group-item dropright text-center list1">
+                            @Html.ActionLink("漫畫", "SeachItem", "CV", new { drop = "漫畫" }, null)
+                            <ul class="dropdown-menu">
+                                <li class="text-center"><a href="#" class="dropdown-item">格鬥</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">冒險</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">少男</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">少女</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">超女</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">警探</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">戰國</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">機械</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">科幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">魔法</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">妖魔</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">競技</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">烹飪</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">職業</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">恐怖</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">搞笑</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">校園</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">戰爭</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">港產</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">短篇</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">其他</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item dropright text-center list1">
+                            @Html.ActionLink("小說", "SeachItem", "CV", new { drop = "小說" }, null)
+                            <ul class="dropdown-menu">
+                                <li class="text-center"><a href="#" class="dropdown-item">童話</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">玄幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">武俠</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">偵探</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">恐怖</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">同人</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">科幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">奇幻</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">歷史</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">網遊</a></li>
+                                <li class="text-center"><a href="#" class="dropdown-item">耽美</a></li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item dropright text-center list1">
+                            <a href="about-us.html">@Html.ActionLink("今日最新", "LatestItem", "CV")</a>
+                        </li>
+                        <li class="list1">
+                            <a class="list-group-item text-center" href="#" style="font-size: 18px;">排行榜</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-10">
+            <h5>共 @ViewBag.count 部作品</h5>
+            <hr>
+            @foreach (var item in Model)
+            {
+                <div class="row mt-3 myborder">
+                    <div>
+                        <input type="hidden" value="@item.b_id" />
+                    </div>
+                    <div class=" col-md-3 myheight1" style="text-align:center;">
+                        <a href="#"><img src="~/書籍素材/@(item.b_Type)素材/@item.b_id/@item.b_Image" class="myheight2 justify-content-center"></a>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="text-body">
+                            <div class="box"></div>
+                            <div class="title">
+                                @Html.ActionLink(item.b_Name, "BookPage", "CV", new { bid = item.b_id }, new { @class = "title", style = "font-size:24px; font-weight:bold;" })
+                            </div>
+                            <p class="ellipsis-2" style="color: black;"> @Html.DisplayFor(modelItem => item.b_Info)
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+    @Html.PagedListPager(Model, page => Url.Action("LatestItem", new { page }))
+
+</div>
+

@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="~/Content/vendors/popup/magnific-popup.css">
+    <!-- Title -->
+    <title>雲墨空間 - 閱讀頁面</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/Content/img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <link rel="stylesheet" href="~/Content/閱讀頁面.css">
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="shadow">
+
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <!-- navbar-light bg-light-->
+
+
+            <div class="container">
+                <div class="col-3 col-md-2" style="padding: 0px 0px 0px 0px;">
+                    <a class="navbar-brand" href="#">
+                        <img class="img-fluid" src="./新logo.png" width="100" height="70" alt="logo" loading="lazy">
+                    </a>
+                </div>
+
+                <div class="col-5 col-md-6 maxlength1">
+                    <a style="font-size: 16px;" href="#">知否知否，應是綠肥紅瘦</a>
+
+                </div>
+                <div class="col-4  col-md-4 offset-md-3" style="margin-right: -40px;">
+
+                    <a href="會員首頁.html" type="button" class="navbar-toggler" aria-controls="navbarSupportedContent">
+                        <img src="img/封面/首頁圖片/2組.jpg" class="imgsize rounded-circle" id="blah" alt="your image" />
+                    </a>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </nav>
+    </header>
+
+
+    <!-- Post Content -->
+
+
+
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-sm-2">
+
+            </div>
+
+
+
+            <div class="col-12 col-sm-8">
+
+                <article>
+
+
+                    <div class="row ">
+
+                        <div class="col-md-1"></div>
+
+                        <div class="col-md-10 myreading1">
+
+                            <hr>
+                            <br>
+
+
+                            <h3 class="section-heading">二-算得上因公殉職的半個烈士，居然投到這種胎，黃泉機構也該反腐倡廉了</h3>
+                            <br>
+                            <!--1段-->
+                            <div>
+
+                                @RenderBody()
+                            </div>
+
+
+                            <hr>
+
+
+
+                            <div class="container-fluid">
+
+                                <div class="row">
+                                    <div class="col-3">
+
+                                        <nav class="pagination-outer" aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link" aria-label="Previous">
+                                                        上一章
+                                                    </a>
+                                                </li>
+                                                <li></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="col-6">
+
+                                        <button type="button" class="btn btn-primary btn-block mybutton5">回到大綱</button>
+
+                                    </div>
+
+                                    <div class="col-3">
+
+                                        <nav class="pagination-outer" aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li></li>
+
+                                                <li class="page-item">
+                                                    <a href="#" class="page-link" aria-label="Next">
+                                                        下一章
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-1"></div>
+
+                    </div>
+
+
+
+                </article>
+            </div>
+
+
+            <div class="col-12 col-sm-2">
+
+                <div class="sidebar container-fluid">
+
+                    <div class="dropdown" id="myDropdown">
+                        <a role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center;">
+                            <i class="fas  fa-cog fa-2x"></i><br>
+                            閱讀設定
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <a href="#" type="button" onclick="themeToggle()">
+                                <i class="fas fa-sun "></i>
+                                切換黑暗模式
+                                <i class="fas fa-moon"></i>
+                            </a>
+
+                            <li>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a href="#" class="fontSizePlus" style="text-align: center;">A+</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="#" class="fontSizeMinus" style="text-align: center;">A-</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+
+
+                                <select class="btn btn-block" id="selecth1FontFamily">
+                                    <option value="新細明體">新細明體</option>
+                                    <option value="微軟正黑體">微軟正黑體</option>
+                                    <option value="標楷體">標楷體</option>
+                                </select>
+
+                            </li>
+                        </div>
+                    </div>
+
+
+                    <a role="button" href="#" style="text-align: center;">
+                        <i class="fas fa-bookmark fa-2x"></i><br>
+                        加入書櫃
+                        <span class="caret"></span>
+                    </a>
+                    <a role="button" href="#" style="text-align: center;">
+                        <i class="fas fa-comments fa-2x"></i><br>
+                        留下評論
+                        <span class="caret"></span>
+                    </a>
+
+                    <div class="dropleft">
+
+                        <a role="button" href="#" style="text-align: center;" data-toggle="dropdown">
+                            <i class="fas fa-th-list fa-2x"></i><br>
+                            章節
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">第一章</a>
+                            <a class="dropdown-item" href="#">第二章</a>
+                            <a class="dropdown-item" href="#">第三章</a>
+                            <a class="dropdown-item" href="#">第四章</a>
+                            <a class="dropdown-item" href="#">第五章</a>
+                            <a class="dropdown-item" href="#">第六章</a>
+                            <a class="dropdown-item" href="#">第七章</a>
+                            <a class="dropdown-item" href="#">第八章</a>
+                            <a class="dropdown-item" href="#">第九章</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">您確定要登出嗎?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">如果您已準備好要登出請選擇下方"登出"按鈕,我們將會為您進行登出作業</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消登出</button>
+                    <a class="btn btn-primary" href="login.html">登出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Casual Reading &copy;
+        <script>document.write(new Date().getFullYear());</script> All rights reserved
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="~/Content/js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/Content/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="~/Content/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/Content/js/active.js"></script>
+
+
+
+    <script>
+        $('#myDropdown .dropdown-menu').on({
+            "click": function (e) {
+                e.stopPropagation();
+            }
+        });
+    </script>
+
+
+
+    <!--黑暗模式-->
+    <script>
+        (function () {
+            let onpageLoad = localStorage.getItem("theme") || "";
+            let element = document.body;
+            element.classList.add(onpageLoad);
+            document.getElementById("theme").textContent =
+                localStorage.getItem("theme") || "light";
+        })();
+
+        function themeToggle() {
+            let element = document.body;
+            element.classList.toggle("dark-mode");
+
+            let theme = localStorage.getItem("theme");
+            if (theme && theme === "dark-mode") {
+                localStorage.setItem("theme", "");
+            } else {
+                localStorage.setItem("theme", "dark-mode");
+            }
+
+            document.getElementById("theme").textContent = localStorage.getItem("theme");
+        }
+
+    </script>
+
+
+    <!--字型存取-->
+
+    <script>
+        var selector = document.getElementById('selecth1FontFamily');
+        var asd = document.getElementById('edit');
+
+        if (localStorage.length != 0) {
+            asd.style.fontFamily = localStorage.font;
+            asd.value = localStorage.font;
+        } else {
+            localStorage.setItem('font', '');
+        }
+
+
+        selector.onchange = function () {
+            var family = this.value;
+            asd.style.fontFamily = family;
+            localStorage.font = family;
+        }
+    </script>
+
+
+
+    <!--字型大小-->
+
+    <script>
+        $(document).ready(function () {
+
+            var reset = $('p').css('fontSize');
+
+            var elm = $('p.intro, p.ending');
+
+            var size = localStorage.getItem('size');
+            if (size) {
+                elm.css('font-size', size + 'px');
+            } else {
+
+                size = str_replace(reset, 'px', '');
+            }
+
+            var min = 21;
+
+            var max = 32;
+
+            $('a.fontSizePlus').click(function () {
+
+                if (size <= max) {
+
+                    size++;
+
+                    elm.css({
+                        'fontSize': size
+                    });
+                    localStorage.setItem('size', size);
+                }
+
+                return false;
+
+            });
+
+            $('a.fontSizeMinus').click(function () {
+
+
+                if (size >= min) {
+
+                    size--;
+
+                    elm.css({ 'fontSize': size });
+                    localStorage.setItem('size', size);
+                }
+
+                return false;
+
+            });
+
+            $('a.fontReset').click(function () {
+
+                elm.css({
+                    'fontSize': reset
+                });
+            });
+
+
+        });
+
+        function str_replace(haystack, needle, replacement) {
+            var temp = haystack.split(needle);
+            return temp.join(replacement);
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
