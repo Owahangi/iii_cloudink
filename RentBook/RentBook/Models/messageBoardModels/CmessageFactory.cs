@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 
 namespace RentBook.Models
 {
+
     public class CmessageFactory
     {
         //bm_id 書籍留言序號
@@ -16,6 +17,7 @@ namespace RentBook.Models
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
 
+        
         public bool checkWishListLove(int bc_id, string b_id)
         {
             SqlConnection con = new SqlConnection();
@@ -178,8 +180,9 @@ namespace RentBook.Models
         //get join tables
         public List<CmessageSqlView> getAllmessageSqlViews()
         {
-            return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id = bm.m_id ", null);
+            //return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id = bm.m_id ", null);
             //SQL語法 where ... 待修正
+            return getMessageSqlView("select bm.bm_id, bm.b_id, b.b_Name, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from ([Member] as m inner join [BooksMessage] as bm on m.m_id = bm.m_id) inner join Books as b on b.b_id = bm.b_id ", null);
         }
 
         //get join table input sql
@@ -208,6 +211,7 @@ namespace RentBook.Models
                 x.bm_id = (int)reader["bm_id"];
                 x.b_id = reader["b_id"].ToString();
                 x.m_id = reader["m_id"].ToString();
+                x.b_Name = reader["b_Name"].ToString();
                 x.m_Email = reader["m_Email"].ToString();
                 x.m_Image = reader["m_Image"].ToString();
                 //SQL Sever table Column(PATH -> ../../Content......)

@@ -9,6 +9,7 @@ namespace RentBook.Models
     {
         public int bm_id { get; set; } //書籍留言序號
         public string b_id { get; set; } //書籍編號
+        public string b_Name { get; set; } //書本名稱
         public string m_id { get; set; } //會員編號
         public string m_Email { get; set; } //會員信箱
         public string m_Image { get; set; } //會員大頭貼
