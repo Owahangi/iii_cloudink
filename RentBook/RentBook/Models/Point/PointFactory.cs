@@ -271,7 +271,7 @@ namespace RentBook.Models.Point
                 int 會員書櫃編號 = 回傳目前此會員的書櫃編號(p.m_id);
 
                 // 找出目前這個會員的月卡剩餘時間
-                string SQL = "select m_MonthlyLastTime from Member where m_id=@mid";
+                string SQL = "select isnull(m_MonthlyLastTime,GETDATE()) as m_MonthlyLastTime from Member where m_id=@mid";
                 SqlCommand cmdd = new SqlCommand(SQL, con);
                 cmdd.Parameters.AddWithValue("mid", p.m_id);
                 SqlDataReader read = cmdd.ExecuteReader();
@@ -367,10 +367,11 @@ namespace RentBook.Models.Point
                     {
                         DateTime dtt = pcb.bcb_BookLastTime;
                         所有書櫃裡的書增加天數 = dtt.AddDays(p.bmc_Date);
+                        string 日期格式轉換 = 所有書櫃裡的書增加天數.ToString("yyyy-MM-dd HH:mm:ss");
 
                         if (所有書櫃裡的書增加天數 != DateTime.Now.Date)
                         {
-                            tSQL3 = "Update BookCaseBooks set bcb_BookLastTime='" + 所有書櫃裡的書增加天數 + "' where bcb_id='" + pcb.bcb_id + "'";
+                            tSQL3 = "Update BookCaseBooks set bcb_BookLastTime='" + 日期格式轉換 + "' where bcb_id='" + pcb.bcb_id + "'";
                             cmd3.CommandText = tSQL3;
                             cmd3.ExecuteNonQuery();
                         }
