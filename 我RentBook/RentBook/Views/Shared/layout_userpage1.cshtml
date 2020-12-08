@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!--框架四連-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--self-->
+    <link rel="shortcut icon" href="./img/1606184875.ico" type="image/x-icon">
+    <link rel="stylesheet" href="~/backstage/header.css">
+    <link rel="stylesheet" href="~/backstage/theme-light.css">
+    <style>
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav style="display: flex;justify-content: space-between;padding-left: 20px;padding-right: 20px;" class="container navbar navbar-expand-lg sticky-top py-0">
+            <!-- navbar-light bg-light-->
+            <a class="navbar-brand" href="@Url.Action("xxx", "CV")"><img style="width:auto;height:60px;" class="img-responsive" src="~/backstage/img/未命名-19good.png" alt=""></a>
+            <!--dropdown-->
+            <div style="display: flex;">
+                <div>
+                    <!--預留空間-->
+                </div>
+                <div class="dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="pic" src="~/backstage/img/profile.jpg" alt="">
+                    </a>
+                    <div style="width: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="@Url.Action("Personal", "Userpage")">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 個人主頁
+                        </a>
+
+                        <a class="dropdown-item" href="@Url.Action("MyBookshelf", "Userpage")">
+                            <i class="fas fa-book fa-sm fa-fw mr-2 text-gray-400"></i> 我的書櫃
+                        </a>
+                        <a class="dropdown-item" href="@Url.Action("MyReadingList", "Userpage")">
+                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> 心願清單
+                        </a>
+                        <a class="dropdown-item" href="@Url.Action("MyComment", "Userpage")">
+                            <i class="fas fa-pen-alt fa-sm fa-fw mr-2 text-gray-400"></i> 留言記錄
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="@Url.Action("MySetting", "Userpage")">
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 帳號資料
+                        </a>
+                        <a class="dropdown-item" href="@Url.Action("MyPurchase", "Userpage")">
+                            <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i> 消費記錄
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> 登出
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="logout" href="@Url.Action("Logout", "Userpage")">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Logout Modal end-->
+    @RenderBody()
+</body>
+</html>

@@ -63,21 +63,21 @@
                         <div class="modal-header">
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext2" href="~/CV/xxx">
-                                        <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>首頁
-                                    </a>
-                                </div>
-                                <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext2" href="會員首頁.html">
+                                    <a class="dropdown-item" href="~/Common/MemberHome">
                                         <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext2" href="心儀書單.html">
+                                    <a class="dropdown-item" href="~/Common/MemberLove">
                                         <i class="fas fa-bookmark fa-sm fa-fw mr-2 text-gray-400"></i>藏書閣
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
+                                    <a class="dropdown-item" href="~/Common/Logout" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>登出
+                                    </a>
+                                </div>
+                                @*<div class="col-md-6 offset-md-3">
                                     <a class="dropdown-item mytext2" href="閱讀紀錄.html">
                                         <i class="fas fa-compact-disc fa-sm fa-fw mr-2 text-gray-400"></i>閱讀記錄
                                     </a>
@@ -91,12 +91,12 @@
                                     <a class="dropdown-item mytext2" href="我的評論.html">
                                         <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>我的評論
                                     </a>
-                                </div>
+                                </div>*@
 
 
                             </div>
                         </div>
-                        <div class="modal-body">
+                        @*<div class="modal-body">
                             <div class="col-md-6 offset-md-3">
                                 <a class="dropdown-item mytext2" href="我的帳戶.html">
                                     <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>我的帳戶
@@ -119,7 +119,7 @@
                                 </a>
                             </div>
 
-                        </div>
+                        </div>*@
 
                     </div>
 
@@ -140,38 +140,14 @@
                         </a>
                         
                         <div class="dropdown-menu " style="margin-left: 25cm;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item mytext2" href="~/CV/xxx">
-                                <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>首頁
-                            </a>
+                            
                             <a class="dropdown-item" href="~/Common/MemberHome">
                                 <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
                             </a>
                             <a class="dropdown-item" href="~/Common/MemberLove">
                                 <i class="fas fa-bookmark fa-sm fa-fw mr-2 text-gray-400"></i>藏書閣
                             </a>
-                            @*<a class="dropdown-item" href="閱讀紀錄.html">
-                                <i class="fas fa-compact-disc fa-sm fa-fw mr-2 text-gray-400"></i>閱讀記錄
-                            </a>
-                            <a class="dropdown-item" href="正在閱讀書單.html">
-                                <i class="fas fa-book-reader fa-sm fa-fw mr-2 text-gray-400"></i>正在閱讀
-                            </a>
-                            <a class="dropdown-item" href="我的評論.html">
-                                <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>我的評論
-                            </a>
-
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="我的帳戶.html">
-                                <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>我的帳戶
-                            </a>
-                            <a class="dropdown-item" href="編輯個人檔案.html">
-                                <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>編輯資訊
-                            </a>
-
-
-                            <a class="dropdown-item" style="text-align: center;" href="#" type="button" onclick="themeToggle()">
-                                <i class="fas fa-moon fa-sm fa-fw mr-2 text-gray-400"></i>
-                                切換黑暗模式
-                            </a>*@
+                            
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="~/Common/Logout" data-toggle="modal" data-target="#logoutModal">

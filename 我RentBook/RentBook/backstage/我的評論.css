@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+
+
+/*版面寬度*/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+/*logo圖片*/
+.myimg1
+{
+  margin-top: -18px;
+}
+
+/*小說封面圖片*/
+.myimg2
+{
+    margin-top: -13px;
+}
+
+/*評論區文字樣式*/
+.mycomment2
+{
+  color: #7f7f7f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*區塊標題背景色*/
+.mybutton1
+{
+ background-color: #c6d9f1
+}
+
+
+/*灰色背景布*/
+.mybg2
+{
+  margin-top: -4cm;
+  background-color: #e6e1e1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

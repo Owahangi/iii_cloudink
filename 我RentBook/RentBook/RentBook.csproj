@@ -136,6 +136,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="backstage\header.css" />
+    <Content Include="backstage\img\profile.jpg" />
+    <Content Include="backstage\img\未命名-19good.png" />
+    <Content Include="backstage\main.css" />
+    <Content Include="backstage\theme-dark.css" />
+    <Content Include="backstage\theme-light.css" />
+    <Content Include="backstage\我的評論-模板CSS.css" />
+    <Content Include="backstage\我的評論.css" />
+    <Content Include="backstage\編輯個人檔案-模板CSS.css" />
+    <Content Include="backstage\編輯個人檔案.css" />
     <Content Include="Content\%28新聞%291+1+1.html" />
     <Content Include="Content\%28新聞%29分手事務所.html" />
     <Content Include="Content\%28新聞%29懸崖上的樂園——專訪吳曉樂《我們沒有祕密》.html" />
@@ -7022,6 +7032,7 @@
     <Content Include="Views\Point\List.cshtml" />
     <Content Include="Views\Point\ShopMonthlyCard.cshtml" />
     <Content Include="Views\Common\MemberMessage.cshtml" />
+    <Content Include="Views\Shared\layout_userpage1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

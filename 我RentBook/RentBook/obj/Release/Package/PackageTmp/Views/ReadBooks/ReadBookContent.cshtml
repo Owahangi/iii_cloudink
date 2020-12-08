@@ -12,18 +12,25 @@
 <br>
 <!--1段-->
 <div>
+    <p style="font-size:20px" id="edit" class="myfont1 intro">
 
-    @foreach (string c in Model.小說書籍內容)
-    {
-
-        if (c != "")
+        @foreach (string c in Model.小說書籍內容)
         {
-            <p style="font-size:20px" id="edit" class="myfont1 intro">
-                @c
-            </p>
-        }
 
-    }
+            if (c != "")
+            {
+                @c
+            }
+            else
+            {
+                <br />
+                <br />
+
+            }
+
+        }
+    </p>
+
 </div>
 
 

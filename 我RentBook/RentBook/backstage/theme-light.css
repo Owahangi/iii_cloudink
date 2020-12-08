@@ -1,0 +1,48 @@
+body {
+    background-color: #fff;/*#F7F6F3;*/
+    color: #6C6A65;
+}
+
+header {
+    background-color: #fff;
+    color: #6C6A65;
+}
+
+nav {
+    background-color: #fff;
+    color: #6C6A65;
+}
+
+nav a {
+    color: #6C6A65;
+}
+
+.dropdown-menu {
+    background-color: #F7F6F3;
+    color: #EBEBEB
+}
+
+.dropdown-item:hover {
+    background-color: #EBEBEB;
+    color: black;
+    /*color: #5A6268;*/
+}
+
+.dark:hover {
+    background-color: #6C757D;
+    /*background-color: #373C3F;
+    color: #EBEBEB*/
+}
+
+#navbarNavDropdown {
+    background-color: white;
+}
+
+article {
+    background-color: #fff;
+    color: #37352F;
+}
+
+.footer-area {
+    color: #878787;
+}
