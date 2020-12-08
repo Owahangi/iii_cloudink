@@ -27,7 +27,7 @@ namespace RentBook.Models
         private void executeSql(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -75,7 +75,7 @@ namespace RentBook.Models
             sql = sql + "   From Member";
 
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -108,7 +108,7 @@ namespace RentBook.Models
         private List<CMember> getBySql(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -143,7 +143,7 @@ namespace RentBook.Models
                 //x.m_LastLogin = (DateTime)reader["m_LastLogin"];
                 //x.m_LastLogon = (DateTime)reader["m_LastLogon"];
                 //x.m_OnlineTime = (DateTime)reader["m_OnlineTime"];
-                //x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];
+                x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];
                 //x.bc_id = (int)reader["bc_id"];
                 list.Add(x);
             }
@@ -248,18 +248,21 @@ namespace RentBook.Models
             sql += "m_Name,";
             sql += "m_Birth,";
             sql += "m_Gender,";
+            sql += "m_MonthlyLastTime,";
             sql += "m_Email";
             sql += ")VALUES(";
             sql += "@M_ID,";
             sql += "@M_NAME,";
             sql += "@M_BIRTH,";
             sql += "@M_GENDER,";
+            sql += "@M_MONTHLYLASTTIME,";
             sql += "@M_EMAIL)";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("M_ID", (object)p.m_id));
             paras.Add(new SqlParameter("M_NAME", (object)p.m_Name));
             paras.Add(new SqlParameter("M_BIRTH", (object)p.m_Birth));
             paras.Add(new SqlParameter("M_GENDER", (object)p.m_Gender));
+            paras.Add(new SqlParameter("M_MONTHLYLASTTIME", (object)DateTime.Now));
             paras.Add(new SqlParameter("M_EMAIL", (object)p.m_Email));
             executeSql(sql, paras);
 
@@ -278,6 +281,53 @@ namespace RentBook.Models
             paras_1.Add(new SqlParameter("S_PWD", (object)passWord));
             paras_1.Add(new SqlParameter("R_ID", (object)s_R_ID));
             executeSql(sql, paras_1);
+
+            //1091208 寫入bc_id
+            sql = "";
+            sql = "Insert Into BookCase (bc_Name)";
+            sql += "  Values (@BC_NAME) ";
+            List<SqlParameter> paras_1_1 = new List<SqlParameter>();
+            paras_1_1.Add(new SqlParameter("BC_NAME", (object)p.m_id));
+            executeSql(sql, paras_1_1);
+
+            string s_BC_ID = "1";
+            s_BC_ID = get_bc_id();
+
+            sql = "";
+            sql = "Update Member";
+            sql += "  Set bc_id = @BC_ID ";
+            sql += " Where m_id = @M_ID";
+            List<SqlParameter> paras_2 = new List<SqlParameter>();
+            paras_2.Add(new SqlParameter("BC_ID", (object)s_BC_ID));
+            paras_2.Add(new SqlParameter("M_ID", (object)p.m_id));
+            executeSql(sql, paras_2);
+
+            
+        }
+
+        public string get_bc_id()
+        {
+            string s_Max_bc_id = "";
+            string sql = "Select Max(bc_id) as Max_bc_id";
+            sql = sql + "   From BookCase";
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                s_Max_bc_id = reader["Max_bc_id"].ToString();
+
+            }
+
+            con.Close();
+            return s_Max_bc_id;
         }
     }
 }

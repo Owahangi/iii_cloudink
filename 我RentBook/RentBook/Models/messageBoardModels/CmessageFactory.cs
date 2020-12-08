@@ -19,7 +19,7 @@ namespace RentBook.Models
         public List<BooksMessage> getOneMessage(string b_id, string m_id)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -54,7 +54,7 @@ namespace RentBook.Models
         {
             string M_ID = "";
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -76,7 +76,7 @@ namespace RentBook.Models
         {
             int star = 0;
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -100,7 +100,7 @@ namespace RentBook.Models
         {
             int avgsore = 0;
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -133,7 +133,7 @@ namespace RentBook.Models
         public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;

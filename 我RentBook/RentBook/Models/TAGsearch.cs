@@ -13,11 +13,11 @@ namespace RentBook.Models
         //public string binfo { get; set; }
         //public string btype { get; set; }
         //public string bimage { get; set; }
-        public List<string> bid = new List<string>();
-        public List<string> bname = new List<string>();
-        public List<string> binfo = new List<string>();
-        public List<string> btype = new List<string>();
-        public List<string> bimage = new List<string>();
+        public string bid { get; set; }
+        public string bname { get; set; }
+        public string binfo { get; set; }
+        public string btype { get; set; }
+        public string bimage { get; set; }
 
     }
     public class 書本標籤

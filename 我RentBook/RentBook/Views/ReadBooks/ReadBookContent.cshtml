@@ -4,26 +4,33 @@
     Layout = "~/Views/Shared/ReadBook.cshtml";
 }
 
-<hr>
+
 <br>
 
 
-<h3 class="section-heading"></h3>
+<h3 class="section-heading " style="text-align:center;">@Model.傳回書籍章節標題</h3>
 <br>
 <!--1段-->
 <div>
+    <p style="font-size:20px" id="edit" class="myfont1 intro">
 
-    @foreach (string c in Model.小說書籍內容)
-    {
-
-        if (c != "")
+        @foreach (string c in Model.小說書籍內容)
         {
-            <p style="font-size:20px" id="edit" class="myfont1 intro">
-                @c
-            </p>
-        }
 
-    }
+            if (c != "")
+            {
+                @c
+            }
+            else
+            {
+                <br />
+                <br />
+
+            }
+
+        }
+    </p>
+
 </div>
 
 
@@ -33,7 +40,7 @@
 
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-3">
 
             <nav class="pagination-outer" aria-label="Page navigation">
@@ -64,7 +71,7 @@
                     <li></li>
 
                     <li class="page-item">
-                        @if (Model.bc_Chapters+1 !=null)
+                        @if (Model.bc_Chapters<Model.傳回書籍最大章節數)
                         {
                             @Html.ActionLink("下一章", "ReadBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters + 1 }, new { @class = "page-link" }); 
                         }

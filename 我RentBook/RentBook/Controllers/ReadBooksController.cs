@@ -26,6 +26,8 @@ namespace RentBook.Controllers
 
             ReadBooksFactory factory = new ReadBooksFactory();
             rb.小說書籍內容 = factory.ReadfileContent(rb);
+            rb.傳回書籍最大章節數 = factory.回傳書籍最大章節數量(b_id);
+            rb.傳回書籍章節標題 = factory.傳回目前章節標題(b_id, bc_Chapters);
 
 
 
@@ -47,6 +49,8 @@ namespace RentBook.Controllers
             rb.bc_Chapters = bc_Chapters;
 
             rb.FilesName = factory.ReadComicBookfileContent(rb);
+            rb.傳回書籍最大章節數 = factory.回傳書籍最大章節數量(b_id);
+            rb.傳回書籍章節標題 = factory.傳回目前章節標題(b_id, bc_Chapters);
 
             //string 路徑 = System.Web.HttpContext.Current.Server.MapPath("~/書籍素材/漫畫素材/" + b_id + "/" + b_id + "-" + chapters + "/");
             rb.FilePath = "../../書籍素材/漫畫素材/" + rb.b_id + "/" + rb.b_id + "-" + rb.bc_Chapters + "/";

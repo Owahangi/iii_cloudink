@@ -7,11 +7,11 @@
 
 
 
-<hr>
+
 <br>
 
 
-<h3 class="section-heading"></h3>
+<h3 class="section-heading " style="text-align:center;">@Model.傳回書籍章節標題</h3>
 <br>
 <!--1段-->
 <div>
@@ -32,7 +32,7 @@
 
 <div class="container-fluid">
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-3">
 
             <nav class="pagination-outer" aria-label="Page navigation">
@@ -58,7 +58,7 @@
                     <li></li>
 
                     <li class="page-item">
-                        @if (Model.bc_Chapters + 1 != null)
+                        @if (Model.bc_Chapters < Model.傳回書籍最大章節數)
                         {
                             @Html.ActionLink("下一章", "ReadComicBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters + 1 }, new { @class = "page-link" });
                         }

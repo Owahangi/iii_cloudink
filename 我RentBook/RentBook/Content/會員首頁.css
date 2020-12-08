@@ -7,6 +7,27 @@
     }
 }
 
+/*區塊1 封面大小寫死*/
+.imgsection1
+{
+  width: 255px;
+  height: 347px;
+}
+
+/*區塊2 封面大小寫死*/
+
+.imgsection2
+{
+  width: 256px;
+  height: 347px;
+}
+/*區塊3 封面大小寫死*/
+
+.imgsection3
+{
+  width: 180px;
+  height: 250px;
+}
 
 
 /*profile 圖片*/
@@ -25,8 +46,14 @@
 /*藍色BAR 頭像圖片調整位置*/
 .mytest1
 {
-  padding-top: 20px;
+  padding-top: 30px;
 }
+
+.mytest3
+{
+  padding-top: 5px;
+}
+
 
 /*書單封面調整位置*/
 .mytest2
@@ -37,7 +64,7 @@
 /*區塊title樣式*/
 .myfont1
 {
- font-size: 20px;
+ font-size: 22px;
  background-color: #c6d9f1
 }
 
@@ -73,6 +100,7 @@
 /*推薦作品-書本大綱*/
 .mytext1
 {
+
   font-weight: bolder;
 }
 
@@ -83,36 +111,28 @@
 }
 
 
-/*sidebar*/
-.sidebar
+/*強制只能顯示...行*/
+.maxlength
 {
-  background-color: #768EA9;
-  font-family: "微軟正黑體";
-  font-weight: bolder;
-}
-
-/*breadcrumb*/
-.navbg1
-{
- font-weight: 700;
- font-family: "微軟正黑體";
- margin-left: 0cm;
- background-color: transparent;
-
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 
+/*modal*/
 .modal-backdrop {
   background-color: rgba(0,0,0,.0001) !important;
 }
 
-.modal { 
-  top: -120px;
-  padding-right: 20px;
-  padding-left: 20px;
+.mystyle3 { 
+  top: -85px;
+  padding-right: 7px;
+  padding-left: 22px;
 }
 
-.mytext1
+.mytext2
 {
   font-size: 20px;
   text-align: center;
@@ -227,7 +247,35 @@ overflow: hidden;
 color: #D56A16; /*前景星星顏色*/
 }
 
+/*黑暗模式*/
+body {
 
+  background-color: white;
+  color: black;
+
+}
+
+
+.dark-mode header * {
+  background-color: #373C3F;
+  color: white;
+}
+.dark-mode footer * {
+  background-color: rgb(100, 99, 99);
+  color: white;
+}
+.dark-mode article * {
+  background-color: #2F3437;
+  color: white;
+}
+.dark-mode {
+  background-color:#373C3F;
+  color: white;
+}
+
+.dark-mode .modal-backdrop * {
+  background-color: rgba(0,0,0,.0001) !important;
+}
 /*********************************/
 
 body

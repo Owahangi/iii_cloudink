@@ -483,6 +483,7 @@
     <Content Include="Content\js\stellar.js" />
     <Content Include="Content\js\theme.js" />
     <Content Include="Content\js\waypoints.min.js" />
+    <Content Include="Content\LOGO-1.png" />
     <Content Include="Content\my-icons-collection\backup.txt" />
     <Content Include="Content\my-icons-collection\font\flaticon.css" />
     <Content Include="Content\my-icons-collection\font\flaticon.html" />
@@ -2271,6 +2272,7 @@
     <Content Include="Content\vendor\jquery\stellar.js" />
     <Content Include="Content\vendor\jquery\theme.js" />
     <Content Include="Content\vendor\jquery\waypoints.min.js" />
+    <Content Include="Content\心儀書單CSS.css" />
     <Content Include="Content\新聞搜尋頁面.html" />
     <Content Include="Content\會員首頁.css" />
     <Content Include="Content\網站圖片庫\img1.jpg" />

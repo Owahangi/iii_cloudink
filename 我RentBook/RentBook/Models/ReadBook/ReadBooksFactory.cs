@@ -9,7 +9,7 @@ namespace RentBook.Models
 {
     public class ReadBooksFactory
     {
-        string myDBConnectionString = @"Data Source=LAPTOP-IRJ3MD8A\SQLEXPRESS;Initial Catalog=RentBookdb;Integrated Security=True";
+        string myDBConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
 
         
 
@@ -90,5 +90,51 @@ namespace RentBook.Models
             return 章節圖片檔名;
         }
 
+        public int 回傳書籍最大章節數量(string b_id)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "select max(bc_Chapters) as bc_Chapters from BooksChapters where b_id=@bid";
+            SqlCommand cmd = new SqlCommand(tSQL,con);
+            cmd.Parameters.AddWithValue("@bid", b_id);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            int 書籍最大章節數 = 0;
+
+            if (reader.Read())
+            {
+                書籍最大章節數 = (int)reader["bc_Chapters"];
+            }
+
+            reader.Close();
+            con.Close();
+
+            return 書籍最大章節數;
+        }
+
+        public string 傳回目前章節標題(string b_id,int bc_Chapters)
+        {
+            SqlConnection con = new SqlConnection(myDBConnectionString);
+            con.Open();
+
+            string tSQL = "select bc_Content from BooksChapters where b_id=@bid and bc_Chapters=@bcChapters";
+            SqlCommand cmd = new SqlCommand(tSQL, con);
+            cmd.Parameters.AddWithValue("@bid", b_id);
+            cmd.Parameters.AddWithValue("@bcChapters", bc_Chapters);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            string 書籍章節標題 = "";
+
+            if (reader.Read())
+            {
+                書籍章節標題 = (string)reader["bc_Content"];
+            }
+
+            reader.Close();
+            con.Close();
+
+            return 書籍章節標題;
+        }
     }
 }

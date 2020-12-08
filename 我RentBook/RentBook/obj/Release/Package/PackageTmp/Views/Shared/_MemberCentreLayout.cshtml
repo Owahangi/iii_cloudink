@@ -33,6 +33,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper@1.7.0/dist/css/bs-stepper.min.css">
 
     <link href="~/Content/會員首頁.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/心儀書單CSS.css" rel="stylesheet" type="text/css"> 
+
+
+
 </head>
 
 
@@ -42,8 +46,8 @@
     <header class="mb-5  shadow">
 
         <nav class="container navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
-                <img src="./新logo.png" width="100" height="70" alt="" loading="lazy">
+            <a class="navbar-brand" href="~/CV/xxx">
+                <img src="~/Content/LOGO-1.png" width="100" height="70" alt="" loading="lazy">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#setting" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <img src="img/封面/首頁圖片/2組.jpg" class="imgsize rounded-circle" id="blah" alt="your image" />
@@ -51,49 +55,66 @@
 
 
             <div class="modal fade" id="setting">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="mystyle3 modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <!--modal-dialog-scrollable:添加彈跳窗的捲動軸-->
                     <!--modal-sm, md, lg, xl-->
                     <div class="modal-content">
+
                         <div class="modal-header">
                             <div class="row">
-                                <div class="col-md-6 offset-md-8">
-                                    <a class="dropdown-item mytext1" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
+                                <div class="col-md-6 offset-md-3">
+                                    <a class="dropdown-item mytext2" href="~/CV/xxx">
+                                        <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>首頁
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext1" href="./我的書櫃.html">
-                                        <i class="fas fa-archive fa-sm fa-fw mr-2 text-gray-400"></i>我的書櫃
+                                    <a class="dropdown-item mytext2" href="會員首頁.html">
+                                        <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext1" href="./閱讀記錄.html">
+                                    <a class="dropdown-item mytext2" href="心儀書單.html">
+                                        <i class="fas fa-bookmark fa-sm fa-fw mr-2 text-gray-400"></i>藏書閣
+                                    </a>
+                                </div>
+                                <div class="col-md-6 offset-md-3">
+                                    <a class="dropdown-item mytext2" href="閱讀紀錄.html">
                                         <i class="fas fa-compact-disc fa-sm fa-fw mr-2 text-gray-400"></i>閱讀記錄
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext1" href="./留言記錄.html">
-                                        <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>留言記錄
+                                    <a class="dropdown-item mytext2" href="正在閱讀書單.html">
+                                        <i class="fas fa-book-reader fa-sm fa-fw mr-2 text-gray-400"></i>正在閱讀
                                     </a>
                                 </div>
                                 <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext1" href="./留言記錄.html">
-                                        <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>帳號資料
+                                    <a class="dropdown-item mytext2" href="我的評論.html">
+                                        <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>我的評論
                                     </a>
                                 </div>
-                                <div class="col-md-6 offset-md-3">
-                                    <a class="dropdown-item mytext1" href="./留言記錄.html">
-                                        <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>消費記錄
-                                    </a>
-                                </div>
+
 
                             </div>
                         </div>
                         <div class="modal-body">
+                            <div class="col-md-6 offset-md-3">
+                                <a class="dropdown-item mytext2" href="我的帳戶.html">
+                                    <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>我的帳戶
+                                </a>
+                            </div>
 
                             <div class="col-md-6 offset-md-3">
-                                <a class="dropdown-item mytext1" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item mytext2" href="編輯個人檔案.html">
+                                    <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>編輯資訊
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <div class="col-md-6 offset-md-3">
+                                <a class="dropdown-item mytext2" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>登出
                                 </a>
                             </div>
@@ -117,30 +138,43 @@
                         <a class="nav-link dropdown-toggle" style="margin-left: 25cm;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="img/封面/首頁圖片/2組.jpg" class="imgsize rounded-circle" id="blah" alt="your image" />
                         </a>
-
+                        
                         <div class="dropdown-menu " style="margin-left: 25cm;" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="./個人主頁.html">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
+                            <a class="dropdown-item mytext2" href="~/CV/xxx">
+                                <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>首頁
                             </a>
-                            <a class="dropdown-item" href="./我的書櫃.html">
-                                <i class="fas fa-archive fa-sm fa-fw mr-2 text-gray-400"></i>我的書櫃
+                            <a class="dropdown-item" href="~/Common/MemberHome">
+                                <i class="fas fa-user-circle fa-sm fa-fw mr-2 text-gray-400"></i>個人主頁
                             </a>
-                            <a class="dropdown-item" href="./閱讀記錄.html">
+                            <a class="dropdown-item" href="~/Common/MemberLove">
+                                <i class="fas fa-bookmark fa-sm fa-fw mr-2 text-gray-400"></i>藏書閣
+                            </a>
+                            @*<a class="dropdown-item" href="閱讀紀錄.html">
                                 <i class="fas fa-compact-disc fa-sm fa-fw mr-2 text-gray-400"></i>閱讀記錄
                             </a>
-                            <a class="dropdown-item" href="./留言記錄.html">
-                                <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>留言記錄
+                            <a class="dropdown-item" href="正在閱讀書單.html">
+                                <i class="fas fa-book-reader fa-sm fa-fw mr-2 text-gray-400"></i>正在閱讀
+                            </a>
+                            <a class="dropdown-item" href="我的評論.html">
+                                <i class="fas fa-comments fa-sm fa-fw mr-2 text-gray-400"></i>我的評論
                             </a>
 
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./帳號資料.html">
-                                <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>帳號資料
+                            <a class="dropdown-item" href="我的帳戶.html">
+                                <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>我的帳戶
                             </a>
-                            <a class="dropdown-item" href="./消費記錄.html">
-                                <i class="fas fa-file-invoice-dollar fa-sm fa-fw mr-2 text-gray-400"></i>消費記錄
+                            <a class="dropdown-item" href="編輯個人檔案.html">
+                                <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>編輯資訊
                             </a>
+
+
+                            <a class="dropdown-item" style="text-align: center;" href="#" type="button" onclick="themeToggle()">
+                                <i class="fas fa-moon fa-sm fa-fw mr-2 text-gray-400"></i>
+                                切換黑暗模式
+                            </a>*@
+
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="~/Common/Logout" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>登出
                             </a>
                         </div>
@@ -155,74 +189,18 @@
 
     </header>
 
-    <div class="invisible left-block d-xl-block d-none order-0" style="min-height: 20px"></div>
+
+
 
 
     <div class="container">
         <div class="d-flex" id="wrapper">
 
 
-            <!-- Sidebar -->
-            <nav role="navigation" style="margin-left: -15px;">
-                <div id="menuToggle" style="margin-top: -30px;">
-                    <!--
-                    A fake / hidden checkbox is used as click reciever,
-                    so you can use the :checked selector on it.
-                    -->
-                    <input type="checkbox" />
-
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-
-                    <ul id="menu">
-                        <a href="#" type="button" class="btn btn-block rounded"><li>會員首頁</li></a>
-                        <a href="#" type="button" class="btn btn-block rounded"><li>我的書櫃</li></a>
-                        <a href="#" type="button" class="btn btn-block rounded"><li>閱讀記錄</li></a>
-                        <a href="#" type="button" class="btn btn-block rounded"><li>留言記錄</li></a>
-                        <a href="#" type="button" class="btn btn-block rounded"><li>帳號資料</li></a>
-                        <a href="#" type="button" class="btn btn-block rounded"><li>消費記錄</li></a>
-
-                    </ul>
-                </div>
-            </nav>
-            <!-- /#sidebar-wrapper -->
-            <!-- Page Content -->
             <div id="page-content-wrapper">
 
-                <div class="container-fluid myborder1">
 
-                    <div class="row">
-
-
-                        <div class="col-2 col-md-2">
-
-                        </div>
-
-
-                        <div class="col-10 col-md-7">
-                            <nav aria-label="breadcrumb navbg1">
-                                <ol class="breadcrumb navbg1">
-                                    <li class="breadcrumb-item"><a href="#">雲墨空間</a></li>
-                                    <li class="breadcrumb-item"><a href="#">會員首頁</a></li>
-                                </ol>
-                            </nav>
-                        </div>
-
-
-                        <div class="col-12 col-md-3">
-                        </div>
-                    </div>
-
-                    <br>
-                    @RenderBody()
-
-
-
-
-                </div>
+                @RenderBody()
             </div>
         </div>
 
@@ -268,7 +246,7 @@
 
 
 
- 
+
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="~/Content/js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -319,6 +297,34 @@
             elLine.style.transform = `rotate(${radius}rad)`
         })
     </script>
+
+
+    <!--黑暗模式-->
+    <script>
+        (function () {
+            let onpageLoad = localStorage.getItem("theme") || "";
+            let element = document.body;
+            element.classList.add(onpageLoad);
+            document.getElementById("theme").textContent =
+                localStorage.getItem("theme") || "light";
+        })();
+
+    function themeToggle() {
+        let element = document.body;
+        element.classList.toggle("dark-mode");
+
+        let theme = localStorage.getItem("theme");
+        if (theme && theme === "dark-mode") {
+            localStorage.setItem("theme", "");
+        } else {
+            localStorage.setItem("theme", "dark-mode");
+        }
+
+        document.getElementById("theme").textContent = localStorage.getItem("theme");
+    }
+
+    </script>
+
 </body>
 
 </html>

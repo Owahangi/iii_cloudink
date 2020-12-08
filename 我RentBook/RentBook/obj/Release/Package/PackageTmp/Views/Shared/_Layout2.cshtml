@@ -4,15 +4,11 @@
 @using System.Data.SqlClient;
 @{
 
-    //if (Session[CDictionary.SK_LOGINED_USER] == null)
-    //{
 
-    //}
-    //else
-    //{
-    //    return View();
-    //}
     var user = (Session[CDictionary.SK_LOGINED_USER] as CMember);
+    RentBookdbEntities2 db = new RentBookdbEntities2();
+    var user2 = db.SystemAccount.Where(u => u.s_id == user.m_Email);
+
 
 }
 <head>
@@ -317,19 +313,21 @@
                                     </li>
                                 }
 
-
-                                <li>
-                                    <a href="contact.html">購物車</a>
-                                </li>
-                                @*<li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>*@
-                                <!--更改Navbar-->
                                 @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
                                 {
                                     <li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>
                                 }
                                 else
                                 {
-                                    <li>@Html.ActionLink("會員中心", "MemberHome", "Common")</li>
+                                    if (user2.ToList()[0].r_id == 2)
+                                    {
+                                        <li>@Html.ActionLink("後端首頁", "AddBook", "AddBook")</li>
+                                    }
+                                    else
+                                    {
+                                        <li>@Html.ActionLink("會員中心", "MemberHome", "Common")</li>
+                                    }
+
                                     <li>@Html.ActionLink("登出", "Logout", "Common")</li>
                                 }
                             </ul>
@@ -403,31 +401,56 @@
                                 <div class="classynav">
                                     <ul>
                                         <li>@Html.ActionLink("首頁", "xxx", "CV")</li>
-                                        <li>@Html.ActionLink("漫畫", "SeachItem", "CV", new { drop = "漫畫" }, null)</li>
-                                        <li>@Html.ActionLink("小說", "SeachItem", "CV", new { drop = "小說" }, null)</li>
                                         <li>
-                                            <a href="#">今日最新</a>
+                                            @Html.ActionLink("漫畫", "SeachItem", "CV", new { drop = "漫畫" }, null)
+
                                         </li>
                                         <li>
-                                            <a href="#">排行榜</a>
+                                            @Html.ActionLink("小說", "SeachItem", "CV", new { drop = "小說" }, null)
+
                                         </li>
-                                        <li>
-                                            <a href="#">兌換點數</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">購物車</a>
-                                        </li>
-                                        @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
+                                        <li>@Html.ActionLink("今日最新", "LatestItem", "CV")</li>
+                                        @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] != null)
                                         {
                                             <li>
-                                                <a href="#">登入|註冊</a>
+                                                @Html.ActionLink("購買月卡", "ShopMonthlyCard", "Point", new { m_id = user.m_id }, null)
                                             </li>
                                         }
                                         else
                                         {
                                             <li>
-                                                <a href="#">會員中心</a>
+                                                @Html.ActionLink("購買月卡", "ShopMonthlyCard", "Point", new { @class = "", onclick = "javascript:alert('請先登入會員'); return false;" })
                                             </li>
+                                        }
+
+                                        @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] != null)
+                                        {
+
+                                            <li>@Html.ActionLink("兌換點數", "AddPoint", "Point", new { m_id = user.m_id }, null)</li>
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                @Html.ActionLink("兌換點數", "AddPoint", "Point", new { @class = "", onclick = "javascript:alert('請先登入會員'); return false;" })
+                                            </li>
+                                        }
+
+                                        @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
+                                        {
+                                            <li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>
+                                        }
+                                        else
+                                        {
+                                            if (user2.ToList()[0].r_id == 2)
+                                            {
+                                                <li>@Html.ActionLink("後端首頁", "AddBook", "AddBook")</li>
+                                            }
+                                            else
+                                            {
+                                                <li>@Html.ActionLink("會員中心", "MemberHome", "Common")</li>
+                                            }
+
+                                            <li>@Html.ActionLink("登出", "Logout", "Common")</li>
                                         }
                                     </ul>
                                 </div>

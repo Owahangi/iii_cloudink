@@ -5,14 +5,66 @@
 
 }
 
-<h2>ReadComicBookContent</h2>
 
 
 
-@foreach (string FileName in Model.FilesName)
-{
-    if (FileName != "")
+<br>
+
+
+<h3 class="section-heading " style="text-align:center;">@Model.傳回書籍章節標題</h3>
+<br>
+<!--1段-->
+<div>
+
+    @foreach (string FileName in Model.FilesName)
     {
-        <img src="@Model.FilePath/@FileName" />
+        if (FileName != "")
+        {
+            <img src="@Model.FilePath/@FileName" />
+        }
     }
-}
+</div>
+
+
+<hr>
+
+
+
+<div class="container-fluid">
+
+    <div class="row mb-3">
+        <div class="col-3">
+
+            <nav class="pagination-outer" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        @if (Model.bc_Chapters > 1)
+                        {
+                            @Html.ActionLink("上一章", "ReadComicBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters - 1 }, new { @class = "page-link" })
+                        }
+                    </li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-6">
+            @Html.ActionLink("回到大綱", "BookPage", "CV", new { bid = Model.b_id }, new { @class = "btn btn-primary btn-block mybutton5" })
+        </div>
+
+        <div class="col-3">
+
+            <nav class="pagination-outer" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li></li>
+
+                    <li class="page-item">
+                        @if (Model.bc_Chapters < Model.傳回書籍最大章節數)
+                        {
+                            @Html.ActionLink("下一章", "ReadComicBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters + 1 }, new { @class = "page-link" });
+                        }
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

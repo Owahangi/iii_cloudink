@@ -7,7 +7,7 @@
 
 }
 
-<h1>@ViewBag.Session</h1>
+
 <div class="hero-area">
     <!-- Hero Slides Area -->
     <div class="hero-slides owl-carousel">
@@ -167,7 +167,7 @@
                             <ul class="tags">
                                 @foreach (var item in Model.tname)
                                 {
-                                <li><a href="#">@item</a></li>
+                                <li><a href="@Url.Action("TAGsearch","CV",new {tagname=item },null)">@item</a></li>
                                 }
                                 
                             </ul>
@@ -213,7 +213,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="insta-title">
-                                    <h5>限時折扣⚡</h5>
+                                    <h5>暢銷書籍⚡</h5>
                                 </div>
                             </div>
                         </div>
@@ -311,65 +311,46 @@
                     <!-- Tag -->
                     <!-- Widget Area -->
                     <!-- Widget Area -->
-                    @*<div class="sidebar-widget-area">
-                        <h5 class="title subscribe-title">Subscribe to my newsletter</h5>
-                        <div class="widget-content">
-                            <form action="#" class="newsletterForm">
-                                <input type="email" name="email" id="subscribesForm" placeholder="Your e-mail here">
-                                <button type="submit" class="btn original-btn">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>*@
+                   
 
                     <!--評論區-->
-                    @for (int i = 0;i<4;i++)
+
+                    @if (Model.CmessageSqlViews.Count > 0)
                     {
-                <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
-                    <div class="card-header mybg1">@Model.CmessageSqlViews[i].m_Alias 評論:</div>
-                    <div class="card-body text-dark">
-                        <a href="#"><h5 class="card-title">@Model.CmessageSqlViews[i].b_Name)</h5></a>
-                        <p class="card-text">
-                            @Model.CmessageSqlViews[i].bm_Message
-                        </p>
-                    </div>
-                </div>
+                        if (Model.CmessageSqlViews.Count < 4)
+                        {
+                            for (int i = 0; i < Model.CmessageSqlViews.Count; i++)
+                            {
+                                <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
+                                    <div class="card-header mybg1">@Model.CmessageSqlViews[i].m_Alias 評論:</div>
+                                    <div class="card-body text-dark">
+                                        <a href="#"><h6 class="card-title">@Model.CmessageSqlViews[i].b_Name</h6></a>
+                                        <p class="card-text">
+                                            @Model.CmessageSqlViews[i].bm_Message
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 0; i < 4; i++)
+                            {
+                                <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
+                                    <div class="card-header mybg1">@Model.CmessageSqlViews[i].m_Alias 評論:</div>
+                                    <div class="card-body text-dark">
+                                        <a href="#"><h5 class="card-title">@Model.CmessageSqlViews[i].b_Name</h5></a>
+                                        <p class="card-text">
+                                            @Model.CmessageSqlViews[i].bm_Message
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
                     }
-                    @*<div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
-                        <div class="card-header mybg1">賈雨村評論:</div>
-                        <div class="card-body text-dark">
-                            <a href="#"><h5 class="card-title">瑯琊榜之風起長林</h5></a>
-                            <p class="card-text">
-                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
-                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
-                        <div class="card-header mybg1">秦可卿評論:</div>
-                        <div class="card-body text-dark">
-                            <a href="#"><h5 class="card-title">《魔道祖師／陳情令》</h5></a>
-                            <p class="card-text">
-                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
-                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="card border-dark mb-3 rounded-0" style="max-width: 18rem;">
-                        <div class="card-header mybg1">馮紫英評論:</div>
-                        <div class="card-body text-dark">
-                            <a href="#"><h5 class="card-title">《知否？知否？應是綠肥紅瘦／庶女明蘭傳》</h5></a>
-                            <p class="card-text">
-                                我覺得說，精神世界是片宇宙那一段文字形容超漂釀（文字貧乏，不會形容了哈哈哈），
-                                所以路米大也會衝戶外追星嗎？<a href="#">更多評論..</a>
-                            </p>
-                        </div>
-                    </div>*@
-
-                    @*<div class="load-more-btn mt-100 wow fadeInUp readmoreposition" data-wow-delay="0.7s" data-wow-duration="1000ms">
-                        <a href="~/Content/新聞搜尋頁面.html" class="btn original-btn ">Read More</a>
-                    </div>*@
 
                 </div>
             </div>

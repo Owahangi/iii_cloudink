@@ -163,9 +163,15 @@
                                 {
                                     for (int i = 0; i < Model.BookCaseBooks.Count; i++)
                                     {
-                                        if (Model.BookCaseBooks[i].b_id == Model.Books.b_id)//驗證有沒有買書
+                                        if (Model.BookCaseBooks[i].b_id == Model.Books.b_id && Model.BookCaseBooks[i].bcb_BookLastTime > DateTime.Now)//驗證有沒有買書
                                         {
                                             check = true;
+                                        }
+                                        else if(Model.cmember.m_MonthlyLastTime > DateTime.Now)
+                                        {
+                                            // 有買月卡
+                                            check = true;
+
                                         }
                                     }
                                 }

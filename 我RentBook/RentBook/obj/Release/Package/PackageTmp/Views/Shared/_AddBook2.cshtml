@@ -287,7 +287,7 @@
 
 
                         <div>
-                            <img class="img-fluid myimg1" alt="your image" width="70" height="70" src="~/Content/LOGO-1.png" />
+                            <img class="img-fluid myimg1" alt="your image" width="70" height="70" src="~/Content/LOGO-1.png" href="~/CV/xxx" />
                         </div>
 
 
@@ -307,28 +307,21 @@
                             <div class="classynav">
 
                                 <ul>
+                                    <li>@Html.ActionLink("首頁", "xxx", "CV")</li>
+                                    
+                                    
 
-                                    <li><a href="index.html">首頁</a></li>
-                                    <li>
-                                        <a href="#">漫畫</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="#">小說</a>
-                                        
-                                    </li>
-                                    <li><a href="about-us.html">今日最新</a></li>
-                                    <li><a href="#">排行榜</a></li>
-                                    <li><a href="contact.html">兌換點數</a></li>
-                                    <li><a href="contact.html">購物車</a></li>
+                                   
 
+                                    @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
+                                    {
+                                        <li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>
+                                    }
+                                    else
+                                    {                                       
 
-
-
-
-
-
-
+                                        <li>@Html.ActionLink("登出", "Logout", "Common")</li>
+                                    }
                                 </ul>
                                 <!-- Search Form  -->
                             </div>
@@ -372,34 +365,12 @@
                 <div class="list-group list-group-flush">
                     @Html.ActionLink("新增書籍", "AddBook", "AddBook", null, new { @class = "list-group-item list-group-item-action sidebar" })
 
-                    @*<a href="閱讀紀錄.html" class="list-group-item list-group-item-action sidebar">
-                        <i class="fas fa-compact-disc"></i>
-                        書籍維護
-                    </a>*@
+                    
                     @Html.ActionLink("書籍清單", "List", "EditBook", null, new { @class = "list-group-item list-group-item-action sidebar" })
 
                     @Html.ActionLink("作者維護", "List", "Author", null, new { @class = "list-group-item list-group-item-action sidebar" })
 
-                    @Html.ActionLink("出版社維護", "List", "Publishing", null, new { @class = "list-group-item list-group-item-action sidebar" })
-
-
-                    <hr>
-                    <div class="sidebar-heading text-white">您的個人選項</div>
-
-                    <a href="我的帳戶.html" class="list-group-item list-group-item-action sidebar">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        我的帳戶
-                    </a>
-
-                    <a href="編輯個人檔案.html" class="list-group-item list-group-item-action sidebar">
-                        <i class="fas fa-user-edit"></i>
-                        編輯個人資訊
-                    </a>
-
-                    <a href="#" data-toggle='modal' data-target='#logoutModal' class="list-group-item list-group-item-action sidebar">
-                        <i class="fas fa-sign-out-alt"></i>
-                        登出
-                    </a>
+                    @Html.ActionLink("出版社維護", "List", "Publishing", null, new { @class = "list-group-item list-group-item-action sidebar" })                    
 
 
 

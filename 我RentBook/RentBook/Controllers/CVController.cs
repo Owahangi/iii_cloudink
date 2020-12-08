@@ -163,7 +163,7 @@ namespace RentBook.Controllers
             int AvgSore = factory.getAvgSorce(bid);
             ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
 
-            //判斷有沒流過言
+            //判斷有沒留過言
             List<BooksMessage> ListBooksMessage = new List<BooksMessage>();
             string m_id = factory.getM_ID(bid);
             ListBooksMessage = factory.getOneMessage(bid, m_id);
@@ -325,24 +325,20 @@ namespace RentBook.Controllers
             var list3 = list2.ToList();
             
             List<TAGsearch> tags = new List<TAGsearch>();
-            TAGsearch x = new TAGsearch();
             foreach (var item in list3)
             {
-                x.bid.Add(item.b.b_id);
-                x.bimage.Add(item.b.b_Image);
-                x.binfo.Add(item.b.b_Info);
-                x.bname.Add(item.b.b_Name);
-                x.btype.Add(item.b.b_Type);
+                TAGsearch x = new TAGsearch();
+                x.bid = item.b.b_id;
+                x.bimage = item.b.b_Image;
+                x.binfo = item.b.b_Info;
+                x.bname = item.b.b_Name;
+                x.btype = item.b.b_Type;
+
+                tags.Add(x);
+
             }
-            
-            tags.Add(x);
-            return View(new TAGsearch {
-                bid = x.bid,
-                bimage = x.bimage,
-                binfo =x.binfo,
-                bname = x.bname,
-                btype = x.btype
-               });
+
+            return View(tags);
         }
     }
 }

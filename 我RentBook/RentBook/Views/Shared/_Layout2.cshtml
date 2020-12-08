@@ -4,9 +4,10 @@
 @using System.Data.SqlClient;
 @{
 
-   
+
     var user = (Session[CDictionary.SK_LOGINED_USER] as CMember);
-   
+    RentBookdbEntities2 db = new RentBookdbEntities2();
+    var user2 = db.SystemAccount.Where(u => u.s_id == user.m_Email);
 
 
 }
@@ -318,7 +319,7 @@
                                 }
                                 else
                                 {
-                                    if (user.m_Name == "123")
+                                    if (user2.ToList()[0].r_id == 2)
                                     {
                                         <li>@Html.ActionLink("後端首頁", "AddBook", "AddBook")</li>
                                     }
@@ -434,19 +435,21 @@
                                             </li>
                                         }
 
-
-                                        @*<li>
-                                                <a href="contact.html">購物車</a>
-                                            </li>*@
-                                        @*<li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>*@
-                                        <!--更改Navbar-->
                                         @if (Session[RentBook.Models.CDictionary.SK_LOGINED_USER] == null)
                                         {
                                             <li>@Html.ActionLink("登入|註冊", "Login", "Common")</li>
                                         }
                                         else
                                         {
-                                            <li>@Html.ActionLink("會員中心", "MemberHome", "Common")</li>
+                                            if (user2.ToList()[0].r_id == 2)
+                                            {
+                                                <li>@Html.ActionLink("後端首頁", "AddBook", "AddBook")</li>
+                                            }
+                                            else
+                                            {
+                                                <li>@Html.ActionLink("會員中心", "MemberHome", "Common")</li>
+                                            }
+
                                             <li>@Html.ActionLink("登出", "Logout", "Common")</li>
                                         }
                                     </ul>
