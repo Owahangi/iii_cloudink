@@ -23,5 +23,10 @@ namespace RentBook.Models
         public List<string> FilesName { get; set; }
 
         public string FilePath { get; set; }
+
+        // 不在資料表內的
+        public int 傳回書籍最大章節數 { get; set; }
+        public string 傳回書籍章節標題 { get; set; }
+
     }
 }

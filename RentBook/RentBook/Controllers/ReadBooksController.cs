@@ -26,14 +26,11 @@ namespace RentBook.Controllers
 
             ReadBooksFactory factory = new ReadBooksFactory();
             rb.小說書籍內容 = factory.ReadfileContent(rb);
-
-
+            rb.傳回書籍最大章節數 = factory.回傳書籍最大章節數量(b_id);
+            rb.傳回書籍章節標題 = factory.傳回目前章節標題(b_id, bc_Chapters);
 
 
             return View(rb);
-
-
-
 
         }
 
@@ -45,6 +42,8 @@ namespace RentBook.Controllers
             ReadBooksModel rb = new ReadBooksModel();
             rb.b_id = b_id;
             rb.bc_Chapters = bc_Chapters;
+            rb.傳回書籍最大章節數 = factory.回傳書籍最大章節數量(b_id);
+            rb.傳回書籍章節標題 = factory.傳回目前章節標題(b_id, bc_Chapters);
 
             rb.FilesName = factory.ReadComicBookfileContent(rb);
 
