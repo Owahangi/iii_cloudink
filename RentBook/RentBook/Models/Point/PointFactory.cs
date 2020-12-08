@@ -213,9 +213,18 @@ namespace RentBook.Models.Point
                 else
                 {
                     // 目前書櫃已有此書籍 (所以增加購買天數)
-
                     DateTime dt = Convert.ToDateTime(書籍剩餘時間);
-                    DateTime 增加天數後的時間 = dt.AddDays(p.購買天數);
+                    DateTime 增加天數後的時間 = DateTime.Now;
+
+                    if (dt < DateTime.Now)
+                    {
+                        dt = DateTime.Now;
+                        增加天數後的時間 = dt.AddDays(p.購買天數);
+                    }
+                    else if(dt > DateTime.Now)
+                    {
+                        增加天數後的時間 = dt.AddDays(p.購買天數);
+                    }
                     p.bcb_BookLastTime = 增加天數後的時間;
 
                     tSQL2 = "update BookCaseBooks set bcb_BookLastTime=@bcbBookLastTime where bc_id=@bcid and b_id=@bid";
@@ -365,9 +374,39 @@ namespace RentBook.Models.Point
 
                     foreach (PointBookCaseBooksModel pcb in list)
                     {
+                        //// 目前書櫃已有此書籍 (所以增加購買天數)
+                        //DateTime dt = Convert.ToDateTime(書籍剩餘時間);
+                        //DateTime 增加天數後的時間 = DateTime.Now;
+
+                        //if (dt < DateTime.Now)
+                        //{
+                        //    dt = DateTime.Now;
+                        //    增加天數後的時間 = dt.AddDays(p.購買天數);
+                        //}
+                        //else if (dt > DateTime.Now)
+                        //{
+                        //    增加天數後的時間 = dt.AddDays(p.購買天數);
+                        //}
+                        //p.bcb_BookLastTime = 增加天數後的時間;
+
+                        //tSQL2 = "update BookCaseBooks set bcb_BookLastTime=@bcbBookLastTime where bc_id=@bcid and b_id=@bid";
+
                         DateTime dtt = pcb.bcb_BookLastTime;
-                        所有書櫃裡的書增加天數 = dtt.AddDays(p.bmc_Date);
-                        string 日期格式轉換 = 所有書櫃裡的書增加天數.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        string 日期格式轉換 = "";
+
+                        if (dtt < DateTime.Now)
+                        {
+                            dtt = DateTime.Now;
+                            所有書櫃裡的書增加天數 = dtt.AddDays(p.bmc_Date);
+                            日期格式轉換 = 所有書櫃裡的書增加天數.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        } else if (dtt > DateTime.Now)
+                        {
+                            所有書櫃裡的書增加天數 = dtt.AddDays(p.bmc_Date);
+                            日期格式轉換 = 所有書櫃裡的書增加天數.ToString("yyyy-MM-dd HH:mm:ss");
+                        }
+                        
 
                         if (所有書櫃裡的書增加天數 != DateTime.Now.Date)
                         {

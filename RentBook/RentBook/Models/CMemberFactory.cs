@@ -143,8 +143,8 @@ namespace RentBook.Models
                 //x.m_LastLogin = (DateTime)reader["m_LastLogin"];
                 //x.m_LastLogon = (DateTime)reader["m_LastLogon"];
                 //x.m_OnlineTime = (DateTime)reader["m_OnlineTime"];
-                //x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];
-                //x.bc_id = (int)reader["bc_id"];
+                x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];
+                
                 list.Add(x);
             }
             con.Close();
