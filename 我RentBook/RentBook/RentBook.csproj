@@ -173,6 +173,7 @@
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\css\simple-sidebar.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\themify-icons.css" />
     <Content Include="Content\css\_about.css" />
@@ -2285,6 +2286,11 @@
     <Content Include="Content\心儀書單CSS.css" />
     <Content Include="Content\新聞搜尋頁面.html" />
     <Content Include="Content\會員首頁.css" />
+    <Content Include="Content\網站圖片庫\%28內圖%29111.jpeg" />
+    <Content Include="Content\網站圖片庫\%28內圖%291+1+1.jpg" />
+    <Content Include="Content\網站圖片庫\%28內圖%29分手事務所.jpg" />
+    <Content Include="Content\網站圖片庫\%28內圖%29拼裝家庭.jpeg" />
+    <Content Include="Content\網站圖片庫\Allnews鏡文學9.jpeg" />
     <Content Include="Content\網站圖片庫\img1.jpg" />
     <Content Include="Content\網站圖片庫\nov1.jpg" />
     <Content Include="Content\網站圖片庫\不能讓老師發現的霸凌日記.jpg" />
@@ -4196,11 +4202,7 @@
     <Content Include="vendor\jquery\stellar.js" />
     <Content Include="vendor\jquery\theme.js" />
     <Content Include="vendor\jquery\waypoints.min.js" />
-    <Content Include="作者照片\1d55f185-42cd-4f3c-8b4b-795fdb23e4b7.jpg" />
-    <Content Include="作者照片\29cc2aa2-98e4-4258-bdd3-44138edc4d6f.jpg" />
-    <Content Include="作者照片\388e3588-2141-44a0-9c42-be46e6cc4614.jpg" />
-    <Content Include="作者照片\ca02ea17-2117-4b9d-8612-403fa179fb65.jpg" />
-    <Content Include="作者照片\fbe93911-d8b1-415b-9c7e-8d9e9f471856.jpg" />
+    <Content Include="作者照片\Default.jpg" />
     <Content Include="書籍素材\小說素材\B00001\B00001-1\B00001-1-1.txt" />
     <Content Include="書籍素材\小說素材\B00001\B00001-2\B00001-2-1.txt" />
     <Content Include="書籍素材\小說素材\B00001\B00001-3\B00001-3-1.txt" />
@@ -6490,6 +6492,7 @@
     <Content Include="書籍素材\漫畫素材\B00042\B00042-9\B00042-9-8.jpg" />
     <Content Include="書籍素材\漫畫素材\B00042\B00042-9\B00042-9-9.jpg" />
     <Content Include="書籍素材\漫畫素材\B00042\B00042-cover.jpg" />
+    <Content Include="會員照片\Default.jpg" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -7033,6 +7036,12 @@
     <Content Include="Views\Point\ShopMonthlyCard.cshtml" />
     <Content Include="Views\Common\MemberMessage.cshtml" />
     <Content Include="Views\Shared\layout_userpage1.cshtml" />
+    <Content Include="Views\CV\news1.cshtml" />
+    <Content Include="Views\CV\news2.cshtml" />
+    <Content Include="Views\CV\news3.cshtml" />
+    <Content Include="Views\CV\news4.cshtml" />
+    <Content Include="Views\CV\news5.cshtml" />
+    <Content Include="Views\CV\Allnews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

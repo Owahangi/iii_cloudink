@@ -59,6 +59,10 @@ namespace RentBook.Models.Author
                 a.a_id = (string)reader["a_id"];
                 a.a_Name = (string)reader["a_Name"];
                 a.a_Image = (string)reader["a_Image"];
+                if (a.a_Image == "未知")
+                {
+                    a.a_Image = "Default.jpg";
+                }
                 a.a_Birth = ((DateTime)reader["a_Birth"]).ToString("yyyy/MM/dd");
                 a.a_Point = (int)reader["a_Point"];
                 a.a_Email = (string)reader["a_Email"];
@@ -86,6 +90,10 @@ namespace RentBook.Models.Author
                 a.a_id = (string)reader["a_id"];
                 a.a_Name = (string)reader["a_Name"];
                 a.a_Image = (string)reader["a_Image"];
+                if(a.a_Image == "未知")
+                {
+                    a.a_Image = "Default.jpg";
+                }
                 a.a_Birth = ((DateTime)reader["a_Birth"]).ToString("yyyy/MM/dd");
                 a.a_Point = (int)reader["a_Point"];
                 a.a_Email = (string)reader["a_Email"];
@@ -125,7 +133,7 @@ namespace RentBook.Models.Author
         {
             SqlConnection con = new SqlConnection(myDBConnectionString);
             con.Open();
-            string tSQL = "select * from Author where a_id=@aid";
+            string tSQL = "select a_id,a_Name,ISNULL(a_Image,'未知') as a_Image,ISNULL(a_Birth,'1900-01-01') as a_Birth,ISNULL(a_Point,0) as a_Point,ISNULL(a_Email,'xxx@RentBook.com') as a_Email from Author where a_id=@aid";
             SqlCommand cmd = new SqlCommand(tSQL, con);
             cmd.Parameters.AddWithValue("aid", aid);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -137,6 +145,10 @@ namespace RentBook.Models.Author
                 aa.a_id = (string)reader["a_id"];
                 aa.a_Name = (string)reader["a_Name"];
                 aa.a_Image = (string)reader["a_Image"];
+                if (aa.a_Image == "未知")
+                {
+                    aa.a_Image = "Default.jpg";
+                }
                 aa.a_Birth = ((DateTime)reader["a_Birth"]).ToString("yyyy/MM/dd");
                 aa.a_Point = (int)reader["a_Point"];
                 aa.a_Email = (string)reader["a_Email"];

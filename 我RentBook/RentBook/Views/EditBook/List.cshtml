@@ -3,10 +3,8 @@
 
 @{
     ViewBag.Title = "List";
-    Layout = "~/Views/Shared/layout_userpage1.cshtml";
+    Layout = "~/Views/Shared/_AddBook2.cshtml";
 }
-
-<h2>List</h2>
 
 <form method="post">
     <input type="text" name="txtkeyword" /> <input type="submit" value="查詢書籍" />
@@ -16,9 +14,8 @@
 {
     @Html.AntiForgeryToken()
 
-    <p>
-        @Html.ActionLink("新增書籍", "AddBook", "AddBook")
-    </p>
+    <br />
+
     <table class="table">
         <tr>
             <th>

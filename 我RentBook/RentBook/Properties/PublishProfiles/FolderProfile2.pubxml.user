@@ -7,6 +7,36 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <_PublishTargetUrl>C:\inetpub\RentBook</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="backstage/header.css">
+      <publishTime>12/06/2020 02:44:16</publishTime>
+    </File>
+    <File Include="backstage/img/profile.jpg">
+      <publishTime>11/29/2020 00:32:08</publishTime>
+    </File>
+    <File Include="backstage/img/未命名-19good.png">
+      <publishTime>11/26/2020 02:09:56</publishTime>
+    </File>
+    <File Include="backstage/main.css">
+      <publishTime>12/06/2020 02:30:56</publishTime>
+    </File>
+    <File Include="backstage/theme-dark.css">
+      <publishTime>11/28/2020 20:16:56</publishTime>
+    </File>
+    <File Include="backstage/theme-light.css">
+      <publishTime>11/30/2020 09:41:22</publishTime>
+    </File>
+    <File Include="backstage/我的評論-模板CSS.css">
+      <publishTime>12/01/2020 11:38:20</publishTime>
+    </File>
+    <File Include="backstage/我的評論.css">
+      <publishTime>12/01/2020 11:45:08</publishTime>
+    </File>
+    <File Include="backstage/編輯個人檔案-模板CSS.css">
+      <publishTime>12/01/2020 13:38:22</publishTime>
+    </File>
+    <File Include="backstage/編輯個人檔案.css">
+      <publishTime>12/01/2020 13:38:18</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>12/04/2020 22:33:29</publishTime>
     </File>
@@ -44,10 +74,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/04/2020 22:33:30</publishTime>
     </File>
     <File Include="bin/RentBook.dll">
-      <publishTime>12/08/2020 14:38:04</publishTime>
+      <publishTime>12/09/2020 11:50:21</publishTime>
     </File>
     <File Include="bin/RentBook.pdb">
-      <publishTime>12/08/2020 14:38:04</publishTime>
+      <publishTime>12/09/2020 11:50:21</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>12/04/2020 22:33:30</publishTime>
@@ -371,6 +401,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/04/2020 22:32:52</publishTime>
     </File>
     <File Include="Content/css/sb-admin-2.min.css">
+      <publishTime>12/04/2020 22:32:52</publishTime>
+    </File>
+    <File Include="Content/css/simple-sidebar.css">
       <publishTime>12/04/2020 22:32:52</publishTime>
     </File>
     <File Include="Content/css/style.css">
@@ -7426,6 +7459,21 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Content/會員首頁.css">
       <publishTime>12/08/2020 10:47:08</publishTime>
     </File>
+    <File Include="Content/網站圖片庫/%28內圖%291+1+1.jpg">
+      <publishTime>12/09/2020 09:15:37</publishTime>
+    </File>
+    <File Include="Content/網站圖片庫/%28內圖%29111.jpeg">
+      <publishTime>12/09/2020 09:25:06</publishTime>
+    </File>
+    <File Include="Content/網站圖片庫/%28內圖%29分手事務所.jpg">
+      <publishTime>12/09/2020 09:10:52</publishTime>
+    </File>
+    <File Include="Content/網站圖片庫/%28內圖%29拼裝家庭.jpeg">
+      <publishTime>12/09/2020 10:09:05</publishTime>
+    </File>
+    <File Include="Content/網站圖片庫/Allnews鏡文學9.jpeg">
+      <publishTime>12/09/2020 10:00:49</publishTime>
+    </File>
     <File Include="Content/網站圖片庫/img1.jpg">
       <publishTime>12/04/2020 22:32:55</publishTime>
     </File>
@@ -13448,13 +13496,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/07/2020 10:09:59</publishTime>
     </File>
     <File Include="Views/Author/Create.cshtml">
-      <publishTime>12/07/2020 09:56:19</publishTime>
+      <publishTime>12/09/2020 10:33:56</publishTime>
     </File>
     <File Include="Views/Author/Edit.cshtml">
-      <publishTime>12/08/2020 09:15:56</publishTime>
+      <publishTime>12/09/2020 10:33:22</publishTime>
     </File>
     <File Include="Views/Author/List.cshtml">
-      <publishTime>12/04/2020 22:32:55</publishTime>
+      <publishTime>12/09/2020 10:20:42</publishTime>
     </File>
     <File Include="Views/Common/Home.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
@@ -13466,10 +13514,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/04/2020 22:32:55</publishTime>
     </File>
     <File Include="Views/Common/MemberHome.cshtml">
-      <publishTime>12/08/2020 14:35:58</publishTime>
+      <publishTime>12/09/2020 11:02:02</publishTime>
     </File>
     <File Include="Views/Common/MemberLove.cshtml">
-      <publishTime>12/08/2020 10:52:00</publishTime>
+      <publishTime>12/09/2020 11:20:01</publishTime>
     </File>
     <File Include="Views/Common/MemberMessage.cshtml">
       <publishTime>12/07/2020 14:12:15</publishTime>
@@ -13477,14 +13525,32 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Common/test.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
     </File>
+    <File Include="Views/CV/Allnews.cshtml">
+      <publishTime>12/09/2020 10:05:09</publishTime>
+    </File>
     <File Include="Views/CV/BookPage.cshtml">
-      <publishTime>12/08/2020 10:18:26</publishTime>
+      <publishTime>12/09/2020 11:45:16</publishTime>
     </File>
     <File Include="Views/CV/LatestItem.cshtml">
       <publishTime>12/08/2020 08:56:48</publishTime>
     </File>
     <File Include="Views/CV/List.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
+    </File>
+    <File Include="Views/CV/news1.cshtml">
+      <publishTime>12/09/2020 09:04:52</publishTime>
+    </File>
+    <File Include="Views/CV/news2.cshtml">
+      <publishTime>12/09/2020 10:09:42</publishTime>
+    </File>
+    <File Include="Views/CV/news3.cshtml">
+      <publishTime>12/09/2020 09:07:10</publishTime>
+    </File>
+    <File Include="Views/CV/news4.cshtml">
+      <publishTime>12/09/2020 09:09:26</publishTime>
+    </File>
+    <File Include="Views/CV/news5.cshtml">
+      <publishTime>12/09/2020 10:10:58</publishTime>
     </File>
     <File Include="Views/CV/SeachItem.cshtml">
       <publishTime>12/08/2020 08:56:48</publishTime>
@@ -13493,19 +13559,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/08/2020 09:28:53</publishTime>
     </File>
     <File Include="Views/CV/xxx.cshtml">
-      <publishTime>12/08/2020 11:13:23</publishTime>
+      <publishTime>12/09/2020 10:13:10</publishTime>
     </File>
     <File Include="Views/EditBook/EditBookData.cshtml">
-      <publishTime>12/07/2020 10:07:20</publishTime>
+      <publishTime>12/09/2020 10:31:06</publishTime>
     </File>
     <File Include="Views/EditBook/EditChapters.cshtml">
-      <publishTime>12/07/2020 10:07:14</publishTime>
+      <publishTime>12/09/2020 10:31:41</publishTime>
     </File>
     <File Include="Views/EditBook/EditChaptersList.cshtml">
-      <publishTime>12/07/2020 10:07:27</publishTime>
+      <publishTime>12/09/2020 10:32:14</publishTime>
     </File>
     <File Include="Views/EditBook/List.cshtml">
-      <publishTime>12/07/2020 10:07:31</publishTime>
+      <publishTime>12/09/2020 10:20:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
@@ -13523,13 +13589,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/07/2020 14:58:36</publishTime>
     </File>
     <File Include="Views/Publishing/Create.cshtml">
-      <publishTime>12/04/2020 22:32:55</publishTime>
+      <publishTime>12/09/2020 10:35:21</publishTime>
     </File>
     <File Include="Views/Publishing/Edit.cshtml">
-      <publishTime>12/08/2020 09:16:23</publishTime>
+      <publishTime>12/09/2020 10:34:49</publishTime>
     </File>
     <File Include="Views/Publishing/List.cshtml">
-      <publishTime>12/04/2020 22:32:55</publishTime>
+      <publishTime>12/09/2020 10:20:42</publishTime>
     </File>
     <File Include="Views/ReadBooks/ReadBookContent.cshtml">
       <publishTime>12/08/2020 12:02:36</publishTime>
@@ -13537,14 +13603,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/ReadBooks/ReadComicBookContent.cshtml">
       <publishTime>12/08/2020 10:05:53</publishTime>
     </File>
+    <File Include="Views/Shared/layout_userpage1.cshtml">
+      <publishTime>12/07/2020 14:48:46</publishTime>
+    </File>
     <File Include="Views/Shared/LoginSignin.cshtml">
-      <publishTime>12/04/2020 22:32:55</publishTime>
+      <publishTime>12/09/2020 10:39:42</publishTime>
     </File>
     <File Include="Views/Shared/ReadBook.cshtml">
-      <publishTime>12/08/2020 11:59:24</publishTime>
+      <publishTime>12/09/2020 10:40:02</publishTime>
     </File>
     <File Include="Views/Shared/_AddBook2.cshtml">
-      <publishTime>12/08/2020 13:37:50</publishTime>
+      <publishTime>12/09/2020 10:46:06</publishTime>
     </File>
     <File Include="Views/Shared/_CommonLayout.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
@@ -13559,13 +13628,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/04/2020 22:32:55</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
-      <publishTime>12/08/2020 09:45:54</publishTime>
+      <publishTime>12/09/2020 11:38:04</publishTime>
     </File>
     <File Include="Views/Shared/_LoginedLayout.cshtml">
       <publishTime>12/04/2020 22:32:55</publishTime>
     </File>
     <File Include="Views/Shared/_MemberCentreLayout.cshtml">
-      <publishTime>12/08/2020 11:46:36</publishTime>
+      <publishTime>12/09/2020 11:11:08</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>12/04/2020 22:32:55</publishTime>
@@ -13587,6 +13656,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="作者照片/ca02ea17-2117-4b9d-8612-403fa179fb65.jpg">
       <publishTime>12/04/2020 22:33:20</publishTime>
+    </File>
+    <File Include="作者照片/Default.jpg">
+      <publishTime>12/09/2020 10:20:52</publishTime>
     </File>
     <File Include="作者照片/fbe93911-d8b1-415b-9c7e-8d9e9f471856.jpg">
       <publishTime>12/04/2020 22:33:20</publishTime>
@@ -20457,6 +20529,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="書籍素材/漫畫素材/B00042/B00042-cover.jpg">
       <publishTime>12/04/2020 22:33:28</publishTime>
+    </File>
+    <File Include="會員照片/Default.jpg">
+      <publishTime>12/09/2020 11:08:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

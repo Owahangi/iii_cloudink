@@ -1,0 +1,46 @@
+body {
+    background-color: #373C3F;
+    color: #EBEBEB
+}
+
+header {
+    background-color: #2F3437;
+    color: #EBEBEB;
+}
+
+nav {
+    background-color: #2F3437;
+    color: #EBEBEB;
+}
+
+nav a {
+    color: #EBEBEB;
+}
+
+.dropdown-menu {
+    background-color: #373C3F;
+    color: #EBEBEB;
+}
+
+.dropdown-item {
+    color: #EBEBEB;
+}
+
+.dropdown-item:hover {
+    background-color: #6C757D;
+    color: #EBEBEB;
+}
+
+#navbarNavDropdown {
+    background-color: #2F3437;
+}
+
+article {
+    z-index: 2;
+    background-color: #2F3437;
+    color: #EBEBEB;
+}
+
+.footer-area {
+    color: #878787;
+}

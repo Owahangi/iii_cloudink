@@ -1,0 +1,77 @@
+body {
+    user-select: none;
+    background-color: white;
+    font-family: "微軟正黑體";
+}
+
+ul {
+    padding: 0px;
+    list-style: none;
+}
+
+header {
+    position: relative;
+    /* position: sticky; */
+    z-index: 3;
+    height: 70px;
+    /*box-shadow: 0px 0px 3px;*/
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px 0px;
+}
+
+#nav {
+    height: 70px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+#nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    position: relative;
+    z-index: 1;
+}
+
+p {
+    font-family: "微軟正黑體", sans-serif;
+    font-size: 20px;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+a:link {
+    text-decoration: none;
+    /*color: black;*/
+}
+
+#optionbar ul {
+    margin-bottom: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+    #optionbar ul li a {
+        text-align: center;
+    }
+
+.footer-area {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    padding: 60px 0;
+    position: relative;
+    /* z-index: 1; */
+}
+
+.pic {
+    width: 55px;
+    height: 55px;
+    border-radius: 999em;
+    /* background-image: url(../img/profile.jpg); */
+}

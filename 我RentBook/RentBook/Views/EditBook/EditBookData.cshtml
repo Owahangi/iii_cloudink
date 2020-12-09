@@ -6,22 +6,19 @@
 }
 
 
-<h2>EditBookData</h2>
-
 
 @using (Html.BeginForm("SaveEditBookData", "EditBook", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-    <p>
-        @Html.ActionLink("新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, null)
-    </p>
-    <p>
-        @Html.ActionLink("編輯章節", "EditChaptersList", new { b_id = Model.b_id })
-    </p>
+<p>
+    @Html.ActionLink("新增章節", "AddChapters", "AddBookChapters", new { b_id = Model.b_id, b_Type = Model.b_Type }, null)
+    @Html.ActionLink("編輯章節", "EditChaptersList", new { b_id = Model.b_id }, new { @class = "", style = "" })
+</p>
+    
 
     <div class="form-horizontal">
-        <h4>EditBookModel</h4>
+
         <hr />
 
         <input type="hidden" name="b_id" value="@Model.b_id" />

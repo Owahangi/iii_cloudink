@@ -276,7 +276,7 @@
                     {
                     <div class="anime__review__item">
                         <div class="anime__review__item__pic">
-                            <img src="@item.m_Image" alt="">
+                            <img src="~/會員照片/@item.m_Image" alt="">
                         </div>
                         <div class="anime__review__item__text">
                             <h6>
@@ -356,9 +356,10 @@
                                     <!-- Post Content -->
                                     <div class="post-content">
                                         <a href="#" class="post-tag">Lifestyle</a>
-                                        <h4>
+                                        @*<h4>
                                             <a href="#" class="post-headline">@Model.LatestBooks[i].b_Name</a>
-                                        </h4>
+                                        </h4>*@
+                                        <h4>@Html.ActionLink(Model.LatestBooks[i].b_Name, "BookPage", "CV", new { bid = Model.LatestBooks[i].b_id }, new { @class = "post-headline"})</h4>
                                         <div class="post-meta">
                                             <p>
                                                 <a href="#">12 March</a>
@@ -376,44 +377,9 @@
                             <ul class="tags">
                                 @foreach (var item in Model.tname)
                                 {
-                                    <li><a href="#">@item</a></li>
+                                    <li><a href="@Url.Action("TAGsearch","CV",new {tagname=item },null)">@item</a></li>
                                 }
-                                @*<li>
-                                    <a href="#">全一集</a>
-                                </li>
-                                <li>
-                                    <a href="#">冒險</a>
-                                </li>
-                                <li>
-                                    <a href="#">戀愛故事</a>
-                                </li>
-                                <li>
-                                    <a href="#">穿越</a>
-                                </li>
-                                <li>
-                                    <a href="#">輕小說</a>
-                                </li>
-                                <li>
-                                    <a href="#">機甲</a>
-                                </li>
-                                <li>
-                                    <a href="#">校園</a>
-                                </li>
-                                <li>
-                                    <a href="#">戰爭</a>
-                                </li>
-                                <li>
-                                    <a href="#">懸疑推理</a>
-                                </li>
-                                <li>
-                                    <a href="#">職場</a>
-                                </li>
-                                <li>
-                                    <a href="#">網路小說</a>
-                                </li>
-                                <li>
-                                    <a href="#">奇幻</a>
-                                </li>*@
+                                
                             </ul>
                         </div>
                     </div>
@@ -423,15 +389,4 @@
 </section>
 
 
-@*<h2>BookPage</h2>
 
-
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayFor(model => model.Books.b_Name)
-            </th>
-
-        </tr>
-
-    </table>*@

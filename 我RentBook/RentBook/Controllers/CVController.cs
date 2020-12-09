@@ -340,5 +340,30 @@ namespace RentBook.Controllers
 
             return View(tags);
         }
+
+        public ActionResult news1()
+        {
+            return View();
+        }
+        public ActionResult news2()
+        {
+            return View();
+        }
+        public ActionResult news3()
+        {
+            return View();
+        }
+        public ActionResult news4()
+        {
+            return View();
+        }
+        public ActionResult news5()
+        {
+            return View();
+        }
+        public ActionResult Allnews()
+        {
+            return View();
+        }
     }
 }

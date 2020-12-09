@@ -22,7 +22,7 @@
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <NameOfLastUsedPublishProfile>FolderProfile2</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_DbContextTypeFullName>RentBook.RentBookdbEntities1</WebStackScaffolding_DbContextTypeFullName>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

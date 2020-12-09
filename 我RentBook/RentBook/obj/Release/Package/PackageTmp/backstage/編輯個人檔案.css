@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+
+
+/*版面寬度*/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+/*logo圖片*/
+.myimg1
+{
+  margin-top: -18px;
+}
+
+/*小說封面圖片*/
+.myimg2
+{
+    margin-top: -13px;
+}
+
+/*灰色背景桌布*/
+.mybg2
+{
+  margin-top: -4cm;
+  background-color: #e6e1e1;
+}
+
+/*強制上傳圖片維持大小*/
+.imgsize
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
