@@ -52,6 +52,7 @@ namespace RentBook.Controllers
                 
                 //存進Session
                 Session[CDictionary.SK_LOGINED_USER] = cust;
+                Session["member"] = login.txtAccount;
 
                 //重新導向到 首頁
                 return RedirectToAction("xxx","CV");

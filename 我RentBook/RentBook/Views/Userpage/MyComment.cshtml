@@ -1,0 +1,32 @@
+﻿@using RentBook.Models.Userpage
+@model List<RentBook.Models.Userpage.commentClass>
+@{
+    ViewBag.Title = "MyComment";
+    Layout = "~/Views/Shared/layout_userpage.cshtml";
+}
+<article class="container py-5 px-5" id="content">
+    <h2>MyComment</h2>
+    <hr style="background-color: white;">
+    @{foreach (var i in Model)
+        {
+            <div class="row mt-4">
+                <div class="col col-lg-4 text-center">
+                    <img style="background-size:contain;width:170px;height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
+                </div>
+                <div class="col col-lg-8">
+                    <p>@Html.DisplayFor(modelItem => i.b_Name)</p>
+                    <p>@Html.DisplayFor(modelItem => i.bm_Score)</p>
+                    <p>@Html.DisplayFor(modelItem => i.bm_Message)</p>
+                    <p>@Html.DisplayFor(modelItem => i.bm_MessageTime)</p>
+                </div>
+            </div>
+        }
+    }
+
+</article>
+
+
+
+
+
+

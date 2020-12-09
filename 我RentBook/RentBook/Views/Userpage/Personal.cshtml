@@ -1,0 +1,30 @@
+﻿@model List<RentBook.Models.userpageClass>
+@{
+    ViewBag.Title = "Personal";
+    Layout = "~/Views/Shared/layout_userpage.cshtml";
+}
+@foreach (var i in Model)
+{
+<article class="container py-5 px-5" id="content">
+    <div style="display:flex">
+        <div>
+            <img style="width:144px;height:144px;max-height:144px;max-width:144px;" src="~/會員照片/@Html.DisplayFor(modelItem => i.m_Image)">
+        </div>
+        <div style="margin-left:50px;display:flex;align-items:center;">
+            <div>
+
+                <h2>@Html.DisplayFor(modelItem => i.m_Alias)</h2>
+            </div>
+        </div>
+    </div>
+    <hr style="background-color: white;">
+    <div style="height:70px;padding:15px;" class="mb-5">
+        <p>@Html.DisplayFor(modelItem => i.m_Intro)</p>
+    </div>
+    <div class="mt-5">
+        <h3>最近讀過</h3>
+        <hr style="background-color: white;">
+        <p>書本一</p>
+    </div>
+</article>
+}

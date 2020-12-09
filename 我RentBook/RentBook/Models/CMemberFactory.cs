@@ -143,7 +143,7 @@ namespace RentBook.Models
                 //x.m_LastLogin = (DateTime)reader["m_LastLogin"];
                 //x.m_LastLogon = (DateTime)reader["m_LastLogon"];
                 //x.m_OnlineTime = (DateTime)reader["m_OnlineTime"];
-                x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];
+                //x.m_MonthlyLastTime = (DateTime)reader["m_MonthlyLastTime"];//
                 //x.bc_id = (int)reader["bc_id"];
                 list.Add(x);
             }
@@ -246,23 +246,26 @@ namespace RentBook.Models
             string sql = "INSERT INTO Member(";
             sql += "m_id,";
             sql += "m_Name,";
+            sql += "m_Alias,";
             sql += "m_Birth,";
             sql += "m_Gender,";
-            sql += "m_MonthlyLastTime,";
-            sql += "m_Email";
+            sql += "m_Email,";
+            sql += "m_Intro,";
+            sql += "m_Image";
             sql += ")VALUES(";
             sql += "@M_ID,";
             sql += "@M_NAME,";
+            sql += "@M_NAME,";
             sql += "@M_BIRTH,";
             sql += "@M_GENDER,";
-            sql += "@M_MONTHLYLASTTIME,";
-            sql += "@M_EMAIL)";
+            sql += "@M_EMAIL,";
+            sql += "'這人很懶，什麼都沒有留下',";
+            sql += "'default.jpg')";//
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("M_ID", (object)p.m_id));
             paras.Add(new SqlParameter("M_NAME", (object)p.m_Name));
             paras.Add(new SqlParameter("M_BIRTH", (object)p.m_Birth));
             paras.Add(new SqlParameter("M_GENDER", (object)p.m_Gender));
-            paras.Add(new SqlParameter("M_MONTHLYLASTTIME", (object)DateTime.Now));
             paras.Add(new SqlParameter("M_EMAIL", (object)p.m_Email));
             executeSql(sql, paras);
 
