@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using RentBook.Models;
 using RentBook.Models.Userpage;
+using RentBook.Models.Userpage.bookshelf;
+using RentBook.Models.Userpage.userpage;
 using System.Web.Script.Serialization;
 using System.IO;
 
@@ -23,13 +25,26 @@ namespace RentBook.Controllers
             }
             string x = Session["member"].ToString();
             List<userpageClass> User = (new userpageFac()).getUserInfo(x);
-
-            return View(User);
+            List<bookBriefClass> recentReading = (new bookBriefFac()).getBookInfo(x);
+            doubleClass1 myView = new doubleClass1();
+            myView.userInfo = User;
+            myView.bookInfo = recentReading;
+            return View(myView);
         }
 
         public ActionResult MyBookshelf()
         {
-            return View();
+            if (Session["member"] == null)
+            {
+                return RedirectToAction("xxx", "CV");
+            }
+            string x = Session["member"].ToString();
+            List<bookBriefClass> unexpired= (new getBookshelfFac()).getUnexpiredBook(x);
+            List<bookBriefClass> expired= (new getBookshelfFac()).getExpiredBook(x);
+            doubleClass2 myshelf = new doubleClass2();
+            myshelf.unexpiredBook = unexpired;
+            myshelf.expiredBook = expired;
+            return View(myshelf);
         }
         public ActionResult WishList()
         {

@@ -1,5 +1,10 @@
-﻿@{
+﻿@using RentBook.Models.Userpage
+@{
     Layout = null;
+    string x = Session["member"].ToString();
+    string img = new shareFac().getMyPicture(x);
+    ViewBag.img = "../會員照片/" + img;
+
 }
 
 <!DOCTYPE html>
@@ -39,7 +44,11 @@
                 </div>
                 <div class="dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="pic" src="~/backstage/img/profile.jpg" alt="">
+                        <!--會員照片-->
+                        <!--
+    <img class="pic" src="~/backstage/img/profile.jpg" alt="">
+        -->
+                        <img class="pic" src="@ViewBag.img" alt="">
                     </a>
                     <div style="width: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="@Url.Action("Personal", "Userpage")">

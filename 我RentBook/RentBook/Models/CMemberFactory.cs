@@ -260,7 +260,7 @@ namespace RentBook.Models
             sql += "@M_GENDER,";
             sql += "@M_EMAIL,";
             sql += "'這人很懶，什麼都沒有留下',";
-            sql += "'default.jpg')";//
+            sql += "'Default.jpg')";//
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("M_ID", (object)p.m_id));
             paras.Add(new SqlParameter("M_NAME", (object)p.m_Name));

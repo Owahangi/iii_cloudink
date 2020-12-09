@@ -1,15 +1,50 @@
-﻿
+﻿@model RentBook.Models.Userpage.bookshelf.doubleClass2
+
 @{
     ViewBag.Title = "MyBookshelf";
     Layout = "~/Views/Shared/layout_userpage.cshtml";
 }
-<article class="container py-5 px-5" id="content">
 
-    <h3>租期中</h3>
-    <hr style="background-color: white;">
-    <p>111</p>
-    <h3>已到期</h3>
-    <hr style="background-color: white;">
-    <p>111</p>
+
+<article class="container py-5 px-5" id="content">
+    <div class="mt-5">
+        <h3>租期中</h3>
+        <hr style="background-color: white;">
+        <div class="row" style="padding:15px;">
+            @foreach (var i in Model.unexpiredBook)
+            {
+            <div class="col">
+                <div class="col col-lg-4 text-center">
+                    <img style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
+                </div>
+                <p>@Html.DisplayFor(modelItem => i.b_Name)</p>
+                <p>@Html.DisplayFor(modelItem => i.a_Name)</p>
+                <p style="color:darkolivegreen">@Html.DisplayFor(modelItem => i.bcb_BookLastTime)</p>
+            </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="mt-5">
+        <h3>已到期</h3>
+        <hr style="background-color: white;">
+        <div class="row" style="padding:15px;">
+            @foreach (var i in Model.expiredBook)
+            {
+            <div class="col">
+                <div class="col col-lg-4 text-center">
+                    <img style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
+                </div>
+                <p>@Html.DisplayFor(modelItem => i.b_Name)</p>
+                <p>@Html.DisplayFor(modelItem => i.a_Name)</p>
+                <p style="color:darkred">@Html.DisplayFor(modelItem => i.bcb_BookLastTime)</p>
+            </div>
+            }
+        </div>
+
+    </div>
+
 
 </article>
+
