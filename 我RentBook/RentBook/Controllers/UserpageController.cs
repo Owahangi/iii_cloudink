@@ -9,6 +9,7 @@ using RentBook.Models.Userpage.bookshelf;
 using RentBook.Models.Userpage.userpage;
 using System.Web.Script.Serialization;
 using System.IO;
+using RentBook.Models.Userpage.myWallet;
 
 namespace RentBook.Controllers
 {
@@ -120,10 +121,19 @@ namespace RentBook.Controllers
             return RedirectToAction("MySetting");
         }
 
-
         public ActionResult MyPurchase()
         {
-            return View();
+            if (Session["member"] == null)
+            {
+                return RedirectToAction("xxx", "CV");
+            }
+            string userMail = Session["member"].ToString();
+            ViewBag.myBalance = (new myWalletFac()).getUserBalance(userMail);
+
+            doubleClass3 myWallet = new doubleClass3();
+            myWallet.comsumption = (new myWalletFac()).getConsumptionBySql(userMail);
+            myWallet.Valueadded = (new myWalletFac()).getAddValueBySql(userMail);
+            return View(myWallet);
         }
         public ActionResult Logout()
         {

@@ -8929,6 +8929,9 @@
     <Compile Include="Models\TAGsearch.cs" />
     <Compile Include="Models\Userpage\bookshelf\doubleClass2.cs" />
     <Compile Include="Models\Userpage\bookshelf\getBookshelfFac.cs" />
+    <Compile Include="Models\Userpage\myWallet\doubleClass3.cs" />
+    <Compile Include="Models\Userpage\myWallet\myWalletFac.cs" />
+    <Compile Include="Models\Userpage\myWallet\transactionClass.cs" />
     <Compile Include="Models\Userpage\userpage\bookBriefClass.cs" />
     <Compile Include="Models\Userpage\commentClass.cs" />
     <Compile Include="Models\Userpage\commentFac.cs" />

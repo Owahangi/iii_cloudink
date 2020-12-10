@@ -167,7 +167,7 @@ namespace RentBook.Models
                 x.m_Alias = reader["m_Alias"].ToString();
                 x.bm_Message = reader["bm_Message"].ToString();
                 x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
-                x.bm_Score = (int)reader["bm_Score"];
+                //x.bm_Score = (int)reader["bm_Score"];
                 list.Add(x);
             }
             con.Close();
