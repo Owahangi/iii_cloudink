@@ -61,7 +61,7 @@
                         <div class="subscribe-btn">
                             @for (int i = 0; i < Model.BooksWishlists.Count; i++)
                             {
-                                if (Model.BooksWishlists[i].b_id == Model.Books.b_id)//驗證有沒有買書
+                                if (Model.BooksWishlists[i].bc_id == Model.cmember.bc_id)//驗證有沒有買書
                                 {
                                     wishlist = true;
                                 }
@@ -81,63 +81,72 @@
                             {
 
                             }
+                            @if (Model.Books.b_Type == "小說")
+                            {
+                                @Html.ActionLink("試閱", "試閱ReadBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = 1 }, new { @class = "btn subscribe-btn border-dark" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("試閱", "試閱ReadComicBookContent", "ReadBooks", new { b_id = Model.Books.b_id, bc_Chapters = 1 }, new { @class = "btn subscribe-btn border-dark" })
+                            }
+
                             <!--購買書籍權限，分天數-->
                             @if (Model.log == true)
                             {
-                            using (Html.BeginForm("ShopBook", "Point", FormMethod.Post))
-                            {
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="m_id" value="@Model.cmember.m_id" />
-                                <input type="hidden" name="b_id" value="@Model.Books.b_id" />
-                                <input type="hidden" name="b_DatePrice" value="@Model.Books.b_DatePrice" />
+                                using (Html.BeginForm("ShopBook", "Point", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="m_id" value="@Model.cmember.m_id" />
+                                    <input type="hidden" name="b_id" value="@Model.Books.b_id" />
+                                    <input type="hidden" name="b_DatePrice" value="@Model.Books.b_DatePrice" />
 
 
-                                <table class="table">
-                                    <tr>
-                                        <th>
-                                            品項
-                                        </th>
-                                        <th>
-                                            價格
-                                        </th>
-                                        <th></th>
-                                    </tr>
+                                    <table class="table">
+                                        <tr>
+                                            <th>
+                                                品項
+                                            </th>
+                                            <th>
+                                                價格
+                                            </th>
+                                            <th></th>
+                                        </tr>
 
 
-                                    <tr>
-                                        <td>
-                                            七日
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => Model.Books.書籍七日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍七日價格">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            十四
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => Model.Books.書籍十四日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍十四日價格">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            二十一日
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => Model.Books.書籍二十一日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍二十一日價格">
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>
+                                                七日
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => Model.Books.書籍七日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍七日價格">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                十四
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => Model.Books.書籍十四日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍十四日價格">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                二十一日
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => Model.Books.書籍二十一日價格) 點 <input type="radio" name="msd_CostPoint" value="@Model.Books.書籍二十一日價格">
+                                            </td>
+                                        </tr>
 
 
-                                </table>
+                                    </table>
 
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" value="立即購買" class="btn btn-default" />
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="立即購買" class="btn btn-default" />
+                                        </div>
                                     </div>
-                                </div>
-                            }
+                                }
                             }
                         </div>
                     </div>

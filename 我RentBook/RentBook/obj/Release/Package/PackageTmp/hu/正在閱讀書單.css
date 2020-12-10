@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+
+/*版面寬度*/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+/*profile 圖片*/
+.imgsize
+{
+ width: 50px;
+ height: 50px;
+}
+
+/*小說封面圖片*/
+.myimg2
+{
+  display: block;
+
+  width: 100px;
+}
+
+
+
+/*正在閱讀書單*/
+.myfont1
+{
+  font-size: 22px;
+  font-weight: bolder;
+  color: black;
+  background-color: #c6d9f1
+}
+
+
+
+/*title 選項*/
+.myfont2
+{
+ color: white;   
+ text-align: center;
+}
+
+/*使封面圖片居中*/
+img {
+    margin: 0 auto;
+}
+
+/*微調封面圖片位置*/
+.mystyle1
+{
+ margin-left: -25px;
+}
+/*每一行書籍資料*/
+.mystyle4
+{
+  border-radius: 20px;
+  border-style: solid #EEE;
+  border-width: 2cm;
+  background-color: rgb(201, 224, 231);
+}
+
+/*title bar*/
+.mystyle5
+{
+  font-size: 20px;
+  background-color: midnightblue;
+}
+
+
+/*書籍名稱*/
+.myfont6
+{
+text-align: center;
+font-size: 24px;
+padding-top: 30px;
+color: rgb(72, 157, 241);
+}
+.myfont6:hover
+{
+  color: darkgoldenrod;
+}
+
+/*背景灰布*/
+.mybg2
+{
+  margin-top: -100px;
+  background-color: #e6e1e1;
+}
+
+
+
+
+/*modal*/
+.modal { 
+  top: -85px;
+  padding-right: 6px;
+  padding-left: 20px;
+}
+
+.modal-backdrop {
+  background-color: rgba(0,0,0,.0001) !important;
+}
+
+.mytext2
+{
+  font-size: 20px;
+  text-align: center;
+  line-height: 1cm;
+
+}
+
+/*黑暗模式*/
+body {
+
+  background-color: white;
+  color: black;
+
+}
+
+
+.dark-mode header * {
+  background-color: #373C3F;
+  color: white;
+}
+.dark-mode footer * {
+  background-color: rgb(100, 99, 99);
+  color: white;
+}
+.dark-mode article * {
+  background-color: #2F3437;
+  color: white;
+}
+.dark-mode {
+  background-color:#373C3F;
+  color: white;
+}
+
+.dark-mode .modal-backdrop * {
+  background-color: rgba(0,0,0,.0001) !important;
+}

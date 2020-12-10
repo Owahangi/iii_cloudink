@@ -23,12 +23,16 @@ namespace RentBook.Controllers
             {
                 return RedirectToAction("xxx", "CV");
             }
+            
             string x = Session["member"].ToString();
             List<userpageClass> User = (new userpageFac()).getUserInfo(x);
             List<bookBriefClass> recentReading = (new bookBriefFac()).getBookInfo(x);
+            List<userpageClass> img = (new userpageFac()).getUserInfo(x);
             doubleClass1 myView = new doubleClass1();
+            myView.userimgS = img;
             myView.userInfo = User;
             myView.bookInfo = recentReading;
+            
             return View(myView);
         }
 
@@ -81,6 +85,7 @@ namespace RentBook.Controllers
             //
             ViewBag.m_id = settings[0].m_id;
             //
+            ViewBag.img = settings[0].m_Image;
             return View(settings);//
         }
 

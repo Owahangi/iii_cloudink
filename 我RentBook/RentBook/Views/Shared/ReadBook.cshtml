@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
     <!--新增-->
     <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/css/simple-sidebar.css" rel="stylesheet">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-4  col-md-4 offset-md-3" style="margin-right: -40px;">
 
-                    <a href="會員首頁.html" type="button" class="navbar-toggler" aria-controls="navbarSupportedContent">
+                    <a href="~/userpage/Personal" type="button" class="navbar-toggler" aria-controls="navbarSupportedContent">
                         <img src="~/Content/img/封面/首頁圖片/2組.jpg" class="imgsize rounded-circle" id="blah" alt="your image" />
                     </a>
 
@@ -91,126 +91,99 @@
 
 
 
-    <div class="container-fluid mt-5">
+        <div class="container">
 
-        <div class="row">
+            <div class="container-fluid">
+                <div class="invisible left-block d-xl-block d-none order-0" style="min-height: 20px"></div>
+                <div class="row">
 
-            <div class="col-sm-2">
-
-            </div>
-
-
-
-            <div class="col-12 col-sm-8">
-
-                <article>
+                   
+                    <div class="col-sm-10 offset-md-1" style="margin-top:-10px;">
+                        <article>
 
 
-                    <div class="row ">
 
-                        <div class="col-md-1"></div>
-
-                        <div class="col-md-10 myreading1">
-
-                            
+                            <div class="row " style="padding-left:15px; padding-right:15px">
 
                                 @RenderBody()
-                            
 
-                        </div>
 
-                        <div class="col-md-1"></div>
+
+                            </div>
+
 
                     </div>
+                    </article>
 
 
+                    <div class="col-12 col-sm-1  ">
 
-                </article>
-            </div>
+                        <div class="sidebar container-fluid">
+
+                            <div class="dropdown" id="myDropdown">
+                                <a role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center;">
+                                    <i class="fas  fa-cog fa-2x"></i><br>
+                                    閱讀設定
+                                    <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu">
+                                    <a href="#" type="button" onclick="themeToggle()">
+                                        <i class="fas fa-sun "></i>
+                                        切換黑暗模式
+                                        <i class="fas fa-moon"></i>
+                                    </a>
+
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <a href="#" class="fontSizePlus" style="text-align: center;">A+</a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="#" class="fontSizeMinus" style="text-align: center;">A-</a>
+                                            </div>
+                                        </div>
+                                    </li>
 
 
-            <div class="col-12 col-sm-2">
+                                    <li>
 
-                <div class="sidebar container-fluid">
+                                        <select class="btn btn-block" id="selecth1FontFamily">
+                                            <option value="新細明體">新細明體</option>
+                                            <option value="微軟正黑體">微軟正黑體</option>
+                                            <option value="標楷體">標楷體</option>
+                                        </select>
 
-                    <div class="dropdown" id="myDropdown">
-                        <a role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align: center;">
-                            <i class="fas  fa-cog fa-2x"></i><br>
-                            閱讀設定
-                            <span class="caret"></span>
-                        </a>
+                                    </li>
 
-                        <div class="dropdown-menu">
-                            <a href="#" type="button" onclick="themeToggle()">
-                                <i class="fas fa-sun "></i>
-                                切換黑暗模式
-                                <i class="fas fa-moon"></i>
+                                </div>
+                            </div>
+
+
+                            <a role="button" href="#" style="text-align: center;">
+                                <i class="fas fa-bookmark fa-2x"></i><br>
+                                加入書櫃
+                                <span class="caret"></span>
+                            </a>
+                            <a role="button" href="#" style="text-align: center;">
+                                <i class="fas fa-comments fa-2x"></i><br>
+                                留下評論
+                                <span class="caret"></span>
                             </a>
 
-                            <li>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <a href="#" class="fontSizePlus" style="text-align: center;">A+</a>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="#" class="fontSizeMinus" style="text-align: center;">A-</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-
-
-                                <select class="btn btn-block" id="selecth1FontFamily">
-                                    <option value="新細明體">新細明體</option>
-                                    <option value="微軟正黑體">微軟正黑體</option>
-                                    <option value="標楷體">標楷體</option>
-                                </select>
-
-                            </li>
                         </div>
+
                     </div>
 
-
-                    <a role="button" href="#" style="text-align: center;">
-                        <i class="fas fa-bookmark fa-2x"></i><br>
-                        加入書櫃
-                        <span class="caret"></span>
-                    </a>
-                    <a role="button" href="#" style="text-align: center;">
-                        <i class="fas fa-comments fa-2x"></i><br>
-                        留下評論
-                        <span class="caret"></span>
-                    </a>
-
-                    <div class="dropleft">
-
-                        <a role="button" href="#" style="text-align: center;" data-toggle="dropdown">
-                            <i class="fas fa-th-list fa-2x"></i><br>
-                            章節
-                            <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">第一章</a>
-                            <a class="dropdown-item" href="#">第二章</a>
-                            <a class="dropdown-item" href="#">第三章</a>
-                            <a class="dropdown-item" href="#">第四章</a>
-                            <a class="dropdown-item" href="#">第五章</a>
-                            <a class="dropdown-item" href="#">第六章</a>
-                            <a class="dropdown-item" href="#">第七章</a>
-                            <a class="dropdown-item" href="#">第八章</a>
-                            <a class="dropdown-item" href="#">第九章</a>
-                        </div>
-                    </div>
 
                 </div>
+              
 
             </div>
 
-        </div>
-
-
-
     </div>
+
+
 
 
     <!-- Logout Modal-->

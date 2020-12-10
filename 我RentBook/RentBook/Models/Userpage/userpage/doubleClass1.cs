@@ -9,5 +9,6 @@ namespace RentBook.Models.Userpage.userpage
     {
         public IEnumerable<bookBriefClass> bookInfo { get; set; }
         public IEnumerable<userpageClass> userInfo { get; set; }
+        public IEnumerable<userpageClass> userimgS { get; set; }
     }
 }
