@@ -26,23 +26,25 @@
 
     }
 
-        <div class="mt-5">
-            <h3>最近讀過</h3>
-            <hr style="background-color: white;">
-            <div class="row" style="padding:15px;">
-                @foreach (var i in Model.bookInfo)
-                {
-                    <div class="col">
-                        <div class="col col-lg-4 text-center">
-                            <img style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
-                        </div>
-                        <p>@Html.DisplayFor(modelItem => i.b_Name)</p>
+    <div class="mt-5">
+        <h3>最近讀過</h3>
+        <hr style="background-color: white;">
+        <div class="row" style="padding:15px;">
+            @foreach (var i in Model.bookInfo)
+            {
+                <div class="col">
+                    <div class="col col-lg-4 text-center">
+                        <a href="../CV/BookPage?bid=@Html.DisplayFor(modelItem => i.b_id)">
+                            <img href="../CV/BookPage?bid=@Html.DisplayFor(modelItem => i.b_id)" style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
+                        </a>
+                        <p class="mt-3">@Html.DisplayFor(modelItem => i.b_Name)</p>
                         <p>@Html.DisplayFor(modelItem => i.a_Name)</p>
                     </div>
-                }
                 </div>
-
+            }
         </div>
 
-   
+    </div>
+
+
 </article>

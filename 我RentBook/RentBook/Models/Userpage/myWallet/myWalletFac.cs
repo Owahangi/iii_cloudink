@@ -7,6 +7,34 @@ namespace RentBook.Models.Userpage
 {
     public class myWalletFac
     {
+        public string getUserDatetime(string userEmail)
+        {
+            string sql = @"select isnull(m_MonthlyLastTime,'1900-09-01') as m_MonthlyLastTime from Member	
+                            where m_Email=@m_Email";
+            List<SqlParameter> paras = new List<SqlParameter>();
+            paras.Add(new SqlParameter("m_Email", userEmail));
+            /****/
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            if (paras != null)
+            {
+                foreach (SqlParameter p in paras)
+                    cmd.Parameters.Add(p);
+            }
+            SqlDataReader reader = cmd.ExecuteReader();
+            string x = "";
+            while (reader.Read())
+            {
+                x = ((DateTime)reader["m_MonthlyLastTime"]).ToString();
+            }
+            con.Close();
+            return x;
+        }
         public int getUserBalance(string userEmail)
         {
             string sql = @"select m_Point from Member	

@@ -8,50 +8,52 @@
     <h2>我的錢包</h2>
     <hr style="background-color: white;">
     <br>
-    <h3>當前餘額:@ViewBag.myBalance</h3>
+    <h3>當前餘額：@ViewBag.myBalance</h3>
+    <br>
+    <h3>月卡到期時間：@ViewBag.myDatetime</h3>
     <br>
     <br>
 
-        <h3>我的消費</h3>
-        <table class="table text-center">
-            <thead>
+    <h3>我的消費</h3>
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>購買序號</th>
+                <th>金額</th>
+                <th>交易時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.comsumption)
+            {
                 <tr>
-                    <th>購買序號</th>
-                    <th>金額</th>
-                    <th>交易時間</th>
+                    <td>@Html.DisplayFor(modelItem => i.orderId)</td>
+                    <td style="color:red;">@Html.DisplayFor(modelItem => i.amount)</td>
+                    <td>@Html.DisplayFor(modelItem => i.time)</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var i in Model.comsumption)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => i.orderId)</td>
-                        <td style="color:red;">@Html.DisplayFor(modelItem => i.amount)</td>
-                        <td>@Html.DisplayFor(modelItem => i.time)</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <br>
-        <h3>我的儲值</h3>
-        <table class="table text-center">
-            <thead>
+            }
+        </tbody>
+    </table>
+    <br>
+    <h3>我的儲值</h3>
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>儲值序號</th>
+                <th>金額</th>
+                <th>交易時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.Valueadded)
+            {
                 <tr>
-                    <th>儲值序號</th>
-                    <th>金額</th>
-                    <th>交易時間</th>
+                    <td>@Html.DisplayFor(modelItem => i.orderId)</td>
+                    <td style="color:green;">@Html.DisplayFor(modelItem => i.amount)</td>
+                    <td>@Html.DisplayFor(modelItem => i.time)</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var i in Model.Valueadded)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => i.orderId)</td>
-                        <td style="color:green;">@Html.DisplayFor(modelItem => i.amount)</td>
-                        <td>@Html.DisplayFor(modelItem => i.time)</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+            }
+        </tbody>
+    </table>
 
 </article>

@@ -10,15 +10,17 @@
     @{foreach (var i in Model)
         {
             <div class="row mt-4">
-                <div class="col col-lg-4 text-center">
-                    <img style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
-                </div>
+                    <div class="col col-lg-4 text-center">
+                        <a href="../CV/BookPage?bid=@Html.DisplayFor(modelItem => i.b_id)">
+                            <img style="background-size:contain;width:auto;height:170px;max-height:170px;" src="~/書籍素材/@Html.DisplayFor(modelItem => i.b_Type)素材/@Html.DisplayFor(modelItem => i.b_id)/@Html.DisplayFor(modelItem => i.b_Image)">
+                    </a>
+                            </div>
                 <div class="col col-lg-8 p-3">
                     <p>@Html.DisplayFor(modelItem => i.b_Name)</p>
                     <p>
                         @for (int j = 0; j < i.bm_Score; j++)
                         {
-                            <i style="color:yellow;" class="fa fa-star yellow"></i>
+                            <i style="color:#E89F12;" class="fa fa-star yellow"></i>
                         }</p>
 <p>@Html.DisplayFor(modelItem => i.bm_Message)</p>
                     <p>@Html.DisplayFor(modelItem => i.bm_MessageTime)</p>

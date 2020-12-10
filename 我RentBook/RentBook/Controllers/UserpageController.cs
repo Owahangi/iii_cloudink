@@ -129,7 +129,7 @@ namespace RentBook.Controllers
             }
             string userMail = Session["member"].ToString();
             ViewBag.myBalance = (new myWalletFac()).getUserBalance(userMail);
-
+            ViewBag.myDatetime = (new myWalletFac()).getUserDatetime(userMail);
             doubleClass3 myWallet = new doubleClass3();
             myWallet.comsumption = (new myWalletFac()).getConsumptionBySql(userMail);
             myWallet.Valueadded = (new myWalletFac()).getAddValueBySql(userMail);
