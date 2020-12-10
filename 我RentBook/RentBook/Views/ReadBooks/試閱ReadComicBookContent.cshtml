@@ -1,0 +1,70 @@
+﻿@model RentBook.Models.ReadBooksModel
+@{
+    ViewBag.Title = "ReadComicBookContent";
+    Layout = "~/Views/Shared/ReadBook.cshtml";
+
+}
+
+
+
+
+<br>
+
+
+<h3 class="section-heading " style="text-align:center;">@Model.傳回書籍章節標題</h3>
+<br>
+<!--1段-->
+<div style="text-align:center;">
+
+    @foreach (string FileName in Model.FilesName)
+    {
+        if (FileName != "")
+        {
+            <img src="@Model.FilePath/@FileName" />
+        }
+    }
+</divstyle="text-align:center;">
+
+
+<hr>
+
+
+
+<div class="container-fluid">
+
+    <div class="row mb-3">
+        <div class="col-3">
+
+            <nav class="pagination-outer" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        @if (Model.bc_Chapters > 1)
+                        {
+                            @Html.ActionLink("上一章", "ReadComicBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters - 1 }, new { @class = "page-link" })
+                        }
+                    </li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-6">
+            @Html.ActionLink("回到大綱", "BookPage", "CV", new { bid = Model.b_id }, new { @class = "btn btn-primary btn-block mybutton5" })
+        </div>
+
+        <div class="col-3">
+
+            <nav class="pagination-outer" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li></li>
+
+                    <li class="page-item">
+                        @if (Model.bc_Chapters < Model.傳回書籍最大章節數)
+                        {
+                            @Html.ActionLink("下一章", "ReadComicBookContent", "ReadBooks", new { b_id = Model.b_id, bc_Chapters = Model.bc_Chapters + 1 }, new { @class = "page-link", onclick = "javascript:alert('請先購買書籍'); return false;" });
+                        }
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

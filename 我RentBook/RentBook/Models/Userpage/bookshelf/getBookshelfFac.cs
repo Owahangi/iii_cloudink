@@ -13,7 +13,7 @@ namespace RentBook.Models.Userpage.bookshelf
 inner join Books as b on bcb.b_id=b.b_id)
 inner join BooksAuthor as ba on ba.b_id=b.b_id)
 inner join Author as a on a.a_id=ba.a_id
-where bc_id=(select bc_id from member where m_Email='ruby@test') and bcb_BookLastTime>GETDATE()
+where bc_id=(select bc_id from member where m_Email=@m_Email) and bcb_BookLastTime>GETDATE()
 ";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("m_Email", userEmail));
@@ -26,7 +26,7 @@ select b.b_Type,b.b_id,b.b_Image,b.b_Name,a.a_Name,bcb.bcb_BookLastTime from ((B
 inner join Books as b on bcb.b_id=b.b_id)
 inner join BooksAuthor as ba on ba.b_id=b.b_id)
 inner join Author as a on a.a_id=ba.a_id
-where bc_id=(select bc_id from member where m_Email='ruby@test') and bcb_BookLastTime<=GETDATE()
+where bc_id=(select bc_id from member where m_Email=@m_Email) and bcb_BookLastTime<=GETDATE()
 ";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("m_Email", userEmail));

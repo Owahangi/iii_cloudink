@@ -10,7 +10,7 @@ namespace RentBook.Models.Userpage
     {
         public string getMyPicture(string userEmail)
         {
-            string sql = @"select m_Image from Member where m_Email=@userEmail;";
+            string sql = @"select isnull(m_Image,'Default.jpg') as m_Image from Member where m_Email=@userEmail;";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("userEmail", userEmail));
             return getPicBySql(sql, paras);

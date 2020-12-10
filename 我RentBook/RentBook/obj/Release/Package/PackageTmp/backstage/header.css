@@ -19,6 +19,7 @@ header {
 }
 
 #nav {
+    position: relative;
     height: 70px;
     white-space: nowrap;
     z-index: 2;

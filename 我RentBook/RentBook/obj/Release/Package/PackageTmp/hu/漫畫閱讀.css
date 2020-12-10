@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+
+.myfont2
+{
+ font-family: "微軟正黑體";
+ font-size: 14px;
+ font-weight: bolder;
+ color: #1f537e;
+}
+.mybutton4
+{
+ font-family: "微軟正黑體";
+ font-size: 20px;
+ font-weight: bolder;
+ color: #000;
+}
+
+.mypagination1
+{
+margin-bottom: 10px; 
+}
+
+
+
+
+
+
+
+
+.pagination-outer{ text-align: center; }
+.pagination{ display: inline-flex; }
+.pagination li a.page-link{
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    background: #043844;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    padding-top: 0px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+
+}
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link{
+    border-radius: 0 0 0;
+}
+.pagination li:last-child a.page-link
+{ border-radius:0; }
+.pagination li:first-child a.page-link:before,
+.pagination li:last-child a.page-link:before{
+    content: "";
+    border-right: 20px solid #043844;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    transition: all 0.3s ease 0s;
+}
+.pagination li:last-child a.page-link:before{
+    border-right: none;
+    border-left: 20px solid #043844;
+    left: auto;
+    right: -20px;
+}
+.pagination li:first-child a.page-link:hover:before{ border-right-color: #6495ed; }
+.pagination li:last-child a.page-link:hover:before{ border-left-color: #6495ed; }
+.pagination li a.page-link:hover,
+.pagination .active a.page-link,
+.pagination .active a.page-link:hover{ background: #6495ed; }
+@media only screen and (max-width: 479px){
+    .pagination{ display: block; }
+}
+
+
+
+/*profile 圖片*/
+.imgsize
+{
+ width: 50px;
+ height: 50px;
+}
+
+
+.sidebar {
+  margin-top: 1cm;
+  position: fixed;
+  float: right;
+  width: 200px;
+  background-color: #f1f1f100; 
+  height: 100%;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+
+@media screen and (max-width: 700px) {
+  .row-reverse,
+  .sidebar {
+    width: 120%;
+    height: auto;
+    float: bottom;
+    position: sticky;
+  }
+  .sidebar a {float:right;}
+  div.content {margin-left: 0;}
+}
+
+/*回到大綱button*/
+.mybutton5
+{
+ padding: 10px  0 10px 0;
+ font-size: 18px;
+}
+
+/*黑暗模式*/
+body {
+
+  background-color: white;
+  color: black;
+
+}
+
+.dark-mode footer * {
+  background-color: rgb(100, 99, 99);
+  color: white;
+}
+
+.dark-mode {
+  background-color:#373C3F;
+  color: white;
+}
+
+.dark-mode header * {
+    background-color: #2F3437;
+    color: white;
+  }
+
+
+
+
+
+.mystyle2
+{
+  padding-right:  60px;
+  padding-left: 1cm;
+}

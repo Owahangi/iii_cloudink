@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 .mystyle1:hover
@@ -35,7 +35,6 @@ margin-bottom: 10px;
 .myfont1
 {
  color: black;
- font-family: "微軟正黑體";
  font-size: 20px;
  line-height: 200%;
 }
@@ -153,12 +152,6 @@ margin-bottom: 10px;
 
 
 /*黑暗模式*/
-body {
-
-  background-color: white;
-  color: black;
-
-}
 
 
 .dark-mode header * {
@@ -169,17 +162,19 @@ body {
   background-color: rgb(100, 99, 99);
   color: white;
 }
-.dark-mode article * {
-  background-color: #2F3437;
-  color: white;
-}
-.dark-mode {
+
+.dark-mode  * {
   background-color:#373C3F;
   color: white;
 }
 
+.dark-mode container-fluid {
+    background-color: #373C3F;
+    color: white;
+}
+
 .dark-mode .modal-backdrop * {
-  background-color: rgba(0,0,0,.0001) !important;
+    background-color: rgba(0,0,0,.0001) !important;
 }
 
 /*回到大綱button 樣式*/

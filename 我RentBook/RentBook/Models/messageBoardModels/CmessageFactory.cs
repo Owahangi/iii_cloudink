@@ -16,7 +16,7 @@ namespace RentBook.Models
         //bm_score 會員對書籍的評分
         //m_Name dbo.Member資料表的會員暱稱
 
-        public List<BooksMessage> getOneMessage(string b_id, string m_id)
+        public bool getOneMessage(string b_id, string m_id)
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=.;Initial Catalog=RentBookdb;Integrated Security=True";
@@ -26,28 +26,16 @@ namespace RentBook.Models
             cmd.CommandText = "select * from BooksMessage where b_id = @b_id and m_id = @m_id ";
             cmd.Parameters.AddWithValue("b_id", b_id);
             cmd.Parameters.AddWithValue("m_id", m_id);
-
-            List<BooksMessage> list = new List<BooksMessage>();
-
+            bool check = false;
             SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            if (reader.HasRows)
             {
-                BooksMessage x = new BooksMessage();
-                x.bm_id = (int)reader["bm_id"];
-                x.b_id = reader["b_id"].ToString();
-                x.m_id = reader["m_id"].ToString();
-                x.bm_Message = reader["bm_Message"].ToString();
-                x.bm_MessageTime = (DateTime)reader["bm_MessageTime"];
-                x.bm_Score = (int)reader["bm_Score"];
-                list.Add(x);
+                check = true;
             }
 
-            if (list.Count == 0)
-            {
-                return null;
-            }
-
-            return list;
+            reader.Close();
+            con.Close();
+            return check;
         }
 
         public string getM_ID(string b_id)
@@ -127,7 +115,7 @@ namespace RentBook.Models
         {
             //return getMessageSqlView("select bm.bm_id, bm.b_id, m.m_id, m.m_Email, m.m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime ,bm.bm_Score from Member as m inner join [BooksMessage] as bm on m.m_id=bm.m_id ", null);
             //SQL語法 where ... 待修正
-            return getMessageSqlView("select bm.bm_id, bm.b_id, b.b_Name, m.m_id, m.m_Email,ISNULL(m.m_Image,'未知') as m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from ([Member] as m inner join [BooksMessage] as bm on m.m_id = bm.m_id) inner join Books as b on b.b_id = bm.b_id ", null);
+            return getMessageSqlView("select bm.bm_id, bm.b_id, b.b_Name, m.m_id, m.m_Email,ISNULL(m.m_Image,'Default.jpg') as m_Image, m.m_Alias, bm.bm_Message, bm.bm_MessageTime, bm.bm_Score from ([Member] as m inner join [BooksMessage] as bm on m.m_id = bm.m_id) inner join Books as b on b.b_id = bm.b_id ", null);
         }
 
         public List<CmessageSqlView> getMessageSqlView(string sql, List<SqlParameter> paras)
@@ -159,10 +147,6 @@ namespace RentBook.Models
                 x.m_id = reader["m_id"].ToString();
                 x.m_Email = reader["m_Email"].ToString();
                 x.m_Image = reader["m_Image"].ToString();
-                if (x.m_Image == "未知")
-                {
-                    x.m_Image = "Default.jpg";
-                }
                 //SQL Sever table Column(PATH -> ../../Content......)
                 x.m_Alias = reader["m_Alias"].ToString();
                 x.bm_Message = reader["bm_Message"].ToString();

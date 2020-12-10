@@ -2286,6 +2286,7 @@
     <Content Include="Content\心儀書單CSS.css" />
     <Content Include="Content\新聞搜尋頁面.html" />
     <Content Include="Content\會員首頁.css" />
+    <Content Include="Content\漫畫閱讀.css" />
     <Content Include="Content\網站圖片庫\%28內圖%29111.jpeg" />
     <Content Include="Content\網站圖片庫\%28內圖%291+1+1.jpg" />
     <Content Include="Content\網站圖片庫\%28內圖%29分手事務所.jpg" />
@@ -8929,6 +8930,9 @@
     <Compile Include="Models\TAGsearch.cs" />
     <Compile Include="Models\Userpage\bookshelf\doubleClass2.cs" />
     <Compile Include="Models\Userpage\bookshelf\getBookshelfFac.cs" />
+    <Compile Include="Models\Userpage\myWallet\doubleClass3.cs" />
+    <Compile Include="Models\Userpage\myWallet\myWalletFac.cs" />
+    <Compile Include="Models\Userpage\myWallet\transactionClass.cs" />
     <Compile Include="Models\Userpage\userpage\bookBriefClass.cs" />
     <Compile Include="Models\Userpage\commentClass.cs" />
     <Compile Include="Models\Userpage\commentFac.cs" />
@@ -9366,6 +9370,8 @@
     <Content Include="Views\Shared\hu_layout_userpage.cshtml" />
     <Content Include="Views\Shared\layout_userpage.cshtml" />
     <Content Include="Views\Userpage\WishList.cshtml" />
+    <Content Include="Views\ReadBooks\試閱ReadBookContent.cshtml" />
+    <Content Include="Views\ReadBooks\試閱ReadComicBookContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -158,33 +158,29 @@ namespace RentBook.Controllers
 
         public ActionResult BookPage(string bid)
         {
+            var user = (Session[CDictionary.SK_LOGINED_USER] as CMember);
+            
             CmessageFactory factory = new CmessageFactory();
             //星星平均
             int AvgSore = factory.getAvgSorce(bid);
             ViewBag.AVGSORE = AvgSore; // 丟ViewBag.AVGSORE到Views
 
-            //判斷有沒留過言
-            List<BooksMessage> ListBooksMessage = new List<BooksMessage>();
-            string m_id = factory.getM_ID(bid);
-            ListBooksMessage = factory.getOneMessage(bid, m_id);
-            bool listbm = false;
-            if (ListBooksMessage != null)
+            bool 有沒有留過言 = false;
+
+            if (user != null)
             {
-                if (ListBooksMessage.Count() > 0)
-                {
-                    listbm = true;
-                }
-                    
+                //判斷有沒留過言
+                List<BooksMessage> ListBooksMessage = new List<BooksMessage>();
+                有沒有留過言 = factory.getOneMessage(bid, user.m_id);
+
+
+                //個人星星
+                int MemberStar = factory.getMemberStar(bid, user.m_id);
+                ViewBag.MEMBERSTAR = MemberStar; // 丟ViewBag.MEMBERSTAR到Views
+
             }
-            else 
-            {
-                listbm = false;
-            }
-            
-            
-            //個人星星
-            int MemberStar = factory.getMemberStar(bid, m_id);
-            ViewBag.MEMBERSTAR = MemberStar; // 丟ViewBag.MEMBERSTAR到Views
+
+
 
             //
 
@@ -194,7 +190,6 @@ namespace RentBook.Controllers
             var chap = db.BooksChapters.Where(c => c.b_id == bid);
             var msg = db.BooksMessage.Where(m => m.b_id == bid);
 
-            var user = (Session[CDictionary.SK_LOGINED_USER] as CMember);
             var bkb = db.BookCaseBooks.Where(b => b.bc_id == user.bc_id);
 
             var result = db.Books.ToList();
@@ -241,12 +236,13 @@ namespace RentBook.Controllers
                     Messages = msg.ToList(),
                     CmessageSqlViews = list2.ToList(),
                     log = false,
-                    LatestBooks = result2,
+                    LatestBooks = result2,                     
                     BooksWishlists = wishlist.ToList(),
                     count = bkb1,
                     tid = bkb2,
                     tname = bkb3,
-                    listbm = listbm
+                    listbm = 有沒有留過言
+
                 });
             }
             else
@@ -265,7 +261,7 @@ namespace RentBook.Controllers
                     count = bkb1,
                     tid = bkb2,
                     tname = bkb3,
-                    listbm = listbm
+                    listbm = 有沒有留過言
 
                 });
             }

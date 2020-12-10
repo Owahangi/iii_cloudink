@@ -10,13 +10,12 @@ namespace RentBook.Models.Userpage.userpage
     {
         public List<bookBriefClass> getBookInfo(string userEmail)
         {
-            string sql = @"select b.b_Type,b.b_id,b.b_Image,b.b_Name,a.a_Name
+            string sql = @"select distinct b.b_Type,b.b_id,b.b_Image,b.b_Name,a.a_Name
 from ((MemberShopDetail as msd
 inner join Books as b on msd.b_id=b.b_id)
 inner join BooksAuthor as ba on ba.b_id=b.b_id)
 inner join Author as a on a.a_id=ba.a_id
 where m_id=(select m_id from member where m_Email=@m_Email)
-order by msd.msd_DateTime desc
 ";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("m_Email", userEmail));
@@ -46,6 +45,10 @@ order by msd.msd_DateTime desc
                 x.b_Image = reader["b_Image"].ToString();
                 x.b_Name = reader["b_Name"].ToString();
                 x.a_Name = reader["a_Name"].ToString();
+                if (x.b_Image == "未知")
+                {
+                    x.b_Image = "Default.jpg";
+                }
                 list.Add(x);
             }
             con.Close();

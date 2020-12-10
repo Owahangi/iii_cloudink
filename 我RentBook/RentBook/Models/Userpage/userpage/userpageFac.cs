@@ -10,7 +10,7 @@ namespace RentBook.Models
     {
         public List<userpageClass> getUserInfo(string userEmail)
         {
-            string sql = "select m_Image,m_Email,m_id,m_Name,m_Alias,m_Intro from Member where m_Email = @m_Email";
+            string sql = "select isnull(m_Image,'Default.jpg') as m_Image,m_Email,m_id,m_Name,m_Alias,m_Intro from Member where m_Email = @m_Email";
             List<SqlParameter> paras = new List<SqlParameter>();
             paras.Add(new SqlParameter("m_Email", userEmail));
             return getBySql(sql, paras);

@@ -7,6 +7,7 @@ using RentBook.Models;
 using RentBook.Models.Userpage;
 using RentBook.Models.Userpage.bookshelf;
 using RentBook.Models.Userpage.userpage;
+using RentBook.Models.Userpage.myWallet;
 using System.Web.Script.Serialization;
 using System.IO;
 
@@ -23,12 +24,16 @@ namespace RentBook.Controllers
             {
                 return RedirectToAction("xxx", "CV");
             }
+            
             string x = Session["member"].ToString();
             List<userpageClass> User = (new userpageFac()).getUserInfo(x);
             List<bookBriefClass> recentReading = (new bookBriefFac()).getBookInfo(x);
+            List<userpageClass> img = (new userpageFac()).getUserInfo(x);
             doubleClass1 myView = new doubleClass1();
+            myView.userimgS = img;
             myView.userInfo = User;
             myView.bookInfo = recentReading;
+            
             return View(myView);
         }
 
@@ -81,6 +86,7 @@ namespace RentBook.Controllers
             //
             ViewBag.m_id = settings[0].m_id;
             //
+            ViewBag.img = settings[0].m_Image;
             return View(settings);//
         }
 
@@ -121,9 +127,20 @@ namespace RentBook.Controllers
         }
 
 
+
         public ActionResult MyPurchase()
         {
-            return View();
+            if (Session["member"] == null)
+            {
+                return RedirectToAction("xxx", "CV");
+            }
+            string userMail = Session["member"].ToString();
+            ViewBag.myBalance = (new myWalletFac()).getUserBalance(userMail);
+            ViewBag.myDatetime = (new myWalletFac()).getUserDatetime(userMail);
+            doubleClass3 myWallet = new doubleClass3();
+            myWallet.comsumption = (new myWalletFac()).getConsumptionBySql(userMail);
+            myWallet.Valueadded = (new myWalletFac()).getAddValueBySql(userMail);
+            return View(myWallet);
         }
         public ActionResult Logout()
         {

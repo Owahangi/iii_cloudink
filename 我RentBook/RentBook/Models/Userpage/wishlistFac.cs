@@ -15,7 +15,7 @@ from (([books] as b
 inner join [BooksAuthor] as ba on b.b_id=ba.b_id)
 inner join [Author] as a on a.a_id=ba.a_id)
 inner join [BooksWishlist] as bw on bw.b_id=b.b_id
-where bc_id=(select bc_id from Member where m_Email='ruby@test')
+where bc_id=(select bc_id from Member where m_Email=@m_Email)
 order by bw_AddTime desc
 ";
             List<SqlParameter> paras = new List<SqlParameter>();
