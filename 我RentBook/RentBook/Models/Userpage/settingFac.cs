@@ -101,6 +101,10 @@ where m_Email=@userEmail;
                 {
                     x.m_Intro = "";
                 }
+                if (x.m_Image == "未知")
+                {
+                    x.m_Image = "Default.jpg";
+                }
                 list.Add(x);
             }
             con.Close();

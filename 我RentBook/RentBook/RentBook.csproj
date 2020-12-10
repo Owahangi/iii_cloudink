@@ -2286,6 +2286,7 @@
     <Content Include="Content\心儀書單CSS.css" />
     <Content Include="Content\新聞搜尋頁面.html" />
     <Content Include="Content\會員首頁.css" />
+    <Content Include="Content\漫畫閱讀.css" />
     <Content Include="Content\網站圖片庫\%28內圖%29111.jpeg" />
     <Content Include="Content\網站圖片庫\%28內圖%291+1+1.jpg" />
     <Content Include="Content\網站圖片庫\%28內圖%29分手事務所.jpg" />
@@ -8860,6 +8861,7 @@
     <Compile Include="Controllers\PointController.cs" />
     <Compile Include="Controllers\PublishingController.cs" />
     <Compile Include="Controllers\ReadBooksController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UserpageController.cs" />
     <Compile Include="Function.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -8927,6 +8929,8 @@
     <Compile Include="Models\ReadBook\ReadBooksFactory.cs" />
     <Compile Include="Models\ReadBook\ReadBooksModel.cs" />
     <Compile Include="Models\TAGsearch.cs" />
+    <Compile Include="Models\Test\TestModel.cs" />
+    <Compile Include="Models\Test\TestFactory.cs" />
     <Compile Include="Models\Userpage\bookshelf\doubleClass2.cs" />
     <Compile Include="Models\Userpage\bookshelf\getBookshelfFac.cs" />
     <Compile Include="Models\Userpage\userpage\bookBriefClass.cs" />
@@ -9366,6 +9370,9 @@
     <Content Include="Views\Shared\hu_layout_userpage.cshtml" />
     <Content Include="Views\Shared\layout_userpage.cshtml" />
     <Content Include="Views\Userpage\WishList.cshtml" />
+    <Content Include="Views\ReadBooks\試閱ReadBookContent.cshtml" />
+    <Content Include="Views\ReadBooks\試閱ReadComicBookContent.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

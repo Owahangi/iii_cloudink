@@ -1,0 +1,114 @@
+﻿@using RentBook.Models
+@using RentBook.Models.Userpage
+@model List<RentBook.Models.Userpage.settingClass>
+@{
+    ViewBag.Title = "MySetting";
+    Layout = "~/Views/Shared/layout_userpage.cshtml";
+    ViewBag.img = Model[0].m_Image;
+    if (String.IsNullOrEmpty(ViewBag.img) == true)
+    {
+        ViewBag.img = "default.jpg";
+    }
+}
+
+<article class="container mt-5 py-0 px-0">
+    <div class="container">
+        <div class="row">
+            @{ foreach (var i in Model)
+                {
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12  text-center">
+                        <div class="container">
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <img name="m_Image" src="~/會員照片/@ViewBag.img" style="width:144px;height:144px;border-radius:72px;max-height:144px;max-width:144px;" id="blah" alt="your image" />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col align-items-center ">
+                                    
+                                    <form action="@Url.Action("Upload")" method="post" enctype="multipart/form-data">
+                                        <p>
+                                            <input type="file" name="m_Image" class="mystyle4" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+                                        </p>
+                                        <p>
+                                            <input type="submit" />
+                                        </p>
+                                    </form>
+                              
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="post" class="form-horizontal form-material">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Email:</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="email" name="m_Email" disabled="disabled" value="@Html.DisplayFor(ModelItem=>i.m_Email)" class="form-control p-0 border-0" id="example-email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">密碼</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="password" name="s_Pwd" value="@Html.DisplayFor(ModelItem=>i.s_Pwd)" class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">姓名:</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" name="m_Name" value="@Html.DisplayFor(ModelItem=>i.m_Name)" class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">暱稱:</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="text" name="m_Alias" value="@Html.DisplayFor(ModelItem=>i.m_Alias)" class="form-control p-0 border-0">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-sm-12 p-0">性別</label>
+                                        <div class="col-sm-12 border-bottom p-0">
+                                            <select name="m_Gender" class="form-control p-0 border-0">
+                                                <option value="@Html.DisplayFor(modelItem=>i.m_Gender)" selected="selected" hidden="hidden">@ViewBag.genderDefault</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Lesbian</option>
+                                                <option value="4">Gay</option>
+                                                <option value="5">Bisexual</option>
+                                                <option value="6">Transgender</option>
+                                                <option value="7">Queer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">個人簡介</label>
+                                        <div class="col-md-12 border-bottom p-0 your-div">
+                                            <textarea name="m_Intro" maxlength="150" rows="5" class="form-control p-0 border-0">@Html.DisplayFor(ModelItem=>i.m_Intro)</textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">確定資料上傳</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }}
+            <!-- Column -->
+        </div>
+    </div>
+</article>
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        var message = @Html.Raw(Json.Encode(TempData["message"]));
+        alert(message);
+    </script>
+}
+
+
+

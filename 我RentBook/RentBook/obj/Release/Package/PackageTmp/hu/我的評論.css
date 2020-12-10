@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+/*版面寬度*/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
+
+/*區塊3 封面大小寫死*/
+
+.imgsection3
+{
+  width: 210px;
+  height: 300px;
+}
+
+@media screen and (max-width: 700px) {
+  .imgsection3
+  {
+    width: 313px;
+    height: 443px;
+  }
+
+  .mycard1
+{
+  margin-left: -15px;
+  margin-right: 15px;
+}
+}
+
+/*profile 圖片*/
+.imgsize
+{
+ width: 50px;
+ height: 50px;
+}
+
+/*評論區文字樣式*/
+.mycomment2
+{
+  color: #7f7f7f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*區塊標題背景色*/
+.myfont1
+{
+
+  background-color: #c6d9f1;
+  font-size: 22px;
+  font-weight: bolder;
+  color: black;
+}
+
+/*推薦作品-書本大綱*/
+.mytext1
+{
+
+  font-weight: bolder;
+}
+
+/*強制只能顯示...行*/
+.maxlength
+{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+
+/*灰色背景布*/
+.mybg2
+{
+  margin-top: -140px;
+  background-color: #e6e1e1;
+}
+
+
+/*評論頁面-書籍名稱style*/
+.myfont2
+{
+  font-size: 16px;
+  color: rgb(8, 69, 97);
+}
+
+.myfont2:hover
+{
+  font-size: 16px;
+  color: rgb(0, 185, 185);
+}
+
+
+
+
+
+/*modal*/
+.modal-backdrop {
+  background-color: rgba(0,0,0,.0001) !important;
+}
+
+.mystyle3 { 
+  top: -85px;
+  padding-right: 7px;
+  padding-left: 8px;
+}
+
+.mytext2
+{
+  font-size: 20px;
+  text-align: center;
+  line-height: 1cm;
+
+}
+
+/*封面HOVER 效果*/
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+/*星星圖示(目前是寫死的)*/
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #ddd; /*背景星星顏色*/
+  overflow: hidden;
+  font-size: 30px; /*調整字體大小可放大縮小星星*/
+  text-shadow: 0px 1px 0 #999;
+  }
+  .full_star {
+  width: 90%; /*調整寬度可變更星等*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #D56A16; /*前景星星顏色*/
+  }
+
+/*黑暗模式*/
+body {
+
+  background-color: white;
+  color: black;
+
+}
+
+
+.dark-mode header * {
+  background-color:  #373C3F;
+  color: white;
+}
+.dark-mode footer * {
+  background-color: rgb(100, 99, 99);
+  color: white;
+}
+.dark-mode article * {
+  background-color: #2F3437;
+  color: rgb(0, 0, 0);
+}
+.dark-mode {
+  background-color:#373C3F;
+  color: white;
+}
+
+.dark-mode .modal-backdrop * {
+  background-color: rgba(0,0,0,.0001) !important;
+}

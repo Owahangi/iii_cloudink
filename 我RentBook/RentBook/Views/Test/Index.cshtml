@@ -1,0 +1,57 @@
+﻿@model List<RentBook.Models.Test.TestModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            商品編號
+        </th>
+        <th>
+            會員編號
+        </th>
+        <th>
+            點數增減
+        </th>
+        <th>
+            時間
+        </th>
+        <th>
+            總額
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.b_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.m_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Point)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPoint)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

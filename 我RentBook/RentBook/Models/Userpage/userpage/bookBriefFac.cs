@@ -46,6 +46,10 @@ order by msd.msd_DateTime desc
                 x.b_Image = reader["b_Image"].ToString();
                 x.b_Name = reader["b_Name"].ToString();
                 x.a_Name = reader["a_Name"].ToString();
+                if (x.b_Image == "未知")
+                {
+                    x.b_Image = "Default.jpg";
+                }
                 list.Add(x);
             }
             con.Close();
